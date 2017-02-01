@@ -4,10 +4,12 @@
  */
 import {PageFactory, PageRegister, PageController} from "@haztivity/core/index";
 import template from "./6611.html!text";
+import {HzAnim} from "../../../../../src/HzAnim";
 let page: PageRegister = PageFactory.createPage(
     {
         name: "6611",
         resources: [
+            HzAnim
         ],
         template: template
     }

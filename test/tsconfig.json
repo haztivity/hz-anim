@@ -4,10 +4,10 @@
         "module": "system",
         "moduleResolution": "node",
         "sourceMap": true,
+        "inlineSourceMap": true,
         "target": "es5",
         "typeRoots": [
-            "../node_modules/@types",
-            "../jspm_packages/npm/bottlejs@1.5.0/dist"
+            "../node_modules/@types"
         ]
     },
     "exclude": [

@@ -1,5 +1,11 @@
 div
-    h1 Page
-    div(data-hz-resource="HzCarousel")
-        div 1
-        div 2
+    button(data-hz-resource="HzAnim"
+    data-opt-hz-anim-on="click"
+    data-opt-hz-anim-do='[{"translateX":100},{"translateY":100}]'
+    data-opt-hz-anim-to="p") Do
+    button(data-hz-resource="HzAnim"
+    data-opt-hz-anim-on="click"
+    data-opt-hz-anim-do='{"translateX":0,"translateY":0}'
+    data-opt-hz-anim-to="p") Reset
+    p 1
+    p 2

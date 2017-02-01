@@ -17,6 +17,7 @@ System.config({
     "slick-carousel": "npm:slick-carousel@1.6.0",
     "text": "github:systemjs/plugin-text@0.0.9",
     "typescript": "npm:typescript@2.1.5",
+    "velocity-animate": "npm:velocity-animate@1.4.2",
     "bitbucket:davinchi_finsi/core@0.1.2": {
       "bottlejs": "npm:bottlejs@1.5.0",
       "jquery": "npm:jquery@3.1.1",
@@ -350,6 +351,9 @@ System.config({
     },
     "npm:util@0.10.3": {
       "inherits": "npm:inherits@2.0.1",
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:velocity-animate@1.4.2": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:vm-browserify@0.0.4": {
