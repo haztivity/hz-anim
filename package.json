@@ -1,6 +1,6 @@
 {
   "name": "@haztivity/hzanim",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Recurso para realizar animaciones",
   "main": "index.js",
   "module": "index.js",
@@ -60,7 +60,7 @@
       "lib": "src"
     },
     "dependencies": {
-      "@haztivity/core": "bitbucket:davinchi_finsi/core@^0.1.2",
+      "@haztivity/core": "bitbucket:davinchi_finsi/core@^0",
       "jquery": "npm:jquery@^3.1.1",
       "velocity-animate": "npm:velocity-animate@^1.4.2"
     },
