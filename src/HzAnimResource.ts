@@ -5,6 +5,7 @@
 import {$, EventEmitterFactory, Resource, ResourceController,ResourceSequence} from "@haztivity/core/index";
 import * as velocity from "velocity-animate";
 import * as velocityui from "velocity-animate/velocity.ui";
+import {HzAnimSequence} from "./HzAnimSequence";
 velocity;
 velocityui;
 interface IOptions {
@@ -22,6 +23,7 @@ interface IOptions {
         ]
     }
 )
+
 export class HzAnimResource extends ResourceController {
     public static readonly NAMESPACE = "hzAnim";
     protected static readonly _DEFAULT_OPTIONS = {
@@ -29,7 +31,6 @@ export class HzAnimResource extends ResourceController {
     };
     protected _id: number;
     protected _namespace: string;
-
     public init(options: any, config?: any): any {
         this._id = new Date().getTime();
         this._namespace = HzAnimResource.NAMESPACE + this._id;
@@ -45,85 +46,24 @@ export class HzAnimResource extends ResourceController {
     }
 
     public run() {
-        if(!this.isDisabled()) {
+        if(!this.isDisabled()) {º
             this._perform(this._options.to,this._options.do,this._options.with).then(this._onEnd.bind(this)).catch(this._onError.bind(this));
             if (this._options.with && this._options.with.loop) {
                 this._markAsCompleted();
             }
         }
     }
-    protected _onStepComplete(config,defer?){
-        if(config && config.toDo) {
-            if (config.toDo.add) {
-                let add = config.toDo.add;
-                for(let key in add){
-                    if(key == "class"){
-                        config.to.addClass(add[key]);
-                    }else{
-                        config.to.attr(key,add[key]);
-                    }
-                }
-            }
-            if (config.toDo.remove) {
-                let remove = config.toDo.remove;
-                for(let key in remove){
-                    if(key == "class"){
-                        config.to.removeClass(remove[key]);
-                    }else{
-                        config.to.removeAttr(key,remove[key]);
-                    }
-                }
-            }
-        }
-        if(defer){
-            defer.resolveWith(this);
-        }
-    }
+
     protected _perform(to,toDo,config){
-        let deferred = this._$.Deferred();
-        to = $(to);
-        if (Array.isArray(toDo)) {
-            let seq = [],
-                doConfig = toDo,
-                withConfig = config || {duration: 500};
-            for (let doIndex = 0, doLength = doConfig.length; doIndex < doLength; doIndex++) {
-                let currentDo = doConfig[doIndex],
-                    opts = $.extend(true,{},withConfig),
-                    hzanim = {
-                        to:to,
-                        toDo:currentDo,
-                        withConfig:withConfig
-                    };
-                if(currentDo.add || currentDo.remove){
-                    opts.complete = this._onStepComplete.bind(this,hzanim,null);
-                }
-                seq.push(
-                    {
-                        e: to,
-                        p: currentDo,
-                        o: opts,
-                        hzanim:hzanim
-                    }
-                );
-
-            }
-            let lastSeq = seq[seq.length - 1];
-            lastSeq.o.complete = this._onStepComplete.bind(this,lastSeq.hzanim,deferred);
-            this._$.Velocity.RunSequence(seq);
-
-        } else {
-            let hzanim = {
-                to:to,
+        let seq = new HzAnimSequence(this._$);
+        seq.activate(
+            {
+                toElement:to,
                 toDo:toDo,
                 withConfig:config
-            };
-            this._$.Velocity.animate(
-                to,
-                toDo,
-                config
-            ).then(this._onStepComplete.bind(this,hzanim,deferred));
-        }
-        return deferred.promise();
+            }
+        );
+        return seq.run();
     }
 
     protected _assignEvents(){
