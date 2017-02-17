@@ -12,8 +12,6 @@ interface IOptions {
     do: string|Object;
     to?: string;
     with: any;
-    doBefore?: string|Object;
-    withBefore?: any;
 }
 @Resource(
     {
@@ -48,50 +46,86 @@ export class HzAnimResource extends ResourceController {
 
     public run() {
         if(!this.isDisabled()) {
-            if (this._options.doBefore) {
-                this._$.Velocity.animate(
-                    this._$(<any>this._options.to),
-                    this._options.doBefore,
-                    this._options.withBefore
-                ).then(this._onDoBefore.bind(this)).catch(this._onError.bind(this));
-            } else {
-                this._onDoBefore();
+            this._perform(this._options.to,this._options.do,this._options.with).then(this._onEnd.bind(this)).catch(this._onError.bind(this));
+            if (this._options.with && this._options.with.loop) {
+                this._markAsCompleted();
             }
         }
     }
-
-    protected _onDoBefore() {
-        if(!this.isDisabled()) {
-            if (Array.isArray(this._options.do)) {
-                let seq = [],
-                    doConfig = this._options.do,
-                    to = $(this._options.to),
-                    withConfig = this._options.with || {duration: 500};
-                for (let doIndex = 0, doLength = doConfig.length; doIndex < doLength; doIndex++) {
-                    let currentDo = doConfig[doIndex];
-                    seq.push(
-                        {
-                            e: to,
-                            p: currentDo,
-                            o: withConfig
-                        }
-                    );
+    protected _onStepComplete(config,defer?){
+        if(config && config.toDo) {
+            if (config.toDo.add) {
+                let add = config.toDo.add;
+                for(let key in add){
+                    if(key == "class"){
+                        config.to.addClass(add[key]);
+                    }else{
+                        config.to.attr(key,add[key]);
+                    }
                 }
-                seq[seq.length - 1].o = $.extend(true, {complete: this._onEnd.bind(this)}, seq[seq.length - 1].o);
-                this._$.Velocity.RunSequence(seq);
-
-            } else {
-                this._$.Velocity.animate(
-                    this._$(this._options.to),
-                    this._options.do,
-                    this._options.with
-                ).then(this._onEnd.bind(this)).catch(this._onError.bind(this));
-                if (this._options.with && this._options.with.loop) {
-                    this._markAsCompleted();
+            }
+            if (config.toDo.remove) {
+                let remove = config.toDo.remove;
+                for(let key in remove){
+                    if(key == "class"){
+                        config.to.removeClass(remove[key]);
+                    }else{
+                        config.to.removeAttr(key,remove[key]);
+                    }
                 }
             }
         }
+        if(defer){
+            defer.resolveWith(this);
+        }
     }
+    protected _perform(to,toDo,config){
+        let deferred = this._$.Deferred();
+        to = $(to);
+        if (Array.isArray(toDo)) {
+            let seq = [],
+                doConfig = toDo,
+                withConfig = config || {duration: 500};
+            for (let doIndex = 0, doLength = doConfig.length; doIndex < doLength; doIndex++) {
+                let currentDo = doConfig[doIndex],
+                    opts = $.extend(true,{},withConfig),
+                    hzanim = {
+                        to:to,
+                        toDo:currentDo,
+                        withConfig:withConfig
+                    };
+                if(currentDo.add || currentDo.remove){
+                    opts.complete = this._onStepComplete.bind(this,hzanim,null);
+                }
+                seq.push(
+                    {
+                        e: to,
+                        p: currentDo,
+                        o: opts,
+                        hzanim:hzanim
+                    }
+                );
+
+            }
+            let lastSeq = seq[seq.length - 1];
+            lastSeq.o.complete = this._onStepComplete.bind(this,lastSeq.hzanim,deferred);
+            this._$.Velocity.RunSequence(seq);
+
+        } else {
+            let hzanim = {
+                to:to,
+                toDo:toDo,
+                withConfig:config
+            };
+            this._$.Velocity.animate(
+                to,
+                toDo,
+                config
+            ).then(this._onStepComplete.bind(this,hzanim,deferred));
+        }
+        return deferred.promise();
+    }
+
     protected _assignEvents(){
         this._eventEmitter.off("."+HzAnimResource.NAMESPACE);
         this._$element.off("."+HzAnimResource.NAMESPACE);
