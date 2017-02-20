@@ -3,7 +3,7 @@
  * Copyright Davinchi. All Rights Reserved.
  */
 import {PageFactory, PageRegister, PageController} from "@haztivity/core/index";
-import template from "./6611.html!text";
+import * as template from "./6611.html!text";
 import {HzAnim} from "../../../../../src/HzAnim";
 let page: PageRegister = PageFactory.createPage(
     {

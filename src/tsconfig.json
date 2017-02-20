@@ -1,9 +1,8 @@
 {
     "compilerOptions": {
-        "module": "system",
+        "module": "umd",
         "target": "es5",
         "sourceMap": true,
-        "inlineSourceMap": true,
         "moduleResolution": "node",
         "experimentalDecorators": true,
         "typeRoots": [

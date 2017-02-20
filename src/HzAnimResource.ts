@@ -46,10 +46,25 @@ export class HzAnimResource extends ResourceController {
     }
 
     public run() {
-        if(!this.isDisabled()) {º
-            this._perform(this._options.to,this._options.do,this._options.with).then(this._onEnd.bind(this)).catch(this._onError.bind(this));
-            if (this._options.with && this._options.with.loop) {
-                this._markAsCompleted();
+        if(!this.isDisabled()) {
+            if(this._options.to) {
+                this._perform(this._options.to, this._options.do, this._options.with)
+                    .then(this._onEnd.bind(this))
+                    .catch(this._onError.bind(this));
+                if (this._options.with && this._options.with.loop) {
+                    this._markAsCompleted();
+                }
+            }else{
+                let next = true,
+                    index = 1;
+                do{
+                    let toDo = this._options[`to-${index}`];
+                    if(toDo){
+
+                    }else{
+                        next = false;
+                    }
+                }while(next);
             }
         }
     }
