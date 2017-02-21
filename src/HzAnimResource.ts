@@ -5,7 +5,7 @@
 import {$, EventEmitterFactory, Resource, ResourceController,ResourceSequence} from "@haztivity/core/index";
 import * as velocity from "velocity-animate";
 import * as velocityui from "velocity-animate/velocity.ui";
-import {HzAnimSequence} from "./HzAnimSequence";
+import {HzAnimSequence, IStepConfig} from "./HzAnimSequence";
 velocity;
 velocityui;
 interface IOptions {
@@ -44,32 +44,56 @@ export class HzAnimResource extends ResourceController {
     protected _onEventTriggered(e) {
         e.data.instance.run();
     }
+    protected _getOptionsFor(seqIndex){
+        let seq:IStepConfig = {
+            toElement:this._options[`to-${seqIndex}`]||this._options.to,
+            toDo:this._options[`do-${seqIndex}`],
+            withConfig:this._options[`with-${seqIndex}`]||this._options.with
+        };
+        return seq.toDo != undefined ? seq : null;
+    }
+    protected _onSequenceStepCompleted(stepIndex,sequence:HzAnimSequence[]){
+        if(sequence[stepIndex]) {
+            this._runSequenceStep(stepIndex, sequence);
+        }else{
+            this._markAsCompleted();
+        }
+    }
+    protected _runSequenceStep(stepIndex,sequence:HzAnimSequence[]){
+        let step = sequence[stepIndex];
+        if(step){
+            let config:IStepConfig = step.getConfig();
+            step.run().then(this._onSequenceStepCompleted.bind(this,stepIndex+1,sequence));
+            if (config.withConfig && config.withConfig.loop) {
+                this._markAsCompleted();
+            }
+        }
 
+    }
+    protected _runSequence(sequence){
+        this._runSequenceStep(0,sequence);
+    }
     public run() {
         if(!this.isDisabled()) {
             if(this._options.to) {
-                this._perform(this._options.to, this._options.do, this._options.with)
-                    .then(this._onEnd.bind(this))
-                    .catch(this._onError.bind(this));
-                if (this._options.with && this._options.with.loop) {
-                    this._markAsCompleted();
-                }
-            }else{
+                let sequence = [this._sequenceFactory(this._options.to, this._options.do, this._options.with)];
                 let next = true,
                     index = 1;
                 do{
-                    let toDo = this._options[`to-${index}`];
-                    if(toDo){
-
+                    index++;
+                    let config = this._getOptionsFor(index);
+                    if(config != undefined){
+                        sequence.push(this._sequenceFactory(config.toElement, config.toDo, config.withConfig));
                     }else{
                         next = false;
                     }
                 }while(next);
+                this._runSequence(sequence);
             }
         }
     }
 
-    protected _perform(to,toDo,config){
+    protected _sequenceFactory(to, toDo, config){
         let seq = new HzAnimSequence(this._$);
         seq.activate(
             {
@@ -78,7 +102,7 @@ export class HzAnimResource extends ResourceController {
                 withConfig:config
             }
         );
-        return seq.run();
+        return seq;
     }
 
     protected _assignEvents(){

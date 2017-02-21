@@ -13,6 +13,7 @@ export class HzAnimSequence{
     protected _complete:boolean = false;
     protected _sequence:any;
     protected _config:any;
+    protected _
     protected _deferred:JQueryDeferred<any>;
     constructor(protected _$:JQueryStatic){
 
@@ -49,6 +50,7 @@ export class HzAnimSequence{
     }
     activate(stepConfig:IStepConfig,config={}){
         this._config = config;
+        this._stepConfig = stepConfig;
         let {toElement,toDo,withConfig} = stepConfig;
         if (!Array.isArray(toDo)) {
             toDo = [
@@ -96,5 +98,8 @@ export class HzAnimSequence{
     }
     getPromise(){
         return this._deferred.promise();
+    }
+    getConfig():IStepConfig{
+        return this._config;
     }
 }
