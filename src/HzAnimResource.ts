@@ -14,6 +14,13 @@ interface IOptions {
     to?: string;
     with: any;
 }
+/**
+ * @class HzAnimResource
+ * @description Recurso de animación para Haztivity
+ * @requires $
+ * @requires EventEmitterFactory
+ * @extends ResourceController
+ */
 @Resource(
     {
         name: "HzAnim",
@@ -23,7 +30,6 @@ interface IOptions {
         ]
     }
 )
-
 export class HzAnimResource extends ResourceController {
     public static readonly NAMESPACE = "hzAnim";
     protected static readonly _DEFAULT_OPTIONS = {
@@ -31,6 +37,13 @@ export class HzAnimResource extends ResourceController {
     };
     protected _id: number;
     protected _namespace: string;
+
+    /**
+     * @description Inicializa el objeto al inyectarse
+     * @param {any}     options     Opciones
+     * @param {any}     config      Configuración
+     * @memberof HzAnimresource
+     */
     public init(options: any, config?: any): any {
         this._id = new Date().getTime();
         this._namespace = HzAnimResource.NAMESPACE + this._id;
