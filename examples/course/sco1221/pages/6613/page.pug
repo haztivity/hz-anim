@@ -1,0 +1,35 @@
+div
+    div.markdown-wrapper
+        :markdown-it(linkify)
+            ## Multiple targets
+            If I want to apply with the same event transformations to different elements?
+            :)
+
+            It's possible modify multiple targets using multiple configurations and the option data-opt-hz-anim-to
+
+            ```html
+            <button data-hz-resource="HzAnim"
+               data-opt-hz-anim-on="click"
+               data-opt-hz-anim-do='{"backgroundColor":"red"}'
+               data-opt-hz-anim-to=".target1"
+               data-opt-hz-anim-do-2='{"width":"8em","height":"8em"}'
+               data-opt-hz-anim-to-2=".target2"
+               data-opt-hz-anim-do-3='{"rotateY":[180,0]}'
+               data-opt-hz-anim-to-3=".target3">
+               Do background
+            </button>
+            <p class="target1">.target1</p>
+            <p class="target2">.target2</p>
+            <p class="target3">.target3</p>
+            ```
+        button(data-hz-resource='HzAnim',
+                data-opt-hz-anim-on='click',
+                data-opt-hz-anim-do='{"backgroundColor":"#ff0000"}',
+                data-opt-hz-anim-to='.target1',
+                data-opt-hz-anim-do-2='{"backgroundColor":"#2196F3","width":"8em","height":"8em"}',
+                data-opt-hz-anim-to-2='.target2',
+                data-opt-hz-anim-do-3='{"rotateX":[180,0]}',
+                data-opt-hz-anim-to-3='.target3') Do
+        p.target1 .target1
+        p.target2 .target2
+        p.target3 .target3

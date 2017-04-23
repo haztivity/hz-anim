@@ -177,4 +177,3 @@ HzAnimResource = HzAnimResource_1 = __decorate([
 ], HzAnimResource);
 exports.HzAnimResource = HzAnimResource;
 var HzAnimResource_1;
-//# sourceMappingURL=HzAnimResource.js.map

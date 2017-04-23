@@ -1,0 +1,54 @@
+div
+    div.markdown-wrapper
+        :markdown-it(linkify)
+            ## Simple use
+            ### Usage
+            1. Set data-hz-resource to the trigger element
+            2. Assign an event to listen with data-hz-anim-on
+            3. Set the animation with data-opt-hz-anim-do
+            ```html
+            <button data-hz-resource="HzAnim"
+                    data-opt-hz-anim-on="click"
+                    data-opt-hz-anim-do="{'rotateZ':[180,0]}">
+                    Do to me
+            </button>
+            ```
+            This will perform a rotate in the Z axis from 0 to 180 degrees
+
+            By default the animation is performed to the item itself
+
+            HzAnim uses velocity.js, a very **efficient** js library to perform animations.
+
+            The velocity.js documentation is available [here](http://velocityjs.org)
+
+            It's possible to animate any of the properties availables in velocity.js
+
+        button(data-hz-resource="HzAnim"
+        data-opt-hz-anim-on="click"
+        data-opt-hz-anim-do='{"rotateZ":[180,0]}') Do to me
+
+    div.markdown-wrapper
+        :markdown-it(linkify)
+            ## Do to another item
+            To apply the transforms to other elements, use the data-opt-hz-anim-to, accepts any jquery valid selector.
+
+            See [jquery selectors](https://api.jquery.com/category/selectors/) for more info
+
+            For example
+            ```html
+            <button data-hz-resource="HzAnim"
+                    data-opt-hz-anim-on="click"
+                    data-opt-hz-anim-do="{'rotateZ':[180,0]}"
+                    data-opt-hz-anim-to=".target">
+                    Do to all .target
+            </button>
+            <button class="target">Target</button>
+            ```
+            This will perform a rotate in the Z axis from 0 to 180 degrees to all the items with the class "target"
+
+        button(data-hz-resource="HzAnim"
+        data-opt-hz-anim-on="click"
+        data-opt-hz-anim-do='{"rotateZ":[180,0]}'
+        data-opt-hz-anim-to=".target") Do to .target
+
+        button.target .target
