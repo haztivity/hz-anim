@@ -32,11 +32,11 @@ div
         :markdown-it(linkify)
             ## JSON
             To animate properties like backgrounds, colors, etc.
-            **Note**: When using HTML,all the object starts with simple comma (`) and the properties are wrapped with double commas ( " ) using the format:
+            **Note**: When using HTML,all the object starts with a simple comma ( ' ) and the properties are wrapped with double commas ( " ) using the format:
             ```js
             '{"property":"value"}'
             ```
-            The properties have to be used folowing the properties map of velocity.js.
+            The properties have to be used following the properties map of velocity.js.
             For more info see [velocity.js properties](http://velocityjs.org/#propertiesMap)
             ### Example
             #### Pug
@@ -133,7 +133,7 @@ div
         data-opt-hz-anim-do-2='{"height":"8em","width":"30em"}'
         data-opt-hz-anim-do-3='{"color":"#fff"}') Do first background, then height and width, then color
         :markdown-it(linkify)
-            This also allow to specify different configurations for each step, like the delay or the easing
+            This also allow specifying different configurations for each step, like the delay or the easing
             #### Pug
             ```jade
             button(data-hz-resource="HzAnim"
