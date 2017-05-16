@@ -1,6 +1,6 @@
 {
   "name": "@haztivity/hz-anim",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Recurso para realizar animaciones",
   "main": "index.js",
   "module": "index.js",
@@ -33,6 +33,7 @@
     "jstransformer-markdown-it": "^2.0.0",
     "merge2": "^1.0.2",
     "postcss": "^5.2.4",
+    "prismjs": "^1.6.0",
     "pug": "^2.0.0-beta6",
     "require-dir": "^0.3.0",
     "typescript": "^2.1.1"
@@ -40,6 +41,6 @@
   "directories": {
     "typings": "src"
   },
-  "types":"index.ts",
-  "typings":"index.ts"
+  "types": "index.ts",
+  "typings": "index.ts"
 }

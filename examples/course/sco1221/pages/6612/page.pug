@@ -2,23 +2,26 @@
 div
     div.markdown-wrapper
         :markdown-it(linkify)
-            ## Apply transforms
-            ### Multiple transform
-            It's possible to set multiple transformattions to apply.
-            The data-opt-hz-anim-do accepts a string, a json object or an array
-            #### String
-
-            Use string to perform pre defined animations like transition.fadeIn.
-
+            # Multiple transformations
+            It's possible to set multiple transformations to apply.
+            The ```data-opt-hz-anim-do``` accepts a string, a json object or an array
+            ## String
+            Use string to perform pre-defined animations like transition.fadeIn.
             All the velocity-js effects are available.
-
             See [velocity.js](http://velocityjs.org/#uiPack) Effects:Pre-Registered
-
-            For example:
+            ### Example
+            #### Pug
+            ```jade
+            button(data-hz-resource="HzAnim"
+                    data-opt-hz-anim-on="click"
+                    data-opt-hz-anim-do="transition.fadeOut") Do fadeOut
+            ```
+            or
+            #### Html
             ```html
             <button data-hz-resource="HzAnim"
-               data-opt-hz-anim-on="click"
-               data-opt-hz-anim-do="transition.fadeOut">
+                    data-opt-hz-anim-on="click"
+                    data-opt-hz-anim-do="transition.fadeOut">
                Do fadeOut
             </button>
             ```
@@ -27,38 +30,44 @@ div
         data-opt-hz-anim-do="transition.fadeOut") Do fadeOut
 
         :markdown-it(linkify)
-            #### JSON
-
+            ## JSON
             To animate properties like backgrounds, colors, etc.
-
-            Note that all the properties are wrapped with double commas ( " ) using the format:
-            ```json
+            **Note**: When using HTML,all the object starts with simple comma (`) and the properties are wrapped with double commas ( " ) using the format:
+            ```js
             '{"property":"value"}'
             ```
-            The properties must be used by properties map.
-
-            See [Properties](http://velocityjs.org/#propertiesMap)
-
-            For example:
+            The properties have to be used folowing the properties map of velocity.js.
+            For more info see [velocity.js properties](http://velocityjs.org/#propertiesMap)
+            ### Example
+            #### Pug
+            ```jade
+            // Single property
+            button(data-hz-resource="HzAnim"
+                   data-opt-hz-anim-on="click"
+                   data-opt-hz-anim-do={"backgroundColor":"#ff0000"}) Do background
+            // Multiple properties
+            button(data-hz-resource="HzAnim"
+                   data-opt-hz-anim-on="click"
+                   data-opt-hz-anim-do={"backgroundColor":"#ff0000","height":"3em","width":"20em"}) Do background, height and width
+            ```
+            or
+            #### HTML
             ```html
+            <!-- Single property -->
             <button data-hz-resource="HzAnim"
                data-opt-hz-anim-on="click"
                data-opt-hz-anim-do='{"backgroundColor":"red"}'>
                Do background
             </button>
-            ```
-            It's possible perform multiple transforms at the same time.
-
-            All the properties in the JSON object will be executed in parallel
-
-            For example:
-            ```html
+            <!-- Multiple properties -->
             <button data-hz-resource="HzAnim"
                data-opt-hz-anim-on="click"
                data-opt-hz-anim-do='{"backgroundColor":"#ff0000","height":"3em","width":"10em"}'>
                Do background, height and width
             </button>
             ```
+            It's possible perform multiple transforms at the same time.
+            All the properties in the object will be animated in parallel. To see sequential animations go to [Array](#markdown-header-array)
         button(data-hz-resource="HzAnim"
         data-opt-hz-anim-on="click"
         data-opt-hz-anim-do='{"backgroundColor":"#ff0000"}') Do background
@@ -67,18 +76,20 @@ div
         data-opt-hz-anim-do='{"backgroundColor":"#ff0000","height":"3em","width":"20em"}') Do background, height and width
 
         :markdown-it(linkify)
-            #### Array
-            Each position in the array is a step.
-
-            The steps will be executed sequentially
-
-            Each step could have one or more properties
-
-            All the properties in a step will be executed in parallel
-
-            The array allow to use multiple JSON object that will be executed in order
-
-            For example:
+            ## Array
+            Using an array is possible to specify a property or a group of properties to be animated sequentially.
+            1. Each position in the array is a step.
+            2. The steps will be executed **sequentially**, one by one.
+            3. Each step could have one or more properties.
+            4. All the properties in a step will be executed in **parallel**.
+            5. The array allows using multiple JSON objects that will be executed in order.
+            ### Example
+            #### Pug
+            ```jade
+            button(data-hz-resource="HzAnim"
+                   data-opt-hz-anim-on="click"
+                   data-opt-hz-anim-do='[{"backgroundColor":"#ff0000"},{"height":"8em","width":"30em"},{"color":"#fff"}]') Do first background, then height and width, then color
+            ```
             ```html
             <button data-hz-resource="HzAnim"
                data-opt-hz-anim-on="click"
@@ -90,24 +101,66 @@ div
             data-opt-hz-anim-on="click"
             data-opt-hz-anim-do='[{"backgroundColor":"#ff0000"},{"height":"8em","width":"30em"},{"color":"#fff"}]') Do first background, then height and width, then color
         :markdown-it(linkify)
-            #### Multiple configurations
+            ## Multiple configurations
             If you don't like array notation, don't worry, it's possible to do the same with multiple configuration.
             To specify more than one configuration, use
-            ```json
-                data-opt-hz-anim-do-{stepIndex}="properties"
+            ```jade
+            data-opt-hz-anim-do-{stepIndex}="properties"
             ```
-            For example:
+            ### Example
+            #### Pug
+            ```jade
+            button(data-hz-resource="HzAnim"
+                   data-opt-hz-anim-on="click"
+                   data-opt-hz-anim-do='{"backgroundColor":"#ff0000"}'
+                   data-opt-hz-anim-do-2='{"height":"8em","width":"30em"}'
+                   data-opt-hz-anim-do-3='{"color":"#fff"}') Do first background, then height and width, then color
+            ```
+            or
+            #### HTML
             ```html
-                <button data-hz-resource="HzAnim"
-                data-opt-hz-anim-on="click"
-                data-opt-hz-anim-do='{"backgroundColor":"#ff0000"}'
-                data-opt-hz-anim-do-2='{"height":"8em","width":"30em"}'
-                data-opt-hz-anim-do-3='{"color":"#fff"}'>
-                Do first background, then height and width, then color
-                </button>
+            <button data-hz-resource="HzAnim"
+                    data-opt-hz-anim-on="click"
+                    data-opt-hz-anim-do='{"backgroundColor":"#ff0000"}'
+                    data-opt-hz-anim-do-2='{"height":"8em","width":"30em"}'
+                    data-opt-hz-anim-do-3='{"color":"#fff"}'>
+                    Do first background, then height and width, then color
+            </button>
             ```
         button(data-hz-resource="HzAnim"
         data-opt-hz-anim-on="click"
         data-opt-hz-anim-do='{"backgroundColor":"#ff0000"}'
         data-opt-hz-anim-do-2='{"height":"8em","width":"30em"}'
         data-opt-hz-anim-do-3='{"color":"#fff"}') Do first background, then height and width, then color
+        :markdown-it(linkify)
+            This also allow to specify different configurations for each step, like the delay or the easing
+            #### Pug
+            ```jade
+            button(data-hz-resource="HzAnim"
+                  data-opt-hz-anim-on="click"
+                  data-opt-hz-anim-do={"backgroundColor":"#ff0000"}
+                  data-opt-hz-anim-with={"delay":1000}
+                  data-opt-hz-anim-do-2={"height":"8em","width":"30em"}
+                  data-opt-hz-anim-with-2={"easing":"easeInSine"}
+                  data-opt-hz-anim-do-3={"color":"#fff"}) Do first background, then height and width, then color
+            ```
+            or
+            #### HTML
+            ```html
+            <button data-hz-resource="HzAnim"
+                   data-opt-hz-anim-on="click"
+                   data-opt-hz-anim-do='{"backgroundColor":"#ff0000"}'
+                   data-opt-hz-anim-with='{"delay":1000}'
+                   data-opt-hz-anim-do-2='{"height":"8em","width":"30em"}'
+                   data-opt-hz-anim-with-2='{"easing":"easeInSine"}'
+                   data-opt-hz-anim-do-3='{"color":"#fff"}'>
+                   Do first background, then height and width, then color
+            </button>
+            ```
+        button(data-hz-resource="HzAnim"
+        data-opt-hz-anim-on="click"
+        data-opt-hz-anim-do={"backgroundColor": "#ff0000"}
+        data-opt-hz-anim-with={"delay": 1000}
+        data-opt-hz-anim-do-2={"height": "8em", "width": "30em"}
+        data-opt-hz-anim-with-2={"easing": "easeInSine"}
+        data-opt-hz-anim-do-3={"color": "#fff"}) Do first background, then height and width, then color

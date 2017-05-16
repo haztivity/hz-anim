@@ -49,7 +49,7 @@ export class HzAnimResource extends ResourceController {
         this._namespace = HzAnimResource.NAMESPACE + this._id;
         this._options = options;
         this._options.to = this._options.to || this._$element;
-        this._options.with = this._$.extend(true,HzAnimResource._DEFAULT_OPTIONS,this._options.with);
+        this._options.with = this._$.extend(true,{},HzAnimResource._DEFAULT_OPTIONS,this._options.with);
         this._config = config;
         this._assignEvents();
     }

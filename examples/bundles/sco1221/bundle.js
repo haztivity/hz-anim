@@ -10307,6 +10307,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var sco_pug_1 = require("./sco.pug");
 require("./main.scss");
 require("./markdown.scss");
+require("./prism-github.scss");
 var core_1 = require("@haztivity/core");
 var hz_navbar_1 = require("@haztivity/hz-navbar");
 var page_1 = require("./pages/6611/page");
@@ -10349,95 +10350,65 @@ ___scope___.file("sco1221/markdown.scss", function(exports, require, module, __f
 
 __fsbx_css("sco1221/markdown.scss", "/*\r\nThis document has been created with Marked.app <http://marked2app.com>, Copyright 2013 Brett Terpstra\r\nContent is property of the document author\r\nPlease leave this notice in place, along with any additional credits below.\r\n---------------------------------------------------------------\r\nTitle: GitHub\r\nAuthor: Brett Terpstra\r\nDescription: Github README style. Includes theme for Pygmentized code blocks.\r\n*/\nhtml, body {\n  color: black;\n}\n\n*:not('#mkdbuttons') {\n  margin: 0;\n  padding: 0;\n}\n\n.markdown-wrapper {\n  font: 15px helvetica, arial, freesans, clean, sans-serif;\n  -webkit-font-smoothing: antialiased;\n  line-height: 1.7;\n  padding: 3px;\n  background: #fff;\n  border-radius: 3px;\n  -moz-border-radius: 3px;\n  -webkit-border-radius: 3px;\n  background-color: #fff;\n  padding: 30px;\n  margin: 15px;\n  font-size: 15px;\n  line-height: 1.6;\n}\n\n.markdown-wrapper ol {\n  list-style: decimal;\n}\n\n.markdown-wrapper p {\n  margin: 1em 0;\n}\n\n.markdown-wrapper a {\n  color: #4183c4;\n  text-decoration: none;\n}\n\n.markdown-wrapper > *:first-child {\n  margin-top: 0 !important;\n}\n\n.markdown-wrapper > *:last-child {\n  margin-bottom: 0 !important;\n}\n\n@media screen {\n  .markdown-wrapper .markdown-wrapper {\n    box-shadow: 0 0 0 1px #cacaca, 0 0 0 4px #eee;\n  }\n}\n\n.markdown-wrapper h1, .markdown-wrapper h2, .markdown-wrapper h3, .markdown-wrapper h4, .markdown-wrapper h5, .markdown-wrapper h6 {\n  font-weight: 700;\n  line-height: 1.7;\n  cursor: text;\n  position: relative;\n  margin: 1em 0 15px;\n  padding: 0;\n}\n\n.markdown-wrapper h1 {\n  font-size: 2.5em;\n  border-bottom: 1px solid #ddd;\n}\n\n.markdown-wrapper h2 {\n  font-size: 2em;\n  border-bottom: 1px solid #eee;\n}\n\n.markdown-wrapper h3 {\n  font-size: 1.5em;\n}\n\n.markdown-wrapper h4 {\n  font-size: 1.2em;\n}\n\n.markdown-wrapper h5 {\n  font-size: 1em;\n}\n\n.markdown-wrapper h6 {\n  color: #777;\n  font-size: 1em;\n}\n\n.markdown-wrapper p, .markdown-wrapper blockquote, .markdown-wrapper table, .markdown-wrapper pre {\n  margin: 15px 0;\n}\n\n.markdown-wrapper ul {\n  padding-left: 30px;\n}\n\n.markdown-wrapper ol {\n  padding-left: 30px;\n}\n\n.markdown-wrapper ol li ul:first-of-type {\n  margin-top: 0px;\n}\n\n.markdown-wrapper hr {\n  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;\n  border: 0 none;\n  color: #ccc;\n  height: 4px;\n  margin: 15px 0;\n  padding: 0;\n}\n\n.markdown-wrapper > h2:first-child {\n  margin-top: 0;\n  padding-top: 0;\n}\n\n.markdown-wrapper > h1:first-child {\n  margin-top: 0;\n  padding-top: 0;\n}\n\n.markdown-wrapper > h1:first-child + h2 {\n  margin-top: 0;\n  padding-top: 0;\n}\n\n.markdown-wrapper > h3:first-child, .markdown-wrapper > h4:first-child, .markdown-wrapper > h5:first-child, .markdown-wrapper > h6:first-child {\n  margin-top: 0;\n  padding-top: 0;\n}\n\n.markdown-wrapper a:first-child h1, .markdown-wrapper a:first-child h2, .markdown-wrapper a:first-child h3, .markdown-wrapper a:first-child h4, .markdown-wrapper a:first-child h5, .markdown-wrapper a:first-child h6 {\n  margin-top: 0;\n  padding-top: 0;\n}\n\n.markdown-wrapper h1 + p, .markdown-wrapper h2 + p, .markdown-wrapper h3 + p, .markdown-wrapper h4 + p, .markdown-wrapper h5 + p, .markdown-wrapper h6 + p, .markdown-wrapper ul li > :first-child, .markdown-wrapper ol li > :first-child {\n  margin-top: 0;\n}\n\n.markdown-wrapper dl {\n  padding: 0;\n}\n\n.markdown-wrapper dl dt {\n  font-size: 14px;\n  font-weight: bold;\n  font-style: italic;\n  padding: 0;\n  margin: 15px 0 5px;\n}\n\n.markdown-wrapper dl dt:first-child {\n  padding: 0;\n}\n\n.markdown-wrapper dl dt > :first-child {\n  margin-top: 0;\n}\n\n.markdown-wrapper dl dt > :last-child {\n  margin-bottom: 0;\n}\n\n.markdown-wrapper dl dd {\n  margin: 0 0 15px;\n  padding: 0 15px;\n}\n\n.markdown-wrapper dl dd > :first-child {\n  margin-top: 0;\n}\n\n.markdown-wrapper dl dd > :last-child {\n  margin-bottom: 0;\n}\n\n.markdown-wrapper blockquote {\n  border-left: 4px solid #ddd;\n  padding: 0 15px;\n  color: #777;\n}\n\n.markdown-wrapper blockquote > :first-child {\n  margin-top: 0;\n}\n\n.markdown-wrapper blockquote > :last-child {\n  margin-bottom: 0;\n}\n\n.markdown-wrapper table {\n  border-collapse: collapse;\n  border-spacing: 0;\n  font-size: 100%;\n  font: inherit;\n}\n\n.markdown-wrapper table th {\n  font-weight: bold;\n  border: 1px solid #ccc;\n  padding: 6px 13px;\n}\n\n.markdown-wrapper table td {\n  border: 1px solid #ccc;\n  padding: 6px 13px;\n}\n\n.markdown-wrapper table tr {\n  border-top: 1px solid #ccc;\n  background-color: #fff;\n}\n\n.markdown-wrapper table tr:nth-child(2n) {\n  background-color: #f8f8f8;\n}\n\n.markdown-wrapper img {\n  max-width: 100%;\n}\n\n.markdown-wrapper code, .markdown-wrapper tt {\n  margin: 0 2px;\n  padding: 0 5px;\n  white-space: nowrap;\n  border: 1px solid #eaeaea;\n  background-color: #f8f8f8;\n  border-radius: 3px;\n  font-family: Consolas, 'Liberation Mono', Courier, monospace;\n  font-size: 12px;\n  color: #333333;\n}\n\n.markdown-wrapper pre > code {\n  margin: 0;\n  padding: 0;\n  white-space: pre;\n  border: none;\n  background: transparent;\n}\n\n.markdown-wrapper .highlight pre {\n  background-color: #f8f8f8;\n  border: 1px solid #ccc;\n  font-size: 13px;\n  line-height: 19px;\n  overflow: auto;\n  padding: 6px 10px;\n  border-radius: 3px;\n}\n\n.markdown-wrapper pre {\n  background-color: #f8f8f8;\n  border: 1px solid #ccc;\n  font-size: 14px;\n  line-height: 19px;\n  overflow: auto;\n  padding: 6px 10px;\n  border-radius: 3px;\n  margin: 26px 0;\n}\n\n.markdown-wrapper pre code, .markdown-wrapper pre tt {\n  background-color: transparent;\n  border: none;\n}\n\n.markdown-wrapper .poetry pre {\n  font-family: Georgia, Garamond, serif !important;\n  font-style: italic;\n  font-size: 110% !important;\n  line-height: 1.6em;\n  display: block;\n  margin-left: 1em;\n}\n\n.markdown-wrapper .poetry pre code {\n  font-family: Georgia, Garamond, serif !important;\n  word-break: break-all;\n  word-break: break-word;\n  /* Non standard for webkit */\n  -webkit-hyphens: auto;\n  -moz-hyphens: auto;\n  hyphens: auto;\n  white-space: pre-wrap;\n}\n\n.markdown-wrapper sup, .markdown-wrapper sub, .markdown-wrapper a.footnote {\n  font-size: 1.4ex;\n  height: 0;\n  line-height: 1;\n  vertical-align: super;\n  position: relative;\n}\n\n.markdown-wrapper sub {\n  vertical-align: sub;\n  top: -1px;\n}\n\n.markdown-wrapper .highlight .c {\n  color: #998;\n  font-style: italic;\n}\n\n.markdown-wrapper .highlight .err {\n  color: #a61717;\n  background-color: #e3d2d2;\n}\n\n.markdown-wrapper .highlight .k, .markdown-wrapper .highlight .o {\n  font-weight: bold;\n}\n\n.markdown-wrapper .highlight .cm {\n  color: #998;\n  font-style: italic;\n}\n\n.markdown-wrapper .highlight .cp {\n  color: #999;\n  font-weight: bold;\n}\n\n.markdown-wrapper .highlight .c1 {\n  color: #998;\n  font-style: italic;\n}\n\n.markdown-wrapper .highlight .cs {\n  color: #999;\n  font-weight: bold;\n  font-style: italic;\n}\n\n.markdown-wrapper .highlight .gd {\n  color: #000;\n  background-color: #fdd;\n}\n\n.markdown-wrapper .highlight .gd .x {\n  color: #000;\n  background-color: #faa;\n}\n\n.markdown-wrapper .highlight .ge {\n  font-style: italic;\n}\n\n.markdown-wrapper .highlight .gr {\n  color: #a00;\n}\n\n.markdown-wrapper .highlight .gh {\n  color: #999;\n}\n\n.markdown-wrapper .highlight .gi {\n  color: #000;\n  background-color: #dfd;\n}\n\n.markdown-wrapper .highlight .gi .x {\n  color: #000;\n  background-color: #afa;\n}\n\n.markdown-wrapper .highlight .go {\n  color: #888;\n}\n\n.markdown-wrapper .highlight .gp {\n  color: #555;\n}\n\n.markdown-wrapper .highlight .gs {\n  font-weight: bold;\n}\n\n.markdown-wrapper .highlight .gu {\n  color: #800080;\n  font-weight: bold;\n}\n\n.markdown-wrapper .highlight .gt {\n  color: #a00;\n}\n\n.markdown-wrapper .highlight .kc, .markdown-wrapper .highlight .kd, .markdown-wrapper .highlight .kn, .markdown-wrapper .highlight .kp, .markdown-wrapper .highlight .kr {\n  font-weight: bold;\n}\n\n.markdown-wrapper .highlight .kt {\n  color: #458;\n  font-weight: bold;\n}\n\n.markdown-wrapper .highlight .m {\n  color: #099;\n}\n\n.markdown-wrapper .highlight .s {\n  color: #d14;\n}\n\n.markdown-wrapper .highlight .na {\n  color: #008080;\n}\n\n.markdown-wrapper .highlight .nb {\n  color: #0086b3;\n}\n\n.markdown-wrapper .highlight .nc {\n  color: #458;\n  font-weight: bold;\n}\n\n.markdown-wrapper .highlight .no {\n  color: #008080;\n}\n\n.markdown-wrapper .highlight .ni {\n  color: #800080;\n}\n\n.markdown-wrapper .highlight .ne, .markdown-wrapper .highlight .nf {\n  color: #900;\n  font-weight: bold;\n}\n\n.markdown-wrapper .highlight .nn {\n  color: #555;\n}\n\n.markdown-wrapper .highlight .nt {\n  color: #000080;\n}\n\n.markdown-wrapper .highlight .nv {\n  color: #008080;\n}\n\n.markdown-wrapper .highlight .ow {\n  font-weight: bold;\n}\n\n.markdown-wrapper .highlight .w {\n  color: #bbb;\n}\n\n.markdown-wrapper .highlight .mf, .markdown-wrapper .highlight .mh, .markdown-wrapper .highlight .mi, .markdown-wrapper .highlight .mo {\n  color: #099;\n}\n\n.markdown-wrapper .highlight .sb, .markdown-wrapper .highlight .sc, .markdown-wrapper .highlight .sd, .markdown-wrapper .highlight .s2, .markdown-wrapper .highlight .se, .markdown-wrapper .highlight .sh, .markdown-wrapper .highlight .si, .markdown-wrapper .highlight .sx {\n  color: #d14;\n}\n\n.markdown-wrapper .highlight .sr {\n  color: #009926;\n}\n\n.markdown-wrapper .highlight .s1 {\n  color: #d14;\n}\n\n.markdown-wrapper .highlight .ss {\n  color: #990073;\n}\n\n.markdown-wrapper .highlight .bp {\n  color: #999;\n}\n\n.markdown-wrapper .highlight .vc, .markdown-wrapper .highlight .vg, .markdown-wrapper .highlight .vi {\n  color: #008080;\n}\n\n.markdown-wrapper .highlight .il {\n  color: #099;\n}\n\n.markdown-wrapper .highlight .gc {\n  color: #999;\n  background-color: #eaf2f5;\n}\n\n.markdown-wrapper .type-csharp .highlight .k, .markdown-wrapper .type-csharp .highlight .kt {\n  color: #00f;\n}\n\n.markdown-wrapper .type-csharp .highlight .nf {\n  color: #000;\n  font-weight: normal;\n}\n\n.markdown-wrapper .type-csharp .highlight .nc {\n  color: #2b91af;\n}\n\n.markdown-wrapper .type-csharp .highlight .nn {\n  color: #000;\n}\n\n.markdown-wrapper .type-csharp .highlight .s, .markdown-wrapper .type-csharp .highlight .sc {\n  color: #a31515;\n}\n\n@media print {\n  body {\n    background: #fff;\n  }\n  img, pre, blockquote, table, figure {\n    page-break-inside: avoid;\n  }\n  .markdown-wrapper {\n    background: #fff;\n    border: none;\n  }\n  pre code {\n    overflow: visible;\n  }\n}\n\n@media screen {\n  body.inverted {\n    color: #eee !important;\n    border-color: #555;\n    box-shadow: none;\n  }\n  .inverted .markdown-wrapper, .inverted hr, .inverted p, .inverted td, .inverted li, .inverted h1, .inverted h2, .inverted h3, .inverted h4, .inverted h5, .inverted h6, .inverted th, .inverted .math, .inverted caption, .inverted dd, .inverted dt, .inverted blockquote {\n    color: #eee !important;\n    border-color: #555;\n    box-shadow: none;\n  }\n  .inverted td, .inverted th {\n    background: #333;\n  }\n  .inverted pre, .inverted code, .inverted tt {\n    background: #eeeeee !important;\n    color: #111;\n  }\n  .inverted h2 {\n    border-color: #555555;\n  }\n  .inverted hr {\n    border-color: #777;\n    border-width: 1px !important;\n  }\n  ::selection {\n    background: rgba(157, 193, 200, 0.5);\n  }\n  h1::selection {\n    background-color: rgba(45, 156, 208, 0.3);\n  }\n  h2::selection {\n    background-color: rgba(90, 182, 224, 0.3);\n  }\n  h3::selection, h4::selection, h5::selection, h6::selection, li::selection, ol::selection {\n    background-color: rgba(133, 201, 232, 0.3);\n  }\n  code::selection {\n    background-color: rgba(0, 0, 0, 0.7);\n    color: #eeeeee;\n  }\n  code span::selection {\n    background-color: rgba(0, 0, 0, 0.7) !important;\n    color: #eeeeee !important;\n  }\n  a::selection {\n    background-color: rgba(255, 230, 102, 0.2);\n  }\n  .inverted a::selection {\n    background-color: rgba(255, 230, 102, 0.6);\n  }\n  td::selection, th::selection, caption::selection {\n    background-color: rgba(180, 237, 95, 0.5);\n  }\n  .inverted {\n    background: #0b2531;\n    background: #252a2a;\n  }\n  .inverted .markdown-wrapper {\n    background: #252a2a;\n  }\n  .inverted a {\n    color: #acd1d5;\n  }\n}\n\nbody.dark .markdown-wrapper {\n  background: transparent !important;\n  box-shadow: none !important;\n}\n\n/*# sourceMappingURL=markdown.scss.map */");
 });
+___scope___.file("sco1221/prism-github.scss", function(exports, require, module, __filename, __dirname){
+
+__fsbx_css("sco1221/prism-github.scss", "/* prism-github */\n/**\r\n * prism.js Github theme based on GitHub's theme.\r\n * @author Sam Clarke\r\n */\ncode[class*=\"language-\"],\npre[class*=\"language-\"] {\n  color: #333;\n  background: none;\n  font-family: Consolas, \"Liberation Mono\", Menlo, Courier, monospace;\n  text-align: left;\n  white-space: pre;\n  word-spacing: normal;\n  word-break: normal;\n  word-wrap: normal;\n  line-height: 1.4;\n  -moz-tab-size: 8;\n  -o-tab-size: 8;\n  tab-size: 8;\n  -webkit-hyphens: none;\n  -moz-hyphens: none;\n  -ms-hyphens: none;\n  hyphens: none;\n}\n\n/* Code blocks */\npre[class*=\"language-\"] {\n  padding: .8em;\n  overflow: auto;\n  border: 1px solid #ddd;\n  border-radius: 3px;\n  background: #fff;\n}\n\n/* Inline code */\n:not(pre) > code[class*=\"language-\"] {\n  padding: .1em;\n  border-radius: .3em;\n  white-space: normal;\n  background: #f5f5f5;\n}\n\n.token.comment,\n.token.blockquote {\n  color: #969896;\n}\n\n.token.cdata {\n  color: #183691;\n}\n\n.token.doctype,\n.token.punctuation,\n.token.variable,\n.token.macro.property {\n  color: #333;\n}\n\n.token.operator,\n.token.important,\n.token.keyword,\n.token.rule,\n.token.builtin {\n  color: #a71d5d;\n}\n\n.token.string,\n.token.url,\n.token.regex,\n.token.attr-value {\n  color: #183691;\n}\n\n.token.property,\n.token.number,\n.token.boolean,\n.token.entity,\n.token.atrule,\n.token.constant,\n.token.symbol,\n.token.command,\n.token.code {\n  color: #0086b3;\n}\n\n.token.tag,\n.token.selector,\n.token.prolog {\n  color: #63a35c;\n}\n\n.token.function,\n.token.namespace,\n.token.pseudo-element,\n.token.class,\n.token.class-name,\n.token.pseudo-class,\n.token.id,\n.token.url-reference .token.variable,\n.token.attr-name {\n  color: #795da3;\n}\n\n.token.entity {\n  cursor: help;\n}\n\n.token.title,\n.token.title .token.punctuation {\n  font-weight: bold;\n  color: #1d3e81;\n}\n\n.token.list {\n  color: #ed6a43;\n}\n\n.token.inserted {\n  background-color: #eaffea;\n  color: #55a532;\n}\n\n.token.deleted {\n  background-color: #ffecec;\n  color: #bd2c00;\n}\n\n.token.bold {\n  font-weight: bold;\n}\n\n.token.italic {\n  font-style: italic;\n}\n\n/* JSON */\n.language-json .token.property {\n  color: #183691;\n}\n\n.language-markup .token.tag .token.punctuation {\n  color: #333;\n}\n\n/* CSS */\ncode.language-css,\n.language-css .token.function {\n  color: #0086b3;\n}\n\n/* YAML */\n.language-yaml .token.atrule {\n  color: #63a35c;\n}\n\ncode.language-yaml {\n  color: #183691;\n}\n\n/* Ruby */\n.language-ruby .token.function {\n  color: #333;\n}\n\n/* Markdown */\n.language-markdown .token.url {\n  color: #795da3;\n}\n\n/* Makefile */\n.language-makefile .token.symbol {\n  color: #795da3;\n}\n\n.language-makefile .token.variable {\n  color: #183691;\n}\n\n.language-makefile .token.builtin {\n  color: #0086b3;\n}\n\n/* Bash */\n.language-bash .token.keyword {\n  color: #0086b3;\n}\n\n/* End prism-github */\n\n/*# sourceMappingURL=prism-github.scss.map */");
+});
 ___scope___.file("sco1221/pages/6611/page.js", function(exports, require, module, __filename, __dirname){
 
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "@haztivity/core", "./page.pug", "../../../resources/hzanim/HzAnim"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    /**
-     * @license
-     * Copyright Davinchi. All Rights Reserved.
-     */
-    var core_1 = require("@haztivity/core");
-    var page_pug_1 = require("./page.pug");
-    /**
-     * use import {HzAnimResource} from "@haztivity/hz-anim"
-     */
-    var HzAnim_1 = require("../../../resources/hzanim/HzAnim");
-    exports.page = core_1.PageFactory.createPage({
-        name: "6611",
-        title: "Simple use",
-        resources: [
-            HzAnim_1.HzAnimResource
-        ],
-        template: page_pug_1.default,
-        autoSequence: false
-    });
-    exports.page.on(core_1.PageController.ON_RENDERING, null, function (eventObject, template, pageController) {
-        console.log(pageController.options.name + " rendering");
-    });
-    exports.page.on(core_1.PageController.ON_RENDERED, null, function (eventObject, $page, pageController) {
-        console.log(pageController.options.name + " rendered");
-        $page.find('pre code').each(function (i, block) {
-            hljs.highlightBlock(block);
-        });
-    });
-    exports.page.on(core_1.PageController.ON_SHOW, null, function (eventObject, $page, $oldPage, oldPageRelativePosition, pageController) {
-        console.log(pageController.options.name + " show start");
-    });
-    exports.page.on(core_1.PageController.ON_SHOWN, null, function (eventObject, $page, $oldPage, oldPageRelativePosition, pageController) {
-        console.log(pageController.options.name + " show end");
-    });
-    exports.page.on(core_1.PageController.ON_COMPLETE_CHANGE, null, function (eventObject, isCompleted, $page, pageController) {
-        console.log(pageController.options.name + " complete change");
-    });
-    exports.page.on(core_1.PageController.ON_DESTROY, null, function (eventObject, $page, pageController) {
-        console.log(pageController.options.name + " destroy");
-    });
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * @license
+ * Copyright Davinchi. All Rights Reserved.
+ */
+var core_1 = require("@haztivity/core");
+var page_pug_1 = require("./page.pug");
+var Prism = require("prismjs");
+require("prismjs/components/prism-typescript");
+require("prismjs/components/prism-jade");
+/**
+ * use import {HzAnimResource} from "@haztivity/hz-anim"
+ */
+var HzAnim_1 = require("../../../resources/hzanim/HzAnim");
+exports.page = core_1.PageFactory.createPage({
+    name: "6611",
+    title: "Simple use",
+    resources: [
+        HzAnim_1.HzAnimResource
+    ],
+    template: page_pug_1.default,
+    autoSequence: false
+});
+exports.page.on(core_1.PageController.ON_SHOW, null, function (eventObject, $page, $oldPage, oldPageRelativePosition, pageController) {
+    Prism.highlightAll(false);
 });
 //# sourceMappingURL=page.js.map
 });
 ___scope___.file("sco1221/pages/6611/page.pug", function(exports, require, module, __filename, __dirname){
 
-module.exports.default =  "\n<div>\n  <div class=\"markdown-wrapper\"><h2>Simple use</h2>\n<h3>Usage</h3>\n<ol>\n<li>Set data-hz-resource to the trigger element</li>\n<li>Assign an event to listen with data-hz-anim-on</li>\n<li>Set the animation with data-opt-hz-anim-do</li>\n</ol>\n<pre><code class=\"language-html\">&lt;button data-hz-resource=&quot;HzAnim&quot;\n        data-opt-hz-anim-on=&quot;click&quot;\n        data-opt-hz-anim-do=&quot;{'rotateZ':[180,0]}&quot;&gt;\n        Do to me\n&lt;/button&gt;\n</code></pre>\n<p>This will perform a rotate in the Z axis from 0 to 180 degrees</p>\n<p>By default the animation is performed to the item itself</p>\n<p>HzAnim uses velocity.js, a very <strong>efficient</strong> js library to perform animations.</p>\n<p>The velocity.js documentation is available <a href=\"http://velocityjs.org\">here</a></p>\n<p>It's possible to animate any of the properties availables in velocity.js</p>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;rotateZ&quot;:[180,0]}\">Do to me</button>\n  </div>\n  <div class=\"markdown-wrapper\"><h2>Do to another item</h2>\n<p>To apply the transforms to other elements, use the data-opt-hz-anim-to, accepts any jquery valid selector.</p>\n<p>See <a href=\"https://api.jquery.com/category/selectors/\">jquery selectors</a> for more info</p>\n<p>For example</p>\n<pre><code class=\"language-html\">&lt;button data-hz-resource=&quot;HzAnim&quot;\n        data-opt-hz-anim-on=&quot;click&quot;\n        data-opt-hz-anim-do=&quot;{'rotateZ':[180,0]}&quot;\n        data-opt-hz-anim-to=&quot;.target&quot;&gt;\n        Do to all .target\n&lt;/button&gt;\n&lt;button class=&quot;target&quot;&gt;Target&lt;/button&gt;\n</code></pre>\n<p>This will perform a rotate in the Z axis from 0 to 180 degrees to all the items with the class &quot;target&quot;</p>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;rotateZ&quot;:[180,0]}\" data-opt-hz-anim-to=\".target\">Do to .target</button>\n    <button class=\"target\">.target</button>\n  </div>\n</div>";
+module.exports.default =  "\n<div>\n  <div class=\"markdown-wrapper\"><h1>hz-dialog</h1>\n<p>hz-anim helps to perform animations synchronizing  with the haztivity resources flow.</p>\n<p>hz-anim uses <a href=\"http://velocityjs.org/\">velocity.js</a> under the hood.</p>\n<h2>Dependencies</h2>\n<ul>\n<li>JQuery</li>\n<li>velocity.js</li>\n<li>haztivity/core</li>\n</ul>\n<h2>Usage</h2>\n<ol>\n<li>Import @haztivity/hz-anim</li>\n<li>Add HzAnim to the page</li>\n<li>Assign an event to listen with <code>data-hz-anim-on</code></li>\n<li>Set the properties o transition to anim with <code>data-opt-hz-anim-do</code></li>\n</ol>\n<h4>Ts</h4>\n<pre><code class=\"language-typescript\">import {PageFactory, Page, PageController, PageRegister} from &quot;@haztivity/core&quot;;\nimport template from &quot;./page.pug&quot;;\nimport {HzAnimResource} from &quot;@haztivity/hz-anim&quot;;\nexport let page: PageRegister = PageFactory.createPage(\n    {\n        name: &quot;myPage&quot;,\n        resources: [\n            HzAnimResource\n        ],\n        template: template\n    }\n);\n</code></pre>\n<h4>Pug</h4>\n<pre><code class=\"language-jade\">button(data-hz-resource=&quot;HzAnim&quot;\n        data-opt-hz-anim-on=&quot;click&quot;\n        data-opt-hz-anim-do={&quot;rotateZ&quot;:[180,0]}) Do to me\n</code></pre>\n<p>or</p>\n<h4>HTML</h4>\n<pre><code class=\"language-html\">&lt;button data-hz-resource=&quot;HzAnim&quot;\n        data-opt-hz-anim-on=&quot;click&quot;\n        data-opt-hz-anim-do=&quot;{'rotateZ':[180,0]}&quot;&gt;\n        Do to me\n&lt;/button&gt;\n</code></pre>\n<p>This will perform a rotate in the Z axis from 0 to 180 degrees.</p>\n<p>By default, the animation is performed to the item itself, to see how to apply the animation to other element plase go to <a href=\"#markdown-header-apply-animation-to-other-targets\">Apply animation to other targets</a></p>\n<p>HzAnim uses <a href=\"http://velocityjs.org/\">velocity.js</a>, a very <strong>efficient</strong> js library to perform animations.</p>\n<p>It's possible to animate any of the properties and transitions available in velocity.js and use all the options.</p>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;rotateZ&quot;:[180,0]}\">Do to me</button>\n  </div>\n  <div class=\"markdown-wrapper\"><h2>Apply animation to other targets</h2>\n<p>To apply the transforms to other elements, use the <code>data-opt-hz-anim-to</code>, accepts any jquery valid selector.\nSee <a href=\"https://api.jquery.com/category/selectors/\">jquery selectors</a> for more info.</p>\n<h3>Example</h3>\n<h4>Pug</h4>\n<pre><code class=\"language-jade\">button(data-hz-resource=&quot;HzAnim&quot;\n        data-opt-hz-anim-on=&quot;click&quot;\n        data-opt-hz-anim-do={&quot;rotateZ&quot;:[180,0]}\n        data-opt-hz-anim-to=&quot;.target&quot;) Do to .target\n\nbutton.target Target\n</code></pre>\n<p>or</p>\n<h4>HTML</h4>\n<pre><code class=\"language-html\">&lt;button data-hz-resource=&quot;HzAnim&quot;\n        data-opt-hz-anim-on=&quot;cli###ck&quot;\n        data-opt-hz-anim-do=&quot;{'rotateZ':[180,0]}&quot;\n        data-opt-hz-anim-to=&quot;.target&quot;&gt;\n        Do to all .target\n&lt;/button&gt;\n&lt;button class=&quot;target&quot;&gt;Target&lt;/button&gt;\n</code></pre>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;rotateZ&quot;:[180,0]}\" data-opt-hz-anim-to=\".target\">Do to .target</button>\n    <button class=\"target\">.target</button>\n  </div>\n</div>";
 });
 ___scope___.file("resources/hzanim/HzAnim.js", function(exports, require, module, __filename, __dirname){
 
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "./HzAnimResource", "./HzAnimResource"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    /**
-     * @license
-     * Copyright Davinchi. All Rights Reserved.
-     */
-    var HzAnimResource_1 = require("./HzAnimResource");
-    exports.HzAnimResource = HzAnimResource_1.HzAnimResource;
-    /**
-     * @deprecated
-     */
-    var HzAnimResource_2 = require("./HzAnimResource");
-    exports.HzAnim = HzAnimResource_2.HzAnimResource;
-});
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * @license
+ * Copyright Davinchi. All Rights Reserved.
+ */
+var HzAnimResource_1 = require("./HzAnimResource");
+exports.HzAnimResource = HzAnimResource_1.HzAnimResource;
+/**
+ * @deprecated
+ */
+var HzAnimResource_2 = require("./HzAnimResource");
+exports.HzAnim = HzAnimResource_2.HzAnimResource;
 //# sourceMappingURL=HzAnim.js.map
 });
 ___scope___.file("resources/hzanim/HzAnimResource.js", function(exports, require, module, __filename, __dirname){
 
+"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -10454,404 +10425,333 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * @license
+ * Copyright Davinchi. All Rights Reserved.
+ */
+var index_1 = require("@haztivity/core/index");
+var velocity = require("velocity-animate");
+var velocityui = require("velocity-animate/velocity.ui");
+var HzAnimSequence_1 = require("./HzAnimSequence");
+velocity;
+velocityui;
+/**
+ * @class HzAnimResource
+ * @description Recurso de animación para Haztivity
+ * @requires $
+ * @requires EventEmitterFactory
+ * @extends ResourceController
+ */
+var HzAnimResource = HzAnimResource_1 = (function (_super) {
+    __extends(HzAnimResource, _super);
+    function HzAnimResource() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "@haztivity/core/index", "velocity-animate", "velocity-animate/velocity.ui", "./HzAnimSequence"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
     /**
-     * @license
-     * Copyright Davinchi. All Rights Reserved.
+     * @description Inicializa el objeto al inyectarse
+     * @param {any}     options     Opciones
+     * @param {any}     config      Configuración
+     * @memberof HzAnimresource
      */
-    var index_1 = require("@haztivity/core/index");
-    var velocity = require("velocity-animate");
-    var velocityui = require("velocity-animate/velocity.ui");
-    var HzAnimSequence_1 = require("./HzAnimSequence");
-    velocity;
-    velocityui;
-    /**
-     * @class HzAnimResource
-     * @description Recurso de animación para Haztivity
-     * @requires $
-     * @requires EventEmitterFactory
-     * @extends ResourceController
-     */
-    var HzAnimResource = HzAnimResource_1 = (function (_super) {
-        __extends(HzAnimResource, _super);
-        function HzAnimResource() {
-            return _super !== null && _super.apply(this, arguments) || this;
+    HzAnimResource.prototype.init = function (options, config) {
+        this._id = new Date().getTime();
+        this._namespace = HzAnimResource_1.NAMESPACE + this._id;
+        this._options = options;
+        this._options.to = this._options.to || this._$element;
+        this._options.with = this._$.extend(true, {}, HzAnimResource_1._DEFAULT_OPTIONS, this._options.with);
+        this._config = config;
+        this._assignEvents();
+    };
+    HzAnimResource.prototype._onEventTriggered = function (e) {
+        e.data.instance.run();
+    };
+    HzAnimResource.prototype._getOptionsFor = function (seqIndex) {
+        var seq = {
+            toElement: this._options["to-" + seqIndex] || this._options.to,
+            toDo: this._options["do-" + seqIndex],
+            withConfig: this._options["with-" + seqIndex] || this._options.with
+        };
+        return seq.toDo != undefined ? seq : null;
+    };
+    HzAnimResource.prototype._onSequenceStepCompleted = function (stepIndex, sequence) {
+        if (sequence[stepIndex]) {
+            this._runSequenceStep(stepIndex, sequence);
         }
-        /**
-         * @description Inicializa el objeto al inyectarse
-         * @param {any}     options     Opciones
-         * @param {any}     config      Configuración
-         * @memberof HzAnimresource
-         */
-        HzAnimResource.prototype.init = function (options, config) {
-            this._id = new Date().getTime();
-            this._namespace = HzAnimResource_1.NAMESPACE + this._id;
-            this._options = options;
-            this._options.to = this._options.to || this._$element;
-            this._options.with = this._$.extend(true, HzAnimResource_1._DEFAULT_OPTIONS, this._options.with);
-            this._config = config;
-            this._assignEvents();
-        };
-        HzAnimResource.prototype._onEventTriggered = function (e) {
-            e.data.instance.run();
-        };
-        HzAnimResource.prototype._getOptionsFor = function (seqIndex) {
-            var seq = {
-                toElement: this._options["to-" + seqIndex] || this._options.to,
-                toDo: this._options["do-" + seqIndex],
-                withConfig: this._options["with-" + seqIndex] || this._options.with
-            };
-            return seq.toDo != undefined ? seq : null;
-        };
-        HzAnimResource.prototype._onSequenceStepCompleted = function (stepIndex, sequence) {
-            if (sequence[stepIndex]) {
-                this._runSequenceStep(stepIndex, sequence);
-            }
-            else {
+        else {
+            this._markAsCompleted();
+        }
+    };
+    HzAnimResource.prototype._runSequenceStep = function (stepIndex, sequence) {
+        var step = sequence[stepIndex];
+        if (step) {
+            var config = step.getConfig();
+            step.run().then(this._onSequenceStepCompleted.bind(this, stepIndex + 1, sequence));
+            if (config.withConfig && config.withConfig.loop) {
                 this._markAsCompleted();
             }
-        };
-        HzAnimResource.prototype._runSequenceStep = function (stepIndex, sequence) {
-            var step = sequence[stepIndex];
-            if (step) {
-                var config = step.getConfig();
-                step.run().then(this._onSequenceStepCompleted.bind(this, stepIndex + 1, sequence));
-                if (config.withConfig && config.withConfig.loop) {
-                    this._markAsCompleted();
-                }
-            }
-        };
-        HzAnimResource.prototype._runSequence = function (sequence) {
-            this._runSequenceStep(0, sequence);
-        };
-        HzAnimResource.prototype.run = function () {
-            if (!this.isDisabled()) {
-                if (this._options.to) {
-                    var sequence = [this._sequenceFactory(this._options.to, this._options.do, this._options.with)];
-                    var next = true, index = 1;
-                    do {
-                        index++;
-                        var config = this._getOptionsFor(index);
-                        if (config != undefined) {
-                            sequence.push(this._sequenceFactory(config.toElement, config.toDo, config.withConfig));
-                        }
-                        else {
-                            next = false;
-                        }
-                    } while (next);
-                    this._runSequence(sequence);
-                }
-            }
-        };
-        HzAnimResource.prototype._sequenceFactory = function (to, toDo, config) {
-            var seq = new HzAnimSequence_1.HzAnimSequence(this._$);
-            seq.activate({
-                toElement: to,
-                toDo: toDo,
-                withConfig: config
-            });
-            return seq;
-        };
-        HzAnimResource.prototype._assignEvents = function () {
-            this._eventEmitter.off("." + HzAnimResource_1.NAMESPACE);
-            this._$element.off("." + HzAnimResource_1.NAMESPACE);
-            this._$element.on(this._options.on + "." + this._namespace, { instance: this }, this._onEventTriggered);
-            this._eventEmitter.on(index_1.ResourceSequence.ON_RESOURCE_STATE_CHANGE + "." + HzAnimResource_1.NAMESPACE, { instance: this }, this._onSequenceStateChange);
-        };
-        HzAnimResource.prototype._onEnd = function () {
-            this._markAsCompleted();
-        };
-        HzAnimResource.prototype._onError = function () {
-        };
-        HzAnimResource.prototype._onSequenceStateChange = function (e, resource, state) {
-            var $triggers = resource._$(resource._options.to);
-            $triggers.removeClass(index_1.ResourceSequence.CLASS_RUNNING + " " + index_1.ResourceSequence.CLASS_COMPLETED + " " + index_1.ResourceSequence.CLASS_WAITING);
-            switch (state) {
-                case index_1.ResourceSequence.STATES.completed:
-                    $triggers.addClass(index_1.ResourceSequence.CLASS_COMPLETED);
-                    break;
-                case index_1.ResourceSequence.STATES.running:
-                    $triggers.addClass(index_1.ResourceSequence.CLASS_RUNNING);
-                    break;
-                case index_1.ResourceSequence.STATES.waiting:
-                    $triggers.addClass(index_1.ResourceSequence.CLASS_WAITING);
-                    break;
-            }
-        };
-        HzAnimResource.prototype.disable = function () {
-            if (_super.prototype.disable.call(this)) {
-                this._$element.attr("disabled", "disabled")
-                    .addClass(index_1.ResourceController.CLASS_DISABLED);
-                var $triggers = this._$(this._options.to);
-                $triggers.attr("disabled", "disabled")
-                    .addClass(index_1.ResourceController.CLASS_DISABLED);
-            }
-        };
-        HzAnimResource.prototype.enable = function () {
-            if (_super.prototype.enable.call(this)) {
-                this._$element.removeAttr("disabled")
-                    .removeClass(index_1.ResourceController.CLASS_DISABLED);
-                var $triggers = this._$(this._options.to);
-                $triggers.removeAttr("disabled")
-                    .removeClass(index_1.ResourceController.CLASS_DISABLED);
-            }
-        };
-        HzAnimResource.prototype.getInstance = function () {
-            return this;
-        };
-        return HzAnimResource;
-    }(index_1.ResourceController));
-    HzAnimResource.NAMESPACE = "hzAnim";
-    HzAnimResource._DEFAULT_OPTIONS = {
-        duration: 500
+        }
     };
-    HzAnimResource = HzAnimResource_1 = __decorate([
-        index_1.Resource({
-            name: "HzAnim",
-            dependencies: [
-                index_1.$,
-                index_1.EventEmitterFactory
-            ]
-        })
-    ], HzAnimResource);
-    exports.HzAnimResource = HzAnimResource;
-    var HzAnimResource_1;
-});
+    HzAnimResource.prototype._runSequence = function (sequence) {
+        this._runSequenceStep(0, sequence);
+    };
+    HzAnimResource.prototype.run = function () {
+        if (!this.isDisabled()) {
+            if (this._options.to) {
+                var sequence = [this._sequenceFactory(this._options.to, this._options.do, this._options.with)];
+                var next = true, index = 1;
+                do {
+                    index++;
+                    var config = this._getOptionsFor(index);
+                    if (config != undefined) {
+                        sequence.push(this._sequenceFactory(config.toElement, config.toDo, config.withConfig));
+                    }
+                    else {
+                        next = false;
+                    }
+                } while (next);
+                this._runSequence(sequence);
+            }
+        }
+    };
+    HzAnimResource.prototype._sequenceFactory = function (to, toDo, config) {
+        var seq = new HzAnimSequence_1.HzAnimSequence(this._$);
+        seq.activate({
+            toElement: to,
+            toDo: toDo,
+            withConfig: config
+        });
+        return seq;
+    };
+    HzAnimResource.prototype._assignEvents = function () {
+        this._eventEmitter.off("." + HzAnimResource_1.NAMESPACE);
+        this._$element.off("." + HzAnimResource_1.NAMESPACE);
+        this._$element.on(this._options.on + "." + this._namespace, { instance: this }, this._onEventTriggered);
+        this._eventEmitter.on(index_1.ResourceSequence.ON_RESOURCE_STATE_CHANGE + "." + HzAnimResource_1.NAMESPACE, { instance: this }, this._onSequenceStateChange);
+    };
+    HzAnimResource.prototype._onEnd = function () {
+        this._markAsCompleted();
+    };
+    HzAnimResource.prototype._onError = function () {
+    };
+    HzAnimResource.prototype._onSequenceStateChange = function (e, resource, state) {
+        var $triggers = resource._$(resource._options.to);
+        $triggers.removeClass(index_1.ResourceSequence.CLASS_RUNNING + " " + index_1.ResourceSequence.CLASS_COMPLETED + " " + index_1.ResourceSequence.CLASS_WAITING);
+        switch (state) {
+            case index_1.ResourceSequence.STATES.completed:
+                $triggers.addClass(index_1.ResourceSequence.CLASS_COMPLETED);
+                break;
+            case index_1.ResourceSequence.STATES.running:
+                $triggers.addClass(index_1.ResourceSequence.CLASS_RUNNING);
+                break;
+            case index_1.ResourceSequence.STATES.waiting:
+                $triggers.addClass(index_1.ResourceSequence.CLASS_WAITING);
+                break;
+        }
+    };
+    HzAnimResource.prototype.disable = function () {
+        if (_super.prototype.disable.call(this)) {
+            this._$element.attr("disabled", "disabled")
+                .addClass(index_1.ResourceController.CLASS_DISABLED);
+            var $triggers = this._$(this._options.to);
+            $triggers.attr("disabled", "disabled")
+                .addClass(index_1.ResourceController.CLASS_DISABLED);
+        }
+    };
+    HzAnimResource.prototype.enable = function () {
+        if (_super.prototype.enable.call(this)) {
+            this._$element.removeAttr("disabled")
+                .removeClass(index_1.ResourceController.CLASS_DISABLED);
+            var $triggers = this._$(this._options.to);
+            $triggers.removeAttr("disabled")
+                .removeClass(index_1.ResourceController.CLASS_DISABLED);
+        }
+    };
+    HzAnimResource.prototype.getInstance = function () {
+        return this;
+    };
+    return HzAnimResource;
+}(index_1.ResourceController));
+HzAnimResource.NAMESPACE = "hzAnim";
+HzAnimResource._DEFAULT_OPTIONS = {
+    duration: 500
+};
+HzAnimResource = HzAnimResource_1 = __decorate([
+    index_1.Resource({
+        name: "HzAnim",
+        dependencies: [
+            index_1.$,
+            index_1.EventEmitterFactory
+        ]
+    })
+], HzAnimResource);
+exports.HzAnimResource = HzAnimResource;
+var HzAnimResource_1;
 //# sourceMappingURL=HzAnimResource.js.map
 });
 ___scope___.file("resources/hzanim/HzAnimSequence.js", function(exports, require, module, __filename, __dirname){
 
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * @license
+ * Copyright Davinchi. All Rights Reserved.
+ */
+require("velocity-animate");
+require("velocity-animate/velocity.ui");
+var HzAnimSequence = (function () {
+    function HzAnimSequence(_$) {
+        this._$ = _$;
+        this._complete = false;
     }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "velocity-animate", "velocity-animate/velocity.ui"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    /**
-     * @license
-     * Copyright Davinchi. All Rights Reserved.
-     */
-    require("velocity-animate");
-    require("velocity-animate/velocity.ui");
-    var HzAnimSequence = (function () {
-        function HzAnimSequence(_$) {
-            this._$ = _$;
-            this._complete = false;
+    HzAnimSequence.prototype._generateConfig = function (toElement, toDo, config) {
+        toElement = this._$(toElement);
+        var seq = [], doConfig = toDo, withConfig = config || { duration: 500 };
+        for (var doIndex = 0, doLength = doConfig.length; doIndex < doLength; doIndex++) {
+            var currentDo = doConfig[doIndex], opts = $.extend(true, {}, withConfig), stepConfig = {
+                toElement: toElement,
+                toDo: currentDo,
+                withConfig: withConfig
+            };
+            if (currentDo.add || currentDo.remove) {
+                opts.complete = this._onStepComplete.bind(this, stepConfig, false);
+            }
+            seq.push({
+                e: toElement,
+                p: currentDo,
+                o: opts,
+                stepConfig: stepConfig
+            });
         }
-        HzAnimSequence.prototype._generateConfig = function (toElement, toDo, config) {
-            toElement = this._$(toElement);
-            var seq = [], doConfig = toDo, withConfig = config || { duration: 500 };
-            for (var doIndex = 0, doLength = doConfig.length; doIndex < doLength; doIndex++) {
-                var currentDo = doConfig[doIndex], opts = $.extend(true, {}, withConfig), stepConfig = {
-                    toElement: toElement,
-                    toDo: currentDo,
-                    withConfig: withConfig
-                };
-                if (currentDo.add || currentDo.remove) {
-                    opts.complete = this._onStepComplete.bind(this, stepConfig, false);
-                }
-                seq.push({
-                    e: toElement,
-                    p: currentDo,
-                    o: opts,
-                    stepConfig: stepConfig
-                });
-            }
-            var lastSeq = seq[seq.length - 1];
-            lastSeq.o.complete = this._onStepComplete.bind(this, lastSeq.stepConfig, true);
-            return seq;
-        };
-        HzAnimSequence.prototype.activate = function (stepConfig, config) {
-            if (config === void 0) { config = {}; }
-            this._config = config;
-            this._stepConfig = stepConfig;
-            var toElement = stepConfig.toElement, toDo = stepConfig.toDo, withConfig = stepConfig.withConfig;
-            if (!Array.isArray(toDo)) {
-                toDo = [
-                    toDo
-                ];
-            }
-            this._sequence = this._generateConfig(toElement, toDo, withConfig);
-        };
-        HzAnimSequence.prototype._onStepComplete = function (stepConfig, isLast) {
-            if (stepConfig && stepConfig.toDo) {
-                if (stepConfig.toDo.add) {
-                    var add = stepConfig.toDo.add;
-                    for (var key in add) {
-                        if (key == "class") {
-                            stepConfig.toElement.addClass(add[key]);
-                        }
-                        else {
-                            stepConfig.toElement.attr(key, add[key]);
-                        }
+        var lastSeq = seq[seq.length - 1];
+        lastSeq.o.complete = this._onStepComplete.bind(this, lastSeq.stepConfig, true);
+        return seq;
+    };
+    HzAnimSequence.prototype.activate = function (stepConfig, config) {
+        if (config === void 0) { config = {}; }
+        this._config = config;
+        this._stepConfig = stepConfig;
+        var toElement = stepConfig.toElement, toDo = stepConfig.toDo, withConfig = stepConfig.withConfig;
+        if (!Array.isArray(toDo)) {
+            toDo = [
+                toDo
+            ];
+        }
+        this._sequence = this._generateConfig(toElement, toDo, withConfig);
+    };
+    HzAnimSequence.prototype._onStepComplete = function (stepConfig, isLast) {
+        if (stepConfig && stepConfig.toDo) {
+            if (stepConfig.toDo.add) {
+                var add = stepConfig.toDo.add;
+                for (var key in add) {
+                    if (key == "class") {
+                        stepConfig.toElement.addClass(add[key]);
                     }
-                }
-                if (stepConfig.toDo.remove) {
-                    var remove = stepConfig.toDo.remove;
-                    for (var key in remove) {
-                        if (key == "class") {
-                            stepConfig.toElement.removeClass(remove[key]);
-                        }
-                        else {
-                            stepConfig.toElement.removeAttr(key);
-                        }
+                    else {
+                        stepConfig.toElement.attr(key, add[key]);
                     }
                 }
             }
-            if (isLast) {
-                this._deferred.resolve();
+            if (stepConfig.toDo.remove) {
+                var remove = stepConfig.toDo.remove;
+                for (var key in remove) {
+                    if (key == "class") {
+                        stepConfig.toElement.removeClass(remove[key]);
+                    }
+                    else {
+                        stepConfig.toElement.removeAttr(key);
+                    }
+                }
             }
-        };
-        HzAnimSequence.prototype.run = function () {
-            this._deferred = $.Deferred();
-            if (this._config.multiple == true || this._complete == false) {
-                this._$.Velocity.RunSequence(this._sequence);
-            }
-            else {
-                this._deferred.reject();
-            }
-            return this._deferred.promise();
-        };
-        HzAnimSequence.prototype.getPromise = function () {
-            return this._deferred.promise();
-        };
-        HzAnimSequence.prototype.getConfig = function () {
-            return this._config;
-        };
-        return HzAnimSequence;
-    }());
-    exports.HzAnimSequence = HzAnimSequence;
-});
+        }
+        if (isLast) {
+            this._deferred.resolve();
+        }
+    };
+    HzAnimSequence.prototype.run = function () {
+        this._deferred = $.Deferred();
+        if (this._config.multiple == true || this._complete == false) {
+            this._$.Velocity.RunSequence(this._sequence);
+        }
+        else {
+            this._deferred.reject();
+        }
+        return this._deferred.promise();
+    };
+    HzAnimSequence.prototype.getPromise = function () {
+        return this._deferred.promise();
+    };
+    HzAnimSequence.prototype.getConfig = function () {
+        return this._config;
+    };
+    return HzAnimSequence;
+}());
+exports.HzAnimSequence = HzAnimSequence;
 //# sourceMappingURL=HzAnimSequence.js.map
 });
 ___scope___.file("sco1221/pages/6612/page.js", function(exports, require, module, __filename, __dirname){
 
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "@haztivity/core", "./page.pug", "../../../resources/hzanim/HzAnim"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    /**
-     * @license
-     * Copyright Davinchi. All Rights Reserved.
-     */
-    var core_1 = require("@haztivity/core");
-    var page_pug_1 = require("./page.pug");
-    /**
-     * use import {HzAnimResource} from "@haztivity/hz-anim"
-     */
-    var HzAnim_1 = require("../../../resources/hzanim/HzAnim");
-    exports.page = core_1.PageFactory.createPage({
-        name: "6612",
-        title: "Apply transforms",
-        resources: [
-            HzAnim_1.HzAnimResource
-        ],
-        template: page_pug_1.default,
-        autoSequence: false
-    });
-    exports.page.on(core_1.PageController.ON_RENDERING, null, function (eventObject, template, pageController) {
-        console.log(pageController.options.name + " rendering");
-    });
-    exports.page.on(core_1.PageController.ON_RENDERED, null, function (eventObject, $page, pageController) {
-        console.log(pageController.options.name + " rendered");
-        $page.find('pre code').each(function (i, block) {
-            hljs.highlightBlock(block);
-        });
-    });
-    exports.page.on(core_1.PageController.ON_SHOW, null, function (eventObject, $page, $oldPage, oldPageRelativePosition, pageController) {
-        console.log(pageController.options.name + " show start");
-    });
-    exports.page.on(core_1.PageController.ON_SHOWN, null, function (eventObject, $page, $oldPage, oldPageRelativePosition, pageController) {
-        console.log(pageController.options.name + " show end");
-    });
-    exports.page.on(core_1.PageController.ON_COMPLETE_CHANGE, null, function (eventObject, isCompleted, $page, pageController) {
-        console.log(pageController.options.name + " complete change");
-    });
-    exports.page.on(core_1.PageController.ON_DESTROY, null, function (eventObject, $page, pageController) {
-        console.log(pageController.options.name + " destroy");
-    });
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * @license
+ * Copyright Davinchi. All Rights Reserved.
+ */
+var core_1 = require("@haztivity/core");
+var page_pug_1 = require("./page.pug");
+var Prism = require("prismjs");
+require("prismjs/components/prism-typescript");
+require("prismjs/components/prism-jade");
+/**
+ * use import {HzAnimResource} from "@haztivity/hz-anim"
+ */
+var HzAnim_1 = require("../../../resources/hzanim/HzAnim");
+exports.page = core_1.PageFactory.createPage({
+    name: "6612",
+    title: "Apply transforms",
+    resources: [
+        HzAnim_1.HzAnimResource
+    ],
+    template: page_pug_1.default,
+    autoSequence: false
+});
+exports.page.on(core_1.PageController.ON_SHOW, null, function (eventObject, $page, $oldPage, oldPageRelativePosition, pageController) {
+    Prism.highlightAll(false);
 });
 //# sourceMappingURL=page.js.map
 });
 ___scope___.file("sco1221/pages/6612/page.pug", function(exports, require, module, __filename, __dirname){
 
-module.exports.default =  "\n<div>\n  <div class=\"markdown-wrapper\"><h2>Apply transforms</h2>\n<h3>Multiple transform</h3>\n<p>It's possible to set multiple transformattions to apply.\nThe data-opt-hz-anim-do accepts a string, a json object or an array</p>\n<h4>String</h4>\n<p>Use string to perform pre defined animations like transition.fadeIn.</p>\n<p>All the velocity-js effects are available.</p>\n<p>See <a href=\"http://velocityjs.org/#uiPack\">velocity.js</a> Effects:Pre-Registered</p>\n<p>For example:</p>\n<pre><code class=\"language-html\">&lt;button data-hz-resource=&quot;HzAnim&quot;\n   data-opt-hz-anim-on=&quot;click&quot;\n   data-opt-hz-anim-do=&quot;transition.fadeOut&quot;&gt;\n   Do fadeOut\n&lt;/button&gt;\n</code></pre>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"transition.fadeOut\">Do fadeOut</button><h4>JSON</h4>\n<p>To animate properties like backgrounds, colors, etc.</p>\n<p>Note that all the properties are wrapped with double commas ( &quot; ) using the format:</p>\n<pre><code class=\"language-json\">'{&quot;property&quot;:&quot;value&quot;}'\n</code></pre>\n<p>The properties must be used by properties map.</p>\n<p>See <a href=\"http://velocityjs.org/#propertiesMap\">Properties</a></p>\n<p>For example:</p>\n<pre><code class=\"language-html\">&lt;button data-hz-resource=&quot;HzAnim&quot;\n   data-opt-hz-anim-on=&quot;click&quot;\n   data-opt-hz-anim-do='{&quot;backgroundColor&quot;:&quot;red&quot;}'&gt;\n   Do background\n&lt;/button&gt;\n</code></pre>\n<p>It's possible perform multiple transforms at the same time.</p>\n<p>All the properties in the JSON object will be executed in parallel</p>\n<p>For example:</p>\n<pre><code class=\"language-html\">&lt;button data-hz-resource=&quot;HzAnim&quot;\n   data-opt-hz-anim-on=&quot;click&quot;\n   data-opt-hz-anim-do='{&quot;backgroundColor&quot;:&quot;#ff0000&quot;,&quot;height&quot;:&quot;3em&quot;,&quot;width&quot;:&quot;10em&quot;}'&gt;\n   Do background, height and width\n&lt;/button&gt;\n</code></pre>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;backgroundColor&quot;:&quot;#ff0000&quot;}\">Do background</button>\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;backgroundColor&quot;:&quot;#ff0000&quot;,&quot;height&quot;:&quot;3em&quot;,&quot;width&quot;:&quot;20em&quot;}\">Do background, height and width</button><h4>Array</h4>\n<p>Each position in the array is a step.</p>\n<p>The steps will be executed sequentially</p>\n<p>Each step could have one or more properties</p>\n<p>All the properties in a step will be executed in parallel</p>\n<p>The array allow to use multiple JSON object that will be executed in order</p>\n<p>For example:</p>\n<pre><code class=\"language-html\">&lt;button data-hz-resource=&quot;HzAnim&quot;\n   data-opt-hz-anim-on=&quot;click&quot;\n   data-opt-hz-anim-do='[{&quot;backgroundColor&quot;:&quot;#ff0000&quot;},{&quot;height&quot;:&quot;8em&quot;,&quot;width&quot;:&quot;30em&quot;},{&quot;color&quot;:&quot;#fff&quot;}]'&gt;\n   Do first background, then height and width, then color\n&lt;/button&gt;\n</code></pre>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"[{&quot;backgroundColor&quot;:&quot;#ff0000&quot;},{&quot;height&quot;:&quot;8em&quot;,&quot;width&quot;:&quot;30em&quot;},{&quot;color&quot;:&quot;#fff&quot;}]\">Do first background, then height and width, then color</button><h4>Multiple configurations</h4>\n<p>If you don't like array notation, don't worry, it's possible to do the same with multiple configuration.\nTo specify more than one configuration, use</p>\n<pre><code class=\"language-json\">    data-opt-hz-anim-do-{stepIndex}=&quot;properties&quot;\n</code></pre>\n<p>For example:</p>\n<pre><code class=\"language-html\">    &lt;button data-hz-resource=&quot;HzAnim&quot;\n    data-opt-hz-anim-on=&quot;click&quot;\n    data-opt-hz-anim-do='{&quot;backgroundColor&quot;:&quot;#ff0000&quot;}'\n    data-opt-hz-anim-do-2='{&quot;height&quot;:&quot;8em&quot;,&quot;width&quot;:&quot;30em&quot;}'\n    data-opt-hz-anim-do-3='{&quot;color&quot;:&quot;#fff&quot;}'&gt;\n    Do first background, then height and width, then color\n    &lt;/button&gt;\n</code></pre>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;backgroundColor&quot;:&quot;#ff0000&quot;}\" data-opt-hz-anim-do-2=\"{&quot;height&quot;:&quot;8em&quot;,&quot;width&quot;:&quot;30em&quot;}\" data-opt-hz-anim-do-3=\"{&quot;color&quot;:&quot;#fff&quot;}\">Do first background, then height and width, then color</button>\n  </div>\n</div>";
+module.exports.default =  "\n<div>\n  <div class=\"markdown-wrapper\"><h1>Multiple transformations</h1>\n<p>It's possible to set multiple transformations to apply.\nThe <code>data-opt-hz-anim-do</code> accepts a string, a json object or an array</p>\n<h2>String</h2>\n<p>Use string to perform pre-defined animations like transition.fadeIn.\nAll the velocity-js effects are available.\nSee <a href=\"http://velocityjs.org/#uiPack\">velocity.js</a> Effects:Pre-Registered</p>\n<h3>Example</h3>\n<h4>Pug</h4>\n<pre><code class=\"language-jade\">button(data-hz-resource=&quot;HzAnim&quot;\n        data-opt-hz-anim-on=&quot;click&quot;\n        data-opt-hz-anim-do=&quot;transition.fadeOut&quot;) Do fadeOut\n</code></pre>\n<p>or</p>\n<h4>Html</h4>\n<pre><code class=\"language-html\">&lt;button data-hz-resource=&quot;HzAnim&quot;\n        data-opt-hz-anim-on=&quot;click&quot;\n        data-opt-hz-anim-do=&quot;transition.fadeOut&quot;&gt;\n   Do fadeOut\n&lt;/button&gt;\n</code></pre>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"transition.fadeOut\">Do fadeOut</button><h2>JSON</h2>\n<p>To animate properties like backgrounds, colors, etc.\n<strong>Note</strong>: When using HTML,all the object starts with simple comma (`) and the properties are wrapped with double commas ( &quot; ) using the format:</p>\n<pre><code class=\"language-js\">'{&quot;property&quot;:&quot;value&quot;}'\n</code></pre>\n<p>The properties have to be used folowing the properties map of velocity.js.\nFor more info see <a href=\"http://velocityjs.org/#propertiesMap\">velocity.js properties</a></p>\n<h3>Example</h3>\n<h4>Pug</h4>\n<pre><code class=\"language-jade\">// Single property\nbutton(data-hz-resource=&quot;HzAnim&quot;\n       data-opt-hz-anim-on=&quot;click&quot;\n       data-opt-hz-anim-do={&quot;backgroundColor&quot;:&quot;#ff0000&quot;}) Do background\n// Multiple properties\nbutton(data-hz-resource=&quot;HzAnim&quot;\n       data-opt-hz-anim-on=&quot;click&quot;\n       data-opt-hz-anim-do={&quot;backgroundColor&quot;:&quot;#ff0000&quot;,&quot;height&quot;:&quot;3em&quot;,&quot;width&quot;:&quot;20em&quot;}) Do background, height and width\n</code></pre>\n<p>or</p>\n<h4>HTML</h4>\n<pre><code class=\"language-html\">&lt;!-- Single property --&gt;\n&lt;button data-hz-resource=&quot;HzAnim&quot;\n   data-opt-hz-anim-on=&quot;click&quot;\n   data-opt-hz-anim-do='{&quot;backgroundColor&quot;:&quot;red&quot;}'&gt;\n   Do background\n&lt;/button&gt;\n&lt;!-- Multiple properties --&gt;\n&lt;button data-hz-resource=&quot;HzAnim&quot;\n   data-opt-hz-anim-on=&quot;click&quot;\n   data-opt-hz-anim-do='{&quot;backgroundColor&quot;:&quot;#ff0000&quot;,&quot;height&quot;:&quot;3em&quot;,&quot;width&quot;:&quot;10em&quot;}'&gt;\n   Do background, height and width\n&lt;/button&gt;\n</code></pre>\n<p>It's possible perform multiple transforms at the same time.\nAll the properties in the object will be animated in parallel. To see sequential animations go to <a href=\"#markdown-header-array\">Array</a></p>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;backgroundColor&quot;:&quot;#ff0000&quot;}\">Do background</button>\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;backgroundColor&quot;:&quot;#ff0000&quot;,&quot;height&quot;:&quot;3em&quot;,&quot;width&quot;:&quot;20em&quot;}\">Do background, height and width</button><h2>Array</h2>\n<p>Using an array is possible to specify a property or a group of properties to be animated sequentially.</p>\n<ol>\n<li>Each position in the array is a step.</li>\n<li>The steps will be executed <strong>sequentially</strong>, one by one.</li>\n<li>Each step could have one or more properties.</li>\n<li>All the properties in a step will be executed in <strong>parallel</strong>.</li>\n<li>The array allows using multiple JSON objects that will be executed in order.</li>\n</ol>\n<h3>Example</h3>\n<h4>Pug</h4>\n<pre><code class=\"language-jade\">button(data-hz-resource=&quot;HzAnim&quot;\n       data-opt-hz-anim-on=&quot;click&quot;\n       data-opt-hz-anim-do='[{&quot;backgroundColor&quot;:&quot;#ff0000&quot;},{&quot;height&quot;:&quot;8em&quot;,&quot;width&quot;:&quot;30em&quot;},{&quot;color&quot;:&quot;#fff&quot;}]') Do first background, then height and width, then color\n</code></pre>\n<pre><code class=\"language-html\">&lt;button data-hz-resource=&quot;HzAnim&quot;\n   data-opt-hz-anim-on=&quot;click&quot;\n   data-opt-hz-anim-do='[{&quot;backgroundColor&quot;:&quot;#ff0000&quot;},{&quot;height&quot;:&quot;8em&quot;,&quot;width&quot;:&quot;30em&quot;},{&quot;color&quot;:&quot;#fff&quot;}]'&gt;\n   Do first background, then height and width, then color\n&lt;/button&gt;\n</code></pre>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"[{&quot;backgroundColor&quot;:&quot;#ff0000&quot;},{&quot;height&quot;:&quot;8em&quot;,&quot;width&quot;:&quot;30em&quot;},{&quot;color&quot;:&quot;#fff&quot;}]\">Do first background, then height and width, then color</button><h2>Multiple configurations</h2>\n<p>If you don't like array notation, don't worry, it's possible to do the same with multiple configuration.\nTo specify more than one configuration, use</p>\n<pre><code class=\"language-jade\">data-opt-hz-anim-do-{stepIndex}=&quot;properties&quot;\n</code></pre>\n<h3>Example</h3>\n<h4>Pug</h4>\n<pre><code class=\"language-jade\">button(data-hz-resource=&quot;HzAnim&quot;\n       data-opt-hz-anim-on=&quot;click&quot;\n       data-opt-hz-anim-do='{&quot;backgroundColor&quot;:&quot;#ff0000&quot;}'\n       data-opt-hz-anim-do-2='{&quot;height&quot;:&quot;8em&quot;,&quot;width&quot;:&quot;30em&quot;}'\n       data-opt-hz-anim-do-3='{&quot;color&quot;:&quot;#fff&quot;}') Do first background, then height and width, then color\n</code></pre>\n<p>or</p>\n<h4>HTML</h4>\n<pre><code class=\"language-html\">&lt;button data-hz-resource=&quot;HzAnim&quot;\n        data-opt-hz-anim-on=&quot;click&quot;\n        data-opt-hz-anim-do='{&quot;backgroundColor&quot;:&quot;#ff0000&quot;}'\n        data-opt-hz-anim-do-2='{&quot;height&quot;:&quot;8em&quot;,&quot;width&quot;:&quot;30em&quot;}'\n        data-opt-hz-anim-do-3='{&quot;color&quot;:&quot;#fff&quot;}'&gt;\n        Do first background, then height and width, then color\n&lt;/button&gt;\n</code></pre>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;backgroundColor&quot;:&quot;#ff0000&quot;}\" data-opt-hz-anim-do-2=\"{&quot;height&quot;:&quot;8em&quot;,&quot;width&quot;:&quot;30em&quot;}\" data-opt-hz-anim-do-3=\"{&quot;color&quot;:&quot;#fff&quot;}\">Do first background, then height and width, then color</button><p>This also allow to specify different configurations for each step, like the delay or the easing</p>\n<h4>Pug</h4>\n<pre><code class=\"language-jade\">button(data-hz-resource=&quot;HzAnim&quot;\n      data-opt-hz-anim-on=&quot;click&quot;\n      data-opt-hz-anim-do={&quot;backgroundColor&quot;:&quot;#ff0000&quot;}\n      data-opt-hz-anim-with={&quot;delay&quot;:1000}\n      data-opt-hz-anim-do-2={&quot;height&quot;:&quot;8em&quot;,&quot;width&quot;:&quot;30em&quot;}\n      data-opt-hz-anim-with-2={&quot;easing&quot;:&quot;easeInSine&quot;}\n      data-opt-hz-anim-do-3={&quot;color&quot;:&quot;#fff&quot;}) Do first background, then height and width, then color\n</code></pre>\n<p>or</p>\n<h4>HTML</h4>\n<pre><code class=\"language-html\">&lt;button data-hz-resource=&quot;HzAnim&quot;\n       data-opt-hz-anim-on=&quot;click&quot;\n       data-opt-hz-anim-do='{&quot;backgroundColor&quot;:&quot;#ff0000&quot;}'\n       data-opt-hz-anim-with='{&quot;delay&quot;:1000}'\n       data-opt-hz-anim-do-2='{&quot;height&quot;:&quot;8em&quot;,&quot;width&quot;:&quot;30em&quot;}'\n       data-opt-hz-anim-with-2='{&quot;easing&quot;:&quot;easeInSine&quot;}'\n       data-opt-hz-anim-do-3='{&quot;color&quot;:&quot;#fff&quot;}'&gt;\n       Do first background, then height and width, then color\n&lt;/button&gt;\n</code></pre>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;backgroundColor&quot;:&quot;#ff0000&quot;}\" data-opt-hz-anim-with=\"{&quot;delay&quot;:1000}\" data-opt-hz-anim-do-2=\"{&quot;height&quot;:&quot;8em&quot;,&quot;width&quot;:&quot;30em&quot;}\" data-opt-hz-anim-with-2=\"{&quot;easing&quot;:&quot;easeInSine&quot;}\" data-opt-hz-anim-do-3=\"{&quot;color&quot;:&quot;#fff&quot;}\">Do first background, then height and width, then color</button>\n  </div>\n</div>";
 });
 ___scope___.file("sco1221/pages/6613/page.js", function(exports, require, module, __filename, __dirname){
 
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "@haztivity/core", "./page.pug", "../../../resources/hzanim/HzAnim"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    /**
-     * @license
-     * Copyright Davinchi. All Rights Reserved.
-     */
-    var core_1 = require("@haztivity/core");
-    var page_pug_1 = require("./page.pug");
-    /**
-     * use import {HzAnimResource} from "@haztivity/hz-anim"
-     */
-    var HzAnim_1 = require("../../../resources/hzanim/HzAnim");
-    exports.page = core_1.PageFactory.createPage({
-        name: "6613",
-        title: "Multiple targets",
-        resources: [
-            HzAnim_1.HzAnimResource
-        ],
-        template: page_pug_1.default,
-        autoSequence: false
-    });
-    exports.page.on(core_1.PageController.ON_RENDERING, null, function (eventObject, template, pageController) {
-        console.log(pageController.options.name + " rendering");
-    });
-    exports.page.on(core_1.PageController.ON_RENDERED, null, function (eventObject, $page, pageController) {
-        console.log(pageController.options.name + " rendered");
-        $page.find('pre code').each(function (i, block) {
-            hljs.highlightBlock(block);
-        });
-    });
-    exports.page.on(core_1.PageController.ON_SHOW, null, function (eventObject, $page, $oldPage, oldPageRelativePosition, pageController) {
-        console.log(pageController.options.name + " show start");
-    });
-    exports.page.on(core_1.PageController.ON_SHOWN, null, function (eventObject, $page, $oldPage, oldPageRelativePosition, pageController) {
-        console.log(pageController.options.name + " show end");
-    });
-    exports.page.on(core_1.PageController.ON_COMPLETE_CHANGE, null, function (eventObject, isCompleted, $page, pageController) {
-        console.log(pageController.options.name + " complete change");
-    });
-    exports.page.on(core_1.PageController.ON_DESTROY, null, function (eventObject, $page, pageController) {
-        console.log(pageController.options.name + " destroy");
-    });
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * @license
+ * Copyright Davinchi. All Rights Reserved.
+ */
+var core_1 = require("@haztivity/core");
+var page_pug_1 = require("./page.pug");
+var Prism = require("prismjs");
+require("prismjs/components/prism-typescript");
+require("prismjs/components/prism-jade");
+/**
+ * use import {HzAnimResource} from "@haztivity/hz-anim"
+ */
+var HzAnim_1 = require("../../../resources/hzanim/HzAnim");
+exports.page = core_1.PageFactory.createPage({
+    name: "6613",
+    title: "Multiple targets",
+    resources: [
+        HzAnim_1.HzAnimResource
+    ],
+    template: page_pug_1.default,
+    autoSequence: false
+});
+exports.page.on(core_1.PageController.ON_SHOW, null, function (eventObject, $page, $oldPage, oldPageRelativePosition, pageController) {
+    Prism.highlightAll(false);
 });
 //# sourceMappingURL=page.js.map
 });
@@ -10874,7 +10774,6 @@ ___scope___.file("index.js", function(exports, require, module, __filename, __di
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -10885,7 +10784,6 @@ __export(require("./src/index"));
 ___scope___.file("src/index.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -10941,7 +10839,6 @@ exports.ScormService = scorm_1.ScormService;
 ___scope___.file("src/jquery.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -10950,6 +10847,7 @@ var di_1 = require("./di");
 var $ = require("jquery");
 exports.$ = $;
 di_1.Injector.getInstance().registerServiceInstance("$", $);
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = $;
 //using global jquery
 
@@ -10960,7 +10858,6 @@ ___scope___.file("src/di.js", function(exports, require, module, __filename, __d
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -10976,7 +10873,6 @@ __export(require("./di/decorators"));
 ___scope___.file("src/di/Injector.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -11580,7 +11476,7 @@ exports.InjectorRegisterService = InjectorRegisterService;
 Injector.getInstance().registerServiceTransient("InjectorService", InjectorService, [], function (service, dependencies, resolvedDependencies, requester) {
     return Injector.getInstance(requester);
 });
-
+//# sourceMappingURL=Injector.js.map
 });
 ___scope___.file("src/di/Errors.js", function(exports, require, module, __filename, __dirname){
 
@@ -11595,7 +11491,6 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -11684,7 +11579,6 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -11712,7 +11606,6 @@ ___scope___.file("src/debug.js", function(exports, require, module, __filename, 
  * Copyright Davinchi. All Rights Reserved.
  */
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var Logger_1 = require("./debug/Logger");
 exports.Logger = Logger_1.Logger;
 
@@ -11720,7 +11613,6 @@ exports.Logger = Logger_1.Logger;
 ___scope___.file("src/debug/Logger.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var loglevel = require("loglevel");
 //Create log
 var log = loglevel.getLogger("haztivity-core");
@@ -11744,7 +11636,6 @@ log.setLevel(log.getLevel()); // Be sure to call setLevel method in order to app
 ___scope___.file("src/di/decorators.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -11885,7 +11776,6 @@ ___scope___.file("src/utils.js", function(exports, require, module, __filename, 
  * Copyright Davinchi. All Rights Reserved.
  */
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @module
  * @description
@@ -11910,7 +11800,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -11958,7 +11847,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -12088,7 +11976,6 @@ exports.EventEmitter = EventEmitter;
 ___scope___.file("src/utils/String.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -13213,7 +13100,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -13291,7 +13177,6 @@ ___scope___.file("src/sco.js", function(exports, require, module, __filename, __
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -13316,7 +13201,6 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -13355,7 +13239,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -13441,7 +13324,6 @@ var ScoController_1;
 ___scope___.file("src/page.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -13469,7 +13351,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -13541,7 +13422,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -13737,7 +13617,6 @@ var PageController_1;
 ___scope___.file("src/resource.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -13763,7 +13642,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -13946,7 +13824,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -14043,7 +13920,6 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -14127,7 +14003,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -14194,7 +14069,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -14257,7 +14131,6 @@ var ResourceInitializer = ResourceInitializer_1 = (function () {
                         controllerInstance.init(options, config.data);
                     }
                     else {
-                        //warn
                     }
                     result = controllerInstance;
                 }
@@ -14381,7 +14254,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -14425,7 +14297,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -14666,7 +14537,6 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -14726,7 +14596,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -14808,7 +14677,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -14862,7 +14730,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -14995,7 +14862,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -15120,7 +14986,6 @@ exports.PageManager = PageManager;
 ___scope___.file("src/navigator.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -15140,7 +15005,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -15240,7 +15104,6 @@ var Navigator = Navigator_1 = (function () {
                 }
             }
             else {
-                //todo throw
             }
         }
         return false;
@@ -15426,7 +15289,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -15507,7 +15369,6 @@ exports.NavigatorService = NavigatorService;
 ___scope___.file("src/component.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -15529,7 +15390,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -15607,7 +15467,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -15705,7 +15564,6 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -15789,7 +15647,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -15865,7 +15722,6 @@ var ComponentInitializer = (function () {
                         controllerInstance.init(options, config.data);
                     }
                     else {
-                        //warn
                     }
                     result = controllerInstance;
                 }
@@ -15985,7 +15841,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -16022,7 +15877,6 @@ var ScoFactory_1;
 ___scope___.file("src/scorm.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -16040,7 +15894,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -17122,44 +16975,25 @@ return ___scope___.entry = "lib/loglevel.js";
 FuseBox.pkg("@haztivity/hz-navbar", {}, function(___scope___){
 ___scope___.file("index.js", function(exports, require, module, __filename, __dirname){
 
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "./src/HzNavbar"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    function __export(m) {
-        for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-    }
-    Object.defineProperty(exports, "__esModule", { value: true });
-    __export(require("./src/HzNavbar"));
-});
-//# sourceMappingURL=index.js.map
+"use strict";
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+Object.defineProperty(exports, "__esModule", { value: true });
+__export(require("./src/HzNavbar"));
+
 });
 ___scope___.file("src/HzNavbar.js", function(exports, require, module, __filename, __dirname){
 
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "./HzNavbarComponent"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    var HzNavbarComponent_1 = require("./HzNavbarComponent");
-    exports.HzNavbarComponent = HzNavbarComponent_1.HzNavbarComponent;
-});
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var HzNavbarComponent_1 = require("./HzNavbarComponent");
+exports.HzNavbarComponent = HzNavbarComponent_1.HzNavbarComponent;
 //# sourceMappingURL=HzNavbar.js.map
 });
 ___scope___.file("src/HzNavbarComponent.js", function(exports, require, module, __filename, __dirname){
 
+"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -17176,403 +17010,392 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@haztivity/core");
+require("jquery-ui-dist/jquery-ui");
+var HzNavbarComponent = HzNavbarComponent_1 = (function (_super) {
+    __extends(HzNavbarComponent, _super);
+    function HzNavbarComponent(_$, _EventEmitterFactory, _Navigator, _PageManager, _DataOptions) {
+        var _this = _super.call(this, _$, _EventEmitterFactory) || this;
+        _this._Navigator = _Navigator;
+        _this._PageManager = _PageManager;
+        _this._DataOptions = _DataOptions;
+        _this._currentPageIndex = 0;
+        _this._numPages = 0;
+        return _this;
     }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "@haztivity/core", "jquery-ui-dist/jquery-ui"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    var core_1 = require("@haztivity/core");
-    require("jquery-ui-dist/jquery-ui");
-    var HzNavbarComponent = HzNavbarComponent_1 = (function (_super) {
-        __extends(HzNavbarComponent, _super);
-        function HzNavbarComponent(_$, _EventEmitterFactory, _Navigator, _PageManager, _DataOptions) {
-            var _this = _super.call(this, _$, _EventEmitterFactory) || this;
-            _this._Navigator = _Navigator;
-            _this._PageManager = _PageManager;
-            _this._DataOptions = _DataOptions;
-            _this._currentPageIndex = 0;
-            _this._numPages = 0;
-            return _this;
+    HzNavbarComponent.prototype.init = function (options, config) {
+        this._options = core_1.$.extend(true, {}, HzNavbarComponent_1._DEFAULTS, options);
+        this._getElements();
+        this.updateLocale();
+        this.progress(0);
+        this._assignEvents();
+        this.updatePaginator();
+    };
+    HzNavbarComponent.prototype.updatePaginator = function () {
+        var numPages = this._PageManager.count();
+        this._setNumPages(numPages);
+        this._generateIndex();
+        var currentPage = this._Navigator.getCurrentPageIndex() || 0;
+        this._setCurrentPage(currentPage);
+    };
+    /**
+     * Si se indica parámetro se establece el porcentaje. El número es redondeado a 2 decimales
+     * Si no se indica parámetro, devuelve el porcentaje actual
+     * @param {Number}      [value]         Valor a establecer
+     * @returns {number}
+     */
+    HzNavbarComponent.prototype.progress = function (value) {
+        if (value) {
+            value = parseFloat(value.toFixed(2));
+            if (!isNaN(value)) {
+                if (value >= 0 && value <= 100) {
+                    this._progress = value;
+                    this._updateProgressValue(value);
+                }
+            }
         }
-        HzNavbarComponent.prototype.init = function (options, config) {
-            this._options = core_1.$.extend(true, {}, HzNavbarComponent_1._DEFAULTS, options);
-            this._getElements();
-            this.updateLocale();
-            this.progress(0);
-            this._assignEvents();
-            this.updatePaginator();
-        };
-        HzNavbarComponent.prototype.updatePaginator = function () {
-            var numPages = this._PageManager.count();
-            this._setNumPages(numPages);
-            this._generateIndex();
-            var currentPage = this._Navigator.getCurrentPageIndex() || 0;
-            this._setCurrentPage(currentPage);
-        };
-        /**
-         * Si se indica parámetro se establece el porcentaje. El número es redondeado a 2 decimales
-         * Si no se indica parámetro, devuelve el porcentaje actual
-         * @param {Number}      [value]         Valor a establecer
-         * @returns {number}
-         */
-        HzNavbarComponent.prototype.progress = function (value) {
-            if (value) {
-                value = parseFloat(value.toFixed(2));
-                if (!isNaN(value)) {
-                    if (value >= 0 && value <= 100) {
-                        this._progress = value;
-                        this._updateProgressValue(value);
+        else {
+            return this._progress;
+        }
+    };
+    /**
+     * Establece un idioma
+     * @param {string}  lang        Idioma. Si no tiene traducciones en options.locale se utiliza el idioma por defecto
+     */
+    HzNavbarComponent.prototype.setLang = function (lang) {
+        this._options.lang = lang;
+        this.updateLocale();
+    };
+    /**
+     * Actualiza las traducciones
+     */
+    HzNavbarComponent.prototype.updateLocale = function () {
+        var lang = this._options.lang, locale = this._options.locale[lang] || this._options.locale[this._options.defaultLang];
+        if (locale) {
+            for (var key in locale) {
+                this._updateText(key, locale[key]);
+            }
+        }
+    };
+    /**
+     * Establece un texto en uno o varios elementos
+     * @param {string}      to      Se buscan los elementos que correspondan con el selector [data-hz-navbar-content=valor]
+     * @param {string}      text    Texto a establecer
+     * @private
+     */
+    HzNavbarComponent.prototype._updateText = function (to, text) {
+        if (to) {
+            var $element = this._$element.find("[data-hz-navbar-content=" + to + "]");
+            if ($element.length > 0) {
+                for (var elementIndex = 0, $elementLength = $element.length; elementIndex < $elementLength; elementIndex++) {
+                    var $currentElement = core_1.$($element[elementIndex]);
+                    var attr = $currentElement.data("hzNavbarContentTo") || "text";
+                    if (attr === "text") {
+                        $currentElement.text(text);
+                    }
+                    else {
+                        $currentElement.attr(attr, text);
                     }
                 }
+            }
+        }
+    };
+    HzNavbarComponent.prototype.closeIndexList = function () {
+        if (this._indexListDialog) {
+            this._indexListDialog.close();
+        }
+    };
+    HzNavbarComponent.prototype.indexListIsOpen = function () {
+        var result;
+        if (this._indexListDialog) {
+            result = this._indexListDialog.isOpen();
+            this._indexListDialog.open();
+        }
+        return result;
+    };
+    HzNavbarComponent.prototype.openIndexList = function () {
+        if (this._indexListDialog) {
+            this.updateIndex();
+            this._indexListDialog.open();
+        }
+    };
+    HzNavbarComponent.prototype._generateIndex = function () {
+        if (this._$indexList && this._$indexList.length > 0 && this._$indexListItemTemplate && this._$indexListItemTemplate.length > 0) {
+            this._$indexListItemTemplate.detach();
+            var options = core_1.$.extend({}, HzNavbarComponent_1.OPT_DIALOG_DEFAULTS, this._DataOptions.getDataOptions(this._$indexList, HzNavbarComponent_1.PREFIX_LIST_DIALOG_OPTIONS));
+            options.dialogClass = HzNavbarComponent_1.CLASS_LIST_INDEX_DIALOG;
+            this._$indexList.dialog(options);
+            this._indexListDialog = this._$indexList.data("ui-dialog");
+        }
+    };
+    HzNavbarComponent.prototype.updateIndex = function () {
+        if (this._$indexList && this._$indexList.length > 0 && this._$indexListItemTemplate && this._$indexListItemTemplate.length > 0) {
+            this._$indexList.empty();
+            var pages = [];
+            var numPages = this._PageManager.count(), previousState = void 0;
+            for (var numPageIndex = 0; numPageIndex < numPages; numPageIndex++) {
+                var currentPage = this._PageManager.getPage(numPageIndex), pageRegister = currentPage.getPage();
+                var $page = this._$indexListItemTemplate.clone();
+                $page.find(HzNavbarComponent_1.QUERY_INDEX_LIST_ITEM_CONTENT).html(pageRegister._options.title);
+                if (currentPage._state.completed) {
+                    $page.addClass(HzNavbarComponent_1.CLASS_PAGE_COMPLETED);
+                }
+                else if (currentPage._state.visited) {
+                    $page.addClass(HzNavbarComponent_1.CLASS_PAGE_VISITED);
+                }
+                if (previousState == undefined || previousState.completed) {
+                    $page.data(HzNavbarComponent_1.DATA_PAGE, {
+                        name: pageRegister.getName(),
+                        index: numPageIndex
+                    });
+                }
+                previousState = currentPage._state;
+                pages.push($page);
+            }
+            this._$indexList.append(pages);
+        }
+    };
+    /**
+     * Obtiene los elementos del DOM a utilizar
+     * @protected
+     */
+    HzNavbarComponent.prototype._getElements = function () {
+        this._$nextBtn = this._$element.find(HzNavbarComponent_1.QUERY_ACTION_NEXT);
+        this._$prevBtn = this._$element.find(HzNavbarComponent_1.QUERY_ACTION_PREV);
+        this._$bar = this._$element.find(HzNavbarComponent_1.QUERY_BAR);
+        this._$progress = this._$element.find(HzNavbarComponent_1.QUERY_PROGRESS);
+        this._$homeBtn = this._$element.find(HzNavbarComponent_1.QUERY_ACTION_HOME);
+        this._$indexBtn = this._$element.find(HzNavbarComponent_1.QUERY_ACTION_INDEX);
+        this._$currentPageIndex = this._$element.find(HzNavbarComponent_1.QUERY_PAGE_CURRENT);
+        this._$numPages = this._$element.find(HzNavbarComponent_1.QUERY_PAGE_TOTAL);
+        this._$indexList = this._$element.find(HzNavbarComponent_1.QUERY_INDEX_LIST);
+        this._$indexListItemTemplate = this._$indexList.find(HzNavbarComponent_1.QUERY_INDEX_LIST_ITEM);
+    };
+    /**
+     * Asigna los handlers a eventos
+     * @protected
+     */
+    HzNavbarComponent.prototype._assignEvents = function () {
+        this._$nextBtn.on("click." + HzNavbarComponent_1.NAMESPACE, { instance: this }, this._onNextClick);
+        this._$prevBtn.on("click." + HzNavbarComponent_1.NAMESPACE, { instance: this }, this._onPrevClick);
+        this._$homeBtn.on("click." + HzNavbarComponent_1.NAMESPACE, { instance: this }, this._onHomeClick);
+        this._$indexBtn.on("click." + HzNavbarComponent_1.NAMESPACE, { instance: this }, this._onIndexClick);
+        this._$indexList.on("click." + HzNavbarComponent_1.NAMESPACE, HzNavbarComponent_1.QUERY_INDEX_LIST_ITEM, { instance: this }, this._onIndexListItemClick);
+        this._Navigator.on(core_1.Navigator.ON_DISABLE, { instance: this }, this._onDisabled);
+        this._Navigator.on(core_1.Navigator.ON_ENABLE, { instance: this }, this._onEnabled);
+        this._Navigator.on(core_1.Navigator.ON_CHANGE_PAGE_START, { instance: this }, this._onPageChangeStart);
+        this._Navigator.on(core_1.Navigator.ON_CHANGE_PAGE_END, { instance: this }, this._onPageChangeEnd);
+    };
+    HzNavbarComponent.prototype._onIndexListItemClick = function (e) {
+        e.preventDefault();
+        var instance = e.data.instance, $item = core_1.$(this), page = $item.data(HzNavbarComponent_1.DATA_PAGE);
+        if (page) {
+            instance.closeIndexList();
+            instance._Navigator.goTo(page.index);
+        }
+    };
+    /**
+     * Invocado al hacerse click en el botón siguiente. Invoca a _Navigator#next
+     * @param e
+     * @private
+     */
+    HzNavbarComponent.prototype._onNextClick = function (e) {
+        var instance = e.data.instance;
+        instance._Navigator.next();
+    };
+    /**
+     * Invocado al hacerse click en el botón anterior. Invoca a _Navigator#prev
+     * @param e
+     * @private
+     */
+    HzNavbarComponent.prototype._onPrevClick = function (e) {
+        var instance = e.data.instance;
+        instance._Navigator.prev();
+    };
+    HzNavbarComponent.prototype._onHomeClick = function (e) {
+        var instance = e.data.instance;
+    };
+    HzNavbarComponent.prototype._onIndexClick = function (e) {
+        var instance = e.data.instance;
+        if (instance.indexListIsOpen()) {
+            instance.closeIndexList();
+        }
+        else {
+            instance.openIndexList();
+        }
+    };
+    /**
+     * Aplica el cambio de estilos a la barra de progreso y actualiza el texto de progreso
+     * @param {Number}      value       Valora establecer
+     * @protected
+     */
+    HzNavbarComponent.prototype._updateProgressValue = function (value) {
+        this._$progress.text(value + "%");
+        this._$bar.css("transform", "scaleX(" + value / 100 + ")");
+    };
+    /**
+     * Invocado al comenzar el cambio de página. Deshabilita la navegación durante el proceso
+     * @param e
+     * @param newPage
+     * @param oldPage
+     * @private
+     */
+    HzNavbarComponent.prototype._onPageChangeStart = function (e, newPage, oldPage) {
+        if (!e.isDefaultPrevented()) {
+            var instance = e.data.instance;
+            if (oldPage) {
+                var pageImplementation = instance._PageManager.getPage(oldPage.index), page = pageImplementation.getPage();
+                page.off("." + HzNavbarComponent_1.NAMESPACE);
+            }
+            instance._setCurrentPage(newPage.index);
+            instance._$prevBtn.attr("disabled", "disabled");
+            instance._$nextBtn.attr("disabled", "disabled");
+        }
+    };
+    /**
+     * Establece los estados de los botones de navegación en base a los datos de Navigator
+     * @private
+     */
+    HzNavbarComponent.prototype._updatePagerButtonState = function () {
+        if (!this._Navigator.isDisabled()) {
+            if (this._currentPageIndex === 0) {
+                this._$prevBtn.attr("disabled", "disabled");
+                this._$nextBtn.removeAttr("disabled");
+            }
+            else if (this._currentPageIndex === this._numPages - 1) {
+                this._$nextBtn.attr("disabled", "disabled");
+                this._$prevBtn.removeAttr("disabled");
             }
             else {
-                return this._progress;
+                this._$nextBtn.removeAttr("disabled");
+                this._$prevBtn.removeAttr("disabled");
             }
-        };
-        /**
-         * Establece un idioma
-         * @param {string}  lang        Idioma. Si no tiene traducciones en options.locale se utiliza el idioma por defecto
-         */
-        HzNavbarComponent.prototype.setLang = function (lang) {
-            this._options.lang = lang;
-            this.updateLocale();
-        };
-        /**
-         * Actualiza las traducciones
-         */
-        HzNavbarComponent.prototype.updateLocale = function () {
-            var lang = this._options.lang, locale = this._options.locale[lang] || this._options.locale[this._options.defaultLang];
-            if (locale) {
-                for (var key in locale) {
-                    this._updateText(key, locale[key]);
-                }
-            }
-        };
-        /**
-         * Establece un texto en uno o varios elementos
-         * @param {string}      to      Se buscan los elementos que correspondan con el selector [data-hz-navbar-content=valor]
-         * @param {string}      text    Texto a establecer
-         * @private
-         */
-        HzNavbarComponent.prototype._updateText = function (to, text) {
-            if (to) {
-                var $element = this._$element.find("[data-hz-navbar-content=" + to + "]");
-                if ($element.length > 0) {
-                    for (var elementIndex = 0, $elementLength = $element.length; elementIndex < $elementLength; elementIndex++) {
-                        var $currentElement = core_1.$($element[elementIndex]);
-                        var attr = $currentElement.data("hzNavbarContentTo") || "text";
-                        if (attr === "text") {
-                            $currentElement.text(text);
-                        }
-                        else {
-                            $currentElement.attr(attr, text);
-                        }
-                    }
-                }
-            }
-        };
-        HzNavbarComponent.prototype.closeIndexList = function () {
-            if (this._indexListDialog) {
-                this._indexListDialog.close();
-            }
-        };
-        HzNavbarComponent.prototype.indexListIsOpen = function () {
-            var result;
-            if (this._indexListDialog) {
-                result = this._indexListDialog.isOpen();
-                this._indexListDialog.open();
-            }
-            return result;
-        };
-        HzNavbarComponent.prototype.openIndexList = function () {
-            if (this._indexListDialog) {
-                this.updateIndex();
-                this._indexListDialog.open();
-            }
-        };
-        HzNavbarComponent.prototype._generateIndex = function () {
-            if (this._$indexList && this._$indexList.length > 0 && this._$indexListItemTemplate && this._$indexListItemTemplate.length > 0) {
-                this._$indexListItemTemplate.detach();
-                var options = core_1.$.extend({}, HzNavbarComponent_1.OPT_DIALOG_DEFAULTS, this._DataOptions.getDataOptions(this._$indexList, HzNavbarComponent_1.PREFIX_LIST_DIALOG_OPTIONS));
-                options.dialogClass = HzNavbarComponent_1.CLASS_LIST_INDEX_DIALOG;
-                this._$indexList.dialog(options);
-                this._indexListDialog = this._$indexList.data("ui-dialog");
-            }
-        };
-        HzNavbarComponent.prototype.updateIndex = function () {
-            if (this._$indexList && this._$indexList.length > 0 && this._$indexListItemTemplate && this._$indexListItemTemplate.length > 0) {
-                this._$indexList.empty();
-                var pages = [];
-                var numPages = this._PageManager.count(), previousState = void 0;
-                for (var numPageIndex = 0; numPageIndex < numPages; numPageIndex++) {
-                    var currentPage = this._PageManager.getPage(numPageIndex), pageRegister = currentPage.getPage();
-                    var $page = this._$indexListItemTemplate.clone();
-                    $page.find(HzNavbarComponent_1.QUERY_INDEX_LIST_ITEM_CONTENT).html(pageRegister._options.title);
-                    if (currentPage._state.completed) {
-                        $page.addClass(HzNavbarComponent_1.CLASS_PAGE_COMPLETED);
-                    }
-                    else if (currentPage._state.visited) {
-                        $page.addClass(HzNavbarComponent_1.CLASS_PAGE_VISITED);
-                    }
-                    if (previousState == undefined || previousState.completed) {
-                        $page.data(HzNavbarComponent_1.DATA_PAGE, {
-                            name: pageRegister.getName(),
-                            index: numPageIndex
-                        });
-                    }
-                    previousState = currentPage._state;
-                    pages.push($page);
-                }
-                this._$indexList.append(pages);
-            }
-        };
-        /**
-         * Obtiene los elementos del DOM a utilizar
-         * @protected
-         */
-        HzNavbarComponent.prototype._getElements = function () {
-            this._$nextBtn = this._$element.find(HzNavbarComponent_1.QUERY_ACTION_NEXT);
-            this._$prevBtn = this._$element.find(HzNavbarComponent_1.QUERY_ACTION_PREV);
-            this._$bar = this._$element.find(HzNavbarComponent_1.QUERY_BAR);
-            this._$progress = this._$element.find(HzNavbarComponent_1.QUERY_PROGRESS);
-            this._$homeBtn = this._$element.find(HzNavbarComponent_1.QUERY_ACTION_HOME);
-            this._$indexBtn = this._$element.find(HzNavbarComponent_1.QUERY_ACTION_INDEX);
-            this._$currentPageIndex = this._$element.find(HzNavbarComponent_1.QUERY_PAGE_CURRENT);
-            this._$numPages = this._$element.find(HzNavbarComponent_1.QUERY_PAGE_TOTAL);
-            this._$indexList = this._$element.find(HzNavbarComponent_1.QUERY_INDEX_LIST);
-            this._$indexListItemTemplate = this._$indexList.find(HzNavbarComponent_1.QUERY_INDEX_LIST_ITEM);
-        };
-        /**
-         * Asigna los handlers a eventos
-         * @protected
-         */
-        HzNavbarComponent.prototype._assignEvents = function () {
-            this._$nextBtn.on("click." + HzNavbarComponent_1.NAMESPACE, { instance: this }, this._onNextClick);
-            this._$prevBtn.on("click." + HzNavbarComponent_1.NAMESPACE, { instance: this }, this._onPrevClick);
-            this._$homeBtn.on("click." + HzNavbarComponent_1.NAMESPACE, { instance: this }, this._onHomeClick);
-            this._$indexBtn.on("click." + HzNavbarComponent_1.NAMESPACE, { instance: this }, this._onIndexClick);
-            this._$indexList.on("click." + HzNavbarComponent_1.NAMESPACE, HzNavbarComponent_1.QUERY_INDEX_LIST_ITEM, { instance: this }, this._onIndexListItemClick);
-            this._Navigator.on(core_1.Navigator.ON_DISABLE, { instance: this }, this._onDisabled);
-            this._Navigator.on(core_1.Navigator.ON_ENABLE, { instance: this }, this._onEnabled);
-            this._Navigator.on(core_1.Navigator.ON_CHANGE_PAGE_START, { instance: this }, this._onPageChangeStart);
-            this._Navigator.on(core_1.Navigator.ON_CHANGE_PAGE_END, { instance: this }, this._onPageChangeEnd);
-        };
-        HzNavbarComponent.prototype._onIndexListItemClick = function (e) {
-            e.preventDefault();
-            var instance = e.data.instance, $item = core_1.$(this), page = $item.data(HzNavbarComponent_1.DATA_PAGE);
-            if (page) {
-                instance.closeIndexList();
-                instance._Navigator.goTo(page.index);
-            }
-        };
-        /**
-         * Invocado al hacerse click en el botón siguiente. Invoca a _Navigator#next
-         * @param e
-         * @private
-         */
-        HzNavbarComponent.prototype._onNextClick = function (e) {
-            var instance = e.data.instance;
-            instance._Navigator.next();
-        };
-        /**
-         * Invocado al hacerse click en el botón anterior. Invoca a _Navigator#prev
-         * @param e
-         * @private
-         */
-        HzNavbarComponent.prototype._onPrevClick = function (e) {
-            var instance = e.data.instance;
-            instance._Navigator.prev();
-        };
-        HzNavbarComponent.prototype._onHomeClick = function (e) {
-            var instance = e.data.instance;
-        };
-        HzNavbarComponent.prototype._onIndexClick = function (e) {
-            var instance = e.data.instance;
-            if (instance.indexListIsOpen()) {
-                instance.closeIndexList();
-            }
-            else {
-                instance.openIndexList();
-            }
-        };
-        /**
-         * Aplica el cambio de estilos a la barra de progreso y actualiza el texto de progreso
-         * @param {Number}      value       Valora establecer
-         * @protected
-         */
-        HzNavbarComponent.prototype._updateProgressValue = function (value) {
-            this._$progress.text(value + "%");
-            this._$bar.css("transform", "scaleX(" + value / 100 + ")");
-        };
-        /**
-         * Invocado al comenzar el cambio de página. Deshabilita la navegación durante el proceso
-         * @param e
-         * @param newPage
-         * @param oldPage
-         * @private
-         */
-        HzNavbarComponent.prototype._onPageChangeStart = function (e, newPage, oldPage) {
-            if (!e.isDefaultPrevented()) {
-                var instance = e.data.instance;
-                if (oldPage) {
-                    var pageImplementation = instance._PageManager.getPage(oldPage.index), page = pageImplementation.getPage();
-                    page.off("." + HzNavbarComponent_1.NAMESPACE);
-                }
-                instance._setCurrentPage(newPage.index);
-                instance._$prevBtn.attr("disabled", "disabled");
-                instance._$nextBtn.attr("disabled", "disabled");
-            }
-        };
-        /**
-         * Establece los estados de los botones de navegación en base a los datos de Navigator
-         * @private
-         */
-        HzNavbarComponent.prototype._updatePagerButtonState = function () {
-            if (!this._Navigator.isDisabled()) {
-                if (this._currentPageIndex === 0) {
-                    this._$prevBtn.attr("disabled", "disabled");
+            if (!this._$nextBtn.prop("disabled")) {
+                if (this._Navigator.getCurrentPage().getController().isCompleted()) {
                     this._$nextBtn.removeAttr("disabled");
-                }
-                else if (this._currentPageIndex === this._numPages - 1) {
-                    this._$nextBtn.attr("disabled", "disabled");
-                    this._$prevBtn.removeAttr("disabled");
                 }
                 else {
-                    this._$nextBtn.removeAttr("disabled");
-                    this._$prevBtn.removeAttr("disabled");
-                }
-                if (!this._$nextBtn.prop("disabled")) {
-                    if (this._Navigator.getCurrentPage().getController().isCompleted()) {
-                        this._$nextBtn.removeAttr("disabled");
-                    }
-                    else {
-                        this._$nextBtn.attr("disabled", "disabled");
-                    }
+                    this._$nextBtn.attr("disabled", "disabled");
                 }
             }
-            else {
-                this._$prevBtn.attr("disabled", "disabled");
-                this._$nextBtn.attr("disabled", "disabled");
-            }
-        };
-        /**
-         * Invocado al finalizarse el cambio de página. Actualiza el paginador y el estado de los botones de navegación
-         * @param e
-         * @param newPage
-         * @param oldPage
-         * @private
-         */
-        HzNavbarComponent.prototype._onPageChangeEnd = function (e, newPage, oldPage) {
+        }
+        else {
+            this._$prevBtn.attr("disabled", "disabled");
+            this._$nextBtn.attr("disabled", "disabled");
+        }
+    };
+    /**
+     * Invocado al finalizarse el cambio de página. Actualiza el paginador y el estado de los botones de navegación
+     * @param e
+     * @param newPage
+     * @param oldPage
+     * @private
+     */
+    HzNavbarComponent.prototype._onPageChangeEnd = function (e, newPage, oldPage) {
+        var instance = e.data.instance;
+        instance._updatePagerButtonState();
+        instance.progress((instance._Navigator.getVisitedPages().length * 100) / instance._numPages);
+        var pageImplementation = instance._Navigator.getCurrentPage(), page = pageImplementation.getPage();
+        page.off("." + HzNavbarComponent_1.NAMESPACE).on(core_1.PageController.ON_COMPLETE_CHANGE + "." + HzNavbarComponent_1.NAMESPACE, { instance: instance }, instance._onPageCompleteChange);
+    };
+    /**
+     * Invocado al completarse la página. Actualiza el estado del botón siguiente
+     * @param e
+     * @param completed
+     * @private
+     */
+    HzNavbarComponent.prototype._onPageCompleteChange = function (e, completed) {
+        if (completed) {
             var instance = e.data.instance;
-            instance._updatePagerButtonState();
-            instance.progress((instance._Navigator.getVisitedPages().length * 100) / instance._numPages);
             var pageImplementation = instance._Navigator.getCurrentPage(), page = pageImplementation.getPage();
-            page.off("." + HzNavbarComponent_1.NAMESPACE).on(core_1.PageController.ON_COMPLETE_CHANGE + "." + HzNavbarComponent_1.NAMESPACE, { instance: instance }, instance._onPageCompleteChange);
-        };
-        /**
-         * Invocado al completarse la página. Actualiza el estado del botón siguiente
-         * @param e
-         * @param completed
-         * @private
-         */
-        HzNavbarComponent.prototype._onPageCompleteChange = function (e, completed) {
-            if (completed) {
-                var instance = e.data.instance;
-                var pageImplementation = instance._Navigator.getCurrentPage(), page = pageImplementation.getPage();
-                if (instance._PageManager.getPageIndex(page.getName()) !== instance._PageManager.count() - 1) {
-                    if (pageImplementation.getController().isCompleted()) {
-                        instance._$nextBtn.removeAttr("disabled");
-                    }
-                    else {
-                        instance._$nextBtn.attr("disabled", "disabled");
-                    }
+            if (instance._PageManager.getPageIndex(page.getName()) !== instance._PageManager.count() - 1) {
+                if (pageImplementation.getController().isCompleted()) {
+                    instance._$nextBtn.removeAttr("disabled");
+                }
+                else {
+                    instance._$nextBtn.attr("disabled", "disabled");
                 }
             }
-        };
-        /**
-         * Establece el valor a la cantidad de páginas y actualiza el texto del elemento
-         * @param {Number}  value       Cantidad de páginas
-         * @private
-         */
-        HzNavbarComponent.prototype._setNumPages = function (value) {
-            this._numPages = value;
-            this._$numPages.text(value);
-        };
-        /**
-         * Establece el valor de la página actual y actualiza el texto del elemento. Se espera recibir el índice de la página comenzando por 0
-         * @param {Number}  value       Índice de la página actual
-         * @private
-         */
-        HzNavbarComponent.prototype._setCurrentPage = function (value) {
-            this._currentPageIndex = value;
-            this._$currentPageIndex.text(value + 1);
-        };
-        HzNavbarComponent.prototype._onDisabled = function (e) {
-            var instance = e.data.instance;
-            instance._updatePagerButtonState();
-        };
-        HzNavbarComponent.prototype._onEnabled = function (e) {
-            var instance = e.data.instance;
-            instance._updatePagerButtonState();
-        };
-        return HzNavbarComponent;
-    }(core_1.ComponentController));
-    HzNavbarComponent.NAMESPACE = "hzNavbar";
-    HzNavbarComponent.PREFIX = "hz-navbar";
-    HzNavbarComponent.PREFIX_LIST_DIALOG_OPTIONS = HzNavbarComponent_1.NAMESPACE + "Dialog";
-    HzNavbarComponent.QUERY_ACTION_NEXT = "[data-" + HzNavbarComponent_1.PREFIX + "-next]";
-    HzNavbarComponent.QUERY_ACTION_PREV = "[data-" + HzNavbarComponent_1.PREFIX + "-prev]";
-    HzNavbarComponent.QUERY_BAR = "[data-" + HzNavbarComponent_1.PREFIX + "-bar]";
-    HzNavbarComponent.QUERY_PROGRESS = "[data-" + HzNavbarComponent_1.PREFIX + "-progress]";
-    HzNavbarComponent.QUERY_ACTION_HOME = "[data-" + HzNavbarComponent_1.PREFIX + "-home]";
-    HzNavbarComponent.QUERY_ACTION_INDEX = "[data-" + HzNavbarComponent_1.PREFIX + "-index]";
-    HzNavbarComponent.QUERY_PAGE_CURRENT = "[data-" + HzNavbarComponent_1.PREFIX + "-current]";
-    HzNavbarComponent.QUERY_PAGE_TOTAL = "[data-" + HzNavbarComponent_1.PREFIX + "-total]";
-    HzNavbarComponent.QUERY_INDEX_LIST = "[data-" + HzNavbarComponent_1.PREFIX + "-index-list]";
-    HzNavbarComponent.QUERY_INDEX_LIST_ITEM = "[data-" + HzNavbarComponent_1.PREFIX + "-index-list-item]";
-    HzNavbarComponent.QUERY_INDEX_LIST_ITEM_CONTENT = "[data-" + HzNavbarComponent_1.PREFIX + "-index-list-item-content]";
-    HzNavbarComponent.CLASS_PAGE_VISITED = "hz-navbar__page--visited";
-    HzNavbarComponent.CLASS_PAGE_COMPLETED = "hz-navbar__page--completed";
-    HzNavbarComponent.CLASS_LIST_INDEX_DIALOG = "hz-navbar__index-list-dialog";
-    HzNavbarComponent.DATA_PAGE = "hzNavbarPage";
-    HzNavbarComponent.OPT_DIALOG_DEFAULTS = {
-        autoOpen: false
+        }
     };
-    HzNavbarComponent._DEFAULTS = {
-        locale: {
-            "es": {
-                next: "Siguiente",
-                prev: "Anterior",
-                currentPage: "Página actual",
-                totalPages: "Páginas totales",
-                home: "Ir al inicio",
-                showIndex: "Mostrar índice",
-                index: "Índice"
-            }
-        },
-        defaultLang: "es"
+    /**
+     * Establece el valor a la cantidad de páginas y actualiza el texto del elemento
+     * @param {Number}  value       Cantidad de páginas
+     * @private
+     */
+    HzNavbarComponent.prototype._setNumPages = function (value) {
+        this._numPages = value;
+        this._$numPages.text(value);
     };
-    HzNavbarComponent = HzNavbarComponent_1 = __decorate([
-        core_1.Component({
-            name: "HzNavbar",
-            dependencies: [
-                core_1.$,
-                core_1.EventEmitterFactory,
-                core_1.Navigator,
-                core_1.PageManager,
-                core_1.DataOptions
-            ]
-        })
-    ], HzNavbarComponent);
-    exports.HzNavbarComponent = HzNavbarComponent;
-    var HzNavbarComponent_1;
-});
+    /**
+     * Establece el valor de la página actual y actualiza el texto del elemento. Se espera recibir el índice de la página comenzando por 0
+     * @param {Number}  value       Índice de la página actual
+     * @private
+     */
+    HzNavbarComponent.prototype._setCurrentPage = function (value) {
+        this._currentPageIndex = value;
+        this._$currentPageIndex.text(value + 1);
+    };
+    HzNavbarComponent.prototype._onDisabled = function (e) {
+        var instance = e.data.instance;
+        instance._updatePagerButtonState();
+    };
+    HzNavbarComponent.prototype._onEnabled = function (e) {
+        var instance = e.data.instance;
+        instance._updatePagerButtonState();
+    };
+    return HzNavbarComponent;
+}(core_1.ComponentController));
+HzNavbarComponent.NAMESPACE = "hzNavbar";
+HzNavbarComponent.PREFIX = "hz-navbar";
+HzNavbarComponent.PREFIX_LIST_DIALOG_OPTIONS = HzNavbarComponent_1.NAMESPACE + "Dialog";
+HzNavbarComponent.QUERY_ACTION_NEXT = "[data-" + HzNavbarComponent_1.PREFIX + "-next]";
+HzNavbarComponent.QUERY_ACTION_PREV = "[data-" + HzNavbarComponent_1.PREFIX + "-prev]";
+HzNavbarComponent.QUERY_BAR = "[data-" + HzNavbarComponent_1.PREFIX + "-bar]";
+HzNavbarComponent.QUERY_PROGRESS = "[data-" + HzNavbarComponent_1.PREFIX + "-progress]";
+HzNavbarComponent.QUERY_ACTION_HOME = "[data-" + HzNavbarComponent_1.PREFIX + "-home]";
+HzNavbarComponent.QUERY_ACTION_INDEX = "[data-" + HzNavbarComponent_1.PREFIX + "-index]";
+HzNavbarComponent.QUERY_PAGE_CURRENT = "[data-" + HzNavbarComponent_1.PREFIX + "-current]";
+HzNavbarComponent.QUERY_PAGE_TOTAL = "[data-" + HzNavbarComponent_1.PREFIX + "-total]";
+HzNavbarComponent.QUERY_INDEX_LIST = "[data-" + HzNavbarComponent_1.PREFIX + "-index-list]";
+HzNavbarComponent.QUERY_INDEX_LIST_ITEM = "[data-" + HzNavbarComponent_1.PREFIX + "-index-list-item]";
+HzNavbarComponent.QUERY_INDEX_LIST_ITEM_CONTENT = "[data-" + HzNavbarComponent_1.PREFIX + "-index-list-item-content]";
+HzNavbarComponent.CLASS_PAGE_VISITED = "hz-navbar__page--visited";
+HzNavbarComponent.CLASS_PAGE_COMPLETED = "hz-navbar__page--completed";
+HzNavbarComponent.CLASS_LIST_INDEX_DIALOG = "hz-navbar__index-list-dialog";
+HzNavbarComponent.DATA_PAGE = "hzNavbarPage";
+HzNavbarComponent.OPT_DIALOG_DEFAULTS = {
+    autoOpen: false
+};
+HzNavbarComponent._DEFAULTS = {
+    locale: {
+        "es": {
+            next: "Siguiente",
+            prev: "Anterior",
+            currentPage: "Página actual",
+            totalPages: "Páginas totales",
+            home: "Ir al inicio",
+            showIndex: "Mostrar índice",
+            index: "Índice"
+        }
+    },
+    defaultLang: "es"
+};
+HzNavbarComponent = HzNavbarComponent_1 = __decorate([
+    core_1.Component({
+        name: "HzNavbar",
+        dependencies: [
+            core_1.$,
+            core_1.EventEmitterFactory,
+            core_1.Navigator,
+            core_1.PageManager,
+            core_1.DataOptions
+        ]
+    })
+], HzNavbarComponent);
+exports.HzNavbarComponent = HzNavbarComponent;
+var HzNavbarComponent_1;
 //# sourceMappingURL=HzNavbarComponent.js.map
 });
 return ___scope___.entry = "index.js";
@@ -36288,6 +36111,1017 @@ var widgetsTooltip = $.ui.tooltip;
 }));
 });
 return ___scope___.entry = "ui/widget.js";
+});
+FuseBox.pkg("prismjs", {}, function(___scope___){
+___scope___.file("prism.js", function(exports, require, module, __filename, __dirname){
+
+
+/* **********************************************
+     Begin prism-core.js
+********************************************** */
+
+var _self = (typeof window !== 'undefined')
+	? window   // if in browser
+	: (
+		(typeof WorkerGlobalScope !== 'undefined' && self instanceof WorkerGlobalScope)
+		? self // if in worker
+		: {}   // if in node js
+	);
+
+/**
+ * Prism: Lightweight, robust, elegant syntax highlighting
+ * MIT license http://www.opensource.org/licenses/mit-license.php/
+ * @author Lea Verou http://lea.verou.me
+ */
+
+var Prism = (function(){
+
+// Private helper vars
+var lang = /\blang(?:uage)?-(\w+)\b/i;
+var uniqueId = 0;
+
+var _ = _self.Prism = {
+	util: {
+		encode: function (tokens) {
+			if (tokens instanceof Token) {
+				return new Token(tokens.type, _.util.encode(tokens.content), tokens.alias);
+			} else if (_.util.type(tokens) === 'Array') {
+				return tokens.map(_.util.encode);
+			} else {
+				return tokens.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\u00a0/g, ' ');
+			}
+		},
+
+		type: function (o) {
+			return Object.prototype.toString.call(o).match(/\[object (\w+)\]/)[1];
+		},
+
+		objId: function (obj) {
+			if (!obj['__id']) {
+				Object.defineProperty(obj, '__id', { value: ++uniqueId });
+			}
+			return obj['__id'];
+		},
+
+		// Deep clone a language definition (e.g. to extend it)
+		clone: function (o) {
+			var type = _.util.type(o);
+
+			switch (type) {
+				case 'Object':
+					var clone = {};
+
+					for (var key in o) {
+						if (o.hasOwnProperty(key)) {
+							clone[key] = _.util.clone(o[key]);
+						}
+					}
+
+					return clone;
+
+				case 'Array':
+					// Check for existence for IE8
+					return o.map && o.map(function(v) { return _.util.clone(v); });
+			}
+
+			return o;
+		}
+	},
+
+	languages: {
+		extend: function (id, redef) {
+			var lang = _.util.clone(_.languages[id]);
+
+			for (var key in redef) {
+				lang[key] = redef[key];
+			}
+
+			return lang;
+		},
+
+		/**
+		 * Insert a token before another token in a language literal
+		 * As this needs to recreate the object (we cannot actually insert before keys in object literals),
+		 * we cannot just provide an object, we need anobject and a key.
+		 * @param inside The key (or language id) of the parent
+		 * @param before The key to insert before. If not provided, the function appends instead.
+		 * @param insert Object with the key/value pairs to insert
+		 * @param root The object that contains `inside`. If equal to Prism.languages, it can be omitted.
+		 */
+		insertBefore: function (inside, before, insert, root) {
+			root = root || _.languages;
+			var grammar = root[inside];
+
+			if (arguments.length == 2) {
+				insert = arguments[1];
+
+				for (var newToken in insert) {
+					if (insert.hasOwnProperty(newToken)) {
+						grammar[newToken] = insert[newToken];
+					}
+				}
+
+				return grammar;
+			}
+
+			var ret = {};
+
+			for (var token in grammar) {
+
+				if (grammar.hasOwnProperty(token)) {
+
+					if (token == before) {
+
+						for (var newToken in insert) {
+
+							if (insert.hasOwnProperty(newToken)) {
+								ret[newToken] = insert[newToken];
+							}
+						}
+					}
+
+					ret[token] = grammar[token];
+				}
+			}
+
+			// Update references in other language definitions
+			_.languages.DFS(_.languages, function(key, value) {
+				if (value === root[inside] && key != inside) {
+					this[key] = ret;
+				}
+			});
+
+			return root[inside] = ret;
+		},
+
+		// Traverse a language definition with Depth First Search
+		DFS: function(o, callback, type, visited) {
+			visited = visited || {};
+			for (var i in o) {
+				if (o.hasOwnProperty(i)) {
+					callback.call(o, i, o[i], type || i);
+
+					if (_.util.type(o[i]) === 'Object' && !visited[_.util.objId(o[i])]) {
+						visited[_.util.objId(o[i])] = true;
+						_.languages.DFS(o[i], callback, null, visited);
+					}
+					else if (_.util.type(o[i]) === 'Array' && !visited[_.util.objId(o[i])]) {
+						visited[_.util.objId(o[i])] = true;
+						_.languages.DFS(o[i], callback, i, visited);
+					}
+				}
+			}
+		}
+	},
+	plugins: {},
+
+	highlightAll: function(async, callback) {
+		var env = {
+			callback: callback,
+			selector: 'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'
+		};
+
+		_.hooks.run("before-highlightall", env);
+
+		var elements = env.elements || document.querySelectorAll(env.selector);
+
+		for (var i=0, element; element = elements[i++];) {
+			_.highlightElement(element, async === true, env.callback);
+		}
+	},
+
+	highlightElement: function(element, async, callback) {
+		// Find language
+		var language, grammar, parent = element;
+
+		while (parent && !lang.test(parent.className)) {
+			parent = parent.parentNode;
+		}
+
+		if (parent) {
+			language = (parent.className.match(lang) || [,''])[1].toLowerCase();
+			grammar = _.languages[language];
+		}
+
+		// Set language on the element, if not present
+		element.className = element.className.replace(lang, '').replace(/\s+/g, ' ') + ' language-' + language;
+
+		// Set language on the parent, for styling
+		parent = element.parentNode;
+
+		if (/pre/i.test(parent.nodeName)) {
+			parent.className = parent.className.replace(lang, '').replace(/\s+/g, ' ') + ' language-' + language;
+		}
+
+		var code = element.textContent;
+
+		var env = {
+			element: element,
+			language: language,
+			grammar: grammar,
+			code: code
+		};
+
+		_.hooks.run('before-sanity-check', env);
+
+		if (!env.code || !env.grammar) {
+			if (env.code) {
+				env.element.textContent = env.code;
+			}
+			_.hooks.run('complete', env);
+			return;
+		}
+
+		_.hooks.run('before-highlight', env);
+
+		if (async && _self.Worker) {
+			var worker = new Worker(_.filename);
+
+			worker.onmessage = function(evt) {
+				env.highlightedCode = evt.data;
+
+				_.hooks.run('before-insert', env);
+
+				env.element.innerHTML = env.highlightedCode;
+
+				callback && callback.call(env.element);
+				_.hooks.run('after-highlight', env);
+				_.hooks.run('complete', env);
+			};
+
+			worker.postMessage(JSON.stringify({
+				language: env.language,
+				code: env.code,
+				immediateClose: true
+			}));
+		}
+		else {
+			env.highlightedCode = _.highlight(env.code, env.grammar, env.language);
+
+			_.hooks.run('before-insert', env);
+
+			env.element.innerHTML = env.highlightedCode;
+
+			callback && callback.call(element);
+
+			_.hooks.run('after-highlight', env);
+			_.hooks.run('complete', env);
+		}
+	},
+
+	highlight: function (text, grammar, language) {
+		var tokens = _.tokenize(text, grammar);
+		return Token.stringify(_.util.encode(tokens), language);
+	},
+
+	tokenize: function(text, grammar, language) {
+		var Token = _.Token;
+
+		var strarr = [text];
+
+		var rest = grammar.rest;
+
+		if (rest) {
+			for (var token in rest) {
+				grammar[token] = rest[token];
+			}
+
+			delete grammar.rest;
+		}
+
+		tokenloop: for (var token in grammar) {
+			if(!grammar.hasOwnProperty(token) || !grammar[token]) {
+				continue;
+			}
+
+			var patterns = grammar[token];
+			patterns = (_.util.type(patterns) === "Array") ? patterns : [patterns];
+
+			for (var j = 0; j < patterns.length; ++j) {
+				var pattern = patterns[j],
+					inside = pattern.inside,
+					lookbehind = !!pattern.lookbehind,
+					greedy = !!pattern.greedy,
+					lookbehindLength = 0,
+					alias = pattern.alias;
+
+				if (greedy && !pattern.pattern.global) {
+					// Without the global flag, lastIndex won't work
+					var flags = pattern.pattern.toString().match(/[imuy]*$/)[0];
+					pattern.pattern = RegExp(pattern.pattern.source, flags + "g");
+				}
+
+				pattern = pattern.pattern || pattern;
+
+				// Don’t cache length as it changes during the loop
+				for (var i=0, pos = 0; i<strarr.length; pos += strarr[i].length, ++i) {
+
+					var str = strarr[i];
+
+					if (strarr.length > text.length) {
+						// Something went terribly wrong, ABORT, ABORT!
+						break tokenloop;
+					}
+
+					if (str instanceof Token) {
+						continue;
+					}
+
+					pattern.lastIndex = 0;
+
+					var match = pattern.exec(str),
+					    delNum = 1;
+
+					// Greedy patterns can override/remove up to two previously matched tokens
+					if (!match && greedy && i != strarr.length - 1) {
+						pattern.lastIndex = pos;
+						match = pattern.exec(text);
+						if (!match) {
+							break;
+						}
+
+						var from = match.index + (lookbehind ? match[1].length : 0),
+						    to = match.index + match[0].length,
+						    k = i,
+						    p = pos;
+
+						for (var len = strarr.length; k < len && p < to; ++k) {
+							p += strarr[k].length;
+							// Move the index i to the element in strarr that is closest to from
+							if (from >= p) {
+								++i;
+								pos = p;
+							}
+						}
+
+						/*
+						 * If strarr[i] is a Token, then the match starts inside another Token, which is invalid
+						 * If strarr[k - 1] is greedy we are in conflict with another greedy pattern
+						 */
+						if (strarr[i] instanceof Token || strarr[k - 1].greedy) {
+							continue;
+						}
+
+						// Number of tokens to delete and replace with the new match
+						delNum = k - i;
+						str = text.slice(pos, p);
+						match.index -= pos;
+					}
+
+					if (!match) {
+						continue;
+					}
+
+					if(lookbehind) {
+						lookbehindLength = match[1].length;
+					}
+
+					var from = match.index + lookbehindLength,
+					    match = match[0].slice(lookbehindLength),
+					    to = from + match.length,
+					    before = str.slice(0, from),
+					    after = str.slice(to);
+
+					var args = [i, delNum];
+
+					if (before) {
+						args.push(before);
+					}
+
+					var wrapped = new Token(token, inside? _.tokenize(match, inside) : match, alias, match, greedy);
+
+					args.push(wrapped);
+
+					if (after) {
+						args.push(after);
+					}
+
+					Array.prototype.splice.apply(strarr, args);
+				}
+			}
+		}
+
+		return strarr;
+	},
+
+	hooks: {
+		all: {},
+
+		add: function (name, callback) {
+			var hooks = _.hooks.all;
+
+			hooks[name] = hooks[name] || [];
+
+			hooks[name].push(callback);
+		},
+
+		run: function (name, env) {
+			var callbacks = _.hooks.all[name];
+
+			if (!callbacks || !callbacks.length) {
+				return;
+			}
+
+			for (var i=0, callback; callback = callbacks[i++];) {
+				callback(env);
+			}
+		}
+	}
+};
+
+var Token = _.Token = function(type, content, alias, matchedStr, greedy) {
+	this.type = type;
+	this.content = content;
+	this.alias = alias;
+	// Copy of the full string this token was created from
+	this.length = (matchedStr || "").length|0;
+	this.greedy = !!greedy;
+};
+
+Token.stringify = function(o, language, parent) {
+	if (typeof o == 'string') {
+		return o;
+	}
+
+	if (_.util.type(o) === 'Array') {
+		return o.map(function(element) {
+			return Token.stringify(element, language, o);
+		}).join('');
+	}
+
+	var env = {
+		type: o.type,
+		content: Token.stringify(o.content, language, parent),
+		tag: 'span',
+		classes: ['token', o.type],
+		attributes: {},
+		language: language,
+		parent: parent
+	};
+
+	if (env.type == 'comment') {
+		env.attributes['spellcheck'] = 'true';
+	}
+
+	if (o.alias) {
+		var aliases = _.util.type(o.alias) === 'Array' ? o.alias : [o.alias];
+		Array.prototype.push.apply(env.classes, aliases);
+	}
+
+	_.hooks.run('wrap', env);
+
+	var attributes = Object.keys(env.attributes).map(function(name) {
+		return name + '="' + (env.attributes[name] || '').replace(/"/g, '&quot;') + '"';
+	}).join(' ');
+
+	return '<' + env.tag + ' class="' + env.classes.join(' ') + '"' + (attributes ? ' ' + attributes : '') + '>' + env.content + '</' + env.tag + '>';
+
+};
+
+if (!_self.document) {
+	if (!_self.addEventListener) {
+		// in Node.js
+		return _self.Prism;
+	}
+ 	// In worker
+	_self.addEventListener('message', function(evt) {
+		var message = JSON.parse(evt.data),
+		    lang = message.language,
+		    code = message.code,
+		    immediateClose = message.immediateClose;
+
+		_self.postMessage(_.highlight(code, _.languages[lang], lang));
+		if (immediateClose) {
+			_self.close();
+		}
+	}, false);
+
+	return _self.Prism;
+}
+
+//Get current script and highlight
+var script = document.currentScript || [].slice.call(document.getElementsByTagName("script")).pop();
+
+if (script) {
+	_.filename = script.src;
+
+	if (document.addEventListener && !script.hasAttribute('data-manual')) {
+		if(document.readyState !== "loading") {
+			if (window.requestAnimationFrame) {
+				window.requestAnimationFrame(_.highlightAll);
+			} else {
+				window.setTimeout(_.highlightAll, 16);
+			}
+		}
+		else {
+			document.addEventListener('DOMContentLoaded', _.highlightAll);
+		}
+	}
+}
+
+return _self.Prism;
+
+})();
+
+if (typeof module !== 'undefined' && module.exports) {
+	module.exports = Prism;
+}
+
+// hack for components to work correctly in node.js
+if (typeof global !== 'undefined') {
+	global.Prism = Prism;
+}
+
+
+/* **********************************************
+     Begin prism-markup.js
+********************************************** */
+
+Prism.languages.markup = {
+	'comment': /<!--[\w\W]*?-->/,
+	'prolog': /<\?[\w\W]+?\?>/,
+	'doctype': /<!DOCTYPE[\w\W]+?>/i,
+	'cdata': /<!\[CDATA\[[\w\W]*?]]>/i,
+	'tag': {
+		pattern: /<\/?(?!\d)[^\s>\/=$<]+(?:\s+[^\s>\/=]+(?:=(?:("|')(?:\\\1|\\?(?!\1)[\w\W])*\1|[^\s'">=]+))?)*\s*\/?>/i,
+		inside: {
+			'tag': {
+				pattern: /^<\/?[^\s>\/]+/i,
+				inside: {
+					'punctuation': /^<\/?/,
+					'namespace': /^[^\s>\/:]+:/
+				}
+			},
+			'attr-value': {
+				pattern: /=(?:('|")[\w\W]*?(\1)|[^\s>]+)/i,
+				inside: {
+					'punctuation': /[=>"']/
+				}
+			},
+			'punctuation': /\/?>/,
+			'attr-name': {
+				pattern: /[^\s>\/]+/,
+				inside: {
+					'namespace': /^[^\s>\/:]+:/
+				}
+			}
+
+		}
+	},
+	'entity': /&#?[\da-z]{1,8};/i
+};
+
+// Plugin to make entity title show the real entity, idea by Roman Komarov
+Prism.hooks.add('wrap', function(env) {
+
+	if (env.type === 'entity') {
+		env.attributes['title'] = env.content.replace(/&amp;/, '&');
+	}
+});
+
+Prism.languages.xml = Prism.languages.markup;
+Prism.languages.html = Prism.languages.markup;
+Prism.languages.mathml = Prism.languages.markup;
+Prism.languages.svg = Prism.languages.markup;
+
+
+/* **********************************************
+     Begin prism-css.js
+********************************************** */
+
+Prism.languages.css = {
+	'comment': /\/\*[\w\W]*?\*\//,
+	'atrule': {
+		pattern: /@[\w-]+?.*?(;|(?=\s*\{))/i,
+		inside: {
+			'rule': /@[\w-]+/
+			// See rest below
+		}
+	},
+	'url': /url\((?:(["'])(\\(?:\r\n|[\w\W])|(?!\1)[^\\\r\n])*\1|.*?)\)/i,
+	'selector': /[^\{\}\s][^\{\};]*?(?=\s*\{)/,
+	'string': {
+		pattern: /("|')(\\(?:\r\n|[\w\W])|(?!\1)[^\\\r\n])*\1/,
+		greedy: true
+	},
+	'property': /(\b|\B)[\w-]+(?=\s*:)/i,
+	'important': /\B!important\b/i,
+	'function': /[-a-z0-9]+(?=\()/i,
+	'punctuation': /[(){};:]/
+};
+
+Prism.languages.css['atrule'].inside.rest = Prism.util.clone(Prism.languages.css);
+
+if (Prism.languages.markup) {
+	Prism.languages.insertBefore('markup', 'tag', {
+		'style': {
+			pattern: /(<style[\w\W]*?>)[\w\W]*?(?=<\/style>)/i,
+			lookbehind: true,
+			inside: Prism.languages.css,
+			alias: 'language-css'
+		}
+	});
+	
+	Prism.languages.insertBefore('inside', 'attr-value', {
+		'style-attr': {
+			pattern: /\s*style=("|').*?\1/i,
+			inside: {
+				'attr-name': {
+					pattern: /^\s*style/i,
+					inside: Prism.languages.markup.tag.inside
+				},
+				'punctuation': /^\s*=\s*['"]|['"]\s*$/,
+				'attr-value': {
+					pattern: /.+/i,
+					inside: Prism.languages.css
+				}
+			},
+			alias: 'language-css'
+		}
+	}, Prism.languages.markup.tag);
+}
+
+/* **********************************************
+     Begin prism-clike.js
+********************************************** */
+
+Prism.languages.clike = {
+	'comment': [
+		{
+			pattern: /(^|[^\\])\/\*[\w\W]*?\*\//,
+			lookbehind: true
+		},
+		{
+			pattern: /(^|[^\\:])\/\/.*/,
+			lookbehind: true
+		}
+	],
+	'string': {
+		pattern: /(["'])(\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,
+		greedy: true
+	},
+	'class-name': {
+		pattern: /((?:\b(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/i,
+		lookbehind: true,
+		inside: {
+			punctuation: /(\.|\\)/
+		}
+	},
+	'keyword': /\b(if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/,
+	'boolean': /\b(true|false)\b/,
+	'function': /[a-z0-9_]+(?=\()/i,
+	'number': /\b-?(?:0x[\da-f]+|\d*\.?\d+(?:e[+-]?\d+)?)\b/i,
+	'operator': /--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*|\/|~|\^|%/,
+	'punctuation': /[{}[\];(),.:]/
+};
+
+
+/* **********************************************
+     Begin prism-javascript.js
+********************************************** */
+
+Prism.languages.javascript = Prism.languages.extend('clike', {
+	'keyword': /\b(as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|var|void|while|with|yield)\b/,
+	'number': /\b-?(0x[\dA-Fa-f]+|0b[01]+|0o[0-7]+|\d*\.?\d+([Ee][+-]?\d+)?|NaN|Infinity)\b/,
+	// Allow for all non-ASCII characters (See http://stackoverflow.com/a/2008444)
+	'function': /[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*(?=\()/i,
+	'operator': /--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*\*?|\/|~|\^|%|\.{3}/
+});
+
+Prism.languages.insertBefore('javascript', 'keyword', {
+	'regex': {
+		pattern: /(^|[^/])\/(?!\/)(\[.+?]|\\.|[^/\\\r\n])+\/[gimyu]{0,5}(?=\s*($|[\r\n,.;})]))/,
+		lookbehind: true,
+		greedy: true
+	}
+});
+
+Prism.languages.insertBefore('javascript', 'string', {
+	'template-string': {
+		pattern: /`(?:\\\\|\\?[^\\])*?`/,
+		greedy: true,
+		inside: {
+			'interpolation': {
+				pattern: /\$\{[^}]+\}/,
+				inside: {
+					'interpolation-punctuation': {
+						pattern: /^\$\{|\}$/,
+						alias: 'punctuation'
+					},
+					rest: Prism.languages.javascript
+				}
+			},
+			'string': /[\s\S]+/
+		}
+	}
+});
+
+if (Prism.languages.markup) {
+	Prism.languages.insertBefore('markup', 'tag', {
+		'script': {
+			pattern: /(<script[\w\W]*?>)[\w\W]*?(?=<\/script>)/i,
+			lookbehind: true,
+			inside: Prism.languages.javascript,
+			alias: 'language-javascript'
+		}
+	});
+}
+
+Prism.languages.js = Prism.languages.javascript;
+
+/* **********************************************
+     Begin prism-file-highlight.js
+********************************************** */
+
+(function () {
+	if (typeof self === 'undefined' || !self.Prism || !self.document || !document.querySelector) {
+		return;
+	}
+
+	self.Prism.fileHighlight = function() {
+
+		var Extensions = {
+			'js': 'javascript',
+			'py': 'python',
+			'rb': 'ruby',
+			'ps1': 'powershell',
+			'psm1': 'powershell',
+			'sh': 'bash',
+			'bat': 'batch',
+			'h': 'c',
+			'tex': 'latex'
+		};
+
+		if(Array.prototype.forEach) { // Check to prevent error in IE8
+			Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+				var src = pre.getAttribute('data-src');
+
+				var language, parent = pre;
+				var lang = /\blang(?:uage)?-(?!\*)(\w+)\b/i;
+				while (parent && !lang.test(parent.className)) {
+					parent = parent.parentNode;
+				}
+
+				if (parent) {
+					language = (pre.className.match(lang) || [, ''])[1];
+				}
+
+				if (!language) {
+					var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+					language = Extensions[extension] || extension;
+				}
+
+				var code = document.createElement('code');
+				code.className = 'language-' + language;
+
+				pre.textContent = '';
+
+				code.textContent = 'Loading…';
+
+				pre.appendChild(code);
+
+				var xhr = new XMLHttpRequest();
+
+				xhr.open('GET', src, true);
+
+				xhr.onreadystatechange = function () {
+					if (xhr.readyState == 4) {
+
+						if (xhr.status < 400 && xhr.responseText) {
+							code.textContent = xhr.responseText;
+
+							Prism.highlightElement(code);
+						}
+						else if (xhr.status >= 400) {
+							code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+						}
+						else {
+							code.textContent = '✖ Error: File does not exist or is empty';
+						}
+					}
+				};
+
+				xhr.send(null);
+			});
+		}
+
+	};
+
+	document.addEventListener('DOMContentLoaded', self.Prism.fileHighlight);
+
+})();
+
+});
+___scope___.file("components/prism-typescript.js", function(exports, require, module, __filename, __dirname){
+
+Prism.languages.typescript = Prism.languages.extend('javascript', {
+	'keyword': /\b(break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|false|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|package|private|protected|public|return|set|static|super|switch|this|throw|true|try|typeof|var|void|while|with|yield|module|declare|constructor|string|Function|any|number|boolean|Array|enum)\b/
+});
+
+Prism.languages.ts = Prism.languages.typescript;
+});
+___scope___.file("components/prism-jade.js", function(exports, require, module, __filename, __dirname){
+
+(function(Prism) {
+	// TODO:
+	// - Add CSS highlighting inside <style> tags
+	// - Add support for multi-line code blocks
+	// - Add support for interpolation #{} and !{}
+	// - Add support for tag interpolation #[]
+	// - Add explicit support for plain text using |
+	// - Add support for markup embedded in plain text
+
+	Prism.languages.jade = {
+
+		// Multiline stuff should appear before the rest
+
+		// This handles both single-line and multi-line comments
+		'comment': {
+			pattern: /(^([\t ]*))\/\/.*((?:\r?\n|\r)\2[\t ]+.+)*/m,
+			lookbehind: true
+		},
+
+		// All the tag-related part is in lookbehind
+		// so that it can be highlighted by the "tag" pattern
+		'multiline-script': {
+			pattern: /(^([\t ]*)script\b.*\.[\t ]*)((?:\r?\n|\r(?!\n))(?:\2[\t ]+.+|\s*?(?=\r?\n|\r)))+/m,
+			lookbehind: true,
+			inside: {
+				rest: Prism.languages.javascript
+			}
+		},
+
+		// See at the end of the file for known filters
+		'filter': {
+			pattern: /(^([\t ]*)):.+((?:\r?\n|\r(?!\n))(?:\2[\t ]+.+|\s*?(?=\r?\n|\r)))+/m,
+			lookbehind: true,
+			inside: {
+				'filter-name': {
+					pattern: /^:[\w-]+/,
+					alias: 'variable'
+				}
+			}
+		},
+
+		'multiline-plain-text': {
+			pattern: /(^([\t ]*)[\w\-#.]+\.[\t ]*)((?:\r?\n|\r(?!\n))(?:\2[\t ]+.+|\s*?(?=\r?\n|\r)))+/m,
+			lookbehind: true
+		},
+		'markup': {
+			pattern: /(^[\t ]*)<.+/m,
+			lookbehind: true,
+			inside: {
+				rest: Prism.languages.markup
+			}
+		},
+		'doctype': {
+			pattern: /((?:^|\n)[\t ]*)doctype(?: .+)?/,
+			lookbehind: true
+		},
+
+		// This handle all conditional and loop keywords
+		'flow-control': {
+			pattern: /(^[\t ]*)(?:if|unless|else|case|when|default|each|while)\b(?: .+)?/m,
+			lookbehind: true,
+			inside: {
+				'each': {
+					pattern: /^each .+? in\b/,
+					inside: {
+						'keyword': /\b(?:each|in)\b/,
+						'punctuation': /,/
+					}
+				},
+				'branch': {
+					pattern: /^(?:if|unless|else|case|when|default|while)\b/,
+					alias: 'keyword'
+				},
+				rest: Prism.languages.javascript
+			}
+		},
+		'keyword': {
+			pattern: /(^[\t ]*)(?:block|extends|include|append|prepend)\b.+/m,
+			lookbehind: true
+		},
+		'mixin': [
+			// Declaration
+			{
+				pattern: /(^[\t ]*)mixin .+/m,
+				lookbehind: true,
+				inside: {
+					'keyword': /^mixin/,
+					'function': /\w+(?=\s*\(|\s*$)/,
+					'punctuation': /[(),.]/
+				}
+			},
+			// Usage
+			{
+				pattern: /(^[\t ]*)\+.+/m,
+				lookbehind: true,
+				inside: {
+					'name': {
+						pattern: /^\+\w+/,
+						alias: 'function'
+					},
+					'rest': Prism.languages.javascript
+				}
+			}
+		],
+		'script': {
+			pattern: /(^[\t ]*script(?:(?:&[^(]+)?\([^)]+\))*[\t ]+).+/m,
+			lookbehind: true,
+			inside: {
+				rest: Prism.languages.javascript
+			}
+		},
+
+		'plain-text': {
+			pattern: /(^[\t ]*(?!-)[\w\-#.]*[\w\-](?:(?:&[^(]+)?\([^)]+\))*\/?[\t ]+).+/m,
+			lookbehind: true
+		},
+		'tag': {
+			pattern: /(^[\t ]*)(?!-)[\w\-#.]*[\w\-](?:(?:&[^(]+)?\([^)]+\))*\/?:?/m,
+			lookbehind: true,
+			inside: {
+				'attributes': [
+					{
+						pattern: /&[^(]+\([^)]+\)/,
+						inside: {
+							rest: Prism.languages.javascript
+						}
+					},
+					{
+						pattern: /\([^)]+\)/,
+						inside: {
+							'attr-value': {
+								pattern: /(=\s*)(?:\{[^}]*\}|[^,)\r\n]+)/,
+								lookbehind: true,
+								inside: {
+									rest: Prism.languages.javascript
+								}
+							},
+							'attr-name': /[\w-]+(?=\s*!?=|\s*[,)])/,
+							'punctuation': /[!=(),]+/
+						}
+					}
+				],
+				'punctuation': /:/
+			}
+		},
+		'code': [
+			{
+				pattern: /(^[\t ]*(?:-|!?=)).+/m,
+				lookbehind: true,
+				inside: {
+					rest: Prism.languages.javascript
+				}
+			}
+		],
+		'punctuation': /[.\-!=|]+/
+	};
+
+	var filter_pattern = '(^([\\t ]*)):{{filter_name}}((?:\\r?\\n|\\r(?!\\n))(?:\\2[\\t ]+.+|\\s*?(?=\\r?\\n|\\r)))+';
+
+	// Non exhaustive list of available filters and associated languages
+	var filters = [
+		{filter:'atpl',language:'twig'},
+		{filter:'coffee',language:'coffeescript'},
+		'ejs',
+		'handlebars',
+		'hogan',
+		'less',
+		'livescript',
+		'markdown',
+		'mustache',
+		'plates',
+		{filter:'sass',language:'scss'},
+		'stylus',
+		'swig'
+
+	];
+	var all_filters = {};
+	for (var i = 0, l = filters.length; i < l; i++) {
+		var filter = filters[i];
+		filter = typeof filter === 'string' ? {filter: filter, language: filter} : filter;
+		if (Prism.languages[filter.language]) {
+			all_filters['filter-' + filter.filter] = {
+				pattern: RegExp(filter_pattern.replace('{{filter_name}}', filter.filter), 'm'),
+				lookbehind: true,
+				inside: {
+					'filter-name': {
+						pattern: /^:[\w-]+/,
+						alias: 'variable'
+					},
+					rest: Prism.languages[filter.language]
+				}
+			}
+		}
+	}
+
+	Prism.languages.insertBefore('jade', 'filter', all_filters);
+
+}(Prism));
+});
+return ___scope___.entry = "prism.js";
 });
 FuseBox.pkg("velocity-animate", {}, function(___scope___){
 ___scope___.file("velocity.js", function(exports, require, module, __filename, __dirname){
