@@ -2,7 +2,7 @@
  * @license
  * Copyright Davinchi. All Rights Reserved.
  */
-import {$, EventEmitterFactory, Resource, ResourceController,ResourceSequence} from "@haztivity/core/index";
+import {$, EventEmitterFactory, Resource, ResourceController,ResourceSequence} from "@haztivity/core";
 import * as velocity from "velocity-animate";
 import * as velocityui from "velocity-animate/velocity.ui";
 import {HzAnimSequence, IStepConfig} from "./HzAnimSequence";

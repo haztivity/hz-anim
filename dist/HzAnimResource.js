@@ -20,7 +20,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @license
  * Copyright Davinchi. All Rights Reserved.
  */
-var index_1 = require("@haztivity/core/index");
+var core_1 = require("@haztivity/core");
 var velocity = require("velocity-animate");
 var velocityui = require("velocity-animate/velocity.ui");
 var HzAnimSequence_1 = require("./HzAnimSequence");
@@ -117,7 +117,7 @@ var HzAnimResource = HzAnimResource_1 = (function (_super) {
         this._eventEmitter.off("." + HzAnimResource_1.NAMESPACE);
         this._$element.off("." + HzAnimResource_1.NAMESPACE);
         this._$element.on(this._options.on + "." + this._namespace, { instance: this }, this._onEventTriggered);
-        this._eventEmitter.on(index_1.ResourceSequence.ON_RESOURCE_STATE_CHANGE + "." + HzAnimResource_1.NAMESPACE, { instance: this }, this._onSequenceStateChange);
+        this._eventEmitter.on(core_1.ResourceSequence.ON_RESOURCE_STATE_CHANGE + "." + HzAnimResource_1.NAMESPACE, { instance: this }, this._onSequenceStateChange);
     };
     HzAnimResource.prototype._onEnd = function () {
         this._markAsCompleted();
@@ -126,52 +126,52 @@ var HzAnimResource = HzAnimResource_1 = (function (_super) {
     };
     HzAnimResource.prototype._onSequenceStateChange = function (e, resource, state) {
         var $triggers = resource._$(resource._options.to);
-        $triggers.removeClass(index_1.ResourceSequence.CLASS_RUNNING + " " + index_1.ResourceSequence.CLASS_COMPLETED + " " + index_1.ResourceSequence.CLASS_WAITING);
+        $triggers.removeClass(core_1.ResourceSequence.CLASS_RUNNING + " " + core_1.ResourceSequence.CLASS_COMPLETED + " " + core_1.ResourceSequence.CLASS_WAITING);
         switch (state) {
-            case index_1.ResourceSequence.STATES.completed:
-                $triggers.addClass(index_1.ResourceSequence.CLASS_COMPLETED);
+            case core_1.ResourceSequence.STATES.completed:
+                $triggers.addClass(core_1.ResourceSequence.CLASS_COMPLETED);
                 break;
-            case index_1.ResourceSequence.STATES.running:
-                $triggers.addClass(index_1.ResourceSequence.CLASS_RUNNING);
+            case core_1.ResourceSequence.STATES.running:
+                $triggers.addClass(core_1.ResourceSequence.CLASS_RUNNING);
                 break;
-            case index_1.ResourceSequence.STATES.waiting:
-                $triggers.addClass(index_1.ResourceSequence.CLASS_WAITING);
+            case core_1.ResourceSequence.STATES.waiting:
+                $triggers.addClass(core_1.ResourceSequence.CLASS_WAITING);
                 break;
         }
     };
     HzAnimResource.prototype.disable = function () {
         if (_super.prototype.disable.call(this)) {
             this._$element.attr("disabled", "disabled")
-                .addClass(index_1.ResourceController.CLASS_DISABLED);
+                .addClass(core_1.ResourceController.CLASS_DISABLED);
             var $triggers = this._$(this._options.to);
             $triggers.attr("disabled", "disabled")
-                .addClass(index_1.ResourceController.CLASS_DISABLED);
+                .addClass(core_1.ResourceController.CLASS_DISABLED);
         }
     };
     HzAnimResource.prototype.enable = function () {
         if (_super.prototype.enable.call(this)) {
             this._$element.removeAttr("disabled")
-                .removeClass(index_1.ResourceController.CLASS_DISABLED);
+                .removeClass(core_1.ResourceController.CLASS_DISABLED);
             var $triggers = this._$(this._options.to);
             $triggers.removeAttr("disabled")
-                .removeClass(index_1.ResourceController.CLASS_DISABLED);
+                .removeClass(core_1.ResourceController.CLASS_DISABLED);
         }
     };
     HzAnimResource.prototype.getInstance = function () {
         return this;
     };
     return HzAnimResource;
-}(index_1.ResourceController));
+}(core_1.ResourceController));
 HzAnimResource.NAMESPACE = "hzAnim";
 HzAnimResource._DEFAULT_OPTIONS = {
     duration: 500
 };
 HzAnimResource = HzAnimResource_1 = __decorate([
-    index_1.Resource({
+    core_1.Resource({
         name: "HzAnim",
         dependencies: [
-            index_1.$,
-            index_1.EventEmitterFactory
+            core_1.$,
+            core_1.EventEmitterFactory
         ]
     })
 ], HzAnimResource);
