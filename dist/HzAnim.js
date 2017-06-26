@@ -11,3 +11,4 @@ exports.HzAnimResource = HzAnimResource_1.HzAnimResource;
  */
 var HzAnimResource_2 = require("./HzAnimResource");
 exports.HzAnim = HzAnimResource_2.HzAnimResource;
+//# sourceMappingURL=HzAnim.js.map

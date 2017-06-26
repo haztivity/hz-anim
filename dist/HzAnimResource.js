@@ -49,7 +49,7 @@ var HzAnimResource = HzAnimResource_1 = (function (_super) {
         this._namespace = HzAnimResource_1.NAMESPACE + this._id;
         this._options = options;
         this._options.to = this._options.to || this._$element;
-        this._options.with = this._$.extend(true, HzAnimResource_1._DEFAULT_OPTIONS, this._options.with);
+        this._options.with = this._$.extend(true, {}, HzAnimResource_1._DEFAULT_OPTIONS, this._options.with);
         this._config = config;
         this._assignEvents();
     };
@@ -177,3 +177,4 @@ HzAnimResource = HzAnimResource_1 = __decorate([
 ], HzAnimResource);
 exports.HzAnimResource = HzAnimResource;
 var HzAnimResource_1;
+//# sourceMappingURL=HzAnimResource.js.map
