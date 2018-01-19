@@ -11,7 +11,7 @@ div
             See [velocity.js](http://velocityjs.org/#uiPack) Effects:Pre-Registered
             ### Example
             #### Pug
-            ```jade
+            ```pug
             button(data-hz-resource="HzAnim"
                     data-opt-hz-anim-on="click"
                     data-opt-hz-anim-do="transition.fadeOut") Do fadeOut
@@ -40,7 +40,7 @@ div
             For more info see [velocity.js properties](http://velocityjs.org/#propertiesMap)
             ### Example
             #### Pug
-            ```jade
+            ```pug
             // Single property
             button(data-hz-resource="HzAnim"
                    data-opt-hz-anim-on="click"
@@ -85,7 +85,7 @@ div
             5. The array allows using multiple JSON objects that will be executed in order.
             ### Example
             #### Pug
-            ```jade
+            ```pug
             button(data-hz-resource="HzAnim"
                    data-opt-hz-anim-on="click"
                    data-opt-hz-anim-do='[{"backgroundColor":"#ff0000"},{"height":"8em","width":"30em"},{"color":"#fff"}]') Do first background, then height and width, then color
@@ -104,12 +104,12 @@ div
             ## Multiple configurations
             If you don't like array notation, don't worry, it's possible to do the same with multiple configuration.
             To specify more than one configuration, use
-            ```jade
+            ```pug
             data-opt-hz-anim-do-{stepIndex}="properties"
             ```
             ### Example
             #### Pug
-            ```jade
+            ```pug
             button(data-hz-resource="HzAnim"
                    data-opt-hz-anim-on="click"
                    data-opt-hz-anim-do='{"backgroundColor":"#ff0000"}'
@@ -135,7 +135,7 @@ div
         :markdown-it(linkify)
             This also allow specifying different configurations for each step, like the delay or the easing
             #### Pug
-            ```jade
+            ```pug
             button(data-hz-resource="HzAnim"
                   data-opt-hz-anim-on="click"
                   data-opt-hz-anim-do={"backgroundColor":"#ff0000"}

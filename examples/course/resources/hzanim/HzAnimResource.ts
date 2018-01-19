@@ -2,7 +2,7 @@
  * @license
  * Copyright Davinchi. All Rights Reserved.
  */
-import {$, EventEmitterFactory, Resource, ResourceController,ResourceSequence} from "@haztivity/core/index";
+import {$, EventEmitterFactory, Resource, ResourceController,ResourceSequence} from "@haztivity/core";
 import * as velocity from "velocity-animate";
 import * as velocityui from "velocity-animate/velocity.ui";
 import {HzAnimSequence, IStepConfig} from "./HzAnimSequence";
@@ -33,11 +33,14 @@ interface IOptions {
 export class HzAnimResource extends ResourceController {
     public static readonly NAMESPACE = "hzAnim";
     protected static readonly _DEFAULT_OPTIONS = {
-        duration:500
+        repeatable:true,
+        with:{
+            duration:500
+        }
     };
     protected _id: number;
     protected _namespace: string;
-
+    protected running:boolean = false;
     /**
      * @description Inicializa el objeto al inyectarse
      * @param {any}     options     Opciones
@@ -47,9 +50,8 @@ export class HzAnimResource extends ResourceController {
     public init(options: any, config?: any): any {
         this._id = new Date().getTime();
         this._namespace = HzAnimResource.NAMESPACE + this._id;
-        this._options = options;
+        this._options = this._$.extend(true,{},HzAnimResource._DEFAULT_OPTIONS,options);
         this._options.to = this._options.to || this._$element;
-        this._options.with = this._$.extend(true,{},HzAnimResource._DEFAULT_OPTIONS,this._options.with);
         this._config = config;
         this._assignEvents();
     }
@@ -70,6 +72,7 @@ export class HzAnimResource extends ResourceController {
             this._runSequenceStep(stepIndex, sequence);
         }else{
             this._markAsCompleted();
+            this.running = false;
         }
     }
     protected _runSequenceStep(stepIndex,sequence:HzAnimSequence[]){
@@ -77,7 +80,7 @@ export class HzAnimResource extends ResourceController {
         if(step){
             let config:IStepConfig = step.getConfig();
             step.run().then(this._onSequenceStepCompleted.bind(this,stepIndex+1,sequence));
-            if (config.withConfig && config.withConfig.loop) {
+            if (config.withConfig && config.withConfig.loop === true) {
                 this._markAsCompleted();
             }
         }
@@ -87,8 +90,9 @@ export class HzAnimResource extends ResourceController {
         this._runSequenceStep(0,sequence);
     }
     public run() {
-        if(!this.isDisabled()) {
+        if(!this.isDisabled() && !this.running && (this.isCompleted() == false || this._options.repeatable)) {
             if(this._options.to) {
+                this.running = true;
                 let sequence = [this._sequenceFactory(this._options.to, this._options.do, this._options.with)];
                 let next = true,
                     index = 1;
@@ -123,9 +127,6 @@ export class HzAnimResource extends ResourceController {
         this._$element.off("."+HzAnimResource.NAMESPACE);
         this._$element.on(`${this._options.on}.${this._namespace}`, {instance: this}, this._onEventTriggered);
         this._eventEmitter.on(ResourceSequence.ON_RESOURCE_STATE_CHANGE+"."+HzAnimResource.NAMESPACE,{instance:this},this._onSequenceStateChange);
-    }
-    protected _onEnd() {
-        this._markAsCompleted();
     }
 
     protected _onError() {

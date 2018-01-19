@@ -33,11 +33,14 @@ velocityui;
  * @requires EventEmitterFactory
  * @extends ResourceController
  */
-var HzAnimResource = HzAnimResource_1 = (function (_super) {
+var HzAnimResource = /** @class */ (function (_super) {
     __extends(HzAnimResource, _super);
     function HzAnimResource() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.running = false;
+        return _this;
     }
+    HzAnimResource_1 = HzAnimResource;
     /**
      * @description Inicializa el objeto al inyectarse
      * @param {any}     options     Opciones
@@ -47,9 +50,8 @@ var HzAnimResource = HzAnimResource_1 = (function (_super) {
     HzAnimResource.prototype.init = function (options, config) {
         this._id = new Date().getTime();
         this._namespace = HzAnimResource_1.NAMESPACE + this._id;
-        this._options = options;
+        this._options = this._$.extend(true, {}, HzAnimResource_1._DEFAULT_OPTIONS, options);
         this._options.to = this._options.to || this._$element;
-        this._options.with = this._$.extend(true, {}, HzAnimResource_1._DEFAULT_OPTIONS, this._options.with);
         this._config = config;
         this._assignEvents();
     };
@@ -70,6 +72,7 @@ var HzAnimResource = HzAnimResource_1 = (function (_super) {
         }
         else {
             this._markAsCompleted();
+            this.running = false;
         }
     };
     HzAnimResource.prototype._runSequenceStep = function (stepIndex, sequence) {
@@ -77,7 +80,7 @@ var HzAnimResource = HzAnimResource_1 = (function (_super) {
         if (step) {
             var config = step.getConfig();
             step.run().then(this._onSequenceStepCompleted.bind(this, stepIndex + 1, sequence));
-            if (config.withConfig && config.withConfig.loop) {
+            if (config.withConfig && config.withConfig.loop === true) {
                 this._markAsCompleted();
             }
         }
@@ -86,8 +89,9 @@ var HzAnimResource = HzAnimResource_1 = (function (_super) {
         this._runSequenceStep(0, sequence);
     };
     HzAnimResource.prototype.run = function () {
-        if (!this.isDisabled()) {
+        if (!this.isDisabled() && !this.running && (this.isCompleted() == false || this._options.repeatable)) {
             if (this._options.to) {
+                this.running = true;
                 var sequence = [this._sequenceFactory(this._options.to, this._options.do, this._options.with)];
                 var next = true, index = 1;
                 do {
@@ -118,9 +122,6 @@ var HzAnimResource = HzAnimResource_1 = (function (_super) {
         this._$element.off("." + HzAnimResource_1.NAMESPACE);
         this._$element.on(this._options.on + "." + this._namespace, { instance: this }, this._onEventTriggered);
         this._eventEmitter.on(core_1.ResourceSequence.ON_RESOURCE_STATE_CHANGE + "." + HzAnimResource_1.NAMESPACE, { instance: this }, this._onSequenceStateChange);
-    };
-    HzAnimResource.prototype._onEnd = function () {
-        this._markAsCompleted();
     };
     HzAnimResource.prototype._onError = function () {
     };
@@ -160,21 +161,24 @@ var HzAnimResource = HzAnimResource_1 = (function (_super) {
     HzAnimResource.prototype.getInstance = function () {
         return this;
     };
+    HzAnimResource.NAMESPACE = "hzAnim";
+    HzAnimResource._DEFAULT_OPTIONS = {
+        repeatable: true,
+        with: {
+            duration: 500
+        }
+    };
+    HzAnimResource = HzAnimResource_1 = __decorate([
+        core_1.Resource({
+            name: "HzAnim",
+            dependencies: [
+                core_1.$,
+                core_1.EventEmitterFactory
+            ]
+        })
+    ], HzAnimResource);
     return HzAnimResource;
+    var HzAnimResource_1;
 }(core_1.ResourceController));
-HzAnimResource.NAMESPACE = "hzAnim";
-HzAnimResource._DEFAULT_OPTIONS = {
-    duration: 500
-};
-HzAnimResource = HzAnimResource_1 = __decorate([
-    core_1.Resource({
-        name: "HzAnim",
-        dependencies: [
-            core_1.$,
-            core_1.EventEmitterFactory
-        ]
-    })
-], HzAnimResource);
 exports.HzAnimResource = HzAnimResource;
-var HzAnimResource_1;
 //# sourceMappingURL=HzAnimResource.js.map

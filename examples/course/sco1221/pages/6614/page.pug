@@ -1,0 +1,100 @@
+div
+    div.markdown-wrapper
+        :markdown-it(linkify)
+            ## Loops
+            Velocity.js allows to use loop animations.
+
+            To set up a loop animation use the `loop` option from Velocity.js. Check the doc [here](http://velocityjs.org/#loop)
+
+            The loop has two steps:
+            1. Apply the changes specified
+            2. Reverse to the original state
+
+            For example, in this case, the animation will apply the rotation of 45deg and then will be reversed to the prior state.
+            ### Pug
+            ```pug
+            button(
+                data-hz-resource='HzAnim',
+                data-opt-hz-anim-on='click',
+                data-opt-hz-anim-do={"rotateX":"45deg"},
+                data-opt-hz-anim-with={loop:true}
+            ) Go and back
+            ```
+            ### HTML
+            ```html
+            <button
+                data-hz-resource="HzAnim"
+                data-opt-hz-anim-on="click"
+                data-opt-hz-anim-do='{"rotateZ":"45deg"}'
+                data-opt-hz-anim-with='{"loop":true}'
+            >
+                Go and back for ever&;ever
+            </button>
+            ```
+        button(
+            data-hz-resource='HzAnim',
+            data-opt-hz-anim-on='click',
+            data-opt-hz-anim-do='{"rotateZ":"45deg"}',
+            data-opt-hz-anim-with={loop:true}
+        ) Go and back for ever&ever
+    div.markdown-wrapper
+        :markdown-it(linkify)
+            ### Resource completion in infinite loops
+            If a `loop:true` (infinite loop) is specified in a step, the resource will be marked as completed when the step with the loop starts and no more steps will be executed.
+
+            In this case, the step 1 changes the background color.
+
+            After the step 1, the step 2 is executed. The step 2 has a infinite loop so the resource is marked as completed just before executing the step 2.
+
+            The step 3 will never be executed.
+            #### Pug
+            ```pug
+            button(
+                data-hz-resource='HzAnim',
+                data-opt-hz-anim-on='click',
+                data-opt-hz-anim-do={"backgroundColor":"#ff0000"},
+                data-opt-hz-anim-do-2={"rotateX":"45deg"},
+                data-opt-hz-anim-with-2={loop:true},
+                data-opt-hz-anim-do-3={"backgroundColor":"#fff"}
+            ) Go and back
+            ```
+            #### HTML
+            ```html
+            <button
+                data-hz-resource='HzAnim',
+                data-opt-hz-anim-on='click',
+                data-opt-hz-anim-do='{"backgroundColor":"#ff0000"}',
+                data-opt-hz-anim-do-2='{"rotateX":"45deg"}',
+                data-opt-hz-anim-with-2='{"loop":true},
+                data-opt-hz-anim-do-3='{"backgroundColor":"#fff"}'
+            >
+                Go and back for ever&ever
+            </button>
+            ```
+            ### Loop over a number of times
+            Also is possible to execute the loop a certain number of times. Set the loop with the numer of times to repeat the animation
+            #### Pug
+            ```pug
+            button(
+                data-hz-resource='HzAnim',
+                data-opt-hz-anim-on='click',
+                data-opt-hz-anim-do='{"rotateZ":"45deg"}',
+                data-opt-hz-anim-with={loop: 3}
+            ) Go and back 3 times
+            ```
+            #### HTML
+            ```html
+            <button
+                data-hz-resource="HzAnim"
+                data-opt-hz-anim-on="click"
+                data-opt-hz-anim-do='{"rotateZ":"45deg"}'
+                data-opt-hz-anim-with='{"loop":3}'
+            >
+                Go and back 3 times
+            </button>
+        button(
+            data-hz-resource='HzAnim',
+            data-opt-hz-anim-on='click',
+            data-opt-hz-anim-do='{"rotateZ":"45deg"}',
+            data-opt-hz-anim-with={loop: 3}
+        ) Go and back 3 times

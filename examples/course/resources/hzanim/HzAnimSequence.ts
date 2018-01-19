@@ -13,8 +13,8 @@ export class HzAnimSequence{
     protected _complete:boolean = false;
     protected _sequence:any;
     protected _config:any;
-    protected _
     protected _deferred:JQueryDeferred<any>;
+    protected _stepConfig:IStepConfig;
     constructor(protected _$:JQueryStatic){
 
     }
@@ -100,6 +100,6 @@ export class HzAnimSequence{
         return this._deferred.promise();
     }
     getConfig():IStepConfig{
-        return this._config;
+        return this._stepConfig;
     }
 }

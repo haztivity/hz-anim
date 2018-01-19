@@ -13,8 +13,8 @@ import "prismjs/components/prism-pug";
 import {HzAnimResource} from "../../../resources/hzanim/HzAnim";
 export let page: PageRegister = PageFactory.createPage(
     {
-        name: "6613",
-        title:"Multiple targets",
+        name: "6615",
+        title:"Reverse",
         resources: [
             HzAnimResource
         ],

@@ -1,0 +1,83 @@
+div
+    div.markdown-wrapper
+        :markdown-it(linkify)
+            ## Reverse
+            Velocity.js allows to animate back to the previous values using `reverse`. Check the doc [here](http://velocityjs.org/#reverse)
+
+            Simpy set `reverse` in the `do` option
+
+            ### Pug
+            ```pug
+            button.target(
+                data-hz-resource='HzAnim',
+                data-opt-hz-anim-on='click',
+                data-opt-hz-anim-do={"rotateZ":"45deg"}
+            ) Rotate
+            button(
+                data-hz-resource='HzAnim',
+                data-opt-hz-anim-on='click',
+                data-opt-hz-anim-to='.target',
+                data-opt-hz-anim-do='reverse'
+            ) Reverse .target
+            ```
+            ### HTML
+            ```html
+            <button
+                class="target"
+                data-hz-resource="HzAnim"
+                data-opt-hz-anim-on="click"
+                data-opt-hz-anim-do='{"rotateZ":"45deg"}'
+            >
+                Rotate
+            </button>
+            <button
+                class="target"
+                data-hz-resource="HzAnim"
+                data-opt-hz-anim-on="click"
+                data-opt-hz-anim-to=".target"
+                data-opt-hz-anim-do='reverse'
+            >
+                Reverse .target
+            </button>
+            ```
+        button.target(
+            data-hz-resource='HzAnim',
+            data-opt-hz-anim-on='click',
+            data-opt-hz-anim-do='{"rotateZ":"45deg"}'
+        ) Rotate
+        button(
+            data-hz-resource='HzAnim',
+            data-opt-hz-anim-on='click',
+            data-opt-hz-anim-to='.target',
+            data-opt-hz-anim-do='reverse'
+        ) Reverse .target
+    div.markdown-wrapper
+        :markdown-it(linkify)
+            Please, note that `reverse` only applies to the latest step and could not be stacked.
+            ```pug
+            button(
+                data-hz-resource='HzAnim',
+                data-opt-hz-anim-on='click',
+                data-opt-hz-anim-do={"backgroundColor":"#ff0000"},
+                data-opt-hz-anim-do-2=[{"width":"10em","height":"10em"}],
+                data-opt-hz-anim-do-3="reverse"
+            ) Go and back
+            ```
+            ```HTML
+            <button
+                data-hz-resource='HzAnim'
+                data-opt-hz-anim-on='click'
+                data-opt-hz-anim-do='{"backgroundColor":"#ff0000"}'
+                data-opt-hz-anim-do-2='[{"width":"10em","height":"10em"}]'
+                data-opt-hz-anim-do-3="reverse"
+            >
+                Go and back
+            </button>
+            ```
+        button(
+            data-hz-resource='HzAnim',
+            data-opt-hz-anim-on='click',
+            data-opt-hz-anim-do='{"backgroundColor":"#ff0000"}',
+            data-opt-hz-anim-do-2=[{"width": "10em", "height": "10em"}],
+            data-opt-hz-anim-do-3="reverse"
+        ) Go and back

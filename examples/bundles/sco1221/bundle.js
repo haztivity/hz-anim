@@ -10313,13 +10313,17 @@ var hz_navbar_1 = require("@haztivity/hz-navbar");
 var page_1 = require("./pages/6611/page");
 var page_2 = require("./pages/6612/page");
 var page_3 = require("./pages/6613/page");
+var page_4 = require("./pages/6614/page");
+var page_5 = require("./pages/6615/page");
 var sco = core_1.ScoFactory.createSco({
     name: "1221",
     template: sco_pug_1.default,
     pages: [
         page_1.page,
         page_2.page,
-        page_3.page
+        page_3.page,
+        page_4.page,
+        page_5.page
     ],
     components: [
         hz_navbar_1.HzNavbarComponent
@@ -10366,7 +10370,7 @@ var core_1 = require("@haztivity/core");
 var page_pug_1 = require("./page.pug");
 var Prism = require("prismjs");
 require("prismjs/components/prism-typescript");
-require("prismjs/components/prism-jade");
+require("prismjs/components/prism-pug");
 /**
  * use import {HzAnimResource} from "@haztivity/hz-anim"
  */
@@ -10387,7 +10391,7 @@ exports.page.on(core_1.PageController.ON_SHOW, null, function (eventObject, $pag
 });
 ___scope___.file("sco1221/pages/6611/page.pug", function(exports, require, module, __filename, __dirname){
 
-module.exports.default =  "\n<div>\n  <div class=\"markdown-wrapper\"><h1>hz-dialog</h1>\n<p>hz-anim helps to perform animations synchronizing  with the haztivity resources flow.</p>\n<p>hz-anim uses <a href=\"http://velocityjs.org/\">velocity.js</a> under the hood.</p>\n<h2>Dependencies</h2>\n<ul>\n<li>JQuery</li>\n<li>velocity.js</li>\n<li>haztivity/core</li>\n</ul>\n<h2>Usage</h2>\n<ol>\n<li>Import @haztivity/hz-anim</li>\n<li>Add HzAnim to the page</li>\n<li>Assign an event to listen with <code>data-hz-anim-on</code></li>\n<li>Set the properties o transition to anim with <code>data-opt-hz-anim-do</code></li>\n</ol>\n<h4>Ts</h4>\n<pre><code class=\"language-typescript\">import {PageFactory, Page, PageController, PageRegister} from &quot;@haztivity/core&quot;;\nimport template from &quot;./page.pug&quot;;\nimport {HzAnimResource} from &quot;@haztivity/hz-anim&quot;;\nexport let page: PageRegister = PageFactory.createPage(\n    {\n        name: &quot;myPage&quot;,\n        resources: [\n            HzAnimResource\n        ],\n        template: template\n    }\n);\n</code></pre>\n<h4>Pug</h4>\n<pre><code class=\"language-jade\">button(data-hz-resource=&quot;HzAnim&quot;\n        data-opt-hz-anim-on=&quot;click&quot;\n        data-opt-hz-anim-do={&quot;rotateZ&quot;:[180,0]}) Do to me\n</code></pre>\n<p>or</p>\n<h4>HTML</h4>\n<pre><code class=\"language-html\">&lt;button data-hz-resource=&quot;HzAnim&quot;\n        data-opt-hz-anim-on=&quot;click&quot;\n        data-opt-hz-anim-do=&quot;{'rotateZ':[180,0]}&quot;&gt;\n        Do to me\n&lt;/button&gt;\n</code></pre>\n<p>This will perform a rotate in the Z axis from 0 to 180 degrees.</p>\n<p>By default, the animation is performed to the item itself, to see how to apply the animation to other element plase go to <a href=\"#markdown-header-apply-animation-to-other-targets\">Apply animation to other targets</a></p>\n<p>HzAnim uses <a href=\"http://velocityjs.org/\">velocity.js</a>, a very <strong>efficient</strong> js library to perform animations.</p>\n<p>It's possible to animate any of the properties and transitions available in velocity.js and use all the options.</p>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;rotateZ&quot;:[180,0]}\">Do to me</button>\n  </div>\n  <div class=\"markdown-wrapper\"><h2>Apply animation to other targets</h2>\n<p>To apply the transforms to other elements, use the <code>data-opt-hz-anim-to</code>, accepts any jquery valid selector.\nSee <a href=\"https://api.jquery.com/category/selectors/\">jquery selectors</a> for more info.</p>\n<h3>Example</h3>\n<h4>Pug</h4>\n<pre><code class=\"language-jade\">button(data-hz-resource=&quot;HzAnim&quot;\n        data-opt-hz-anim-on=&quot;click&quot;\n        data-opt-hz-anim-do={&quot;rotateZ&quot;:[180,0]}\n        data-opt-hz-anim-to=&quot;.target&quot;) Do to .target\n\nbutton.target Target\n</code></pre>\n<p>or</p>\n<h4>HTML</h4>\n<pre><code class=\"language-html\">&lt;button data-hz-resource=&quot;HzAnim&quot;\n        data-opt-hz-anim-on=&quot;cli###ck&quot;\n        data-opt-hz-anim-do=&quot;{'rotateZ':[180,0]}&quot;\n        data-opt-hz-anim-to=&quot;.target&quot;&gt;\n        Do to all .target\n&lt;/button&gt;\n&lt;button class=&quot;target&quot;&gt;Target&lt;/button&gt;\n</code></pre>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;rotateZ&quot;:[180,0]}\" data-opt-hz-anim-to=\".target\">Do to .target</button>\n    <button class=\"target\">.target</button>\n  </div>\n</div>";
+module.exports.default =  "\n<div>\n  <div class=\"markdown-wrapper\"><h1>hz-anim</h1>\n<p>hz-anim helps to perform animations synchronizing  with the haztivity resources flow.</p>\n<p>hz-anim uses <a href=\"http://velocityjs.org/\">velocity.js</a> under the hood.</p>\n<h2>Dependencies</h2>\n<ul>\n<li>JQuery</li>\n<li>velocity.js</li>\n<li>haztivity/core</li>\n</ul>\n<h2>Usage</h2>\n<ol>\n<li>Import @haztivity/hz-anim</li>\n<li>Add HzAnim to the page</li>\n<li>Assign an event to listen with <code>data-hz-anim-on</code></li>\n<li>Set the properties o transition to anim with <code>data-opt-hz-anim-do</code></li>\n</ol>\n<h4>Ts</h4>\n<pre><code class=\"language-typescript\">import {PageFactory, Page, PageController, PageRegister} from &quot;@haztivity/core&quot;;\nimport template from &quot;./page.pug&quot;;\nimport {HzAnimResource} from &quot;@haztivity/hz-anim&quot;;\nexport let page: PageRegister = PageFactory.createPage(\n    {\n        name: &quot;myPage&quot;,\n        resources: [\n            HzAnimResource\n        ],\n        template: template\n    }\n);\n</code></pre>\n<h4>Pug</h4>\n<pre><code class=\"language-pug\">button(\n    data-hz-resource=&quot;HzAnim&quot;\n    data-opt-hz-anim-on=&quot;click&quot;\n    data-opt-hz-anim-do={&quot;rotateZ&quot;:&quot;45deg&quot;}\n) Do to me\n</code></pre>\n<p>or</p>\n<h4>HTML</h4>\n<pre><code class=\"language-html\">&lt;button\n    data-hz-resource=&quot;HzAnim&quot;\n    data-opt-hz-anim-on=&quot;click&quot;\n    data-opt-hz-anim-do='{&quot;rotateZ&quot;:&quot;45deg&quot;}'\n&gt;\n    Do to me\n&lt;/button&gt;\n</code></pre>\n<p>This will perform a rotate in the Z axis from 45 degrees.</p>\n<p>By default, the animation is performed to the item itself, to see how to apply the animation to other element plase go to <a href=\"#markdown-header-apply-animation-to-other-targets\">Apply animation to other targets</a></p>\n<p>HzAnim uses <a href=\"http://velocityjs.org/\">velocity.js</a>, a very <strong>efficient</strong> js library to perform animations.</p>\n<p>It's possible to animate any of the properties and transitions available in velocity.js and use all the options.</p>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;rotateZ&quot;:&quot;45deg&quot;}\">Do to me</button>\n  </div>\n  <div class=\"markdown-wrapper\"><h2>Apply animation to other targets</h2>\n<p>To apply the transforms to other elements, use the <code>data-opt-hz-anim-to</code>, accepts any jquery valid selector.\nSee <a href=\"https://api.jquery.com/category/selectors/\">jquery selectors</a> for more info.</p>\n<h3>Example</h3>\n<h4>Pug</h4>\n<pre><code class=\"language-pug\">button(\n    data-hz-resource=&quot;HzAnim&quot;\n    data-opt-hz-anim-on=&quot;click&quot;\n    data-opt-hz-anim-do={&quot;rotateZ&quot;:&quot;45deg&quot;}\n    data-opt-hz-anim-to=&quot;.target&quot;\n) Do to .target\n\nbutton.target Target\n</code></pre>\n<p>or</p>\n<h4>HTML</h4>\n<pre><code class=\"language-html\">&lt;button\n    data-hz-resource=&quot;HzAnim&quot;\n    data-opt-hz-anim-on=&quot;cli###ck&quot;\n    data-opt-hz-anim-do='{&quot;rotateZ&quot;:&quot;45deg&quot;}'\n    data-opt-hz-anim-to=&quot;.target&quot;\n&gt;\n    Do to .target\n&lt;/button&gt;\n&lt;button class=&quot;target&quot;&gt;Target&lt;/button&gt;\n</code></pre>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;rotateZ&quot;:&quot;40deg&quot;}\" data-opt-hz-anim-to=\".target\">Do to .target</button>\n    <button class=\"target\">.target</button>\n  </div>\n  <div class=\"markdown-wrapper\"><h2>Increment / decrement</h2>\n<p>Velocity.js allows to increment/decrement a property, this is allows to create complex animations with an easiest configuration.</p>\n<p>To set an increment use <code>+=</code> and to decrement use <code>-=</code></p>\n<h3>Pug</h3>\n<pre><code class=\"language-pug\">button.targetIncrement(\n   data-hz-resource=&quot;HzAnim&quot;\n   data-opt-hz-anim-on=&quot;click&quot;\n   data-opt-hz-anim-do={&quot;rotateZ&quot;: &quot;+=45deg&quot;, &quot;scale&quot;: &quot;+=0.4&quot;,&quot;colorRed&quot;:&quot;+=80&quot;,&quot;marginRight&quot;:&quot;+=0.5em&quot;}\n) Increase\nbutton(\n   data-hz-resource=&quot;HzAnim&quot;\n   data-opt-hz-anim-to=&quot;.targetIncrement&quot;,\n   data-opt-hz-anim-on=&quot;click&quot;\n   data-opt-hz-anim-do={&quot;rotateZ&quot;: &quot;-=45deg&quot;, &quot;scale&quot;: &quot;-=0.4&quot;,&quot;colorRed&quot;:&quot;-=80&quot;,&quot;marginRight&quot;:&quot;-=0.5em&quot;}\n) Decrease\n</code></pre>\n<p>or</p>\n<h3>HTML</h3>\n<pre><code class=\"language-html\">&lt;button\n    class=&quot;targetIncrement&quot;\n    data-hz-resource=&quot;HzAnim&quot;\n    data-opt-hz-anim-on=&quot;click&quot;\n    data-opt-hz-anim-do='{&quot;rotateZ&quot;: &quot;+=45deg&quot;, &quot;scale&quot;: &quot;+=0.4&quot;,&quot;colorRed&quot;:&quot;+=80&quot;,&quot;marginRight&quot;:&quot;+=0.5em&quot;}'\n&gt;\n    Increase\n&lt;/button&gt;\n&lt;button\n    data-opt-hz-anim-to=&quot;.targetIncrement&quot;,\n    data-opt-hz-anim-on=&quot;click&quot;\n    data-opt-hz-anim-do='{&quot;rotateZ&quot;: &quot;-=45deg&quot;, &quot;scale&quot;: &quot;-=0.4&quot;,&quot;colorRed&quot;:&quot;-=80&quot;,&quot;marginRight&quot;:&quot;-=0.5em&quot;}'\n&gt;\n    Decrease\n&lt;/button&gt;\n</code></pre>\n\n    <button class=\"targetIncrement\" data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;rotateZ&quot;:&quot;+=45deg&quot;,&quot;scale&quot;:&quot;+=0.4&quot;,&quot;colorRed&quot;:&quot;+=80&quot;,&quot;marginRight&quot;:&quot;+=0.5em&quot;}\">Increase</button>\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-to=\".targetIncrement\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;rotateZ&quot;:&quot;-=45deg&quot;,&quot;scale&quot;:&quot;-=0.4&quot;,&quot;colorRed&quot;:&quot;-=80&quot;,&quot;marginRight&quot;:&quot;-=0.5em&quot;}\">Decrease</button>\n  </div>\n  <div class=\"markdown-wrapper\"><h2>Repeatable</h2>\n<p>By default, the animation is repeatable and could be performed multiple times.</p>\n<p>For one time execution, set the <code>repeatable</code> option to false</p>\n<h3>Pug</h3>\n<pre><code class=\"language-pug\">    button(\n        data-hz-resource=&quot;HzAnim&quot;\n        data-opt-hz-anim-repeatable=&quot;false&quot;\n        data-opt-hz-anim-on=&quot;click&quot;\n        data-opt-hz-anim-do={&quot;rotateZ&quot;: &quot;+=45deg&quot;}\n    ) Do to me one time\n</code></pre>\n<p>or</p>\n<h3>HTML</h3>\n<pre><code class=\"language-html\">&lt;button\n    data-hz-resource=&quot;HzAnim&quot;\n    data-opt-hz-anim-repeatable=&quot;false&quot;\n    data-opt-hz-anim-on=&quot;click&quot;\n    data-opt-hz-anim-do='{&quot;rotateZ&quot;:&quot;+=45deg&quot;}'\n&gt;\n    Do to me one time\n&lt;/button&gt;</code></pre>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-repeatable=\"false\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;rotateZ&quot;:&quot;+=45deg&quot;}\">Do to me one time</button>\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;rotateZ&quot;:&quot;+=45deg&quot;}\">Do to me infinite times</button>\n  </div>\n</div>";
 });
 ___scope___.file("resources/hzanim/HzAnim.js", function(exports, require, module, __filename, __dirname){
 
@@ -10430,7 +10434,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @license
  * Copyright Davinchi. All Rights Reserved.
  */
-var index_1 = require("@haztivity/core/index");
+var core_1 = require("@haztivity/core");
 var velocity = require("velocity-animate");
 var velocityui = require("velocity-animate/velocity.ui");
 var HzAnimSequence_1 = require("./HzAnimSequence");
@@ -10443,11 +10447,14 @@ velocityui;
  * @requires EventEmitterFactory
  * @extends ResourceController
  */
-var HzAnimResource = HzAnimResource_1 = (function (_super) {
+var HzAnimResource = /** @class */ (function (_super) {
     __extends(HzAnimResource, _super);
     function HzAnimResource() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.running = false;
+        return _this;
     }
+    HzAnimResource_1 = HzAnimResource;
     /**
      * @description Inicializa el objeto al inyectarse
      * @param {any}     options     Opciones
@@ -10457,9 +10464,8 @@ var HzAnimResource = HzAnimResource_1 = (function (_super) {
     HzAnimResource.prototype.init = function (options, config) {
         this._id = new Date().getTime();
         this._namespace = HzAnimResource_1.NAMESPACE + this._id;
-        this._options = options;
+        this._options = this._$.extend(true, {}, HzAnimResource_1._DEFAULT_OPTIONS, options);
         this._options.to = this._options.to || this._$element;
-        this._options.with = this._$.extend(true, {}, HzAnimResource_1._DEFAULT_OPTIONS, this._options.with);
         this._config = config;
         this._assignEvents();
     };
@@ -10480,6 +10486,7 @@ var HzAnimResource = HzAnimResource_1 = (function (_super) {
         }
         else {
             this._markAsCompleted();
+            this.running = false;
         }
     };
     HzAnimResource.prototype._runSequenceStep = function (stepIndex, sequence) {
@@ -10487,7 +10494,7 @@ var HzAnimResource = HzAnimResource_1 = (function (_super) {
         if (step) {
             var config = step.getConfig();
             step.run().then(this._onSequenceStepCompleted.bind(this, stepIndex + 1, sequence));
-            if (config.withConfig && config.withConfig.loop) {
+            if (config.withConfig && config.withConfig.loop === true) {
                 this._markAsCompleted();
             }
         }
@@ -10496,8 +10503,9 @@ var HzAnimResource = HzAnimResource_1 = (function (_super) {
         this._runSequenceStep(0, sequence);
     };
     HzAnimResource.prototype.run = function () {
-        if (!this.isDisabled()) {
+        if (!this.isDisabled() && !this.running && (this.isCompleted() == false || this._options.repeatable)) {
             if (this._options.to) {
+                this.running = true;
                 var sequence = [this._sequenceFactory(this._options.to, this._options.do, this._options.with)];
                 var next = true, index = 1;
                 do {
@@ -10527,66 +10535,66 @@ var HzAnimResource = HzAnimResource_1 = (function (_super) {
         this._eventEmitter.off("." + HzAnimResource_1.NAMESPACE);
         this._$element.off("." + HzAnimResource_1.NAMESPACE);
         this._$element.on(this._options.on + "." + this._namespace, { instance: this }, this._onEventTriggered);
-        this._eventEmitter.on(index_1.ResourceSequence.ON_RESOURCE_STATE_CHANGE + "." + HzAnimResource_1.NAMESPACE, { instance: this }, this._onSequenceStateChange);
-    };
-    HzAnimResource.prototype._onEnd = function () {
-        this._markAsCompleted();
+        this._eventEmitter.on(core_1.ResourceSequence.ON_RESOURCE_STATE_CHANGE + "." + HzAnimResource_1.NAMESPACE, { instance: this }, this._onSequenceStateChange);
     };
     HzAnimResource.prototype._onError = function () {
     };
     HzAnimResource.prototype._onSequenceStateChange = function (e, resource, state) {
         var $triggers = resource._$(resource._options.to);
-        $triggers.removeClass(index_1.ResourceSequence.CLASS_RUNNING + " " + index_1.ResourceSequence.CLASS_COMPLETED + " " + index_1.ResourceSequence.CLASS_WAITING);
+        $triggers.removeClass(core_1.ResourceSequence.CLASS_RUNNING + " " + core_1.ResourceSequence.CLASS_COMPLETED + " " + core_1.ResourceSequence.CLASS_WAITING);
         switch (state) {
-            case index_1.ResourceSequence.STATES.completed:
-                $triggers.addClass(index_1.ResourceSequence.CLASS_COMPLETED);
+            case core_1.ResourceSequence.STATES.completed:
+                $triggers.addClass(core_1.ResourceSequence.CLASS_COMPLETED);
                 break;
-            case index_1.ResourceSequence.STATES.running:
-                $triggers.addClass(index_1.ResourceSequence.CLASS_RUNNING);
+            case core_1.ResourceSequence.STATES.running:
+                $triggers.addClass(core_1.ResourceSequence.CLASS_RUNNING);
                 break;
-            case index_1.ResourceSequence.STATES.waiting:
-                $triggers.addClass(index_1.ResourceSequence.CLASS_WAITING);
+            case core_1.ResourceSequence.STATES.waiting:
+                $triggers.addClass(core_1.ResourceSequence.CLASS_WAITING);
                 break;
         }
     };
     HzAnimResource.prototype.disable = function () {
         if (_super.prototype.disable.call(this)) {
             this._$element.attr("disabled", "disabled")
-                .addClass(index_1.ResourceController.CLASS_DISABLED);
+                .addClass(core_1.ResourceController.CLASS_DISABLED);
             var $triggers = this._$(this._options.to);
             $triggers.attr("disabled", "disabled")
-                .addClass(index_1.ResourceController.CLASS_DISABLED);
+                .addClass(core_1.ResourceController.CLASS_DISABLED);
         }
     };
     HzAnimResource.prototype.enable = function () {
         if (_super.prototype.enable.call(this)) {
             this._$element.removeAttr("disabled")
-                .removeClass(index_1.ResourceController.CLASS_DISABLED);
+                .removeClass(core_1.ResourceController.CLASS_DISABLED);
             var $triggers = this._$(this._options.to);
             $triggers.removeAttr("disabled")
-                .removeClass(index_1.ResourceController.CLASS_DISABLED);
+                .removeClass(core_1.ResourceController.CLASS_DISABLED);
         }
     };
     HzAnimResource.prototype.getInstance = function () {
         return this;
     };
+    HzAnimResource.NAMESPACE = "hzAnim";
+    HzAnimResource._DEFAULT_OPTIONS = {
+        repeatable: true,
+        with: {
+            duration: 500
+        }
+    };
+    HzAnimResource = HzAnimResource_1 = __decorate([
+        core_1.Resource({
+            name: "HzAnim",
+            dependencies: [
+                core_1.$,
+                core_1.EventEmitterFactory
+            ]
+        })
+    ], HzAnimResource);
     return HzAnimResource;
-}(index_1.ResourceController));
-HzAnimResource.NAMESPACE = "hzAnim";
-HzAnimResource._DEFAULT_OPTIONS = {
-    duration: 500
-};
-HzAnimResource = HzAnimResource_1 = __decorate([
-    index_1.Resource({
-        name: "HzAnim",
-        dependencies: [
-            index_1.$,
-            index_1.EventEmitterFactory
-        ]
-    })
-], HzAnimResource);
+    var HzAnimResource_1;
+}(core_1.ResourceController));
 exports.HzAnimResource = HzAnimResource;
-var HzAnimResource_1;
 //# sourceMappingURL=HzAnimResource.js.map
 });
 ___scope___.file("resources/hzanim/HzAnimSequence.js", function(exports, require, module, __filename, __dirname){
@@ -10599,7 +10607,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  */
 require("velocity-animate");
 require("velocity-animate/velocity.ui");
-var HzAnimSequence = (function () {
+var HzAnimSequence = /** @class */ (function () {
     function HzAnimSequence(_$) {
         this._$ = _$;
         this._complete = false;
@@ -10682,7 +10690,7 @@ var HzAnimSequence = (function () {
         return this._deferred.promise();
     };
     HzAnimSequence.prototype.getConfig = function () {
-        return this._config;
+        return this._stepConfig;
     };
     return HzAnimSequence;
 }());
@@ -10701,7 +10709,7 @@ var core_1 = require("@haztivity/core");
 var page_pug_1 = require("./page.pug");
 var Prism = require("prismjs");
 require("prismjs/components/prism-typescript");
-require("prismjs/components/prism-jade");
+require("prismjs/components/prism-pug");
 /**
  * use import {HzAnimResource} from "@haztivity/hz-anim"
  */
@@ -10722,7 +10730,7 @@ exports.page.on(core_1.PageController.ON_SHOW, null, function (eventObject, $pag
 });
 ___scope___.file("sco1221/pages/6612/page.pug", function(exports, require, module, __filename, __dirname){
 
-module.exports.default =  "\n<div>\n  <div class=\"markdown-wrapper\"><h1>Multiple transformations</h1>\n<p>It's possible to set multiple transformations to apply.\nThe <code>data-opt-hz-anim-do</code> accepts a string, a json object or an array</p>\n<h2>String</h2>\n<p>Use string to perform pre-defined animations like transition.fadeIn.\nAll the velocity-js effects are available.\nSee <a href=\"http://velocityjs.org/#uiPack\">velocity.js</a> Effects:Pre-Registered</p>\n<h3>Example</h3>\n<h4>Pug</h4>\n<pre><code class=\"language-jade\">button(data-hz-resource=&quot;HzAnim&quot;\n        data-opt-hz-anim-on=&quot;click&quot;\n        data-opt-hz-anim-do=&quot;transition.fadeOut&quot;) Do fadeOut\n</code></pre>\n<p>or</p>\n<h4>Html</h4>\n<pre><code class=\"language-html\">&lt;button data-hz-resource=&quot;HzAnim&quot;\n        data-opt-hz-anim-on=&quot;click&quot;\n        data-opt-hz-anim-do=&quot;transition.fadeOut&quot;&gt;\n   Do fadeOut\n&lt;/button&gt;\n</code></pre>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"transition.fadeOut\">Do fadeOut</button><h2>JSON</h2>\n<p>To animate properties like backgrounds, colors, etc.\n<strong>Note</strong>: When using HTML,all the object starts with simple comma (`) and the properties are wrapped with double commas ( &quot; ) using the format:</p>\n<pre><code class=\"language-js\">'{&quot;property&quot;:&quot;value&quot;}'\n</code></pre>\n<p>The properties have to be used folowing the properties map of velocity.js.\nFor more info see <a href=\"http://velocityjs.org/#propertiesMap\">velocity.js properties</a></p>\n<h3>Example</h3>\n<h4>Pug</h4>\n<pre><code class=\"language-jade\">// Single property\nbutton(data-hz-resource=&quot;HzAnim&quot;\n       data-opt-hz-anim-on=&quot;click&quot;\n       data-opt-hz-anim-do={&quot;backgroundColor&quot;:&quot;#ff0000&quot;}) Do background\n// Multiple properties\nbutton(data-hz-resource=&quot;HzAnim&quot;\n       data-opt-hz-anim-on=&quot;click&quot;\n       data-opt-hz-anim-do={&quot;backgroundColor&quot;:&quot;#ff0000&quot;,&quot;height&quot;:&quot;3em&quot;,&quot;width&quot;:&quot;20em&quot;}) Do background, height and width\n</code></pre>\n<p>or</p>\n<h4>HTML</h4>\n<pre><code class=\"language-html\">&lt;!-- Single property --&gt;\n&lt;button data-hz-resource=&quot;HzAnim&quot;\n   data-opt-hz-anim-on=&quot;click&quot;\n   data-opt-hz-anim-do='{&quot;backgroundColor&quot;:&quot;red&quot;}'&gt;\n   Do background\n&lt;/button&gt;\n&lt;!-- Multiple properties --&gt;\n&lt;button data-hz-resource=&quot;HzAnim&quot;\n   data-opt-hz-anim-on=&quot;click&quot;\n   data-opt-hz-anim-do='{&quot;backgroundColor&quot;:&quot;#ff0000&quot;,&quot;height&quot;:&quot;3em&quot;,&quot;width&quot;:&quot;10em&quot;}'&gt;\n   Do background, height and width\n&lt;/button&gt;\n</code></pre>\n<p>It's possible perform multiple transforms at the same time.\nAll the properties in the object will be animated in parallel. To see sequential animations go to <a href=\"#markdown-header-array\">Array</a></p>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;backgroundColor&quot;:&quot;#ff0000&quot;}\">Do background</button>\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;backgroundColor&quot;:&quot;#ff0000&quot;,&quot;height&quot;:&quot;3em&quot;,&quot;width&quot;:&quot;20em&quot;}\">Do background, height and width</button><h2>Array</h2>\n<p>Using an array is possible to specify a property or a group of properties to be animated sequentially.</p>\n<ol>\n<li>Each position in the array is a step.</li>\n<li>The steps will be executed <strong>sequentially</strong>, one by one.</li>\n<li>Each step could have one or more properties.</li>\n<li>All the properties in a step will be executed in <strong>parallel</strong>.</li>\n<li>The array allows using multiple JSON objects that will be executed in order.</li>\n</ol>\n<h3>Example</h3>\n<h4>Pug</h4>\n<pre><code class=\"language-jade\">button(data-hz-resource=&quot;HzAnim&quot;\n       data-opt-hz-anim-on=&quot;click&quot;\n       data-opt-hz-anim-do='[{&quot;backgroundColor&quot;:&quot;#ff0000&quot;},{&quot;height&quot;:&quot;8em&quot;,&quot;width&quot;:&quot;30em&quot;},{&quot;color&quot;:&quot;#fff&quot;}]') Do first background, then height and width, then color\n</code></pre>\n<pre><code class=\"language-html\">&lt;button data-hz-resource=&quot;HzAnim&quot;\n   data-opt-hz-anim-on=&quot;click&quot;\n   data-opt-hz-anim-do='[{&quot;backgroundColor&quot;:&quot;#ff0000&quot;},{&quot;height&quot;:&quot;8em&quot;,&quot;width&quot;:&quot;30em&quot;},{&quot;color&quot;:&quot;#fff&quot;}]'&gt;\n   Do first background, then height and width, then color\n&lt;/button&gt;\n</code></pre>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"[{&quot;backgroundColor&quot;:&quot;#ff0000&quot;},{&quot;height&quot;:&quot;8em&quot;,&quot;width&quot;:&quot;30em&quot;},{&quot;color&quot;:&quot;#fff&quot;}]\">Do first background, then height and width, then color</button><h2>Multiple configurations</h2>\n<p>If you don't like array notation, don't worry, it's possible to do the same with multiple configuration.\nTo specify more than one configuration, use</p>\n<pre><code class=\"language-jade\">data-opt-hz-anim-do-{stepIndex}=&quot;properties&quot;\n</code></pre>\n<h3>Example</h3>\n<h4>Pug</h4>\n<pre><code class=\"language-jade\">button(data-hz-resource=&quot;HzAnim&quot;\n       data-opt-hz-anim-on=&quot;click&quot;\n       data-opt-hz-anim-do='{&quot;backgroundColor&quot;:&quot;#ff0000&quot;}'\n       data-opt-hz-anim-do-2='{&quot;height&quot;:&quot;8em&quot;,&quot;width&quot;:&quot;30em&quot;}'\n       data-opt-hz-anim-do-3='{&quot;color&quot;:&quot;#fff&quot;}') Do first background, then height and width, then color\n</code></pre>\n<p>or</p>\n<h4>HTML</h4>\n<pre><code class=\"language-html\">&lt;button data-hz-resource=&quot;HzAnim&quot;\n        data-opt-hz-anim-on=&quot;click&quot;\n        data-opt-hz-anim-do='{&quot;backgroundColor&quot;:&quot;#ff0000&quot;}'\n        data-opt-hz-anim-do-2='{&quot;height&quot;:&quot;8em&quot;,&quot;width&quot;:&quot;30em&quot;}'\n        data-opt-hz-anim-do-3='{&quot;color&quot;:&quot;#fff&quot;}'&gt;\n        Do first background, then height and width, then color\n&lt;/button&gt;\n</code></pre>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;backgroundColor&quot;:&quot;#ff0000&quot;}\" data-opt-hz-anim-do-2=\"{&quot;height&quot;:&quot;8em&quot;,&quot;width&quot;:&quot;30em&quot;}\" data-opt-hz-anim-do-3=\"{&quot;color&quot;:&quot;#fff&quot;}\">Do first background, then height and width, then color</button><p>This also allow to specify different configurations for each step, like the delay or the easing</p>\n<h4>Pug</h4>\n<pre><code class=\"language-jade\">button(data-hz-resource=&quot;HzAnim&quot;\n      data-opt-hz-anim-on=&quot;click&quot;\n      data-opt-hz-anim-do={&quot;backgroundColor&quot;:&quot;#ff0000&quot;}\n      data-opt-hz-anim-with={&quot;delay&quot;:1000}\n      data-opt-hz-anim-do-2={&quot;height&quot;:&quot;8em&quot;,&quot;width&quot;:&quot;30em&quot;}\n      data-opt-hz-anim-with-2={&quot;easing&quot;:&quot;easeInSine&quot;}\n      data-opt-hz-anim-do-3={&quot;color&quot;:&quot;#fff&quot;}) Do first background, then height and width, then color\n</code></pre>\n<p>or</p>\n<h4>HTML</h4>\n<pre><code class=\"language-html\">&lt;button data-hz-resource=&quot;HzAnim&quot;\n       data-opt-hz-anim-on=&quot;click&quot;\n       data-opt-hz-anim-do='{&quot;backgroundColor&quot;:&quot;#ff0000&quot;}'\n       data-opt-hz-anim-with='{&quot;delay&quot;:1000}'\n       data-opt-hz-anim-do-2='{&quot;height&quot;:&quot;8em&quot;,&quot;width&quot;:&quot;30em&quot;}'\n       data-opt-hz-anim-with-2='{&quot;easing&quot;:&quot;easeInSine&quot;}'\n       data-opt-hz-anim-do-3='{&quot;color&quot;:&quot;#fff&quot;}'&gt;\n       Do first background, then height and width, then color\n&lt;/button&gt;\n</code></pre>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;backgroundColor&quot;:&quot;#ff0000&quot;}\" data-opt-hz-anim-with=\"{&quot;delay&quot;:1000}\" data-opt-hz-anim-do-2=\"{&quot;height&quot;:&quot;8em&quot;,&quot;width&quot;:&quot;30em&quot;}\" data-opt-hz-anim-with-2=\"{&quot;easing&quot;:&quot;easeInSine&quot;}\" data-opt-hz-anim-do-3=\"{&quot;color&quot;:&quot;#fff&quot;}\">Do first background, then height and width, then color</button>\n  </div>\n</div>";
+module.exports.default =  "\n<div>\n  <div class=\"markdown-wrapper\"><h1>Multiple transformations</h1>\n<p>It's possible to set multiple transformations to apply.\nThe <code>data-opt-hz-anim-do</code> accepts a string, a json object or an array</p>\n<h2>String</h2>\n<p>Use string to perform pre-defined animations like transition.fadeIn.\nAll the velocity-js effects are available.\nSee <a href=\"http://velocityjs.org/#uiPack\">velocity.js</a> Effects:Pre-Registered</p>\n<h3>Example</h3>\n<h4>Pug</h4>\n<pre><code class=\"language-pug\">button(data-hz-resource=&quot;HzAnim&quot;\n        data-opt-hz-anim-on=&quot;click&quot;\n        data-opt-hz-anim-do=&quot;transition.fadeOut&quot;) Do fadeOut\n</code></pre>\n<p>or</p>\n<h4>Html</h4>\n<pre><code class=\"language-html\">&lt;button data-hz-resource=&quot;HzAnim&quot;\n        data-opt-hz-anim-on=&quot;click&quot;\n        data-opt-hz-anim-do=&quot;transition.fadeOut&quot;&gt;\n   Do fadeOut\n&lt;/button&gt;\n</code></pre>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"transition.fadeOut\">Do fadeOut</button><h2>JSON</h2>\n<p>To animate properties like backgrounds, colors, etc.\n<strong>Note</strong>: When using HTML,all the object starts with a simple comma ( ' ) and the properties are wrapped with double commas ( &quot; ) using the format:</p>\n<pre><code class=\"language-js\">'{&quot;property&quot;:&quot;value&quot;}'\n</code></pre>\n<p>The properties have to be used following the properties map of velocity.js.\nFor more info see <a href=\"http://velocityjs.org/#propertiesMap\">velocity.js properties</a></p>\n<h3>Example</h3>\n<h4>Pug</h4>\n<pre><code class=\"language-pug\">// Single property\nbutton(data-hz-resource=&quot;HzAnim&quot;\n       data-opt-hz-anim-on=&quot;click&quot;\n       data-opt-hz-anim-do={&quot;backgroundColor&quot;:&quot;#ff0000&quot;}) Do background\n// Multiple properties\nbutton(data-hz-resource=&quot;HzAnim&quot;\n       data-opt-hz-anim-on=&quot;click&quot;\n       data-opt-hz-anim-do={&quot;backgroundColor&quot;:&quot;#ff0000&quot;,&quot;height&quot;:&quot;3em&quot;,&quot;width&quot;:&quot;20em&quot;}) Do background, height and width\n</code></pre>\n<p>or</p>\n<h4>HTML</h4>\n<pre><code class=\"language-html\">&lt;!-- Single property --&gt;\n&lt;button data-hz-resource=&quot;HzAnim&quot;\n   data-opt-hz-anim-on=&quot;click&quot;\n   data-opt-hz-anim-do='{&quot;backgroundColor&quot;:&quot;red&quot;}'&gt;\n   Do background\n&lt;/button&gt;\n&lt;!-- Multiple properties --&gt;\n&lt;button data-hz-resource=&quot;HzAnim&quot;\n   data-opt-hz-anim-on=&quot;click&quot;\n   data-opt-hz-anim-do='{&quot;backgroundColor&quot;:&quot;#ff0000&quot;,&quot;height&quot;:&quot;3em&quot;,&quot;width&quot;:&quot;10em&quot;}'&gt;\n   Do background, height and width\n&lt;/button&gt;\n</code></pre>\n<p>It's possible perform multiple transforms at the same time.\nAll the properties in the object will be animated in parallel. To see sequential animations go to <a href=\"#markdown-header-array\">Array</a></p>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;backgroundColor&quot;:&quot;#ff0000&quot;}\">Do background</button>\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;backgroundColor&quot;:&quot;#ff0000&quot;,&quot;height&quot;:&quot;3em&quot;,&quot;width&quot;:&quot;20em&quot;}\">Do background, height and width</button><h2>Array</h2>\n<p>Using an array is possible to specify a property or a group of properties to be animated sequentially.</p>\n<ol>\n<li>Each position in the array is a step.</li>\n<li>The steps will be executed <strong>sequentially</strong>, one by one.</li>\n<li>Each step could have one or more properties.</li>\n<li>All the properties in a step will be executed in <strong>parallel</strong>.</li>\n<li>The array allows using multiple JSON objects that will be executed in order.</li>\n</ol>\n<h3>Example</h3>\n<h4>Pug</h4>\n<pre><code class=\"language-pug\">button(data-hz-resource=&quot;HzAnim&quot;\n       data-opt-hz-anim-on=&quot;click&quot;\n       data-opt-hz-anim-do='[{&quot;backgroundColor&quot;:&quot;#ff0000&quot;},{&quot;height&quot;:&quot;8em&quot;,&quot;width&quot;:&quot;30em&quot;},{&quot;color&quot;:&quot;#fff&quot;}]') Do first background, then height and width, then color\n</code></pre>\n<pre><code class=\"language-html\">&lt;button data-hz-resource=&quot;HzAnim&quot;\n   data-opt-hz-anim-on=&quot;click&quot;\n   data-opt-hz-anim-do='[{&quot;backgroundColor&quot;:&quot;#ff0000&quot;},{&quot;height&quot;:&quot;8em&quot;,&quot;width&quot;:&quot;30em&quot;},{&quot;color&quot;:&quot;#fff&quot;}]'&gt;\n   Do first background, then height and width, then color\n&lt;/button&gt;\n</code></pre>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"[{&quot;backgroundColor&quot;:&quot;#ff0000&quot;},{&quot;height&quot;:&quot;8em&quot;,&quot;width&quot;:&quot;30em&quot;},{&quot;color&quot;:&quot;#fff&quot;}]\">Do first background, then height and width, then color</button><h2>Multiple configurations</h2>\n<p>If you don't like array notation, don't worry, it's possible to do the same with multiple configuration.\nTo specify more than one configuration, use</p>\n<pre><code class=\"language-pug\">data-opt-hz-anim-do-{stepIndex}=&quot;properties&quot;\n</code></pre>\n<h3>Example</h3>\n<h4>Pug</h4>\n<pre><code class=\"language-pug\">button(data-hz-resource=&quot;HzAnim&quot;\n       data-opt-hz-anim-on=&quot;click&quot;\n       data-opt-hz-anim-do='{&quot;backgroundColor&quot;:&quot;#ff0000&quot;}'\n       data-opt-hz-anim-do-2='{&quot;height&quot;:&quot;8em&quot;,&quot;width&quot;:&quot;30em&quot;}'\n       data-opt-hz-anim-do-3='{&quot;color&quot;:&quot;#fff&quot;}') Do first background, then height and width, then color\n</code></pre>\n<p>or</p>\n<h4>HTML</h4>\n<pre><code class=\"language-html\">&lt;button data-hz-resource=&quot;HzAnim&quot;\n        data-opt-hz-anim-on=&quot;click&quot;\n        data-opt-hz-anim-do='{&quot;backgroundColor&quot;:&quot;#ff0000&quot;}'\n        data-opt-hz-anim-do-2='{&quot;height&quot;:&quot;8em&quot;,&quot;width&quot;:&quot;30em&quot;}'\n        data-opt-hz-anim-do-3='{&quot;color&quot;:&quot;#fff&quot;}'&gt;\n        Do first background, then height and width, then color\n&lt;/button&gt;\n</code></pre>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;backgroundColor&quot;:&quot;#ff0000&quot;}\" data-opt-hz-anim-do-2=\"{&quot;height&quot;:&quot;8em&quot;,&quot;width&quot;:&quot;30em&quot;}\" data-opt-hz-anim-do-3=\"{&quot;color&quot;:&quot;#fff&quot;}\">Do first background, then height and width, then color</button><p>This also allow specifying different configurations for each step, like the delay or the easing</p>\n<h4>Pug</h4>\n<pre><code class=\"language-pug\">button(data-hz-resource=&quot;HzAnim&quot;\n      data-opt-hz-anim-on=&quot;click&quot;\n      data-opt-hz-anim-do={&quot;backgroundColor&quot;:&quot;#ff0000&quot;}\n      data-opt-hz-anim-with={&quot;delay&quot;:1000}\n      data-opt-hz-anim-do-2={&quot;height&quot;:&quot;8em&quot;,&quot;width&quot;:&quot;30em&quot;}\n      data-opt-hz-anim-with-2={&quot;easing&quot;:&quot;easeInSine&quot;}\n      data-opt-hz-anim-do-3={&quot;color&quot;:&quot;#fff&quot;}) Do first background, then height and width, then color\n</code></pre>\n<p>or</p>\n<h4>HTML</h4>\n<pre><code class=\"language-html\">&lt;button data-hz-resource=&quot;HzAnim&quot;\n       data-opt-hz-anim-on=&quot;click&quot;\n       data-opt-hz-anim-do='{&quot;backgroundColor&quot;:&quot;#ff0000&quot;}'\n       data-opt-hz-anim-with='{&quot;delay&quot;:1000}'\n       data-opt-hz-anim-do-2='{&quot;height&quot;:&quot;8em&quot;,&quot;width&quot;:&quot;30em&quot;}'\n       data-opt-hz-anim-with-2='{&quot;easing&quot;:&quot;easeInSine&quot;}'\n       data-opt-hz-anim-do-3='{&quot;color&quot;:&quot;#fff&quot;}'&gt;\n       Do first background, then height and width, then color\n&lt;/button&gt;\n</code></pre>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;backgroundColor&quot;:&quot;#ff0000&quot;}\" data-opt-hz-anim-with=\"{&quot;delay&quot;:1000}\" data-opt-hz-anim-do-2=\"{&quot;height&quot;:&quot;8em&quot;,&quot;width&quot;:&quot;30em&quot;}\" data-opt-hz-anim-with-2=\"{&quot;easing&quot;:&quot;easeInSine&quot;}\" data-opt-hz-anim-do-3=\"{&quot;color&quot;:&quot;#fff&quot;}\">Do first background, then height and width, then color</button>\n  </div>\n</div>";
 });
 ___scope___.file("sco1221/pages/6613/page.js", function(exports, require, module, __filename, __dirname){
 
@@ -10736,7 +10744,7 @@ var core_1 = require("@haztivity/core");
 var page_pug_1 = require("./page.pug");
 var Prism = require("prismjs");
 require("prismjs/components/prism-typescript");
-require("prismjs/components/prism-jade");
+require("prismjs/components/prism-pug");
 /**
  * use import {HzAnimResource} from "@haztivity/hz-anim"
  */
@@ -10757,7 +10765,77 @@ exports.page.on(core_1.PageController.ON_SHOW, null, function (eventObject, $pag
 });
 ___scope___.file("sco1221/pages/6613/page.pug", function(exports, require, module, __filename, __dirname){
 
-module.exports.default =  "\n<div>\n  <div class=\"markdown-wrapper\"><h2>Multiple targets</h2>\n<p>If I want to apply with the same event transformations to different elements?\n:)</p>\n<p>It's possible modify multiple targets using multiple configurations and the option data-opt-hz-anim-to</p>\n<pre><code class=\"language-html\">&lt;button data-hz-resource=&quot;HzAnim&quot;\n   data-opt-hz-anim-on=&quot;click&quot;\n   data-opt-hz-anim-do='{&quot;backgroundColor&quot;:&quot;red&quot;}'\n   data-opt-hz-anim-to=&quot;.target1&quot;\n   data-opt-hz-anim-do-2='{&quot;width&quot;:&quot;8em&quot;,&quot;height&quot;:&quot;8em&quot;}'\n   data-opt-hz-anim-to-2=&quot;.target2&quot;\n   data-opt-hz-anim-do-3='{&quot;rotateY&quot;:[180,0]}'\n   data-opt-hz-anim-to-3=&quot;.target3&quot;&gt;\n   Do background\n&lt;/button&gt;\n&lt;p class=&quot;target1&quot;&gt;.target1&lt;/p&gt;\n&lt;p class=&quot;target2&quot;&gt;.target2&lt;/p&gt;\n&lt;p class=&quot;target3&quot;&gt;.target3&lt;/p&gt;\n</code></pre>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;backgroundColor&quot;:&quot;#ff0000&quot;}\" data-opt-hz-anim-to=\".target1\" data-opt-hz-anim-do-2=\"{&quot;backgroundColor&quot;:&quot;#2196F3&quot;,&quot;width&quot;:&quot;8em&quot;,&quot;height&quot;:&quot;8em&quot;}\" data-opt-hz-anim-to-2=\".target2\" data-opt-hz-anim-do-3=\"{&quot;rotateX&quot;:[180,0]}\" data-opt-hz-anim-to-3=\".target3\">Do</button>\n    <p class=\"target1\">.target1</p>\n    <p class=\"target2\">.target2</p>\n    <p class=\"target3\">.target3</p>\n  </div>\n</div>";
+module.exports.default =  "\n<div>\n  <div class=\"markdown-wrapper\"><h2>Multiple targets</h2>\n<p>If I want to apply with the same event transformations to different elements?\n:)</p>\n<p>It's possible modify multiple targets using multiple configurations and the option data-opt-hz-anim-to</p>\n<h3>Example</h3>\n<h4>Pug</h4>\n<pre><code class=\"language-pug\">button(\n    data-hz-resource=&quot;HzAnim&quot;\n    data-opt-hz-anim-on=&quot;click&quot;\n    data-opt-hz-anim-do='{&quot;backgroundColor&quot;:&quot;red&quot;}'\n    data-opt-hz-anim-to=&quot;.target1&quot;\n    data-opt-hz-anim-do-2='{&quot;width&quot;:&quot;8em&quot;,&quot;height&quot;:&quot;8em&quot;}'\n    data-opt-hz-anim-to-2=&quot;.target2&quot;\n    data-opt-hz-anim-do-3='{&quot;rotateY&quot;:[180,0]}'\n    data-opt-hz-anim-to-3=&quot;.target3&quot;\n)\n   Do background\np.target1 .target1\np.target2 .target2\np.target3 .target3\n</code></pre>\n<h4>Html</h4>\n<pre><code class=\"language-html\">&lt;button data-hz-resource=&quot;HzAnim&quot;\n   data-opt-hz-anim-on=&quot;click&quot;\n   data-opt-hz-anim-do='{&quot;backgroundColor&quot;:&quot;red&quot;}'\n   data-opt-hz-anim-to=&quot;.target1&quot;\n   data-opt-hz-anim-do-2='{&quot;width&quot;:&quot;8em&quot;,&quot;height&quot;:&quot;8em&quot;}'\n   data-opt-hz-anim-to-2=&quot;.target2&quot;\n   data-opt-hz-anim-do-3='{&quot;rotateY&quot;:[180,0]}'\n   data-opt-hz-anim-to-3=&quot;.target3&quot;&gt;\n   Do background\n&lt;/button&gt;\n&lt;p class=&quot;target1&quot;&gt;.target1&lt;/p&gt;\n&lt;p class=&quot;target2&quot;&gt;.target2&lt;/p&gt;\n&lt;p class=&quot;target3&quot;&gt;.target3&lt;/p&gt;\n</code></pre>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;backgroundColor&quot;:&quot;#ff0000&quot;}\" data-opt-hz-anim-to=\".target1\" data-opt-hz-anim-do-2=\"{&quot;backgroundColor&quot;:&quot;#2196F3&quot;,&quot;width&quot;:&quot;8em&quot;,&quot;height&quot;:&quot;8em&quot;}\" data-opt-hz-anim-to-2=\".target2\" data-opt-hz-anim-do-3=\"{&quot;rotateX&quot;:[180,0]}\" data-opt-hz-anim-to-3=\".target3\">Do</button>\n    <p class=\"target1\">.target1</p>\n    <p class=\"target2\">.target2</p>\n    <p class=\"target3\">.target3</p>\n  </div>\n</div>";
+});
+___scope___.file("sco1221/pages/6614/page.js", function(exports, require, module, __filename, __dirname){
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * @license
+ * Copyright Davinchi. All Rights Reserved.
+ */
+var core_1 = require("@haztivity/core");
+var page_pug_1 = require("./page.pug");
+var Prism = require("prismjs");
+require("prismjs/components/prism-typescript");
+require("prismjs/components/prism-pug");
+/**
+ * use import {HzAnimResource} from "@haztivity/hz-anim"
+ */
+var HzAnim_1 = require("../../../resources/hzanim/HzAnim");
+exports.page = core_1.PageFactory.createPage({
+    name: "6614",
+    title: "Loop",
+    resources: [
+        HzAnim_1.HzAnimResource
+    ],
+    template: page_pug_1.default,
+    autoSequence: false
+});
+exports.page.on(core_1.PageController.ON_SHOW, null, function (eventObject, $page, $oldPage, oldPageRelativePosition, pageController) {
+    Prism.highlightAll(false);
+});
+//# sourceMappingURL=page.js.map
+});
+___scope___.file("sco1221/pages/6614/page.pug", function(exports, require, module, __filename, __dirname){
+
+module.exports.default =  "\n<div>\n  <div class=\"markdown-wrapper\"><h2>Loops</h2>\n<p>Velocity.js allows to use loop animations.</p>\n<p>To set up a loop animation use the <code>loop</code> option from Velocity.js. Check the doc <a href=\"http://velocityjs.org/#loop\">here</a></p>\n<p>The loop has two steps:</p>\n<ol>\n<li>Apply the changes specified</li>\n<li>Reverse to the original state</li>\n</ol>\n<p>For example, in this case, the animation will apply the rotation of 45deg and then will be reversed to the prior state.</p>\n<h3>Pug</h3>\n<pre><code class=\"language-pug\">button(\n    data-hz-resource='HzAnim',\n    data-opt-hz-anim-on='click',\n    data-opt-hz-anim-do={&quot;rotateX&quot;:&quot;45deg&quot;},\n    data-opt-hz-anim-with={loop:true}\n) Go and back\n</code></pre>\n<h3>HTML</h3>\n<pre><code class=\"language-html\">&lt;button\n    data-hz-resource=&quot;HzAnim&quot;\n    data-opt-hz-anim-on=&quot;click&quot;\n    data-opt-hz-anim-do='{&quot;rotateZ&quot;:&quot;45deg&quot;}'\n    data-opt-hz-anim-with='{&quot;loop&quot;:true}'\n&gt;\n    Go and back for ever&amp;;ever\n&lt;/button&gt;\n</code></pre>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;rotateZ&quot;:&quot;45deg&quot;}\" data-opt-hz-anim-with=\"{&quot;loop&quot;:true}\">Go and back for ever&ever</button>\n  </div>\n  <div class=\"markdown-wrapper\"><h3>Resource completion in infinite loops</h3>\n<p>If a <code>loop:true</code> (infinite loop) is specified in a step, the resource will be marked as completed when the step with the loop starts and no more steps will be executed.</p>\n<p>In this case, the step 1 changes the background color.</p>\n<p>After the step 1, the step 2 is executed. The step 2 has a infinite loop so the resource is marked as completed just before executing the step 2.</p>\n<p>The step 3 will never be executed.</p>\n<h4>Pug</h4>\n<pre><code class=\"language-pug\">button(\n    data-hz-resource='HzAnim',\n    data-opt-hz-anim-on='click',\n    data-opt-hz-anim-do={&quot;backgroundColor&quot;:&quot;#ff0000&quot;},\n    data-opt-hz-anim-do-2={&quot;rotateX&quot;:&quot;45deg&quot;},\n    data-opt-hz-anim-with-2={loop:true},\n    data-opt-hz-anim-do-3={&quot;backgroundColor&quot;:&quot;#fff&quot;}\n) Go and back\n</code></pre>\n<h4>HTML</h4>\n<pre><code class=\"language-html\">&lt;button\n    data-hz-resource='HzAnim',\n    data-opt-hz-anim-on='click',\n    data-opt-hz-anim-do='{&quot;backgroundColor&quot;:&quot;#ff0000&quot;}',\n    data-opt-hz-anim-do-2='{&quot;rotateX&quot;:&quot;45deg&quot;}',\n    data-opt-hz-anim-with-2='{&quot;loop&quot;:true},\n    data-opt-hz-anim-do-3='{&quot;backgroundColor&quot;:&quot;#fff&quot;}'\n&gt;\n    Go and back for ever&amp;ever\n&lt;/button&gt;\n</code></pre>\n<h3>Loop over a number of times</h3>\n<p>Also is possible to execute the loop a certain number of times. Set the loop with the numer of times to repeat the animation</p>\n<h4>Pug</h4>\n<pre><code class=\"language-pug\">button(\n    data-hz-resource='HzAnim',\n    data-opt-hz-anim-on='click',\n    data-opt-hz-anim-do='{&quot;rotateZ&quot;:&quot;45deg&quot;}',\n    data-opt-hz-anim-with={loop: 3}\n) Go and back 3 times\n</code></pre>\n<h4>HTML</h4>\n<pre><code class=\"language-html\">&lt;button\n    data-hz-resource=&quot;HzAnim&quot;\n    data-opt-hz-anim-on=&quot;click&quot;\n    data-opt-hz-anim-do='{&quot;rotateZ&quot;:&quot;45deg&quot;}'\n    data-opt-hz-anim-with='{&quot;loop&quot;:3}'\n&gt;\n    Go and back 3 times\n&lt;/button&gt;</code></pre>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;rotateZ&quot;:&quot;45deg&quot;}\" data-opt-hz-anim-with=\"{&quot;loop&quot;:3}\">Go and back 3 times</button>\n  </div>\n</div>";
+});
+___scope___.file("sco1221/pages/6615/page.js", function(exports, require, module, __filename, __dirname){
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * @license
+ * Copyright Davinchi. All Rights Reserved.
+ */
+var core_1 = require("@haztivity/core");
+var page_pug_1 = require("./page.pug");
+var Prism = require("prismjs");
+require("prismjs/components/prism-typescript");
+require("prismjs/components/prism-pug");
+/**
+ * use import {HzAnimResource} from "@haztivity/hz-anim"
+ */
+var HzAnim_1 = require("../../../resources/hzanim/HzAnim");
+exports.page = core_1.PageFactory.createPage({
+    name: "6615",
+    title: "Reverse",
+    resources: [
+        HzAnim_1.HzAnimResource
+    ],
+    template: page_pug_1.default,
+    autoSequence: false
+});
+exports.page.on(core_1.PageController.ON_SHOW, null, function (eventObject, $page, $oldPage, oldPageRelativePosition, pageController) {
+    Prism.highlightAll(false);
+});
+//# sourceMappingURL=page.js.map
+});
+___scope___.file("sco1221/pages/6615/page.pug", function(exports, require, module, __filename, __dirname){
+
+module.exports.default =  "\n<div>\n  <div class=\"markdown-wrapper\"><h2>Reverse</h2>\n<p>Velocity.js allows to animate back to the previous values using <code>reverse</code>. Check the doc <a href=\"http://velocityjs.org/#reverse\">here</a></p>\n<p>Simpy set <code>reverse</code> in the <code>do</code> option</p>\n<h3>Pug</h3>\n<pre><code class=\"language-pug\">button.target(\n    data-hz-resource='HzAnim',\n    data-opt-hz-anim-on='click',\n    data-opt-hz-anim-do={&quot;rotateZ&quot;:&quot;45deg&quot;}\n) Rotate\nbutton(\n    data-hz-resource='HzAnim',\n    data-opt-hz-anim-on='click',\n    data-opt-hz-anim-to='.target',\n    data-opt-hz-anim-do='reverse'\n) Reverse .target\n</code></pre>\n<h3>HTML</h3>\n<pre><code class=\"language-html\">&lt;button\n    class=&quot;target&quot;\n    data-hz-resource=&quot;HzAnim&quot;\n    data-opt-hz-anim-on=&quot;click&quot;\n    data-opt-hz-anim-do='{&quot;rotateZ&quot;:&quot;45deg&quot;}'\n&gt;\n    Rotate\n&lt;/button&gt;\n&lt;button\n    class=&quot;target&quot;\n    data-hz-resource=&quot;HzAnim&quot;\n    data-opt-hz-anim-on=&quot;click&quot;\n    data-opt-hz-anim-to=&quot;.target&quot;\n    data-opt-hz-anim-do='reverse'\n&gt;\n    Reverse .target\n&lt;/button&gt;\n</code></pre>\n\n    <button class=\"target\" data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;rotateZ&quot;:&quot;45deg&quot;}\">Rotate</button>\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-to=\".target\" data-opt-hz-anim-do=\"reverse\">Reverse .target</button>\n  </div>\n  <div class=\"markdown-wrapper\"><p>Please, note that <code>reverse</code> only applies to the latest step and could not be stacked.</p>\n<pre><code class=\"language-pug\">button(\n    data-hz-resource='HzAnim',\n    data-opt-hz-anim-on='click',\n    data-opt-hz-anim-do={&quot;backgroundColor&quot;:&quot;#ff0000&quot;},\n    data-opt-hz-anim-do-2=[{&quot;width&quot;:&quot;10em&quot;,&quot;height&quot;:&quot;10em&quot;}],\n    data-opt-hz-anim-do-3=&quot;reverse&quot;\n) Go and back\n</code></pre>\n<pre><code class=\"language-HTML\">&lt;button\n    data-hz-resource='HzAnim'\n    data-opt-hz-anim-on='click'\n    data-opt-hz-anim-do='{&quot;backgroundColor&quot;:&quot;#ff0000&quot;}'\n    data-opt-hz-anim-do-2='[{&quot;width&quot;:&quot;10em&quot;,&quot;height&quot;:&quot;10em&quot;}]'\n    data-opt-hz-anim-do-3=&quot;reverse&quot;\n&gt;\n    Go and back\n&lt;/button&gt;\n</code></pre>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;backgroundColor&quot;:&quot;#ff0000&quot;}\" data-opt-hz-anim-do-2=\"[{&quot;width&quot;:&quot;10em&quot;,&quot;height&quot;:&quot;10em&quot;}]\" data-opt-hz-anim-do-3=\"reverse\">Go and back</button>\n  </div>\n</div>";
 });
 });
 FuseBox.pkg("jquery", {}, function(___scope___){
@@ -10767,31 +10845,19 @@ module.exports = $
 });
 return ___scope___.entry = "index.js";
 });
-FuseBox.pkg("@haztivity/core", {}, function(___scope___){
-___scope___.file("index.js", function(exports, require, module, __filename, __dirname){
+FuseBox.pkg("@haztivity/core", {"bottlejs":"1.6.3","array-unique":"0.3.2","loglevel":"1.6.1"}, function(___scope___){
+___scope___.file("dist/index.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-/**
- * @license
- * Copyright Davinchi. All Rights Reserved.
- */
-__export(require("./src/index"));
-
-});
-___scope___.file("src/index.js", function(exports, require, module, __filename, __dirname){
-
-"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
  */
 var jquery_1 = require("./jquery");
 exports.$ = jquery_1.$;
-var debug_1 = require("./debug");
-exports.Logger = debug_1.Logger;
+var devTools_1 = require("./devTools");
+exports.Logger = devTools_1.Logger;
 var di_1 = require("./di");
 exports.InjectorService = di_1.InjectorService;
 exports.Service = di_1.Service;
@@ -10803,8 +10869,8 @@ exports.Page = di_1.Page;
 exports.Resource = di_1.Resource;
 exports.Component = di_1.Component;
 var Injector_1 = require("./di/Injector");
-var debug_2 = require("./debug");
-Injector_1.Injector.getInstance().registerServiceInstance("Logger", debug_2.Logger);
+var devTools_2 = require("./devTools");
+Injector_1.Injector.getInstance().registerServiceInstance("Logger", devTools_2.Logger);
 var utils_1 = require("./utils");
 exports.EventEmitter = utils_1.EventEmitter;
 exports.EventEmitterFactory = utils_1.EventEmitterFactory;
@@ -10834,11 +10900,14 @@ exports.ComponentManager = component_1.ComponentManager;
 exports.ComponentInitializer = component_1.ComponentInitializer;
 var scorm_1 = require("./scorm");
 exports.ScormService = scorm_1.ScormService;
-
+var global_1 = require("./global");
+exports.haztivity = global_1.haztivity;
+//# sourceMappingURL=index.js.map
 });
-___scope___.file("src/jquery.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/jquery.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -10847,17 +10916,14 @@ var di_1 = require("./di");
 var $ = require("jquery");
 exports.$ = $;
 di_1.Injector.getInstance().registerServiceInstance("$", $);
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = $;
 //using global jquery
-
+//# sourceMappingURL=jquery.js.map
 });
-___scope___.file("src/di.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/di.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -10867,12 +10933,22 @@ exports.Injector = Injector_1.Injector;
 exports.TYPES = Injector_1.TYPES;
 exports.InjectorRegisterService = Injector_1.InjectorRegisterService;
 exports.InjectorService = Injector_1.InjectorService;
-__export(require("./di/decorators"));
-
+var decorators_1 = require("./di/decorators");
+exports.ServiceInstance = decorators_1.ServiceInstance;
+exports.Service = decorators_1.Service;
+exports.Sco = decorators_1.Sco;
+exports.Resource = decorators_1.Resource;
+exports.Page = decorators_1.Page;
+exports.Dependencies = decorators_1.Dependencies;
+exports.Component = decorators_1.Component;
+exports.Module = decorators_1.Module;
+exports.Core = decorators_1.Core;
+//# sourceMappingURL=di.js.map
 });
-___scope___.file("src/di/Injector.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/di/Injector.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -10937,7 +11013,7 @@ exports.TYPES = (function () {
  * Inyector de dependencias. Api para la manipulación de contenedores y dependencias
  * @class
  */
-var Injector = (function () {
+var Injector = /** @class */ (function () {
     /**
      * Instancia el Inyector. Por defecto se genera un contenedor root
      * @constructor
@@ -11353,9 +11429,7 @@ var Injector = (function () {
      * @see TYPES
      */
     Injector.prototype.registerComponent = function (name, service, dependencies, factory) {
-        if (service._componentName == undefined) {
-            service._componentName = name;
-        }
+        service._componentName = name;
         this._registerService(exports.TYPES.Component, name, service, dependencies, factory);
     };
     /**
@@ -11412,7 +11486,7 @@ var Injector = (function () {
     return Injector;
 }());
 exports.Injector = Injector;
-var InjectorService = (function () {
+var InjectorService = /** @class */ (function () {
     function InjectorService(injector, target) {
         this.get = function (service) {
             var result;
@@ -11447,7 +11521,7 @@ var InjectorService = (function () {
 }());
 exports.InjectorService = InjectorService;
 //Map dynamically the methods
-var InjectorRegisterService = (function () {
+var InjectorRegisterService = /** @class */ (function () {
     function InjectorRegisterService(injector) {
         var publish = [
             "registerService",
@@ -11478,7 +11552,7 @@ Injector.getInstance().registerServiceTransient("InjectorService", InjectorServi
 });
 //# sourceMappingURL=Injector.js.map
 });
-___scope___.file("src/di/Errors.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/di/Errors.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
 var __extends = (this && this.__extends) || (function () {
@@ -11491,6 +11565,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -11499,7 +11574,7 @@ var BaseError_1 = require("../base/BaseError");
 /**
  * Error al intentar obtener una dependencia no registrada
  */
-var HaztivityDependencyNotRegisteredError = (function (_super) {
+var HaztivityDependencyNotRegisteredError = /** @class */ (function (_super) {
     __extends(HaztivityDependencyNotRegisteredError, _super);
     function HaztivityDependencyNotRegisteredError(dependency, target) {
         return _super.call(this, "HaztivityDependencyNotRegisteredError", target
@@ -11512,7 +11587,7 @@ exports.HaztivityDependencyNotRegisteredError = HaztivityDependencyNotRegistered
 /**
  * Error al intentar registrar una dependencia ya registrada
  */
-var HaztivityDependencyAlreadyRegistered = (function (_super) {
+var HaztivityDependencyAlreadyRegistered = /** @class */ (function (_super) {
     __extends(HaztivityDependencyAlreadyRegistered, _super);
     function HaztivityDependencyAlreadyRegistered(dependency) {
         return _super.call(this, "HaztivityDependencyAlreadyRegistered", dependency + " is already registered") || this;
@@ -11523,7 +11598,7 @@ exports.HaztivityDependencyAlreadyRegistered = HaztivityDependencyAlreadyRegiste
 /**
  * Error al no indicarse un parámetro obligatorio
  */
-var HaztivityDependencyOptionRequired = (function (_super) {
+var HaztivityDependencyOptionRequired = /** @class */ (function (_super) {
     __extends(HaztivityDependencyOptionRequired, _super);
     function HaztivityDependencyOptionRequired(parameterName) {
         return _super.call(this, "HaztivityDependencyOptionRequired", "The parameter '" + parameterName + "' is required") || this;
@@ -11534,7 +11609,7 @@ exports.HaztivityDependencyOptionRequired = HaztivityDependencyOptionRequired;
 /**
  * Error al definir una clase como dependencia de ella misma
  */
-var HaztivityDependencyHasItsOwnAsDependency = (function (_super) {
+var HaztivityDependencyHasItsOwnAsDependency = /** @class */ (function (_super) {
     __extends(HaztivityDependencyHasItsOwnAsDependency, _super);
     function HaztivityDependencyHasItsOwnAsDependency(dependency) {
         return _super.call(this, "HaztivityDependencyHasItsOwnAsDependency", dependency + " has its own as dependency") || this;
@@ -11545,7 +11620,7 @@ exports.HaztivityDependencyHasItsOwnAsDependency = HaztivityDependencyHasItsOwnA
 /**
  * Error al intentar inyectar una dependencia a la que no se tiene acceso
  */
-var HaztivityDependencyAccessDenied = (function (_super) {
+var HaztivityDependencyAccessDenied = /** @class */ (function (_super) {
     __extends(HaztivityDependencyAccessDenied, _super);
     function HaztivityDependencyAccessDenied(target, dependency) {
         return _super.call(this, "HaztivityDependencyAccessDenied", target + " has not access to " + dependency) || this;
@@ -11556,7 +11631,7 @@ exports.HaztivityDependencyAccessDenied = HaztivityDependencyAccessDenied;
 /**
  * Error al intentar inyectar una dependencia a la que no se tiene acceso
  */
-var HaztivityDependencyNotValid = (function (_super) {
+var HaztivityDependencyNotValid = /** @class */ (function (_super) {
     __extends(HaztivityDependencyNotValid, _super);
     function HaztivityDependencyNotValid(target, dependencies) {
         return _super.call(this, "HaztivityDependencyNotValid", "Some dependency for " + target + " is undefined.") || this;
@@ -11564,9 +11639,9 @@ var HaztivityDependencyNotValid = (function (_super) {
     return HaztivityDependencyNotValid;
 }(BaseError_1.BaseError));
 exports.HaztivityDependencyNotValid = HaztivityDependencyNotValid;
-
+//# sourceMappingURL=Errors.js.map
 });
-___scope___.file("src/base/BaseError.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/base/BaseError.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
 var __extends = (this && this.__extends) || (function () {
@@ -11579,40 +11654,43 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
  */
-var debug_1 = require("../debug");
-debug_1.Logger;
-var BaseError = (function (_super) {
+var devTools_1 = require("../devTools");
+devTools_1.Logger;
+var BaseError = /** @class */ (function (_super) {
     __extends(BaseError, _super);
     function BaseError(name, message) {
         var _this = _super.call(this, message) || this;
         _this.name = name;
         _this.message = message;
-        debug_1.Logger.error(name, message);
+        devTools_1.Logger.error(name, message);
         return _this;
     }
     return BaseError;
 }(Error));
 exports.BaseError = BaseError;
-
+//# sourceMappingURL=BaseError.js.map
 });
-___scope___.file("src/debug.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/devTools.js", function(exports, require, module, __filename, __dirname){
 
+"use strict";
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
  */
-"use strict";
-var Logger_1 = require("./debug/Logger");
+Object.defineProperty(exports, "__esModule", { value: true });
+var Logger_1 = require("./devTools/Logger");
 exports.Logger = Logger_1.Logger;
-
+//# sourceMappingURL=devTools.js.map
 });
-___scope___.file("src/debug/Logger.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/devTools/Logger.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var loglevel = require("loglevel");
 //Create log
 var log = loglevel.getLogger("haztivity-core");
@@ -11631,11 +11709,12 @@ log.methodFactory = function (methodName, logLevel, loggerName) {
     };
 };
 log.setLevel(log.getLevel()); // Be sure to call setLevel method in order to apply plugin
-
+//# sourceMappingURL=Logger.js.map
 });
-___scope___.file("src/di/decorators.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/di/decorators.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -11767,15 +11846,16 @@ function Dependencies(params) {
     };
 }
 exports.Dependencies = Dependencies;
-
+//# sourceMappingURL=decorators.js.map
 });
-___scope___.file("src/utils.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/utils.js", function(exports, require, module, __filename, __dirname){
 
+"use strict";
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
  */
-"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @module
  * @description
@@ -11789,9 +11869,9 @@ var String_1 = require("./utils/String");
 exports.S = String_1.S;
 var DataOptions_1 = require("./utils/DataOptions");
 exports.DataOptions = DataOptions_1.DataOptions;
-
+//# sourceMappingURL=utils.js.map
 });
-___scope___.file("src/utils/EventEmitterFactory.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/utils/EventEmitterFactory.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -11800,13 +11880,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
  */
 var di_1 = require("../di");
 var EventEmitter_1 = require("./EventEmitter");
-var EventEmitterFactory = (function () {
+var EventEmitterFactory = /** @class */ (function () {
     /**
      * Factoria de EventEmitter. Permite generar instancias de EventEmitter para manipular eventos
      * @requires _EventEmitter
@@ -11825,20 +11906,20 @@ var EventEmitterFactory = (function () {
         eventEmitter.activate(this._globalEmitter, bind);
         return eventEmitter;
     };
+    EventEmitterFactory = __decorate([
+        di_1.Service({
+            name: "EventEmitterFactory",
+            dependencies: [
+                EventEmitter_1.EventEmitter
+            ]
+        })
+    ], EventEmitterFactory);
     return EventEmitterFactory;
 }());
-EventEmitterFactory = __decorate([
-    di_1.Service({
-        name: "EventEmitterFactory",
-        dependencies: [
-            EventEmitter_1.EventEmitter
-        ]
-    })
-], EventEmitterFactory);
 exports.EventEmitterFactory = EventEmitterFactory;
-
+//# sourceMappingURL=EventEmitterFactory.js.map
 });
-___scope___.file("src/utils/EventEmitter.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/utils/EventEmitter.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -11847,6 +11928,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -11854,7 +11936,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var jquery_1 = require("../jquery");
 //Register EventEmitter in DI
 var di_1 = require("../di");
-var EventEmitter = (function () {
+var EventEmitter = /** @class */ (function () {
     function EventEmitter(_$) {
         this._$ = _$;
         this._namespace = ".eventEmitter" + new Date().getTime();
@@ -11958,24 +12040,25 @@ var EventEmitter = (function () {
     EventEmitter.prototype.createEvent = function (name) {
         return this._$.Event(name);
     };
+    EventEmitter = __decorate([
+        di_1.Core({
+            name: "EventEmitter",
+            instantiable: true,
+            public: true,
+            dependencies: [
+                jquery_1.$
+            ]
+        })
+    ], EventEmitter);
     return EventEmitter;
 }());
-EventEmitter = __decorate([
-    di_1.Core({
-        name: "EventEmitter",
-        instantiable: true,
-        public: true,
-        dependencies: [
-            jquery_1.$
-        ]
-    })
-], EventEmitter);
 exports.EventEmitter = EventEmitter;
-
+//# sourceMappingURL=EventEmitter.js.map
 });
-___scope___.file("src/utils/String.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/utils/String.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -11989,9 +12072,9 @@ var String_1 = require("../libs/String");
 exports.S = String_1.S;
 var di_1 = require("../di");
 di_1.Injector.getInstance().registerServiceInstance("S", String_1.S);
-
+//# sourceMappingURL=String.js.map
 });
-___scope___.file("src/libs/String.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/libs/String.js", function(exports, require, module, __filename, __dirname){
 
 /* */
 "format cjs";
@@ -13089,9 +13172,9 @@ else {
                 }).call(this);
             }, { "./_count": 1, "./_splitLeft": 2, "./_splitRight": 3 }] }, {}, [4])(4);
 });
-
+//# sourceMappingURL=String.js.map
 });
-___scope___.file("src/utils/DataOptions.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/utils/DataOptions.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -13100,6 +13183,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -13107,11 +13191,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var di_1 = require("../di");
 var jquery_1 = require("../jquery");
 var String_1 = require("./String");
-var DataOptions = DataOptions_1 = (function () {
+var DataOptions = /** @class */ (function () {
     function DataOptions(_$, _S) {
         this._$ = _$;
         this._S = _S;
     }
+    DataOptions_1 = DataOptions;
     DataOptions.prototype.getDataOptions = function (element, prefix, optPrefix, mode) {
         if (optPrefix === void 0) { optPrefix = "opt"; }
         //extract data-_attributes with jquery data
@@ -13134,7 +13219,7 @@ var DataOptions = DataOptions_1 = (function () {
                         //myParam to my-param
                         parsedKey = parsedKey.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
                         break;
-                    default:
+                    default://camel
                         //myParam
                         parsedKey = parsedKey.charAt(0).toLowerCase().concat(parsedKey.substring(1));
                         break;
@@ -13151,44 +13236,44 @@ var DataOptions = DataOptions_1 = (function () {
         }
         return parsedParams;
     };
+    DataOptions.EXTRACT_DATA_MODE = {
+        underscore: "underscore",
+        hypen: "hypen",
+        camel: "camel"
+    };
+    DataOptions = DataOptions_1 = __decorate([
+        di_1.Service({
+            name: "DataOptions",
+            dependencies: [
+                jquery_1.$,
+                String_1.S
+            ]
+        })
+    ], DataOptions);
     return DataOptions;
+    var DataOptions_1;
 }());
-DataOptions.EXTRACT_DATA_MODE = {
-    underscore: "underscore",
-    hypen: "hypen",
-    camel: "camel"
-};
-DataOptions = DataOptions_1 = __decorate([
-    di_1.Service({
-        name: "DataOptions",
-        dependencies: [
-            jquery_1.$,
-            String_1.S
-        ]
-    })
-], DataOptions);
 exports.DataOptions = DataOptions;
-var DataOptions_1;
-
+//# sourceMappingURL=DataOptions.js.map
 });
-___scope___.file("src/sco.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/sco.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
  */
-__export(require("./sco/Errors"));
+var Errors_1 = require("./sco/Errors");
+exports.HaztivityPagesContextNotFound = Errors_1.HaztivityPagesContextNotFound;
+exports.HaztivityAppContextNotFound = Errors_1.HaztivityAppContextNotFound;
 var Sco_1 = require("./sco/Sco");
 exports.ScoController = Sco_1.ScoController;
 var ScoFactory_1 = require("./sco/ScoFactory");
 exports.ScoFactory = ScoFactory_1.ScoFactory;
-
+//# sourceMappingURL=sco.js.map
 });
-___scope___.file("src/sco/Errors.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/sco/Errors.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
 var __extends = (this && this.__extends) || (function () {
@@ -13201,6 +13286,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -13209,7 +13295,7 @@ var BaseError_1 = require("../base/BaseError");
 /**
  * Error al no indicarse contexto para la aplicación
  */
-var HaztivityAppContextNotFound = (function (_super) {
+var HaztivityAppContextNotFound = /** @class */ (function (_super) {
     __extends(HaztivityAppContextNotFound, _super);
     function HaztivityAppContextNotFound() {
         return _super.call(this, "HaztivityAppContextNotFound", "not context found for the application. Please visit LINK TO HELP") || this;
@@ -13220,7 +13306,7 @@ exports.HaztivityAppContextNotFound = HaztivityAppContextNotFound;
 /**
  * Error al no indicarse contexto para las páginas
  */
-var HaztivityPagesContextNotFound = (function (_super) {
+var HaztivityPagesContextNotFound = /** @class */ (function (_super) {
     __extends(HaztivityPagesContextNotFound, _super);
     function HaztivityPagesContextNotFound() {
         return _super.call(this, "HaztivityPagesContextNotFound", "not context found for pages. Please visit LINK TO HELP") || this;
@@ -13228,9 +13314,9 @@ var HaztivityPagesContextNotFound = (function (_super) {
     return HaztivityPagesContextNotFound;
 }(BaseError_1.BaseError));
 exports.HaztivityPagesContextNotFound = HaztivityPagesContextNotFound;
-
+//# sourceMappingURL=Errors.js.map
 });
-___scope___.file("src/sco/Sco.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/sco/Sco.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -13239,6 +13325,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -13251,8 +13338,10 @@ var Errors_1 = require("./Errors");
 var resource_1 = require("../resource");
 var component_1 = require("../component");
 var jquery_1 = require("../jquery");
-var ScoController = ScoController_1 = (function () {
-    function ScoController(_Navigator, _PageManager, _ResourceManager, _EventEmitterFactory, _ComponentManager, _ComponentInitializer, _$) {
+var PageController_1 = require("../page/PageController");
+var ScormService_1 = require("../scorm/ScormService");
+var ScoController = /** @class */ (function () {
+    function ScoController(_Navigator, _PageManager, _ResourceManager, _EventEmitterFactory, _ComponentManager, _ComponentInitializer, _$, _scormService) {
         this._Navigator = _Navigator;
         this._PageManager = _PageManager;
         this._ResourceManager = _ResourceManager;
@@ -13260,12 +13349,15 @@ var ScoController = ScoController_1 = (function () {
         this._ComponentManager = _ComponentManager;
         this._ComponentInitializer = _ComponentInitializer;
         this._$ = _$;
+        this._scormService = _scormService;
         this._eventEmitter = this._EventEmitterFactory.createEmitter();
     }
+    ScoController_1 = ScoController;
     ScoController.prototype.activate = function (options) {
         this._options = options;
         this._ComponentManager.addAll(this._options.components || []);
         this._PageManager.addPages(this._options.pages);
+        this._restorePagesState();
         return this;
     };
     ScoController.prototype.on = function () {
@@ -13278,6 +13370,8 @@ var ScoController = ScoController_1 = (function () {
             this._$context.prepend(this._options.template);
             this._$context.addClass(ScoController_1.CLASS_CONTEXT);
             this._$pagesContainer = this._$context.find("[data-hz-pages]");
+            this._eventEmitter.globalEmitter.on(PageController_1.PageController.ON_COMPLETE_CHANGE, { instance: this }, this._onPageStateChange);
+            this._eventEmitter.globalEmitter.on(PageController_1.PageController.ON_SHOWN, { instance: this }, this._onPageShown);
             //page contexts must exists
             if (this._$pagesContainer.length > 0) {
                 return true;
@@ -13290,40 +13384,114 @@ var ScoController = ScoController_1 = (function () {
             throw new Errors_1.HaztivityAppContextNotFound();
         }
     };
+    ScoController.prototype._onPageShown = function (e, $page, $oldPage, oldPageRelativePosition, pageController) {
+        var instance = e.data.instance;
+        if (instance._scormService.LMSIsInitialized()) {
+            instance._scormService.doLMSSetValue("cmi.core.lesson_location", pageController.options.name);
+            instance._scormService.doLMSCommit();
+        }
+    };
+    ScoController.prototype._getCurrentPage = function () {
+        var result = null;
+        if (this._scormService.LMSIsInitialized()) {
+            var page = this._scormService.doLMSGetValue("cmi.core.lesson_location");
+            if (!!page) {
+                result = page;
+            }
+        }
+        return result;
+    };
+    ScoController.prototype._restorePagesState = function () {
+        this._scormService.doLMSInitialize();
+        if (this._scormService.LMSIsInitialized()) {
+            var count = this._scormService.doLMSGetValue("cmi.objectives._count"), lessonStatus = this._scormService.doLMSGetValue("cmi.core.lesson_status");
+            if (lessonStatus == "not attempted") {
+                this._scormService.doLMSSetValue("cmi.core.lesson_status", "incomplete");
+                this._scormService.doLMSCommit();
+            }
+            if (count != undefined) {
+                for (var currentCount = 0; currentCount < count; currentCount++) {
+                    var currentKey = "cmi.objectives." + currentCount, id = this._scormService.doLMSGetValue(currentKey + ".id"), page = this._PageManager.getPageByName(id);
+                    if (page != undefined) {
+                        var scormState = this._scormService.doLMSGetValue(currentKey + ".status"), scormScore = parseFloat(this._scormService.doLMSGetValue(currentKey + ".score.raw")), pageState = page.getState();
+                        pageState.completed = scormState == "completed";
+                        pageState.score = !isNaN(scormScore) ? scormScore : null;
+                        pageState.visited = true;
+                        page.setState(pageState);
+                    }
+                }
+            }
+        }
+    };
+    ScoController.prototype._onPageStateChange = function (e, result, $page, pageController) {
+        var instance = e.data.instance;
+        var total = instance._PageManager.count(), completed = instance._PageManager.getCompleted();
+        if (instance._scormService.LMSIsInitialized()) {
+            var count = parseInt(instance._scormService.doLMSGetValue("cmi.objectives._count")), key = "cmi.objectives." + count;
+            instance._scormService.doLMSSetValue(key + ".id", pageController.options.name);
+            instance._scormService.doLMSSetValue(key + ".status", "completed");
+            if (pageController.state.score != undefined) {
+                instance._scormService.doLMSSetValue(key + ".score.raw", pageController.state.score);
+            }
+            if (completed.length == total) {
+                var score = 0.0, hasScore = 0;
+                for (var pageIndex = 0, completedLength = completed.length; pageIndex < completedLength; pageIndex++) {
+                    var page = instance._PageManager.getPage(completed[pageIndex]), pageScore = page.getState().score;
+                    if (pageScore != undefined) {
+                        hasScore++;
+                        score += pageScore;
+                    }
+                }
+                instance._scormService.doLMSSetValue("cmi.core.score.raw", (score * 100) / (hasScore * 100));
+                instance._scormService.doLMSSetValue("cmi.core.lesson_status", "completed");
+            }
+            instance._scormService.doLMSCommit();
+        }
+    };
     ScoController.prototype.run = function () {
         this._init();
         this._Navigator.activate(this._$pagesContainer);
         this._$pagesContainer.addClass(ScoController_1.CLASS_PAGES);
         this._ComponentInitializer.initialize(this._$context);
         //init components
-        this._Navigator.goTo(0);
+        var currentPage = this._getCurrentPage();
+        if (!!currentPage) {
+            var pageIndex = this._PageManager.getPageIndex(currentPage);
+            pageIndex = pageIndex != -1 ? pageIndex : 0;
+            this._Navigator.goTo(pageIndex);
+        }
+        else {
+            this._Navigator.goTo(0);
+        }
         return this;
     };
+    ScoController.CLASS_CONTEXT = "hz-container";
+    ScoController.CLASS_PAGES = "hz-pages-container";
+    ScoController = ScoController_1 = __decorate([
+        di_1.Sco({
+            name: "ScoController",
+            dependencies: [
+                navigator_1.Navigator,
+                page_1.PageManager,
+                resource_1.ResourceManager,
+                utils_1.EventEmitterFactory,
+                component_1.ComponentManager,
+                component_1.ComponentInitializer,
+                jquery_1.$,
+                ScormService_1.ScormService
+            ]
+        })
+    ], ScoController);
     return ScoController;
+    var ScoController_1;
 }());
-ScoController.CLASS_CONTEXT = "hz-container";
-ScoController.CLASS_PAGES = "hz-pages-container";
-ScoController = ScoController_1 = __decorate([
-    di_1.Sco({
-        name: "ScoController",
-        dependencies: [
-            navigator_1.Navigator,
-            page_1.PageManager,
-            resource_1.ResourceManager,
-            utils_1.EventEmitterFactory,
-            component_1.ComponentManager,
-            component_1.ComponentInitializer,
-            jquery_1.$
-        ]
-    })
-], ScoController);
 exports.ScoController = ScoController;
-var ScoController_1;
-
+//# sourceMappingURL=Sco.js.map
 });
-___scope___.file("src/page.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/page.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -13340,9 +13508,9 @@ var PageImplementation_1 = require("./page/PageImplementation");
 exports.PageImplementation = PageImplementation_1.PageImplementation;
 var PageManager_1 = require("./page/PageManager");
 exports.PageManager = PageManager_1.PageManager;
-
+//# sourceMappingURL=page.js.map
 });
-___scope___.file("src/page/PageRegister.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/page/PageRegister.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -13351,13 +13519,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
  */
 var di_1 = require("../di");
 var utils_1 = require("../utils");
-var PageRegister = PageRegister_1 = (function () {
+var PageRegister = /** @class */ (function () {
     /**
      * Almacena la información de una página.
      * Tipo Core
@@ -13367,6 +13536,7 @@ var PageRegister = PageRegister_1 = (function () {
     function PageRegister(_EventEmitterFactory) {
         this._EventEmitterFactory = _EventEmitterFactory;
     }
+    PageRegister_1 = PageRegister;
     PageRegister.prototype.getResources = function () {
         return this._options.resources;
     };
@@ -13397,23 +13567,23 @@ var PageRegister = PageRegister_1 = (function () {
     PageRegister.prototype.getName = function () {
         return this._options.name;
     };
+    PageRegister.NAMESPACE = "page";
+    PageRegister = PageRegister_1 = __decorate([
+        di_1.Core({
+            name: "PageRegister",
+            instantiable: true,
+            dependencies: [
+                utils_1.EventEmitterFactory
+            ]
+        })
+    ], PageRegister);
     return PageRegister;
+    var PageRegister_1;
 }());
-PageRegister.NAMESPACE = "page";
-PageRegister = PageRegister_1 = __decorate([
-    di_1.Core({
-        name: "PageRegister",
-        instantiable: true,
-        dependencies: [
-            utils_1.EventEmitterFactory
-        ]
-    })
-], PageRegister);
 exports.PageRegister = PageRegister;
-var PageRegister_1;
-
+//# sourceMappingURL=PageRegister.js.map
 });
-___scope___.file("src/page/PageController.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/page/PageController.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -13422,6 +13592,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -13430,7 +13601,8 @@ var di_1 = require("../di");
 var jquery_1 = require("../jquery");
 var resource_1 = require("../resource");
 var Errors_1 = require("./Errors");
-var PageController = PageController_1 = (function () {
+var ScormService_1 = require("../scorm/ScormService");
+var PageController = /** @class */ (function () {
     /**
      * Controller base para todas las páginas.
      * Tipo Page
@@ -13445,6 +13617,7 @@ var PageController = PageController_1 = (function () {
         this._ResourceInitializerService = _ResourceInitializerService;
         this._resources = [];
     }
+    PageController_1 = PageController;
     /**
      * Configura la clase nada más instanciarla
      * @param {IPageControllerOptions}  options         Opciones para el controlador
@@ -13469,6 +13642,17 @@ var PageController = PageController_1 = (function () {
         }
         return completed;
     };
+    PageController.prototype._getScore = function () {
+        var score = 0, hasScore = false;
+        for (var _i = 0, _a = this._resources; _i < _a.length; _i++) {
+            var resource = _a[_i];
+            score += resource.getScore();
+            if (hasScore == false) {
+                hasScore = resource.hasScore();
+            }
+        }
+        return hasScore == false ? null : score;
+    };
     PageController.prototype.isCompleted = function (forceCheck) {
         var result = this.state.completed, current = this.state.completed;
         if (forceCheck || this.state.completed != true) {
@@ -13477,6 +13661,7 @@ var PageController = PageController_1 = (function () {
             this.state.completed = result;
             if (current !== result) {
                 this.eventEmitter.trigger(PageController_1.ON_COMPLETE_CHANGE, [result, this.$element, this]);
+                this.eventEmitter.globalEmitter.trigger(PageController_1.ON_COMPLETE_CHANGE, [result, this.$element, this]);
             }
         }
         return result;
@@ -13509,11 +13694,16 @@ var PageController = PageController_1 = (function () {
             var resource = _a[_i];
             resource.on(resource_1.ResourceController.ON_COMPLETED, { instance: this, resource: resource }, this._onResourceCompleted);
         }
+        if (this._resources.length == 0) {
+            this.isCompleted(true);
+        }
         return this._resources;
     };
     PageController.prototype._onResourceCompleted = function (e) {
-        var instance = e.data.instance;
-        instance.eventEmitter.trigger(PageController_1.ON_RESOURCE_COMPLETED, [instance.$element, instance, e.data.resource]);
+        var instance = e.data.instance, resource = e.data.resource;
+        instance.state.score = instance._getScore();
+        instance.eventEmitter.trigger(PageController_1.ON_RESOURCE_COMPLETED, [instance.$element, instance, resource]);
+        instance.eventEmitter.globalEmitter.trigger(PageController_1.ON_RESOURCE_COMPLETED, [instance.$element, instance, resource]);
         instance.isCompleted(true);
     };
     /**
@@ -13555,6 +13745,8 @@ var PageController = PageController_1 = (function () {
      */
     PageController.prototype._onShowEnd = function ($oldPage, oldPageRelativePosition) {
         this.eventEmitter.trigger(PageController_1.ON_SHOWN, [this.$element, $oldPage, oldPageRelativePosition, this]);
+        this.eventEmitter.globalEmitter.trigger(PageController_1.ON_SHOWN, [this.$element, $oldPage, oldPageRelativePosition, this]);
+        this.isCompleted();
     };
     /**
      * Realiza la animación correspondiente
@@ -13587,36 +13779,42 @@ var PageController = PageController_1 = (function () {
      * Invocado al solicitarse la destruccion de la página
      */
     PageController.prototype._destroy = function () {
+        for (var _i = 0, _a = this._resources; _i < _a.length; _i++) {
+            var resource = _a[_i];
+            resource.destroy();
+        }
         this.eventEmitter.trigger(PageController_1.ON_DESTROY, [this.$element, this]);
     };
+    PageController.NAMESPACE = "pageController";
+    PageController.ON_RENDERING = PageController_1.NAMESPACE + ":rendering";
+    PageController.ON_RENDERED = PageController_1.NAMESPACE + ":rendered";
+    PageController.ON_APPENDED = PageController_1.NAMESPACE + ":appended";
+    PageController.ON_SHOW = PageController_1.NAMESPACE + ":show";
+    PageController.ON_SHOWN = PageController_1.NAMESPACE + ":shown";
+    PageController.ON_COMPLETE_CHANGE = PageController_1.NAMESPACE + ":completechange";
+    PageController.ON_RESOURCE_COMPLETED = PageController_1.NAMESPACE + ":resourcecomplete";
+    PageController.ON_DESTROY = PageController_1.NAMESPACE + ":destroy";
+    PageController.CLASS_PAGE = "hz-page";
+    PageController = PageController_1 = __decorate([
+        di_1.Dependencies({
+            dependencies: [
+                jquery_1.$,
+                di_1.InjectorService,
+                resource_1.ResourceInitializerService,
+                ScormService_1.ScormService
+            ]
+        })
+    ], PageController);
     return PageController;
+    var PageController_1;
 }());
-PageController.NAMESPACE = "pageController";
-PageController.ON_RENDERING = PageController_1.NAMESPACE + ":rendering";
-PageController.ON_RENDERED = PageController_1.NAMESPACE + ":rendered";
-PageController.ON_APPENDED = PageController_1.NAMESPACE + ":appended";
-PageController.ON_SHOW = PageController_1.NAMESPACE + ":show";
-PageController.ON_SHOWN = PageController_1.NAMESPACE + ":shown";
-PageController.ON_COMPLETE_CHANGE = PageController_1.NAMESPACE + ":completechange";
-PageController.ON_RESOURCE_COMPLETED = PageController_1.NAMESPACE + ":resourcecomplete";
-PageController.ON_DESTROY = PageController_1.NAMESPACE + ":destroy";
-PageController.CLASS_PAGE = "hz-page";
-PageController = PageController_1 = __decorate([
-    di_1.Dependencies({
-        dependencies: [
-            jquery_1.$,
-            di_1.InjectorService,
-            resource_1.ResourceInitializerService
-        ]
-    })
-], PageController);
 exports.PageController = PageController;
-var PageController_1;
-
+//# sourceMappingURL=PageController.js.map
 });
-___scope___.file("src/resource.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/resource.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -13631,9 +13829,9 @@ var ResourceSequenceFactory_1 = require("./resource/ResourceSequenceFactory");
 exports.ResourceSequenceFactory = ResourceSequenceFactory_1.ResourceSequenceFactory;
 var ResourceSequence_1 = require("./resource/ResourceSequence");
 exports.ResourceSequence = ResourceSequence_1.ResourceSequence;
-
+//# sourceMappingURL=resource.js.map
 });
-___scope___.file("src/resource/ResourceController.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/resource/ResourceController.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -13642,6 +13840,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -13649,7 +13848,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var di_1 = require("../di");
 var jquery_1 = require("../jquery");
 var utils_1 = require("../utils");
-var ResourceController = ResourceController_1 = (function () {
+var ResourceController = /** @class */ (function () {
     /**
      * Controlador base para los recursos
      * @param {JQueryStatic}            _$
@@ -13664,7 +13863,9 @@ var ResourceController = ResourceController_1 = (function () {
         this._completeDeferred = this._$.Deferred();
         this._disabled = false;
         this._locked = false;
+        this._hasScore = false;
     }
+    ResourceController_1 = ResourceController;
     /**
      * Marca el recurso como completado
      * @private
@@ -13698,6 +13899,12 @@ var ResourceController = ResourceController_1 = (function () {
      */
     ResourceController.prototype.isLocked = function () {
         return this._locked;
+    };
+    ResourceController.prototype.hasScore = function () {
+        return this._hasScore;
+    };
+    ResourceController.prototype.getScore = function () {
+        return this._score;
     };
     /**
      * Indica si el recurso está deshabilitado
@@ -13796,26 +14003,26 @@ var ResourceController = ResourceController_1 = (function () {
     ResourceController.prototype.getElement = function () {
         return this._$element;
     };
+    ResourceController.NAMESPACE = "resourceController";
+    ResourceController.ON_COMPLETED = ResourceController_1.NAMESPACE + ":completed";
+    ResourceController.CLASS_UNCOMPLETED = "hz-resource--uncompleted";
+    ResourceController.CLASS_COMPLETED = "hz-resource--completed";
+    ResourceController.CLASS_DISABLED = "hz-resource--disabled";
+    ResourceController = ResourceController_1 = __decorate([
+        di_1.Dependencies({
+            dependencies: [
+                jquery_1.$,
+                utils_1.EventEmitterFactory
+            ]
+        })
+    ], ResourceController);
     return ResourceController;
+    var ResourceController_1;
 }());
-ResourceController.NAMESPACE = "resourceController";
-ResourceController.ON_COMPLETED = ResourceController_1.NAMESPACE + ":completed";
-ResourceController.CLASS_UNCOMPLETED = "hz-resource--uncompleted";
-ResourceController.CLASS_COMPLETED = "hz-resource--completed";
-ResourceController.CLASS_DISABLED = "hz-resource--disabled";
-ResourceController = ResourceController_1 = __decorate([
-    di_1.Dependencies({
-        dependencies: [
-            jquery_1.$,
-            utils_1.EventEmitterFactory
-        ]
-    })
-], ResourceController);
 exports.ResourceController = ResourceController;
-var ResourceController_1;
-
+//# sourceMappingURL=ResourceController.js.map
 });
-___scope___.file("src/resource/ResourceManager.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/resource/ResourceManager.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -13824,6 +14031,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -13832,7 +14040,7 @@ var di_1 = require("../di");
 var di_2 = require("../di");
 var Errors_1 = require("./Errors");
 var utils_1 = require("../utils");
-var ResourceManager = (function () {
+var ResourceManager = /** @class */ (function () {
     function ResourceManager(_Injector, _S) {
         this._Injector = _Injector;
         this._S = _S;
@@ -13893,21 +14101,21 @@ var ResourceManager = (function () {
             this.add(resource);
         }
     };
+    ResourceManager = __decorate([
+        di_1.Core({
+            name: "ResourceManager",
+            dependencies: [
+                di_2.InjectorService,
+                utils_1.S
+            ]
+        })
+    ], ResourceManager);
     return ResourceManager;
 }());
-ResourceManager = __decorate([
-    di_1.Core({
-        name: "ResourceManager",
-        dependencies: [
-            di_2.InjectorService,
-            utils_1.S
-        ]
-    })
-], ResourceManager);
 exports.ResourceManager = ResourceManager;
-
+//# sourceMappingURL=ResourceManager.js.map
 });
-___scope___.file("src/resource/Errors.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/resource/Errors.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
 var __extends = (this && this.__extends) || (function () {
@@ -13920,6 +14128,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -13928,7 +14137,7 @@ var BaseError_1 = require("../base/BaseError");
 /**
  * Error al intentar registrar un recurso inválido
  */
-var HaztivityResourceInvalidError = (function (_super) {
+var HaztivityResourceInvalidError = /** @class */ (function (_super) {
     __extends(HaztivityResourceInvalidError, _super);
     function HaztivityResourceInvalidError() {
         return _super.call(this, "HaztivityResourceInvalidError", "Invalid resource") || this;
@@ -13939,7 +14148,7 @@ exports.HaztivityResourceInvalidError = HaztivityResourceInvalidError;
 /**
  * Error al intentar registrar un recurso inválido
  */
-var HaztivityResourceAlreadyRegisteredError = (function (_super) {
+var HaztivityResourceAlreadyRegisteredError = /** @class */ (function (_super) {
     __extends(HaztivityResourceAlreadyRegisteredError, _super);
     function HaztivityResourceAlreadyRegisteredError(resource) {
         return _super.call(this, "HaztivityResourceInvalidError", "Resource '" + resource + "' already registered with another controller.") || this;
@@ -13950,7 +14159,7 @@ exports.HaztivityResourceAlreadyRegisteredError = HaztivityResourceAlreadyRegist
 /**
  * Error al intentar registrar un recurso inválido
  */
-var HaztivityResourceNameInvalidError = (function (_super) {
+var HaztivityResourceNameInvalidError = /** @class */ (function (_super) {
     __extends(HaztivityResourceNameInvalidError, _super);
     function HaztivityResourceNameInvalidError(resource) {
         //todo LINK
@@ -13962,7 +14171,7 @@ exports.HaztivityResourceNameInvalidError = HaztivityResourceNameInvalidError;
 /**
  * Error al intentar inicializar un recurso sin indicar el nombre del recurso a inicializar
  */
-var HaztivityResourceNameRequiredError = (function (_super) {
+var HaztivityResourceNameRequiredError = /** @class */ (function (_super) {
     __extends(HaztivityResourceNameRequiredError, _super);
     function HaztivityResourceNameRequiredError($element) {
         return _super.call(this, "HaztivityResourceNameRequiredError", "Resource name not provider in data-* attribute. " + $element) || this;
@@ -13973,7 +14182,7 @@ exports.HaztivityResourceNameRequiredError = HaztivityResourceNameRequiredError;
 /**
  * Error al intentar inicializar un recurso no registrado
  */
-var HaztivityResourceNotRegisteredError = (function (_super) {
+var HaztivityResourceNotRegisteredError = /** @class */ (function (_super) {
     __extends(HaztivityResourceNotRegisteredError, _super);
     function HaztivityResourceNotRegisteredError(resource) {
         return _super.call(this, "HaztivityResourceNotRegisteredError", "Attempt to initialize " + resource + " but is not registered") || this;
@@ -13984,7 +14193,7 @@ exports.HaztivityResourceNotRegisteredError = HaztivityResourceNotRegisteredErro
 /**
  * Error de controlador invalido
  */
-var HaztivityInvalidResourceControllerError = (function (_super) {
+var HaztivityInvalidResourceControllerError = /** @class */ (function (_super) {
     __extends(HaztivityInvalidResourceControllerError, _super);
     function HaztivityInvalidResourceControllerError(resource) {
         return _super.call(this, "HaztivityInvalidResourceControllerError", "Invalid controller for " + resource + " resource") || this;
@@ -13992,9 +14201,9 @@ var HaztivityInvalidResourceControllerError = (function (_super) {
     return HaztivityInvalidResourceControllerError;
 }(BaseError_1.BaseError));
 exports.HaztivityInvalidResourceControllerError = HaztivityInvalidResourceControllerError;
-
+//# sourceMappingURL=Errors.js.map
 });
-___scope___.file("src/resource/ResourceInitializerService.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/resource/ResourceInitializerService.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -14003,13 +14212,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
  */
 var ResourceInitializer_1 = require("./ResourceInitializer");
 var di_1 = require("../di");
-var ResourceInitializerService = (function () {
+var ResourceInitializerService = /** @class */ (function () {
     /**
      * Servicio del inicializador de recursos
      * @class
@@ -14047,20 +14257,20 @@ var ResourceInitializerService = (function () {
         if (config === void 0) { config = {}; }
         return undefined;
     };
+    ResourceInitializerService = __decorate([
+        di_1.Service({
+            name: "ResourceInitializerService",
+            dependencies: [
+                ResourceInitializer_1.ResourceInitializer
+            ]
+        })
+    ], ResourceInitializerService);
     return ResourceInitializerService;
 }());
-ResourceInitializerService = __decorate([
-    di_1.Service({
-        name: "ResourceInitializerService",
-        dependencies: [
-            ResourceInitializer_1.ResourceInitializer
-        ]
-    })
-], ResourceInitializerService);
 exports.ResourceInitializerService = ResourceInitializerService;
-
+//# sourceMappingURL=ResourceInitializerService.js.map
 });
-___scope___.file("src/resource/ResourceInitializer.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/resource/ResourceInitializer.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -14069,6 +14279,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -14078,13 +14289,14 @@ var ResourceManager_1 = require("./ResourceManager");
 var utils_1 = require("../utils");
 var jquery_1 = require("../jquery");
 var Errors_1 = require("./Errors");
-var ResourceInitializer = ResourceInitializer_1 = (function () {
+var ResourceInitializer = /** @class */ (function () {
     function ResourceInitializer(_$, _ResourceManager, _InjectorService, _DataOptions) {
         this._$ = _$;
         this._ResourceManager = _ResourceManager;
         this._InjectorService = _InjectorService;
         this._DataOptions = _DataOptions;
     }
+    ResourceInitializer_1 = ResourceInitializer;
     /**
      * Inicializa todos los recursos en un contexto en concreto
      * @param {JQuery}  $context    Contexto en el cual buscar recursos a inicializar
@@ -14131,6 +14343,7 @@ var ResourceInitializer = ResourceInitializer_1 = (function () {
                         controllerInstance.init(options, config.data);
                     }
                     else {
+                        //warn
                     }
                     result = controllerInstance;
                 }
@@ -14160,7 +14373,7 @@ var ResourceInitializer = ResourceInitializer_1 = (function () {
         if (initState === void 0) { initState = 2; }
         var result = [], $elements = this._findElementsInContext($context);
         switch (initState) {
-            case 0:
+            case 0://only without init
                 for (var elementIndex = 0, $elementsLength = $elements.length; elementIndex < $elementsLength; elementIndex++) {
                     var $element = this._$($elements[elementIndex]);
                     if ($element.data(ResourceInitializer_1.PREFIX_INSTANCE) == undefined) {
@@ -14168,7 +14381,7 @@ var ResourceInitializer = ResourceInitializer_1 = (function () {
                     }
                 }
                 break;
-            case 1:
+            case 1://only initialized
                 for (var elementIndex = 0, $elementsLength = $elements.length; elementIndex < $elementsLength; elementIndex++) {
                     var $element = this._$($elements[elementIndex]);
                     if ($element.data(ResourceInitializer_1.PREFIX_INSTANCE) != undefined) {
@@ -14224,28 +14437,28 @@ var ResourceInitializer = ResourceInitializer_1 = (function () {
         $elements = parents.concat($context.find("[" + ResourceInitializer_1.PREFIX + "],[data-" + ResourceInitializer_1.PREFIX + "]").toArray()); //get elements with the prefix
         return this._$($elements);
     };
+    ResourceInitializer.PREFIX = "hz-resource";
+    ResourceInitializer.CAMEL_PREFIX = "hzResource";
+    ResourceInitializer.PREFIX_INSTANCE = "hzResourceInstance";
+    ResourceInitializer = ResourceInitializer_1 = __decorate([
+        di_1.Core({
+            name: "ResourceInitializer",
+            dependencies: [
+                jquery_1.$,
+                ResourceManager_1.ResourceManager,
+                di_1.InjectorService,
+                utils_1.DataOptions
+            ],
+            public: true
+        })
+    ], ResourceInitializer);
     return ResourceInitializer;
+    var ResourceInitializer_1;
 }());
-ResourceInitializer.PREFIX = "hz-resource";
-ResourceInitializer.CAMEL_PREFIX = "hzResource";
-ResourceInitializer.PREFIX_INSTANCE = "hzResourceInstance";
-ResourceInitializer = ResourceInitializer_1 = __decorate([
-    di_1.Core({
-        name: "ResourceInitializer",
-        dependencies: [
-            jquery_1.$,
-            ResourceManager_1.ResourceManager,
-            di_1.InjectorService,
-            utils_1.DataOptions
-        ],
-        public: true
-    })
-], ResourceInitializer);
 exports.ResourceInitializer = ResourceInitializer;
-var ResourceInitializer_1;
-
+//# sourceMappingURL=ResourceInitializer.js.map
 });
-___scope___.file("src/resource/ResourceSequenceFactory.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/resource/ResourceSequenceFactory.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -14254,13 +14467,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
  */
 var di_1 = require("../di");
 var ResourceSequence_1 = require("./ResourceSequence");
-var ResourceSequenceFactory = (function () {
+var ResourceSequenceFactory = /** @class */ (function () {
     function ResourceSequenceFactory(_ResourceSequence) {
         this._ResourceSequence = _ResourceSequence;
     }
@@ -14275,20 +14489,20 @@ var ResourceSequenceFactory = (function () {
         sequence.activate(items, id);
         return sequence;
     };
+    ResourceSequenceFactory = __decorate([
+        di_1.Service({
+            name: "ResourceSequenceFactory",
+            dependencies: [
+                ResourceSequence_1.ResourceSequence
+            ]
+        })
+    ], ResourceSequenceFactory);
     return ResourceSequenceFactory;
 }());
-ResourceSequenceFactory = __decorate([
-    di_1.Service({
-        name: "ResourceSequenceFactory",
-        dependencies: [
-            ResourceSequence_1.ResourceSequence
-        ]
-    })
-], ResourceSequenceFactory);
 exports.ResourceSequenceFactory = ResourceSequenceFactory;
-
+//# sourceMappingURL=ResourceSequenceFactory.js.map
 });
-___scope___.file("src/resource/ResourceSequence.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/resource/ResourceSequence.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -14297,6 +14511,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -14306,7 +14521,7 @@ var jquery_1 = require("../jquery");
 var utils_1 = require("../utils");
 var ResourceController_1 = require("./ResourceController");
 var ResourceInitializer_1 = require("./ResourceInitializer");
-var ResourceSequence = ResourceSequence_1 = (function () {
+var ResourceSequence = /** @class */ (function () {
     function ResourceSequence(_$, _EventEmitterFactory) {
         this._items = [];
         this._itemsPromises = [];
@@ -14317,6 +14532,7 @@ var ResourceSequence = ResourceSequence_1 = (function () {
         this._completeDeferred = this._$.Deferred();
         this._locked = false;
     }
+    ResourceSequence_1 = ResourceSequence;
     /**
      * Activa la secuencia
      * @param {JQuery | ResourceController[] | ResourceSequence[]}  items       Conjunto de items a incluir en la secuencia.
@@ -14495,36 +14711,36 @@ var ResourceSequence = ResourceSequence_1 = (function () {
         return this;
     };
     ;
+    ResourceSequence.NAMESPACE = "resourceSequence";
+    ResourceSequence.ON_COMPLETED = ResourceSequence_1.NAMESPACE + ":completed";
+    ResourceSequence.ON_RESOURCE_STATE_CHANGE = ResourceSequence_1.NAMESPACE + ":resourcestatechange";
+    ResourceSequence.STATES = {
+        waiting: 0,
+        running: 1,
+        completed: 2
+    };
+    ResourceSequence.CLASS_WAITING = "hz-resource-sequence--waiting";
+    ResourceSequence.CLASS_RUNNING = "hz-resource-sequence--current";
+    ResourceSequence.CLASS_COMPLETED = "hz-resource-sequence--completed";
+    ResourceSequence.ATTR_SEQUENCE = "data-hz-resource-sequence";
+    ResourceSequence = ResourceSequence_1 = __decorate([
+        di_1.Core({
+            name: "ResourceSequence",
+            dependencies: [
+                jquery_1.$,
+                utils_1.EventEmitterFactory
+            ],
+            instantiable: true,
+            public: true
+        })
+    ], ResourceSequence);
     return ResourceSequence;
+    var ResourceSequence_1;
 }());
-ResourceSequence.NAMESPACE = "resourceSequence";
-ResourceSequence.ON_COMPLETED = ResourceSequence_1.NAMESPACE + ":completed";
-ResourceSequence.ON_RESOURCE_STATE_CHANGE = ResourceSequence_1.NAMESPACE + ":resourcestatechange";
-ResourceSequence.STATES = {
-    waiting: 0,
-    running: 1,
-    completed: 2
-};
-ResourceSequence.CLASS_WAITING = "hz-resource-sequence--waiting";
-ResourceSequence.CLASS_RUNNING = "hz-resource-sequence--current";
-ResourceSequence.CLASS_COMPLETED = "hz-resource-sequence--completed";
-ResourceSequence.ATTR_SEQUENCE = "data-hz-resource-sequence";
-ResourceSequence = ResourceSequence_1 = __decorate([
-    di_1.Core({
-        name: "ResourceSequence",
-        dependencies: [
-            jquery_1.$,
-            utils_1.EventEmitterFactory
-        ],
-        instantiable: true,
-        public: true
-    })
-], ResourceSequence);
 exports.ResourceSequence = ResourceSequence;
-var ResourceSequence_1;
-
+//# sourceMappingURL=ResourceSequence.js.map
 });
-___scope___.file("src/page/Errors.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/page/Errors.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
 var __extends = (this && this.__extends) || (function () {
@@ -14537,6 +14753,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -14545,7 +14762,7 @@ var BaseError_1 = require("../base/BaseError");
 /**
  * Error al tratar de registrar una página existente
  */
-var HaztivityPageAlreadyRegistered = (function (_super) {
+var HaztivityPageAlreadyRegistered = /** @class */ (function (_super) {
     __extends(HaztivityPageAlreadyRegistered, _super);
     function HaztivityPageAlreadyRegistered(pageName) {
         return _super.call(this, "HaztivityPageAlreadyRegistered", "'" + pageName + "' already exists. Pages must be uniques") || this;
@@ -14556,7 +14773,7 @@ exports.HaztivityPageAlreadyRegistered = HaztivityPageAlreadyRegistered;
 /**
  * Error al indicarse un nombre de página inválido
  */
-var HaztivityPageNameInvalid = (function (_super) {
+var HaztivityPageNameInvalid = /** @class */ (function (_super) {
     __extends(HaztivityPageNameInvalid, _super);
     function HaztivityPageNameInvalid(pageName) {
         return _super.call(this, "HaztivityPageNameInvalid", "The name '" + pageName + "' is invalid. Only allowed [a-zA-Z0-9_-]") || this;
@@ -14567,7 +14784,7 @@ exports.HaztivityPageNameInvalid = HaztivityPageNameInvalid;
 /**
  * Error al no generarse elemento en la página
  */
-var HaztivityPageElementError = (function (_super) {
+var HaztivityPageElementError = /** @class */ (function (_super) {
     __extends(HaztivityPageElementError, _super);
     function HaztivityPageElementError(pageName) {
         return _super.call(this, "HaztivityPageElementError", "The page '" + pageName + "' $element is invalid. The template could not be undefined") || this;
@@ -14575,9 +14792,152 @@ var HaztivityPageElementError = (function (_super) {
     return HaztivityPageElementError;
 }(BaseError_1.BaseError));
 exports.HaztivityPageElementError = HaztivityPageElementError;
-
+//# sourceMappingURL=Errors.js.map
 });
-___scope___.file("src/page/GenericPageController.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/scorm/ScormService.js", function(exports, require, module, __filename, __dirname){
+
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * @license
+ * Copyright Davinchi. All Rights Reserved.
+ */
+var di_1 = require("../di");
+var devTools_1 = require("../devTools");
+var ScormService = /** @class */ (function () {
+    function ScormService(Logger) {
+        this.Logger = Logger;
+        this._version = ScormService_1.VERSIONS.auto;
+    }
+    ScormService_1 = ScormService;
+    ScormService.prototype.setVersion = function (version) {
+        var versions = ScormService_1.VERSIONS, keys = Object.keys(versions);
+        for (var versionIndex = 0, keysLength = keys.length; versionIndex < keysLength; versionIndex++) {
+            var currentKey = keys[versionIndex], currentVersion = versions[currentKey];
+            if (currentVersion === version) {
+                this._version = version;
+                versionIndex = keysLength;
+            }
+        }
+        this._version = this._version || versions.auto;
+    };
+    ScormService.prototype.getAPIVersion = function () {
+        return this._version;
+    };
+    ScormService.prototype.doLMSInitialize = function () {
+        return this.cmiBooleanToJs(this._getAPICall("LMSInitialize", "Initialize")(""));
+    };
+    ScormService.prototype.doLMSFinish = function () {
+        return this.cmiBooleanToJs(this._getAPICall("LMSFinish", "Terminate")(""));
+    };
+    ScormService.prototype.doLMSGetValue = function (parameter) {
+        return this._getAPICall("LMSGetValue", "GetValue")(parameter);
+    };
+    ScormService.prototype.doLMSSetValue = function (parameter, value) {
+        return this.cmiBooleanToJs(this._getAPICall("LMSSetValue", "SetValue")(parameter, value));
+    };
+    ScormService.prototype.doLMSCommit = function () {
+        return this.cmiBooleanToJs(this._getAPICall("LMSCommit", "Commit")(""));
+    };
+    ScormService.prototype.doLMSGetLastError = function () {
+        return this._getAPICall("LMSGetLastError", "GetLastError")();
+    };
+    ScormService.prototype.doLMSGetErrorString = function (errorCode) {
+        return this._getAPICall("LMSGetErrorString", "GetErrorString")(errorCode.toString());
+    };
+    ScormService.prototype.doLMSGetDiagnostic = function (errorCode) {
+        return this._getAPICall("LMSGetDiagnostic", "GetDiagnostic")(errorCode.toString());
+    };
+    ScormService.prototype.LMSIsInitialized = function () {
+        return this._API;
+    };
+    ScormService.prototype.ErrorHandler = function () {
+        return this._getAPICall("LMSGetLastError", "GetLastError")();
+    };
+    ScormService.prototype.cmiBooleanToJs = function (value) {
+        return (value === "1" || value === 1 || value === "true" || value === true);
+    };
+    ScormService.prototype.getAPIHandle = function () {
+        var win = window;
+        if (win.parent && win.parent != win) {
+            this._findAPI(win.parent);
+        }
+        if (!this._API && win.top.opener) {
+            this._findAPI(win.top.opener);
+        }
+        else if (!this._API) {
+            devTools_1.Logger.warn("ScormService", "Unable to find API adapter");
+        }
+    };
+    ScormService.prototype._findAPI = function (win) {
+        var findAttempts = 0, findAttemptLimit = 500;
+        for (findAttempts; findAttempts < findAttemptLimit; findAttempts++) {
+            if (win.API && (this._version === ScormService_1.VERSIONS.v12 || this._version === ScormService_1.VERSIONS.auto)) {
+                this._API = win.API;
+                this._version = ScormService_1.VERSIONS.v12;
+                findAttempts = findAttemptLimit;
+            }
+            else if (win.API_1484_11 && (this._version === ScormService_1.VERSIONS.v2004 || this._version === ScormService_1.VERSIONS.auto)) {
+                this._API = win.API_1484_11;
+                this._version = "2004";
+                findAttempts = findAttemptLimit;
+            }
+            else if (win.parent && win.parent != win) {
+                findAttempts++;
+                win = win.parent;
+            }
+        }
+    };
+    ScormService.prototype._getAPICall = function (funcname12, funcname2004) {
+        var _this = this;
+        if (!this._API) {
+            this.getAPIHandle();
+            if (!this._API) {
+                return (function () {
+                    devTools_1.Logger.error("ScormService", "No API found, unable to execute " + (_this.getAPIVersion() === ScormService_1.VERSIONS.v2004
+                        ? funcname2004
+                        : funcname12));
+                });
+            }
+        }
+        switch (this._version) {
+            case ScormService_1.VERSIONS.v2004:
+                return function () {
+                    return _this._API[funcname2004].apply(_this._API, arguments);
+                };
+            default:
+                return function () {
+                    return _this._API[funcname12].apply(_this._API, arguments);
+                };
+        }
+    };
+    ;
+    ScormService.VERSIONS = {
+        auto: "Auto",
+        v12: "1.2",
+        v2004: "2004"
+    };
+    ScormService = ScormService_1 = __decorate([
+        di_1.Service({
+            name: "ScormService",
+            dependencies: [
+                devTools_1.Logger
+            ]
+        })
+    ], ScormService);
+    return ScormService;
+    var ScormService_1;
+}());
+exports.ScormService = ScormService;
+//# sourceMappingURL=ScormService.js.map
+});
+___scope___.file("dist/page/GenericPageController.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
 var __extends = (this && this.__extends) || (function () {
@@ -14596,6 +14956,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -14604,7 +14965,7 @@ var di_1 = require("../di");
 var jquery_1 = require("../jquery");
 var PageController_1 = require("./PageController");
 var resource_1 = require("../resource");
-var GenericPageController = (function (_super) {
+var GenericPageController = /** @class */ (function (_super) {
     __extends(GenericPageController, _super);
     function GenericPageController(_$, _InjectorService, _ResourceInitializerService, _ResourceSequenceFactory) {
         var _this = _super.call(this, _$, _InjectorService, _ResourceInitializerService) || this;
@@ -14652,23 +15013,23 @@ var GenericPageController = (function (_super) {
         }
         return defer.promise();
     };
+    GenericPageController = __decorate([
+        di_1.Page({
+            name: "GenericPageController",
+            dependencies: [
+                jquery_1.$,
+                di_1.InjectorService,
+                resource_1.ResourceInitializerService,
+                resource_1.ResourceSequenceFactory
+            ]
+        })
+    ], GenericPageController);
     return GenericPageController;
 }(PageController_1.PageController));
-GenericPageController = __decorate([
-    di_1.Page({
-        name: "GenericPageController",
-        dependencies: [
-            jquery_1.$,
-            di_1.InjectorService,
-            resource_1.ResourceInitializerService,
-            resource_1.ResourceSequenceFactory
-        ]
-    })
-], GenericPageController);
 exports.GenericPageController = GenericPageController;
-
+//# sourceMappingURL=GenericPageController.js.map
 });
-___scope___.file("src/page/PageFactory.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/page/PageFactory.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -14677,6 +15038,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -14688,9 +15050,10 @@ var GenericPageController_1 = require("./GenericPageController");
  * Factory para crear páginas genéricas
  * @class PageFactory
  */
-var PageFactory = PageFactory_1 = (function () {
+var PageFactory = /** @class */ (function () {
     function PageFactory() {
     }
+    PageFactory_1 = PageFactory;
     /**
      * Genera una página genérica
      * @static
@@ -14707,21 +15070,21 @@ var PageFactory = PageFactory_1 = (function () {
         page.activate(options);
         return page;
     };
+    PageFactory = PageFactory_1 = __decorate([
+        di_1.Core({
+            name: "PageFactory",
+            dependencies: [
+                GenericPageController_1.GenericPageController
+            ]
+        })
+    ], PageFactory);
     return PageFactory;
+    var PageFactory_1;
 }());
-PageFactory = PageFactory_1 = __decorate([
-    di_1.Core({
-        name: "PageFactory",
-        dependencies: [
-            GenericPageController_1.GenericPageController
-        ]
-    })
-], PageFactory);
 exports.PageFactory = PageFactory;
-var PageFactory_1;
-
+//# sourceMappingURL=PageFactory.js.map
 });
-___scope___.file("src/page/PageImplementation.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/page/PageImplementation.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -14730,6 +15093,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -14738,7 +15102,7 @@ var di_1 = require("../di");
 var di_2 = require("../di");
 var jquery_1 = require("../jquery");
 var resource_1 = require("../resource");
-var PageImplementation = (function () {
+var PageImplementation = /** @class */ (function () {
     /**
      * Gestiona el ciclo de vida de una página una vez registrada en el PageManager. Almacena el estado y el store y gestiona el ciclo de vida del controlador.
      * @class
@@ -14752,7 +15116,7 @@ var PageImplementation = (function () {
             public: {},
             private: {}
         };
-        this._state = { completed: false, visited: false };
+        this._state = { completed: false, visited: false, score: null };
     }
     /**
      * Configura la clase nada más instanciarla
@@ -14775,6 +15139,20 @@ var PageImplementation = (function () {
      */
     PageImplementation.prototype.getState = function () {
         return this._state;
+    };
+    /**
+     * Obtiene si la página ha sido visitada
+     * @returns {boolean}
+     */
+    PageImplementation.prototype.isVisited = function () {
+        return this._state.visited;
+    };
+    /**
+     * Obtiene si la página ha sido completada
+     * @returns {boolean}
+     */
+    PageImplementation.prototype.isCompleted = function () {
+        return this._state.completed;
     };
     /**
      * Actualiza el estado
@@ -14837,23 +15215,23 @@ var PageImplementation = (function () {
         this._currentController = null;
         return this;
     };
+    PageImplementation = __decorate([
+        di_1.Core({
+            name: "PageImplementation",
+            dependencies: [
+                jquery_1.$,
+                resource_1.ResourceManager,
+                di_2.InjectorService
+            ],
+            instantiable: true
+        })
+    ], PageImplementation);
     return PageImplementation;
 }());
-PageImplementation = __decorate([
-    di_1.Core({
-        name: "PageImplementation",
-        dependencies: [
-            jquery_1.$,
-            resource_1.ResourceManager,
-            di_2.InjectorService
-        ],
-        instantiable: true
-    })
-], PageImplementation);
 exports.PageImplementation = PageImplementation;
-
+//# sourceMappingURL=PageImplementation.js.map
 });
-___scope___.file("src/page/PageManager.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/page/PageManager.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -14862,6 +15240,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -14871,7 +15250,7 @@ var PageImplementation_1 = require("./PageImplementation");
 var utils_1 = require("../utils");
 var Errors_1 = require("./Errors");
 var resource_1 = require("../resource");
-var PageManager = (function () {
+var PageManager = /** @class */ (function () {
     function PageManager(_ResourceManager, _EventEmitterFactory, _PageImplementationFactory) {
         this._ResourceManager = _ResourceManager;
         this._EventEmitterFactory = _EventEmitterFactory;
@@ -14896,6 +15275,21 @@ var PageManager = (function () {
             var page = pages_1[_i];
             this.addPage(page);
         }
+    };
+    /**
+     * Devuelve un array con los ids o índices de las páginas completadas.
+     * @param {boolean} [returnName=false]      Indica si devolver los ids de las páginas o los índices
+     * @returns {String[]|Number[]}
+     */
+    PageManager.prototype.getCompleted = function (returnName) {
+        var pages = this._pages, completed = [];
+        for (var pageIndex = 0, pagesLength = pages.length; pageIndex < pagesLength; pageIndex++) {
+            var currentPage = pages[pageIndex];
+            if (currentPage.isCompleted()) {
+                completed.push(returnName === true ? currentPage.getPageName() : pageIndex);
+            }
+        }
+        return completed;
     };
     /**
      * Añade una página
@@ -14967,25 +15361,26 @@ var PageManager = (function () {
     };
     PageManager.prototype.off = function () {
     };
+    PageManager = __decorate([
+        di_1.Core({
+            name: "PageManager",
+            public: true,
+            dependencies: [
+                resource_1.ResourceManager,
+                utils_1.EventEmitterFactory,
+                PageImplementation_1.PageImplementation
+            ]
+        })
+    ], PageManager);
     return PageManager;
 }());
-PageManager = __decorate([
-    di_1.Core({
-        name: "PageManager",
-        public: true,
-        dependencies: [
-            resource_1.ResourceManager,
-            utils_1.EventEmitterFactory,
-            PageImplementation_1.PageImplementation
-        ]
-    })
-], PageManager);
 exports.PageManager = PageManager;
-
+//# sourceMappingURL=PageManager.js.map
 });
-___scope___.file("src/navigator.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/navigator.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -14994,9 +15389,9 @@ var Navigator_1 = require("./navigator/Navigator");
 exports.Navigator = Navigator_1.Navigator;
 var NavigatorService_1 = require("./navigator/NavigatorService");
 exports.NavigatorService = NavigatorService_1.NavigatorService;
-
+//# sourceMappingURL=navigator.js.map
 });
-___scope___.file("src/navigator/Navigator.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/navigator/Navigator.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -15005,6 +15400,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -15013,7 +15409,7 @@ var jquery_1 = require("../jquery");
 var di_1 = require("../di");
 var page_1 = require("../page");
 var utils_1 = require("../utils");
-var Navigator = Navigator_1 = (function () {
+var Navigator = /** @class */ (function () {
     /**
      * Gestiona la transición entre páginas y el renderizado de las mismas en un contexto específico
      * @param {JQueryStatic}                _$
@@ -15024,10 +15420,18 @@ var Navigator = Navigator_1 = (function () {
         this._$ = _$;
         this._PageManager = _PageManager;
         this._EventEmitterFactory = _EventEmitterFactory;
+        this._development = false;
     }
+    Navigator_1 = Navigator;
     Navigator.prototype.activate = function ($context) {
         this._$context = $context;
         this._eventEmitter = this._EventEmitterFactory.createEmitter();
+    };
+    Navigator.prototype.enableDev = function () {
+        this._development = true;
+    };
+    Navigator.prototype.disableDev = function () {
+        this._development = false;
     };
     /**
      * Navega a la página solicitada.
@@ -15048,7 +15452,7 @@ var Navigator = Navigator_1 = (function () {
                         ? -1
                         : 1; //check the position of the old page relative to the new page
                     //check if resources are completed to go to the next page
-                    if (currentPageIs === 1 || (currentPage == undefined || currentPage.getController().isCompleted())) {
+                    if (this._development === true || (currentPageIs === 1 || (currentPage == undefined || currentPage.getController().isCompleted()))) {
                         if (this._currentRenderProcess && this._currentRenderProcess.state() === "pending") {
                             this._currentRenderProcess.reject();
                         }
@@ -15058,12 +15462,14 @@ var Navigator = Navigator_1 = (function () {
                         var newPageName = newPage.getPageName(), //get name of new controller
                         newPageData = {
                             index: index,
-                            name: newPageName
+                            name: newPageName,
+                            state: newPage.getState()
                         }, currentPageData = void 0;
                         if (currentPage) {
                             currentPageData = {
                                 index: currentPageIndex,
-                                name: currentPage.getPageName()
+                                name: currentPage.getPageName(),
+                                state: currentPage.getState()
                             };
                         }
                         //trigger event in navigator
@@ -15104,6 +15510,7 @@ var Navigator = Navigator_1 = (function () {
                 }
             }
             else {
+                //todo throw
             }
         }
         return false;
@@ -15201,6 +15608,9 @@ var Navigator = Navigator_1 = (function () {
         }
         this._$context.removeAttr(Navigator_1.ATTR_TRANSITION_TO);
         this._$context.attr(Navigator_1.ATTR_CURRENT, newPageData.name);
+        if (newPage.isCompleted()) {
+            this.enable();
+        }
         //trigger event in navigator
         this._eventEmitter.trigger(Navigator_1.ON_CHANGE_PAGE_END, [newPageData, oldPageData]);
         //trigger a global event that could be listened by anyone
@@ -15228,7 +15638,8 @@ var Navigator = Navigator_1 = (function () {
     Navigator.prototype.getCurrentPageData = function () {
         return {
             index: this._currentPageIndex,
-            name: this._currentPage.getPageName()
+            name: this._currentPage.getPageName(),
+            state: this._currentPage.getState()
         };
     };
     /**
@@ -15255,32 +15666,32 @@ var Navigator = Navigator_1 = (function () {
         this._eventEmitter.off(events, handler);
         return this;
     };
+    Navigator.NAMESPACE = "navigator";
+    Navigator.ON_DRAW_PAGE = Navigator_1.NAMESPACE + ":draw";
+    Navigator.ON_DISABLE = Navigator_1.NAMESPACE + ":disable";
+    Navigator.ON_ENABLE = Navigator_1.NAMESPACE + ":enable";
+    Navigator.ON_CHANGE_PAGE_END = Navigator_1.NAMESPACE + ":changeend";
+    Navigator.ON_CHANGE_PAGE_START = Navigator_1.NAMESPACE + ":changestart";
+    Navigator.ATTR_TRANSITION_TO = "data-hz-navigator-transition-to";
+    Navigator.ATTR_CURRENT = "data-hz-navigator-page";
+    Navigator = Navigator_1 = __decorate([
+        di_1.Core({
+            name: "Navigator",
+            public: true,
+            dependencies: [
+                jquery_1.$,
+                page_1.PageManager,
+                utils_1.EventEmitterFactory
+            ]
+        })
+    ], Navigator);
     return Navigator;
+    var Navigator_1;
 }());
-Navigator.NAMESPACE = "navigator";
-Navigator.ON_DRAW_PAGE = Navigator_1.NAMESPACE + ":draw";
-Navigator.ON_DISABLE = Navigator_1.NAMESPACE + ":disable";
-Navigator.ON_ENABLE = Navigator_1.NAMESPACE + ":enable";
-Navigator.ON_CHANGE_PAGE_END = Navigator_1.NAMESPACE + ":changeend";
-Navigator.ON_CHANGE_PAGE_START = Navigator_1.NAMESPACE + ":changestart";
-Navigator.ATTR_TRANSITION_TO = "data-hz-navigator-transition-to";
-Navigator.ATTR_CURRENT = "data-hz-navigator-page";
-Navigator = Navigator_1 = __decorate([
-    di_1.Core({
-        name: "Navigator",
-        public: true,
-        dependencies: [
-            jquery_1.$,
-            page_1.PageManager,
-            utils_1.EventEmitterFactory
-        ]
-    })
-], Navigator);
 exports.Navigator = Navigator;
-var Navigator_1;
-
+//# sourceMappingURL=Navigator.js.map
 });
-___scope___.file("src/navigator/NavigatorService.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/navigator/NavigatorService.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -15289,13 +15700,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
  */
 var di_1 = require("../di");
 var Navigator_1 = require("./Navigator");
-var NavigatorService = (function () {
+var NavigatorService = /** @class */ (function () {
     function NavigatorService(_Navigator) {
         var publish = [
             "goTo",
@@ -15348,27 +15760,28 @@ var NavigatorService = (function () {
     NavigatorService.prototype.off = function (events, handler) {
         return undefined;
     };
+    NavigatorService.ON_DRAW_PAGE = Navigator_1.Navigator.ON_DRAW_PAGE;
+    NavigatorService.ON_DISABLE = Navigator_1.Navigator.ON_DISABLE;
+    NavigatorService.ON_ENABLE = Navigator_1.Navigator.ON_ENABLE;
+    NavigatorService.ON_CHANGE_PAGE_END = Navigator_1.Navigator.ON_CHANGE_PAGE_END;
+    NavigatorService.ON_CHANGE_PAGE_START = Navigator_1.Navigator.ON_CHANGE_PAGE_START;
+    NavigatorService = __decorate([
+        di_1.Service({
+            name: "NavigatorService",
+            dependencies: [
+                Navigator_1.Navigator
+            ]
+        })
+    ], NavigatorService);
     return NavigatorService;
 }());
-NavigatorService.ON_DRAW_PAGE = Navigator_1.Navigator.ON_DRAW_PAGE;
-NavigatorService.ON_DISABLE = Navigator_1.Navigator.ON_DISABLE;
-NavigatorService.ON_ENABLE = Navigator_1.Navigator.ON_ENABLE;
-NavigatorService.ON_CHANGE_PAGE_END = Navigator_1.Navigator.ON_CHANGE_PAGE_END;
-NavigatorService.ON_CHANGE_PAGE_START = Navigator_1.Navigator.ON_CHANGE_PAGE_START;
-NavigatorService = __decorate([
-    di_1.Service({
-        name: "NavigatorService",
-        dependencies: [
-            Navigator_1.Navigator
-        ]
-    })
-], NavigatorService);
 exports.NavigatorService = NavigatorService;
-
+//# sourceMappingURL=NavigatorService.js.map
 });
-___scope___.file("src/component.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/component.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -15379,9 +15792,9 @@ var ComponentManager_1 = require("./component/ComponentManager");
 exports.ComponentManager = ComponentManager_1.ComponentManager;
 var ComponentInitializer_1 = require("./component/ComponentInitializer");
 exports.ComponentInitializer = ComponentInitializer_1.ComponentInitializer;
-
+//# sourceMappingURL=component.js.map
 });
-___scope___.file("src/component/ComponentController.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/component/ComponentController.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -15390,6 +15803,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -15397,7 +15811,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var di_1 = require("../di");
 var jquery_1 = require("../jquery");
 var utils_1 = require("../utils");
-var ComponentController = (function () {
+var ComponentController = /** @class */ (function () {
     /**
      * Controlador base para los recursos
      * @param {JQueryStatic}            _$
@@ -15445,20 +15859,20 @@ var ComponentController = (function () {
         return this;
     };
     ;
+    ComponentController = __decorate([
+        di_1.Dependencies({
+            dependencies: [
+                jquery_1.default,
+                utils_1.EventEmitterFactory
+            ]
+        })
+    ], ComponentController);
     return ComponentController;
 }());
-ComponentController = __decorate([
-    di_1.Dependencies({
-        dependencies: [
-            jquery_1.default,
-            utils_1.EventEmitterFactory
-        ]
-    })
-], ComponentController);
 exports.ComponentController = ComponentController;
-
+//# sourceMappingURL=ComponentController.js.map
 });
-___scope___.file("src/component/ComponentManager.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/component/ComponentManager.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -15467,6 +15881,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -15475,7 +15890,7 @@ var di_1 = require("../di");
 var di_2 = require("../di");
 var Errors_1 = require("./Errors");
 var utils_1 = require("../utils");
-var ComponentManager = (function () {
+var ComponentManager = /** @class */ (function () {
     function ComponentManager(_Injector, _S) {
         this._Injector = _Injector;
         this._S = _S;
@@ -15537,21 +15952,21 @@ var ComponentManager = (function () {
             this.add(component);
         }
     };
+    ComponentManager = __decorate([
+        di_1.Core({
+            name: "ComponentManager",
+            dependencies: [
+                di_2.InjectorService,
+                utils_1.S
+            ]
+        })
+    ], ComponentManager);
     return ComponentManager;
 }());
-ComponentManager = __decorate([
-    di_1.Core({
-        name: "ComponentManager",
-        dependencies: [
-            di_2.InjectorService,
-            utils_1.S
-        ]
-    })
-], ComponentManager);
 exports.ComponentManager = ComponentManager;
-
+//# sourceMappingURL=ComponentManager.js.map
 });
-___scope___.file("src/component/Errors.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/component/Errors.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
 var __extends = (this && this.__extends) || (function () {
@@ -15564,6 +15979,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -15572,7 +15988,7 @@ var BaseError_1 = require("../base/BaseError");
 /**
  * Error al intentar registrar un componente inválido
  */
-var HaztivityComponentInvalidError = (function (_super) {
+var HaztivityComponentInvalidError = /** @class */ (function (_super) {
     __extends(HaztivityComponentInvalidError, _super);
     function HaztivityComponentInvalidError() {
         return _super.call(this, "HaztivityComponentInvalidError", "Invalid component") || this;
@@ -15583,7 +15999,7 @@ exports.HaztivityComponentInvalidError = HaztivityComponentInvalidError;
 /**
  * Error al intentar registrar un componente inválido
  */
-var HaztivityComponentAlreadyRegisteredError = (function (_super) {
+var HaztivityComponentAlreadyRegisteredError = /** @class */ (function (_super) {
     __extends(HaztivityComponentAlreadyRegisteredError, _super);
     function HaztivityComponentAlreadyRegisteredError(component) {
         return _super.call(this, "HaztivityComponentInvalidError", "Component '" + component + "' already registered with another controller.") || this;
@@ -15594,7 +16010,7 @@ exports.HaztivityComponentAlreadyRegisteredError = HaztivityComponentAlreadyRegi
 /**
  * Error al intentar registrar un componente inválido
  */
-var HaztivityComponentNameInvalidError = (function (_super) {
+var HaztivityComponentNameInvalidError = /** @class */ (function (_super) {
     __extends(HaztivityComponentNameInvalidError, _super);
     function HaztivityComponentNameInvalidError(component) {
         //todo LINK
@@ -15606,7 +16022,7 @@ exports.HaztivityComponentNameInvalidError = HaztivityComponentNameInvalidError;
 /**
  * Error al intentar inicializar un componente sin indicar el nombre del componente a inicializar
  */
-var HaztivityComponentNameRequiredError = (function (_super) {
+var HaztivityComponentNameRequiredError = /** @class */ (function (_super) {
     __extends(HaztivityComponentNameRequiredError, _super);
     function HaztivityComponentNameRequiredError($element) {
         return _super.call(this, "HaztivityComponentNameRequiredError", "Component name not provider in data-* attribute. " + $element) || this;
@@ -15617,7 +16033,7 @@ exports.HaztivityComponentNameRequiredError = HaztivityComponentNameRequiredErro
 /**
  * Error al intentar inicializar un componente no registrado
  */
-var HaztivityComponentNotRegisteredError = (function (_super) {
+var HaztivityComponentNotRegisteredError = /** @class */ (function (_super) {
     __extends(HaztivityComponentNotRegisteredError, _super);
     function HaztivityComponentNotRegisteredError(component) {
         return _super.call(this, "HaztivityComponentNotRegisteredError", "Attempt to initialize " + component + " but is not registered") || this;
@@ -15628,7 +16044,7 @@ exports.HaztivityComponentNotRegisteredError = HaztivityComponentNotRegisteredEr
 /**
  * Error de controlador invalido
  */
-var HaztivityInvalidComponentControllerError = (function (_super) {
+var HaztivityInvalidComponentControllerError = /** @class */ (function (_super) {
     __extends(HaztivityInvalidComponentControllerError, _super);
     function HaztivityInvalidComponentControllerError(component) {
         return _super.call(this, "HaztivityInvalidComponentControllerError", "Invalid controller for " + component + " component") || this;
@@ -15636,9 +16052,9 @@ var HaztivityInvalidComponentControllerError = (function (_super) {
     return HaztivityInvalidComponentControllerError;
 }(BaseError_1.BaseError));
 exports.HaztivityInvalidComponentControllerError = HaztivityInvalidComponentControllerError;
-
+//# sourceMappingURL=Errors.js.map
 });
-___scope___.file("src/component/ComponentInitializer.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/component/ComponentInitializer.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -15647,6 +16063,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
@@ -15657,7 +16074,7 @@ var utils_1 = require("../utils");
 var utils_2 = require("../utils");
 var jquery_1 = require("../jquery");
 var Errors_1 = require("./Errors");
-var ComponentInitializer = (function () {
+var ComponentInitializer = /** @class */ (function () {
     /**
      * Inicializador de componentes.
      * @class
@@ -15722,6 +16139,7 @@ var ComponentInitializer = (function () {
                         controllerInstance.init(options, config.data);
                     }
                     else {
+                        //warn
                     }
                     result = controllerInstance;
                 }
@@ -15751,7 +16169,7 @@ var ComponentInitializer = (function () {
         if (initState === void 0) { initState = 2; }
         var result = [], $elements = this._findElementsInContext($context);
         switch (initState) {
-            case 0:
+            case 0://only without init
                 for (var elementIndex = 0, $elementsLength = $elements.length; elementIndex < $elementsLength; elementIndex++) {
                     var $element = this._$($elements[elementIndex]);
                     if ($element.data(this._instanceDataName) == undefined) {
@@ -15759,7 +16177,7 @@ var ComponentInitializer = (function () {
                     }
                 }
                 break;
-            case 1:
+            case 1://only initialized
                 for (var elementIndex = 0, $elementsLength = $elements.length; elementIndex < $elementsLength; elementIndex++) {
                     var $element = this._$($elements[elementIndex]);
                     if ($element.data(this._instanceDataName) != undefined) {
@@ -15815,24 +16233,24 @@ var ComponentInitializer = (function () {
         $elements = parents.concat($context.find("[" + this._prefix + "],[data-" + this._prefix + "]").toArray()); //get elements with the prefix
         return this._$($elements);
     };
+    ComponentInitializer = __decorate([
+        di_1.Core({
+            name: "ComponentInitializer",
+            dependencies: [
+                jquery_1.$,
+                ComponentManager_1.ComponentManager,
+                di_1.InjectorService,
+                utils_1.S,
+                utils_2.DataOptions
+            ]
+        })
+    ], ComponentInitializer);
     return ComponentInitializer;
 }());
-ComponentInitializer = __decorate([
-    di_1.Core({
-        name: "ComponentInitializer",
-        dependencies: [
-            jquery_1.$,
-            ComponentManager_1.ComponentManager,
-            di_1.InjectorService,
-            utils_1.S,
-            utils_2.DataOptions
-        ]
-    })
-], ComponentInitializer);
 exports.ComponentInitializer = ComponentInitializer;
-
+//# sourceMappingURL=ComponentInitializer.js.map
 });
-___scope___.file("src/sco/ScoFactory.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/sco/ScoFactory.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -15841,15 +16259,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
  */
 var Sco_1 = require("./Sco");
 var di_1 = require("../di");
-var ScoFactory = ScoFactory_1 = (function () {
+var ScoFactory = /** @class */ (function () {
     function ScoFactory() {
     }
+    ScoFactory_1 = ScoFactory;
     ScoFactory.createSco = function (options) {
         var ScoControllerFactory = di_1.Injector.getInstance(ScoFactory_1).get(Sco_1.ScoController);
         var sco = ScoControllerFactory.instance();
@@ -15862,30 +16282,45 @@ var ScoFactory = ScoFactory_1 = (function () {
         sco.activate(options);
         return sco;
     };
+    ScoFactory = ScoFactory_1 = __decorate([
+        di_1.Core({
+            name: "ScoFactory",
+            dependencies: []
+        })
+    ], ScoFactory);
     return ScoFactory;
+    var ScoFactory_1;
 }());
-ScoFactory = ScoFactory_1 = __decorate([
-    di_1.Core({
-        name: "ScoFactory",
-        dependencies: []
-    })
-], ScoFactory);
 exports.ScoFactory = ScoFactory;
-var ScoFactory_1;
-
+//# sourceMappingURL=ScoFactory.js.map
 });
-___scope___.file("src/scorm.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/scorm.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
  */
 var ScormService_1 = require("./scorm/ScormService");
 exports.ScormService = ScormService_1.ScormService;
-
+//# sourceMappingURL=scorm.js.map
 });
-___scope___.file("src/scorm/ScormService.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/global.js", function(exports, require, module, __filename, __dirname){
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * @license
+ * Copyright Davinchi. All Rights Reserved.
+ */
+var Haztivity_1 = require("./global/Haztivity");
+var di_1 = require("./di");
+exports.haztivity = di_1.Injector.getInstance(Haztivity_1.Haztivity).get("Haztivity");
+window.haztivity = exports.haztivity;
+//# sourceMappingURL=global.js.map
+});
+___scope___.file("dist/global/Haztivity.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -15894,147 +16329,188 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * @license
+ * Copyright Davinchi. All Rights Reserved.
+ */
+var Logger_1 = require("../devTools/Logger");
+var DevTools_1 = require("../devTools/DevTools");
+var di_1 = require("../di");
+var Haztivity = /** @class */ (function () {
+    /**
+     * @class Haztivity
+     * @description Global object
+     * @param _logger
+     * @param _devTools
+     */
+    function Haztivity(_logger) {
+        this._logger = _logger;
+    }
+    Haztivity_1 = Haztivity;
+    /**
+     * Enables development mode
+     * @see DevTools#enable
+     */
+    Haztivity.prototype.enableDev = function () {
+        var devTools = di_1.Injector.getInstance(Haztivity_1).get(DevTools_1.DevTools);
+        devTools.enable();
+        return devTools;
+    };
+    Haztivity = Haztivity_1 = __decorate([
+        di_1.Core({
+            name: "Haztivity",
+            dependencies: [
+                Logger_1.Logger
+            ]
+        })
+    ], Haztivity);
+    return Haztivity;
+    var Haztivity_1;
+}());
+exports.Haztivity = Haztivity;
+//# sourceMappingURL=Haztivity.js.map
+});
+___scope___.file("dist/devTools/DevTools.js", function(exports, require, module, __filename, __dirname){
+
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @license
  * Copyright Davinchi. All Rights Reserved.
  */
 var di_1 = require("../di");
-var debug_1 = require("../debug");
-var ScormService = ScormService_1 = (function () {
-    function ScormService(Logger) {
-        this.Logger = Logger;
-        this._version = ScormService_1.VERSIONS.auto;
+var Logger_1 = require("./Logger");
+var navigator_1 = require("../navigator");
+var EventEmitterFactory_1 = require("../utils/EventEmitterFactory");
+var PageManager_1 = require("../page/PageManager");
+var DevTools = /** @class */ (function () {
+    /**
+     * Tools for development
+     */
+    function DevTools(_logger, _navigator, _pageManager, _eventEmitterFactory) {
+        this._logger = _logger;
+        this._navigator = _navigator;
+        this._pageManager = _pageManager;
+        this._eventEmitterFactory = _eventEmitterFactory;
+        this._isEnabled = false;
     }
-    ScormService.prototype.setVersion = function (version) {
-        var versions = ScormService_1.VERSIONS, keys = Object.keys(versions);
-        for (var versionIndex = 0, keysLength = keys.length; versionIndex < keysLength; versionIndex++) {
-            var currentKey = keys[versionIndex], currentVersion = versions[currentKey];
-            if (currentVersion === version) {
-                this._version = version;
-                versionIndex = keysLength;
-            }
-        }
-        this._version = this._version || versions.auto;
-    };
-    ScormService.prototype.getAPIVersion = function () {
-        return this._version;
-    };
-    ScormService.prototype.doLMSInitialize = function () {
-        return this.cmiBooleanToJs(this._getAPICall("LMSInitialize", "Initialize")(""));
-    };
-    ScormService.prototype.doLMSFinish = function () {
-        return this.cmiBooleanToJs(this._getAPICall("LMSFinish", "Terminate")(""));
-    };
-    ScormService.prototype.doLMSGetValue = function (parameter) {
-        return this._getAPICall("LMSGetValue", "GetValue")(parameter);
-    };
-    ScormService.prototype.doLMSSetValue = function (parameter, value) {
-        return this.cmiBooleanToJs(this._getAPICall("LMSSetValue", "SetValue")(parameter, value));
-    };
-    ScormService.prototype.doLMSCommit = function () {
-        return this.cmiBooleanToJs(this._getAPICall("LMSCommit", "Commit")(""));
-    };
-    ScormService.prototype.doLMSGetLastError = function () {
-        return this._getAPICall("LMSGetLastError", "GetLastError")();
-    };
-    ScormService.prototype.doLMSGetErrorString = function (errorCode) {
-        return this._getAPICall("LMSGetErrorString", "GetErrorString")(errorCode.toString());
-    };
-    ScormService.prototype.doLMSGetDiagnostic = function (errorCode) {
-        return this._getAPICall("LMSGetDiagnostic", "GetDiagnostic")(errorCode.toString());
-    };
-    ScormService.prototype.LMSIsInitialized = function () {
-        return this._API;
-    };
-    ScormService.prototype.ErrorHandler = function () {
-        return this._getAPICall("LMSGetLastError", "GetLastError")();
-    };
-    ScormService.prototype.cmiBooleanToJs = function (value) {
-        return (value === "1" || value === 1 || value === "true" || value === true);
-    };
-    ScormService.prototype.getAPIHandle = function () {
-        var win = window;
-        if (win.parent && win.parent != win) {
-            this._findAPI(win.parent);
-        }
-        if (!this._API && win.top.opener) {
-            this._findAPI(win.top.opener);
-        }
-        else if (!this._API) {
-            debug_1.Logger.warn("ScormService", "Unable to find API adapter");
+    /**
+     * Enables development mode.
+     */
+    DevTools.prototype.enable = function () {
+        if (!this.isEnabled()) {
+            this._isEnabled = true;
+            this._navigator.enableDev();
+            this._currentLoggerLevel = this._logger.getLevel();
+            this._logger.setLevel(this._logger.levels.TRACE);
+            this._logger.warn("DevTools", "Development mode enabled. Log level set to TRACE");
         }
     };
-    ScormService.prototype._findAPI = function (win) {
-        var findAttempts = 0, findAttemptLimit = 500;
-        for (findAttempts; findAttempts < findAttemptLimit; findAttempts++) {
-            if (win.API && (this._version === ScormService_1.VERSIONS.v12 || this._version === ScormService_1.VERSIONS.auto)) {
-                this._API = win.API;
-                this._version = ScormService_1.VERSIONS.v12;
-                findAttempts = findAttemptLimit;
-            }
-            else if (win.API_1484_11 && (this._version === ScormService_1.VERSIONS.v2004 || this._version === ScormService_1.VERSIONS.auto)) {
-                this._API = win.API_1484_11;
-                this._version = "2004";
-                findAttempts = findAttemptLimit;
-            }
-            else if (win.parent && win.parent != win) {
-                findAttempts++;
-                win = win.parent;
-            }
+    /**
+     * Disables development mode
+     */
+    DevTools.prototype.disable = function () {
+        if (this.isEnabled()) {
+            this._isEnabled = false;
+            this._navigator.disableDev();
+            this._logger.setLevel(this._currentLoggerLevel);
+            this._currentLoggerLevel = null;
+            this._logger.warn("DevTools", "Development mode disabled. Log level restored");
         }
     };
-    ScormService.prototype._getAPICall = function (funcname12, funcname2004) {
-        var _this = this;
-        if (!this._API) {
-            this.getAPIHandle();
-            if (!this._API) {
-                return (function () {
-                    debug_1.Logger.error("ScormService", "No API found, unable to execute " + (_this.getAPIVersion() === ScormService_1.VERSIONS.v2004
-                        ? funcname2004
-                        : funcname12));
-                });
-            }
-        }
-        switch (this._version) {
-            case ScormService_1.VERSIONS.v2004:
-                return function () {
-                    return _this._API[funcname2004].apply(_this._API, arguments);
-                };
-            default:
-                return function () {
-                    return _this._API[funcname12].apply(_this._API, arguments);
-                };
+    /**
+     * Return if the development mode is enabled
+     * @returns {boolean}
+     */
+    DevTools.prototype.isEnabled = function () {
+        return this._isEnabled;
+    };
+    /**
+     * Force to go to a specific page
+     * @param index
+     */
+    DevTools.prototype.goToPage = function (index) {
+        if (this.isEnabled()) {
+            this._navigator.goTo(index);
         }
     };
-    ;
-    return ScormService;
+    /**
+     * Force to go to a specific page by name
+     * @param name
+     */
+    DevTools.prototype.goToPageByName = function (name) {
+        if (this.isEnabled()) {
+            var pageIndex = this._pageManager.getPageIndex(name);
+            this._navigator.goTo(pageIndex);
+        }
+    };
+    /**
+     * Force to go to the next page
+     * @returns {string}
+     */
+    DevTools.prototype.goToNextPage = function () {
+        if (this.isEnabled()) {
+            return this._navigator.next();
+        }
+    };
+    /**
+     * Force to go to the prev page
+     * @returns {string}
+     */
+    DevTools.prototype.goToPrevPage = function () {
+        if (this.isEnabled()) {
+            return this._navigator.prev();
+        }
+    };
+    /**
+     * Get the name of the current page
+     * @returns {string}
+     */
+    DevTools.prototype.getCurrentPageName = function () {
+        if (this.isEnabled()) {
+            return this._navigator.getCurrentPage().getPageName();
+        }
+    };
+    /**
+     * Create an event emitter
+     */
+    DevTools.prototype.createEventEmitter = function () {
+        if (this.isEnabled()) {
+            return this._eventEmitterFactory.create();
+        }
+    };
+    DevTools = __decorate([
+        di_1.Module({
+            name: "DevTools",
+            dependencies: [
+                Logger_1.Logger,
+                navigator_1.Navigator,
+                PageManager_1.PageManager,
+                EventEmitterFactory_1.EventEmitterFactory
+            ]
+        })
+    ], DevTools);
+    return DevTools;
 }());
-ScormService.VERSIONS = {
-    auto: "Auto",
-    v12: "1.2",
-    v2004: "2004"
-};
-ScormService = ScormService_1 = __decorate([
-    di_1.Service({
-        name: "ScormService",
-        dependencies: [
-            debug_1.Logger
-        ]
-    })
-], ScormService);
-exports.ScormService = ScormService;
-var ScormService_1;
-
+exports.DevTools = DevTools;
+//# sourceMappingURL=DevTools.js.map
 });
-return ___scope___.entry = "index.js";
+return ___scope___.entry = "dist/index.js";
 });
-FuseBox.pkg("bottlejs", {}, function(___scope___){
+FuseBox.pkg("bottlejs@1.6.3", {}, function(___scope___){
 ___scope___.file("dist/bottle.js", function(exports, require, module, __filename, __dirname){
 
 ;(function(undefined) {
     'use strict';
     /**
-     * BottleJS v1.6.0 - 2017-02-22
+     * BottleJS v1.6.3 - 2017-12-06
      * A powerful dependency injection micro container
      *
      * Copyright (c) 2017 Stephen Young
@@ -16081,7 +16557,15 @@ ___scope___.file("dist/bottle.js", function(exports, require, module, __filename
      * @return Bottle
      */
     var getNestedBottle = function getNestedBottle(name) {
-        return this.nested[name] || (this.nested[name] = Bottle.pop());
+        var bottle;
+        if (!this.nested[name]) {
+            bottle = Bottle.pop();
+            this.nested[name] = bottle;
+            this.factory(name, function SubProviderFactory() {
+                return bottle.container;
+            });
+        }
+        return this.nested[name];
     };
     
     /**
@@ -16347,7 +16831,7 @@ ___scope___.file("dist/bottle.js", function(exports, require, module, __filename
         name = parts.shift();
     
         if (parts.length) {
-            createSubProvider.call(this, name, Provider, parts);
+            getNestedBottle.call(this, name).provider(parts.join('.'), Provider);
             return this;
         }
         return createProvider.call(this, name, Provider);
@@ -16413,24 +16897,6 @@ ___scope___.file("dist/bottle.js", function(exports, require, module, __filename
     };
     
     /**
-     * Creates a bottle container on the current bottle container, and registers
-     * the provider under the sub container.
-     *
-     * @param String name
-     * @param Function Provider
-     * @param Array parts
-     * @return Bottle
-     */
-    var createSubProvider = function createSubProvider(name, Provider, parts) {
-        var bottle;
-        bottle = getNestedBottle.call(this, name);
-        this.factory(name, function SubProviderFactory() {
-            return bottle.container;
-        });
-        return bottle.provider(parts.join('.'), Provider);
-    };
-    
-    /**
      * Register a service, factory, provider, or value based on properties on the object.
      *
      * properties:
@@ -16472,7 +16938,6 @@ ___scope___.file("dist/bottle.js", function(exports, require, module, __filename
         Object.keys(this.originalProviders).forEach(function resetPrvider(provider) {
             var parts = provider.split('.');
             if (parts.length > 1) {
-                removeProviderMap.call(this, parts[0]);
                 parts.forEach(removeProviderMap, getNestedBottle.call(this, parts[0]));
             }
             removeProviderMap.call(this, provider);
@@ -16506,12 +16971,13 @@ ___scope___.file("dist/bottle.js", function(exports, require, module, __filename
         var deps = arguments.length > 2 ? slice.call(arguments, 2) : null;
         var bottle = this;
         return factory.call(this, name, function GenericFactory() {
+            var ServiceCopy = Service;
             if (deps) {
-                deps = deps.map(getNestedService, bottle.container);
-                deps.unshift(Service);
-                Service = Service.bind.apply(Service, deps);
+                var args = deps.map(getNestedService, bottle.container);
+                args.unshift(Service);
+                ServiceCopy = Service.bind.apply(Service, args);
             }
-            return new Service();
+            return new ServiceCopy();
         });
     };
     
@@ -16692,7 +17158,7 @@ ___scope___.file("dist/bottle.js", function(exports, require, module, __filename
 });
 return ___scope___.entry = "dist/bottle.js";
 });
-FuseBox.pkg("array-unique", {}, function(___scope___){
+FuseBox.pkg("array-unique@0.3.2", {}, function(___scope___){
 ___scope___.file("index.js", function(exports, require, module, __filename, __dirname){
 
 /*!
@@ -16742,7 +17208,7 @@ module.exports.immutable = function uniqueImmutable(arr) {
 });
 return ___scope___.entry = "index.js";
 });
-FuseBox.pkg("loglevel", {}, function(___scope___){
+FuseBox.pkg("loglevel@1.6.1", {}, function(___scope___){
 ___scope___.file("lib/loglevel.js", function(exports, require, module, __filename, __dirname){
 
 /*
@@ -16762,21 +17228,20 @@ ___scope___.file("lib/loglevel.js", function(exports, require, module, __filenam
     }
 }(this, function () {
     "use strict";
+
+    // Slightly dubious tricks to cut down minimized file size
     var noop = function() {};
     var undefinedType = "undefined";
 
-    function realMethod(methodName) {
-        if (typeof console === undefinedType) {
-            return false; // We can't build a real method without a console to log to
-        } else if (console[methodName] !== undefined) {
-            return bindMethod(console, methodName);
-        } else if (console.log !== undefined) {
-            return bindMethod(console, 'log');
-        } else {
-            return noop;
-        }
-    }
+    var logMethods = [
+        "trace",
+        "debug",
+        "info",
+        "warn",
+        "error"
+    ];
 
+    // Cross-browser bind equivalent that works at least back to IE6
     function bindMethod(obj, methodName) {
         var method = obj[methodName];
         if (typeof method.bind === 'function') {
@@ -16793,16 +17258,25 @@ ___scope___.file("lib/loglevel.js", function(exports, require, module, __filenam
         }
     }
 
-    // these private functions always need `this` to be set properly
+    // Build the best logging method possible for this env
+    // Wherever possible we want to bind, not wrap, to preserve stack traces
+    function realMethod(methodName) {
+        if (methodName === 'debug') {
+            methodName = 'log';
+        }
 
-    function enableLoggingWhenConsoleArrives(methodName, level, loggerName) {
-        return function () {
-            if (typeof console !== undefinedType) {
-                replaceLoggingMethods.call(this, level, loggerName);
-                this[methodName].apply(this, arguments);
-            }
-        };
+        if (typeof console === undefinedType) {
+            return false; // No method possible, for now - fixed later by enableLoggingWhenConsoleArrives
+        } else if (console[methodName] !== undefined) {
+            return bindMethod(console, methodName);
+        } else if (console.log !== undefined) {
+            return bindMethod(console, 'log');
+        } else {
+            return noop;
+        }
     }
+
+    // These private functions always need `this` to be set properly
 
     function replaceLoggingMethods(level, loggerName) {
         /*jshint validthis:true */
@@ -16812,21 +17286,29 @@ ___scope___.file("lib/loglevel.js", function(exports, require, module, __filenam
                 noop :
                 this.methodFactory(methodName, level, loggerName);
         }
+
+        // Define log.log as an alias for log.debug
+        this.log = this.debug;
     }
 
+    // In old IE versions, the console isn't present until you first open it.
+    // We build realMethod() replacements here that regenerate logging methods
+    function enableLoggingWhenConsoleArrives(methodName, level, loggerName) {
+        return function () {
+            if (typeof console !== undefinedType) {
+                replaceLoggingMethods.call(this, level, loggerName);
+                this[methodName].apply(this, arguments);
+            }
+        };
+    }
+
+    // By default, we use closely bound real methods wherever possible, and
+    // otherwise we wait for a console to appear, and then try again.
     function defaultMethodFactory(methodName, level, loggerName) {
         /*jshint validthis:true */
         return realMethod(methodName) ||
                enableLoggingWhenConsoleArrives.apply(this, arguments);
     }
-
-    var logMethods = [
-        "trace",
-        "debug",
-        "info",
-        "warn",
-        "error"
-    ];
 
     function Logger(name, defaultLevel, factory) {
       var self = this;
@@ -16838,6 +17320,8 @@ ___scope___.file("lib/loglevel.js", function(exports, require, module, __filenam
 
       function persistLevelIfPossible(levelNum) {
           var levelName = (logMethods[levelNum] || 'silent').toUpperCase();
+
+          if (typeof window === undefinedType) return;
 
           // Use localStorage if available
           try {
@@ -16855,16 +17339,19 @@ ___scope___.file("lib/loglevel.js", function(exports, require, module, __filenam
       function getPersistedLevel() {
           var storedLevel;
 
+          if (typeof window === undefinedType) return;
+
           try {
               storedLevel = window.localStorage[storageKey];
           } catch (ignore) {}
 
+          // Fallback to cookies if local storage gives us nothing
           if (typeof storedLevel === undefinedType) {
               try {
                   var cookie = window.document.cookie;
                   var location = cookie.indexOf(
                       encodeURIComponent(storageKey) + "=");
-                  if (location) {
+                  if (location !== -1) {
                       storedLevel = /^([^;]+)/.exec(cookie.slice(location))[1];
                   }
               } catch (ignore) {}
@@ -16880,9 +17367,11 @@ ___scope___.file("lib/loglevel.js", function(exports, require, module, __filenam
 
       /*
        *
-       * Public API
+       * Public logger API - see https://github.com/pimterry/loglevel for details
        *
        */
+
+      self.name = name;
 
       self.levels = { "TRACE": 0, "DEBUG": 1, "INFO": 2, "WARN": 3,
           "ERROR": 4, "SILENT": 5};
@@ -16935,7 +17424,7 @@ ___scope___.file("lib/loglevel.js", function(exports, require, module, __filenam
 
     /*
      *
-     * Package-level API
+     * Top-level API
      *
      */
 
@@ -16966,24 +17455,18 @@ ___scope___.file("lib/loglevel.js", function(exports, require, module, __filenam
         return defaultLogger;
     };
 
+    defaultLogger.getLoggers = function getLoggers() {
+        return _loggersByName;
+    };
+
     return defaultLogger;
 }));
 
 });
 return ___scope___.entry = "lib/loglevel.js";
 });
-FuseBox.pkg("@haztivity/hz-navbar", {}, function(___scope___){
-___scope___.file("index.js", function(exports, require, module, __filename, __dirname){
-
-"use strict";
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-Object.defineProperty(exports, "__esModule", { value: true });
-__export(require("./src/HzNavbar"));
-
-});
-___scope___.file("src/HzNavbar.js", function(exports, require, module, __filename, __dirname){
+FuseBox.pkg("@haztivity/hz-navbar", {"jquery-ui-dist":"1.12.1"}, function(___scope___){
+___scope___.file("dist/HzNavbar.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -16991,7 +17474,7 @@ var HzNavbarComponent_1 = require("./HzNavbarComponent");
 exports.HzNavbarComponent = HzNavbarComponent_1.HzNavbarComponent;
 //# sourceMappingURL=HzNavbar.js.map
 });
-___scope___.file("src/HzNavbarComponent.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("dist/HzNavbarComponent.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
 var __extends = (this && this.__extends) || (function () {
@@ -17398,9 +17881,9 @@ exports.HzNavbarComponent = HzNavbarComponent;
 var HzNavbarComponent_1;
 //# sourceMappingURL=HzNavbarComponent.js.map
 });
-return ___scope___.entry = "index.js";
+return ___scope___.entry = "dist/HzNavbar.js";
 });
-FuseBox.pkg("jquery-ui-dist", {}, function(___scope___){
+FuseBox.pkg("jquery-ui-dist@1.12.1", {}, function(___scope___){
 ___scope___.file("jquery-ui.js", function(exports, require, module, __filename, __dirname){
 
 /*! jQuery UI - v1.12.1 - 2016-09-14
@@ -36141,6 +36624,8 @@ var lang = /\blang(?:uage)?-(\w+)\b/i;
 var uniqueId = 0;
 
 var _ = _self.Prism = {
+	manual: _self.Prism && _self.Prism.manual,
+	disableWorkerMessageHandler: _self.Prism && _self.Prism.disableWorkerMessageHandler,
 	util: {
 		encode: function (tokens) {
 			if (tokens instanceof Token) {
@@ -36180,8 +36665,7 @@ var _ = _self.Prism = {
 					return clone;
 
 				case 'Array':
-					// Check for existence for IE8
-					return o.map && o.map(function(v) { return _.util.clone(v); });
+					return o.map(function(v) { return _.util.clone(v); });
 			}
 
 			return o;
@@ -36276,6 +36760,10 @@ var _ = _self.Prism = {
 	plugins: {},
 
 	highlightAll: function(async, callback) {
+		_.highlightAllUnder(document, async, callback);
+	},
+
+	highlightAllUnder: function(container, async, callback) {
 		var env = {
 			callback: callback,
 			selector: 'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'
@@ -36283,7 +36771,7 @@ var _ = _self.Prism = {
 
 		_.hooks.run("before-highlightall", env);
 
-		var elements = env.elements || document.querySelectorAll(env.selector);
+		var elements = env.elements || container.querySelectorAll(env.selector);
 
 		for (var i=0, element; element = elements[i++];) {
 			_.highlightElement(element, async === true, env.callback);
@@ -36306,11 +36794,13 @@ var _ = _self.Prism = {
 		// Set language on the element, if not present
 		element.className = element.className.replace(lang, '').replace(/\s+/g, ' ') + ' language-' + language;
 
-		// Set language on the parent, for styling
-		parent = element.parentNode;
+		if (element.parentNode) {
+			// Set language on the parent, for styling
+			parent = element.parentNode;
 
-		if (/pre/i.test(parent.nodeName)) {
-			parent.className = parent.className.replace(lang, '').replace(/\s+/g, ' ') + ' language-' + language;
+			if (/pre/i.test(parent.nodeName)) {
+				parent.className = parent.className.replace(lang, '').replace(/\s+/g, ' ') + ' language-' + language;
+			}
 		}
 
 		var code = element.textContent;
@@ -36326,7 +36816,9 @@ var _ = _self.Prism = {
 
 		if (!env.code || !env.grammar) {
 			if (env.code) {
+				_.hooks.run('before-highlight', env);
 				env.element.textContent = env.code;
+				_.hooks.run('after-highlight', env);
 			}
 			_.hooks.run('complete', env);
 			return;
@@ -36374,24 +36866,16 @@ var _ = _self.Prism = {
 		return Token.stringify(_.util.encode(tokens), language);
 	},
 
-	tokenize: function(text, grammar, language) {
+	matchGrammar: function (text, strarr, grammar, index, startPos, oneshot, target) {
 		var Token = _.Token;
 
-		var strarr = [text];
-
-		var rest = grammar.rest;
-
-		if (rest) {
-			for (var token in rest) {
-				grammar[token] = rest[token];
-			}
-
-			delete grammar.rest;
-		}
-
-		tokenloop: for (var token in grammar) {
+		for (var token in grammar) {
 			if(!grammar.hasOwnProperty(token) || !grammar[token]) {
 				continue;
+			}
+
+			if (token == target) {
+				return;
 			}
 
 			var patterns = grammar[token];
@@ -36414,13 +36898,13 @@ var _ = _self.Prism = {
 				pattern = pattern.pattern || pattern;
 
 				// Don’t cache length as it changes during the loop
-				for (var i=0, pos = 0; i<strarr.length; pos += strarr[i].length, ++i) {
+				for (var i = index, pos = startPos; i < strarr.length; pos += strarr[i].length, ++i) {
 
 					var str = strarr[i];
 
 					if (strarr.length > text.length) {
 						// Something went terribly wrong, ABORT, ABORT!
-						break tokenloop;
+						return;
 					}
 
 					if (str instanceof Token) {
@@ -36445,7 +36929,7 @@ var _ = _self.Prism = {
 						    k = i,
 						    p = pos;
 
-						for (var len = strarr.length; k < len && p < to; ++k) {
+						for (var len = strarr.length; k < len && (p < to || (!strarr[k].type && !strarr[k - 1].greedy)); ++k) {
 							p += strarr[k].length;
 							// Move the index i to the element in strarr that is closest to from
 							if (from >= p) {
@@ -36469,6 +36953,10 @@ var _ = _self.Prism = {
 					}
 
 					if (!match) {
+						if (oneshot) {
+							break;
+						}
+
 						continue;
 					}
 
@@ -36485,6 +36973,8 @@ var _ = _self.Prism = {
 					var args = [i, delNum];
 
 					if (before) {
+						++i;
+						pos += before.length;
 						args.push(before);
 					}
 
@@ -36497,9 +36987,31 @@ var _ = _self.Prism = {
 					}
 
 					Array.prototype.splice.apply(strarr, args);
+
+					if (delNum != 1)
+						_.matchGrammar(text, strarr, grammar, i, pos, true, token);
+
+					if (oneshot)
+						break;
 				}
 			}
 		}
+	},
+
+	tokenize: function(text, grammar, language) {
+		var strarr = [text];
+
+		var rest = grammar.rest;
+
+		if (rest) {
+			for (var token in rest) {
+				grammar[token] = rest[token];
+			}
+
+			delete grammar.rest;
+		}
+
+		_.matchGrammar(text, strarr, grammar, 0, 0, false);
 
 		return strarr;
 	},
@@ -36559,10 +37071,6 @@ Token.stringify = function(o, language, parent) {
 		parent: parent
 	};
 
-	if (env.type == 'comment') {
-		env.attributes['spellcheck'] = 'true';
-	}
-
 	if (o.alias) {
 		var aliases = _.util.type(o.alias) === 'Array' ? o.alias : [o.alias];
 		Array.prototype.push.apply(env.classes, aliases);
@@ -36583,18 +37091,21 @@ if (!_self.document) {
 		// in Node.js
 		return _self.Prism;
 	}
- 	// In worker
-	_self.addEventListener('message', function(evt) {
-		var message = JSON.parse(evt.data),
-		    lang = message.language,
-		    code = message.code,
-		    immediateClose = message.immediateClose;
 
-		_self.postMessage(_.highlight(code, _.languages[lang], lang));
-		if (immediateClose) {
-			_self.close();
-		}
-	}, false);
+	if (!_.disableWorkerMessageHandler) {
+		// In worker
+		_self.addEventListener('message', function (evt) {
+			var message = JSON.parse(evt.data),
+				lang = message.language,
+				code = message.code,
+				immediateClose = message.immediateClose;
+
+			_self.postMessage(_.highlight(code, _.languages[lang], lang));
+			if (immediateClose) {
+				_self.close();
+			}
+		}, false);
+	}
 
 	return _self.Prism;
 }
@@ -36605,7 +37116,7 @@ var script = document.currentScript || [].slice.call(document.getElementsByTagNa
 if (script) {
 	_.filename = script.src;
 
-	if (document.addEventListener && !script.hasAttribute('data-manual')) {
+	if (!_.manual && !script.hasAttribute('data-manual')) {
 		if(document.readyState !== "loading") {
 			if (window.requestAnimationFrame) {
 				window.requestAnimationFrame(_.highlightAll);
@@ -36638,12 +37149,12 @@ if (typeof global !== 'undefined') {
 ********************************************** */
 
 Prism.languages.markup = {
-	'comment': /<!--[\w\W]*?-->/,
-	'prolog': /<\?[\w\W]+?\?>/,
-	'doctype': /<!DOCTYPE[\w\W]+?>/i,
-	'cdata': /<!\[CDATA\[[\w\W]*?]]>/i,
+	'comment': /<!--[\s\S]*?-->/,
+	'prolog': /<\?[\s\S]+?\?>/,
+	'doctype': /<!DOCTYPE[\s\S]+?>/i,
+	'cdata': /<!\[CDATA\[[\s\S]*?]]>/i,
 	'tag': {
-		pattern: /<\/?(?!\d)[^\s>\/=$<]+(?:\s+[^\s>\/=]+(?:=(?:("|')(?:\\\1|\\?(?!\1)[\w\W])*\1|[^\s'">=]+))?)*\s*\/?>/i,
+		pattern: /<\/?(?!\d)[^\s>\/=$<]+(?:\s+[^\s>\/=]+(?:=(?:("|')(?:\\[\s\S]|(?!\1)[^\\])*\1|[^\s'">=]+))?)*\s*\/?>/i,
 		inside: {
 			'tag': {
 				pattern: /^<\/?[^\s>\/]+/i,
@@ -36653,9 +37164,15 @@ Prism.languages.markup = {
 				}
 			},
 			'attr-value': {
-				pattern: /=(?:('|")[\w\W]*?(\1)|[^\s>]+)/i,
+				pattern: /=(?:("|')(?:\\[\s\S]|(?!\1)[^\\])*\1|[^\s'">=]+)/i,
 				inside: {
-					'punctuation': /[=>"']/
+					'punctuation': [
+						/^=/,
+						{
+							pattern: /(^|[^\\])["']/,
+							lookbehind: true
+						}
+					]
 				}
 			},
 			'punctuation': /\/?>/,
@@ -36670,6 +37187,9 @@ Prism.languages.markup = {
 	},
 	'entity': /&#?[\da-z]{1,8};/i
 };
+
+Prism.languages.markup['tag'].inside['attr-value'].inside['entity'] =
+	Prism.languages.markup['entity'];
 
 // Plugin to make entity title show the real entity, idea by Roman Komarov
 Prism.hooks.add('wrap', function(env) {
@@ -36690,21 +37210,21 @@ Prism.languages.svg = Prism.languages.markup;
 ********************************************** */
 
 Prism.languages.css = {
-	'comment': /\/\*[\w\W]*?\*\//,
+	'comment': /\/\*[\s\S]*?\*\//,
 	'atrule': {
-		pattern: /@[\w-]+?.*?(;|(?=\s*\{))/i,
+		pattern: /@[\w-]+?.*?(?:;|(?=\s*\{))/i,
 		inside: {
 			'rule': /@[\w-]+/
 			// See rest below
 		}
 	},
-	'url': /url\((?:(["'])(\\(?:\r\n|[\w\W])|(?!\1)[^\\\r\n])*\1|.*?)\)/i,
-	'selector': /[^\{\}\s][^\{\};]*?(?=\s*\{)/,
+	'url': /url\((?:(["'])(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1|.*?)\)/i,
+	'selector': /[^{}\s][^{};]*?(?=\s*\{)/,
 	'string': {
-		pattern: /("|')(\\(?:\r\n|[\w\W])|(?!\1)[^\\\r\n])*\1/,
+		pattern: /("|')(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,
 		greedy: true
 	},
-	'property': /(\b|\B)[\w-]+(?=\s*:)/i,
+	'property': /[-_a-z\xA0-\uFFFF][-\w\xA0-\uFFFF]*(?=\s*:)/i,
 	'important': /\B!important\b/i,
 	'function': /[-a-z0-9]+(?=\()/i,
 	'punctuation': /[(){};:]/
@@ -36715,16 +37235,17 @@ Prism.languages.css['atrule'].inside.rest = Prism.util.clone(Prism.languages.css
 if (Prism.languages.markup) {
 	Prism.languages.insertBefore('markup', 'tag', {
 		'style': {
-			pattern: /(<style[\w\W]*?>)[\w\W]*?(?=<\/style>)/i,
+			pattern: /(<style[\s\S]*?>)[\s\S]*?(?=<\/style>)/i,
 			lookbehind: true,
 			inside: Prism.languages.css,
-			alias: 'language-css'
+			alias: 'language-css',
+			greedy: true
 		}
 	});
-	
+
 	Prism.languages.insertBefore('inside', 'attr-value', {
 		'style-attr': {
-			pattern: /\s*style=("|').*?\1/i,
+			pattern: /\s*style=("|')(?:\\[\s\S]|(?!\1)[^\\])*\1/i,
 			inside: {
 				'attr-name': {
 					pattern: /^\s*style/i,
@@ -36748,7 +37269,7 @@ if (Prism.languages.markup) {
 Prism.languages.clike = {
 	'comment': [
 		{
-			pattern: /(^|[^\\])\/\*[\w\W]*?\*\//,
+			pattern: /(^|[^\\])\/\*[\s\S]*?(?:\*\/|$)/,
 			lookbehind: true
 		},
 		{
@@ -36757,18 +37278,18 @@ Prism.languages.clike = {
 		}
 	],
 	'string': {
-		pattern: /(["'])(\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,
+		pattern: /(["'])(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,
 		greedy: true
 	},
 	'class-name': {
-		pattern: /((?:\b(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/i,
+		pattern: /((?:\b(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[\w.\\]+/i,
 		lookbehind: true,
 		inside: {
-			punctuation: /(\.|\\)/
+			punctuation: /[.\\]/
 		}
 	},
-	'keyword': /\b(if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/,
-	'boolean': /\b(true|false)\b/,
+	'keyword': /\b(?:if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/,
+	'boolean': /\b(?:true|false)\b/,
 	'function': /[a-z0-9_]+(?=\()/i,
 	'number': /\b-?(?:0x[\da-f]+|\d*\.?\d+(?:e[+-]?\d+)?)\b/i,
 	'operator': /--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*|\/|~|\^|%/,
@@ -36781,24 +37302,29 @@ Prism.languages.clike = {
 ********************************************** */
 
 Prism.languages.javascript = Prism.languages.extend('clike', {
-	'keyword': /\b(as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|var|void|while|with|yield)\b/,
-	'number': /\b-?(0x[\dA-Fa-f]+|0b[01]+|0o[0-7]+|\d*\.?\d+([Ee][+-]?\d+)?|NaN|Infinity)\b/,
+	'keyword': /\b(?:as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|var|void|while|with|yield)\b/,
+	'number': /\b-?(?:0[xX][\dA-Fa-f]+|0[bB][01]+|0[oO][0-7]+|\d*\.?\d+(?:[Ee][+-]?\d+)?|NaN|Infinity)\b/,
 	// Allow for all non-ASCII characters (See http://stackoverflow.com/a/2008444)
-	'function': /[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*(?=\()/i,
-	'operator': /--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*\*?|\/|~|\^|%|\.{3}/
+	'function': /[_$a-z\xA0-\uFFFF][$\w\xA0-\uFFFF]*(?=\s*\()/i,
+	'operator': /-[-=]?|\+[+=]?|!=?=?|<<?=?|>>?>?=?|=(?:==?|>)?|&[&=]?|\|[|=]?|\*\*?=?|\/=?|~|\^=?|%=?|\?|\.{3}/
 });
 
 Prism.languages.insertBefore('javascript', 'keyword', {
 	'regex': {
-		pattern: /(^|[^/])\/(?!\/)(\[.+?]|\\.|[^/\\\r\n])+\/[gimyu]{0,5}(?=\s*($|[\r\n,.;})]))/,
+		pattern: /(^|[^/])\/(?!\/)(\[[^\]\r\n]+]|\\.|[^/\\\[\r\n])+\/[gimyu]{0,5}(?=\s*($|[\r\n,.;})]))/,
 		lookbehind: true,
 		greedy: true
+	},
+	// This must be declared before keyword because we use "function" inside the look-forward
+	'function-variable': {
+		pattern: /[_$a-z\xA0-\uFFFF][$\w\xA0-\uFFFF]*(?=\s*=\s*(?:function\b|(?:\([^()]*\)|[_$a-z\xA0-\uFFFF][$\w\xA0-\uFFFF]*)\s*=>))/i,
+		alias: 'function'
 	}
 });
 
 Prism.languages.insertBefore('javascript', 'string', {
 	'template-string': {
-		pattern: /`(?:\\\\|\\?[^\\])*?`/,
+		pattern: /`(?:\\[\s\S]|[^\\`])*`/,
 		greedy: true,
 		inside: {
 			'interpolation': {
@@ -36819,15 +37345,17 @@ Prism.languages.insertBefore('javascript', 'string', {
 if (Prism.languages.markup) {
 	Prism.languages.insertBefore('markup', 'tag', {
 		'script': {
-			pattern: /(<script[\w\W]*?>)[\w\W]*?(?=<\/script>)/i,
+			pattern: /(<script[\s\S]*?>)[\s\S]*?(?=<\/script>)/i,
 			lookbehind: true,
 			inside: Prism.languages.javascript,
-			alias: 'language-javascript'
+			alias: 'language-javascript',
+			greedy: true
 		}
 	});
 }
 
 Prism.languages.js = Prism.languages.javascript;
+
 
 /* **********************************************
      Begin prism-file-highlight.js
@@ -36852,58 +37380,56 @@ Prism.languages.js = Prism.languages.javascript;
 			'tex': 'latex'
 		};
 
-		if(Array.prototype.forEach) { // Check to prevent error in IE8
-			Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
-				var src = pre.getAttribute('data-src');
+		Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+			var src = pre.getAttribute('data-src');
 
-				var language, parent = pre;
-				var lang = /\blang(?:uage)?-(?!\*)(\w+)\b/i;
-				while (parent && !lang.test(parent.className)) {
-					parent = parent.parentNode;
-				}
+			var language, parent = pre;
+			var lang = /\blang(?:uage)?-(?!\*)(\w+)\b/i;
+			while (parent && !lang.test(parent.className)) {
+				parent = parent.parentNode;
+			}
 
-				if (parent) {
-					language = (pre.className.match(lang) || [, ''])[1];
-				}
+			if (parent) {
+				language = (pre.className.match(lang) || [, ''])[1];
+			}
 
-				if (!language) {
-					var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
-					language = Extensions[extension] || extension;
-				}
+			if (!language) {
+				var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+				language = Extensions[extension] || extension;
+			}
 
-				var code = document.createElement('code');
-				code.className = 'language-' + language;
+			var code = document.createElement('code');
+			code.className = 'language-' + language;
 
-				pre.textContent = '';
+			pre.textContent = '';
 
-				code.textContent = 'Loading…';
+			code.textContent = 'Loading…';
 
-				pre.appendChild(code);
+			pre.appendChild(code);
 
-				var xhr = new XMLHttpRequest();
+			var xhr = new XMLHttpRequest();
 
-				xhr.open('GET', src, true);
+			xhr.open('GET', src, true);
 
-				xhr.onreadystatechange = function () {
-					if (xhr.readyState == 4) {
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState == 4) {
 
-						if (xhr.status < 400 && xhr.responseText) {
-							code.textContent = xhr.responseText;
+					if (xhr.status < 400 && xhr.responseText) {
+						code.textContent = xhr.responseText;
 
-							Prism.highlightElement(code);
-						}
-						else if (xhr.status >= 400) {
-							code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
-						}
-						else {
-							code.textContent = '✖ Error: File does not exist or is empty';
-						}
+						Prism.highlightElement(code);
 					}
-				};
+					else if (xhr.status >= 400) {
+						code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+					}
+					else {
+						code.textContent = '✖ Error: File does not exist or is empty';
+					}
+				}
+			};
 
-				xhr.send(null);
-			});
-		}
+			xhr.send(null);
+		});
 
 	};
 
@@ -36915,12 +37441,13 @@ Prism.languages.js = Prism.languages.javascript;
 ___scope___.file("components/prism-typescript.js", function(exports, require, module, __filename, __dirname){
 
 Prism.languages.typescript = Prism.languages.extend('javascript', {
-	'keyword': /\b(break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|false|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|package|private|protected|public|return|set|static|super|switch|this|throw|true|try|typeof|var|void|while|with|yield|module|declare|constructor|string|Function|any|number|boolean|Array|enum)\b/
+	// From JavaScript Prism keyword list and TypeScript language spec: https://github.com/Microsoft/TypeScript/blob/master/doc/spec.md#221-reserved-words
+	'keyword': /\b(?:as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|var|void|while|with|yield|false|true|module|declare|constructor|string|Function|any|number|boolean|Array|symbol|namespace|abstract|require|type)\b/
 });
 
 Prism.languages.ts = Prism.languages.typescript;
 });
-___scope___.file("components/prism-jade.js", function(exports, require, module, __filename, __dirname){
+___scope___.file("components/prism-pug.js", function(exports, require, module, __filename, __dirname){
 
 (function(Prism) {
 	// TODO:
@@ -36931,20 +37458,20 @@ ___scope___.file("components/prism-jade.js", function(exports, require, module, 
 	// - Add explicit support for plain text using |
 	// - Add support for markup embedded in plain text
 
-	Prism.languages.jade = {
+	Prism.languages.pug = {
 
 		// Multiline stuff should appear before the rest
 
 		// This handles both single-line and multi-line comments
 		'comment': {
-			pattern: /(^([\t ]*))\/\/.*((?:\r?\n|\r)\2[\t ]+.+)*/m,
+			pattern: /(^([\t ]*))\/\/.*(?:(?:\r?\n|\r)\2[\t ]+.+)*/m,
 			lookbehind: true
 		},
 
 		// All the tag-related part is in lookbehind
 		// so that it can be highlighted by the "tag" pattern
 		'multiline-script': {
-			pattern: /(^([\t ]*)script\b.*\.[\t ]*)((?:\r?\n|\r(?!\n))(?:\2[\t ]+.+|\s*?(?=\r?\n|\r)))+/m,
+			pattern: /(^([\t ]*)script\b.*\.[\t ]*)(?:(?:\r?\n|\r(?!\n))(?:\2[\t ]+.+|\s*?(?=\r?\n|\r)))+/m,
 			lookbehind: true,
 			inside: {
 				rest: Prism.languages.javascript
@@ -36953,7 +37480,7 @@ ___scope___.file("components/prism-jade.js", function(exports, require, module, 
 
 		// See at the end of the file for known filters
 		'filter': {
-			pattern: /(^([\t ]*)):.+((?:\r?\n|\r(?!\n))(?:\2[\t ]+.+|\s*?(?=\r?\n|\r)))+/m,
+			pattern: /(^([\t ]*)):.+(?:(?:\r?\n|\r(?!\n))(?:\2[\t ]+.+|\s*?(?=\r?\n|\r)))+/m,
 			lookbehind: true,
 			inside: {
 				'filter-name': {
@@ -36964,7 +37491,7 @@ ___scope___.file("components/prism-jade.js", function(exports, require, module, 
 		},
 
 		'multiline-plain-text': {
-			pattern: /(^([\t ]*)[\w\-#.]+\.[\t ]*)((?:\r?\n|\r(?!\n))(?:\2[\t ]+.+|\s*?(?=\r?\n|\r)))+/m,
+			pattern: /(^([\t ]*)[\w\-#.]+\.[\t ]*)(?:(?:\r?\n|\r(?!\n))(?:\2[\t ]+.+|\s*?(?=\r?\n|\r)))+/m,
 			lookbehind: true
 		},
 		'markup': {
@@ -37079,7 +37606,7 @@ ___scope___.file("components/prism-jade.js", function(exports, require, module, 
 		'punctuation': /[.\-!=|]+/
 	};
 
-	var filter_pattern = '(^([\\t ]*)):{{filter_name}}((?:\\r?\\n|\\r(?!\\n))(?:\\2[\\t ]+.+|\\s*?(?=\\r?\\n|\\r)))+';
+	var filter_pattern = '(^([\\t ]*)):{{filter_name}}(?:(?:\\r?\\n|\\r(?!\\n))(?:\\2[\\t ]+.+|\\s*?(?=\\r?\\n|\\r)))+';
 
 	// Non exhaustive list of available filters and associated languages
 	var filters = [
@@ -37117,9 +37644,10 @@ ___scope___.file("components/prism-jade.js", function(exports, require, module, 
 		}
 	}
 
-	Prism.languages.insertBefore('jade', 'filter', all_filters);
+	Prism.languages.insertBefore('pug', 'filter', all_filters);
 
 }(Prism));
+
 });
 return ___scope___.entry = "prism.js";
 });
@@ -37490,7 +38018,7 @@ ___scope___.file("velocity.js", function(exports, require, module, __filename, _
 			function offsetParentFn(elem) {
 				var offsetParent = elem.offsetParent;
 
-				while (offsetParent && offsetParent.nodeName.toLowerCase() !== "html" && offsetParent.style && offsetParent.style.position === "static") {
+				while (offsetParent && (offsetParent.nodeName.toLowerCase() !== "html" && offsetParent.style && offsetParent.style.position.toLowerCase() === "static")) {
 					offsetParent = offsetParent.offsetParent;
 				}
 
@@ -37830,12 +38358,12 @@ ___scope___.file("velocity.js", function(exports, require, module, __filename, _
 			/* Container for page-wide Velocity state data. */
 			State: {
 				/* Detect mobile devices to determine if mobileHA should be turned on. */
-				isMobile: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
+				isMobile: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(window.navigator.userAgent),
 				/* The mobileHA option's behavior changes on older Android devices (Gingerbread, versions 2.3.3-2.3.7). */
-				isAndroid: /Android/i.test(navigator.userAgent),
-				isGingerbread: /Android 2\.3\.[3-7]/i.test(navigator.userAgent),
+				isAndroid: /Android/i.test(window.navigator.userAgent),
+				isGingerbread: /Android 2\.3\.[3-7]/i.test(window.navigator.userAgent),
 				isChrome: window.chrome,
-				isFirefox: /Firefox/i.test(navigator.userAgent),
+				isFirefox: /Firefox/i.test(window.navigator.userAgent),
 				/* Create a cached element for re-use when checking for CSS property prefixes. */
 				prefixElement: document.createElement("div"),
 				/* Cache every prefix match to avoid repeating lookups. */
@@ -37905,7 +38433,7 @@ ___scope___.file("velocity.js", function(exports, require, module, __filename, _
 			hook: null, /* Defined below. */
 			/* Velocity-wide animation time remapping for testing purposes. */
 			mock: false,
-			version: {major: 1, minor: 5, patch: 0},
+			version: {major: 1, minor: 5, patch: 1},
 			/* Set to 1 or 2 (most verbose) to output debug info to console. */
 			debug: false,
 			/* Use rAF high resolution timestamp when available */
@@ -40132,7 +40660,12 @@ ___scope___.file("velocity.js", function(exports, require, module, __filename, _
 				/* Note: Velocity rolls its own delay function since jQuery doesn't have a utility alias for $.fn.delay()
 				 (and thus requires jQuery element creation, which we avoid since its overhead includes DOM querying). */
 				if (parseFloat(opts.delay) && opts.queue !== false) {
-					$.queue(element, opts.queue, function(next) {
+					$.queue(element, opts.queue, function(next, clearQueue) {
+						if (clearQueue === true) {
+							/* Do not continue with animation queueing. */
+							return true;
+						}
+
 						/* This is a flag used to indicate to the upcoming completeCall() function that this queue entry was initiated by Velocity. See completeCall() for further details. */
 						Velocity.velocityQueueEntryFlag = true;
 
@@ -41345,7 +41878,7 @@ ___scope___.file("velocity.js", function(exports, require, module, __filename, _
 							call = callContainer[0],
 							opts = callContainer[2],
 							timeStart = callContainer[3],
-							firstTick = !!timeStart,
+							firstTick = !timeStart,
 							tweenDummyValue = null,
 							pauseObject = callContainer[5],
 							millisecondsEllapsed = callContainer[6];

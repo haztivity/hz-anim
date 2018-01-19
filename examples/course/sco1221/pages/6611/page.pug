@@ -30,22 +30,26 @@ div
             );
             ```
             #### Pug
-            ```jade
-            button(data-hz-resource="HzAnim"
-                    data-opt-hz-anim-on="click"
-                    data-opt-hz-anim-do={"rotateZ":[180,0]}) Do to me
+            ```pug
+            button(
+                data-hz-resource="HzAnim"
+                data-opt-hz-anim-on="click"
+                data-opt-hz-anim-do={"rotateZ":"45deg"}
+            ) Do to me
             ```
             or
             #### HTML
             ```html
-            <button data-hz-resource="HzAnim"
-                    data-opt-hz-anim-on="click"
-                    data-opt-hz-anim-do="{'rotateZ':[180,0]}">
-                    Do to me
+            <button
+                data-hz-resource="HzAnim"
+                data-opt-hz-anim-on="click"
+                data-opt-hz-anim-do='{"rotateZ":"45deg"}'
+            >
+                Do to me
             </button>
             ```
 
-            This will perform a rotate in the Z axis from 0 to 180 degrees.
+            This will perform a rotate in the Z axis from 45 degrees.
 
             By default, the animation is performed to the item itself, to see how to apply the animation to other element plase go to [Apply animation to other targets](#markdown-header-apply-animation-to-other-targets)
 
@@ -54,7 +58,7 @@ div
             It's possible to animate any of the properties and transitions available in velocity.js and use all the options.
         button(data-hz-resource="HzAnim"
         data-opt-hz-anim-on="click"
-        data-opt-hz-anim-do='{"rotateZ":[180,0]}') Do to me
+        data-opt-hz-anim-do='{"rotateZ":"45deg"}') Do to me
 
     div.markdown-wrapper
         :markdown-it(linkify)
@@ -63,29 +67,121 @@ div
             See [jquery selectors](https://api.jquery.com/category/selectors/) for more info.
             ### Example
             #### Pug
-            ```jade
-            button(data-hz-resource="HzAnim"
-                    data-opt-hz-anim-on="click"
-                    data-opt-hz-anim-do={"rotateZ":[180,0]}
-                    data-opt-hz-anim-to=".target") Do to .target
+            ```pug
+            button(
+                data-hz-resource="HzAnim"
+                data-opt-hz-anim-on="click"
+                data-opt-hz-anim-do={"rotateZ":"45deg"}
+                data-opt-hz-anim-to=".target"
+            ) Do to .target
 
             button.target Target
             ```
             or
             #### HTML
             ```html
-            <button data-hz-resource="HzAnim"
-                    data-opt-hz-anim-on="cli###ck"
-                    data-opt-hz-anim-do="{'rotateZ':[180,0]}"
-                    data-opt-hz-anim-to=".target">
-                    Do to all .target
+            <button
+                data-hz-resource="HzAnim"
+                data-opt-hz-anim-on="cli###ck"
+                data-opt-hz-anim-do='{"rotateZ":"45deg"}'
+                data-opt-hz-anim-to=".target"
+            >
+                Do to .target
             </button>
             <button class="target">Target</button>
             ```
 
         button(data-hz-resource="HzAnim"
         data-opt-hz-anim-on="click"
-        data-opt-hz-anim-do='{"rotateZ":[180,0]}'
+        data-opt-hz-anim-do='{"rotateZ":"40deg"}'
         data-opt-hz-anim-to=".target") Do to .target
 
         button.target .target
+    div.markdown-wrapper
+        :markdown-it(linkify)
+            ## Increment / decrement
+            Velocity.js allows to increment/decrement a property, this is allows to create complex animations with an easiest configuration.
+
+            To set an increment use `+=` and to decrement use `-=`
+            ### Pug
+            ```pug
+            button.targetIncrement(
+               data-hz-resource="HzAnim"
+               data-opt-hz-anim-on="click"
+               data-opt-hz-anim-do={"rotateZ": "+=45deg", "scale": "+=0.4","colorRed":"+=80","marginRight":"+=0.5em"}
+            ) Increase
+            button(
+               data-hz-resource="HzAnim"
+               data-opt-hz-anim-to=".targetIncrement",
+               data-opt-hz-anim-on="click"
+               data-opt-hz-anim-do={"rotateZ": "-=45deg", "scale": "-=0.4","colorRed":"-=80","marginRight":"-=0.5em"}
+            ) Decrease
+            ```
+            or
+            ### HTML
+            ```html
+            <button
+                class="targetIncrement"
+                data-hz-resource="HzAnim"
+                data-opt-hz-anim-on="click"
+                data-opt-hz-anim-do='{"rotateZ": "+=45deg", "scale": "+=0.4","colorRed":"+=80","marginRight":"+=0.5em"}'
+            >
+                Increase
+            </button>
+            <button
+                data-opt-hz-anim-to=".targetIncrement",
+                data-opt-hz-anim-on="click"
+                data-opt-hz-anim-do='{"rotateZ": "-=45deg", "scale": "-=0.4","colorRed":"-=80","marginRight":"-=0.5em"}'
+            >
+                Decrease
+            </button>
+            ```
+        button.targetIncrement(
+            data-hz-resource="HzAnim"
+            data-opt-hz-anim-on="click"
+            data-opt-hz-anim-do={"rotateZ": "+=45deg", "scale": "+=0.4","colorRed":"+=80","marginRight":"+=0.5em"}
+        ) Increase
+        button(
+            data-hz-resource="HzAnim"
+            data-opt-hz-anim-to=".targetIncrement",
+            data-opt-hz-anim-on="click"
+            data-opt-hz-anim-do={"rotateZ": "-=45deg", "scale": "-=0.4","colorRed":"-=80","marginRight":"-=0.5em"}
+        ) Decrease
+    div.markdown-wrapper
+        :markdown-it(linkify)
+            ## Repeatable
+            By default, the animation is repeatable and could be performed multiple times.
+
+            For one time execution, set the `repeatable` option to false
+            ### Pug
+            ```pug
+                button(
+                    data-hz-resource="HzAnim"
+                    data-opt-hz-anim-repeatable="false"
+                    data-opt-hz-anim-on="click"
+                    data-opt-hz-anim-do={"rotateZ": "+=45deg"}
+                ) Do to me one time
+            ```
+            or
+            ### HTML
+            ```html
+            <button
+                data-hz-resource="HzAnim"
+                data-opt-hz-anim-repeatable="false"
+                data-opt-hz-anim-on="click"
+                data-opt-hz-anim-do='{"rotateZ":"+=45deg"}'
+            >
+                Do to me one time
+            </button>
+        button(
+            data-hz-resource="HzAnim"
+            data-opt-hz-anim-repeatable="false"
+            data-opt-hz-anim-on="click"
+            data-opt-hz-anim-do={"rotateZ": "+=45deg"}
+        ) Do to me one time
+
+        button(
+            data-hz-resource="HzAnim"
+            data-opt-hz-anim-on="click"
+            data-opt-hz-anim-do={"rotateZ": "+=45deg"}
+        ) Do to me infinite times
