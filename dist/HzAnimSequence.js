@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  */
 require("velocity-animate");
 require("velocity-animate/velocity.ui");
-var HzAnimSequence = (function () {
+var HzAnimSequence = /** @class */ (function () {
     function HzAnimSequence(_$) {
         this._$ = _$;
         this._complete = false;
@@ -89,7 +89,7 @@ var HzAnimSequence = (function () {
         return this._deferred.promise();
     };
     HzAnimSequence.prototype.getConfig = function () {
-        return this._config;
+        return this._stepConfig;
     };
     return HzAnimSequence;
 }());
