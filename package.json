@@ -1,6 +1,6 @@
 {
   "name": "@haztivity/hz-anim",
-  "version": "0.6.4",
+  "version": "0.7.0",
   "description": "Resource to create animations",
   "main": "dist/HzAnim.js",
   "module": "dist/HzAnim.js",
