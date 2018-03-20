@@ -1,34 +1,34 @@
 div
     div.markdown-wrapper
         :markdown-it(linkify)
-            ## Loops
-            Velocity.js allows to use loop animations.
+            # Loops
+            Velocity.js allows using loop animations.
 
             To set up a loop animation use the `loop` option from Velocity.js. Check the doc [here](http://velocityjs.org/#loop)
 
             The loop has two steps:
-            1. Apply the changes specified
+            1. Apply the specified changes
             2. Reverse to the original state
 
             For example, in this case, the animation will apply the rotation of 45deg and then will be reversed to the prior state.
-            ### Pug
+            ## Pug
             ```pug
-            button(
+                button(
                 data-hz-resource='HzAnim',
                 data-opt-hz-anim-on='click',
-                data-opt-hz-anim-do={"rotateX":"45deg"},
-                data-opt-hz-anim-with={loop:true}
-            ) Go and back
+                data-opt-hz-anim-do={"rotateX": "45deg"},
+                data-opt-hz-anim-with={loop: true}
+                ) Go and back
             ```
-            ### HTML
+            ## HTML
             ```html
-            <button
+                <button
                 data-hz-resource="HzAnim"
                 data-opt-hz-anim-on="click"
                 data-opt-hz-anim-do='{"rotateZ":"45deg"}'
                 data-opt-hz-anim-with='{"loop":true}'
             >
-                Go and back for ever&;ever
+            Go and back for ever&ever
             </button>
             ```
         button(
@@ -42,9 +42,9 @@ div
             ### Resource completion in infinite loops
             If a `loop:true` (infinite loop) is specified in a step, the resource will be marked as completed when the step with the loop starts and no more steps will be executed.
 
-            In this case, the step 1 changes the background color.
+            In this case, step 1 changes the background color.
 
-            After the step 1, the step 2 is executed. The step 2 has a infinite loop so the resource is marked as completed just before executing the step 2.
+            After the step 1, step 2 is executed. Step 2 has an infinite loop so the resource is marked as completed just before executing the rotation.
 
             The step 3 will never be executed.
             #### Pug
@@ -72,7 +72,7 @@ div
             </button>
             ```
             ### Loop over a number of times
-            Also is possible to execute the loop a certain number of times. Set the loop with the numer of times to repeat the animation
+            Also is possible to execute the loop a certain number of times. Set the loop with the number of times to repeat the animation
             #### Pug
             ```pug
             button(

@@ -10344,11 +10344,11 @@ sco.run();
 });
 ___scope___.file("sco1221/sco.pug", function(exports, require, module, __filename, __dirname){
 
-module.exports.default =  "\n<div data-hz-pages=\"data-hz-pages\"></div>\n<div class=\"hz-navbar\" data-hz-component=\"HzNavbar\">\n  <div class=\"hz-navbar__progress\">\n    <div class=\"hz-navbar__progress-bar\">\n      <div class=\"hz-navbar__progress-mask\"></div>\n      <div class=\"hz-navbar__progress-value\" data-hz-navbar-bar=\"data-hz-navbar-bar\"></div>\n    </div>\n    <div class=\"hz-navbar__content hz-navbar__progress-percentage\" data-hz-navbar-progress=\"data-hz-navbar-progress\"></div>\n  </div>\n  <div class=\"hz-navbar__actions\">\n    <button class=\"hz-navbar__btn hz-navbar__action-home\" data-hz-navbar-home=\"data-hz-navbar-home\" data-hz-navbar-content=\"home\" data-hz-navbar-content-to=\"title\"><span class=\"hz-navbar__content\" data-hz-navbar-content=\"home\"></span></button>\n    <button class=\"hz-navbar__btn hz-navbar__action-index\" data-hz-navbar-index=\"data-hz-navbar-index\" data-hz-navbar-content=\"showIndex\" data-hz-navbar-content-to=\"title\"><span class=\"hz-navbar__content\" data-hz-navbar-content=\"showIndex\"></span></button>\n  </div>\n  <div class=\"hz-navbar__pager\">\n    <button class=\"hz-navbar__btn hz-navbar__prev\" data-hz-navbar-prev=\"data-hz-navbar-prev\" data-hz-navbar-content=\"prev\" data-hz-navbar-content-to=\"title\"><span class=\"hz-navbar__content\" data-hz-navbar-content=\"prev\"></span></button>\n    <p class=\"hz-navbar__pages\"><span class=\"hz-navbar__content hz-navbar__current\" data-hz-navbar-current=\"data-hz-navbar-current\" data-hz-navbar-content-to=\"title\" data-hz-navbar-content=\"currentPage\"></span><span class=\"hz-navbar__content hz-navbar__total\" data-hz-navbar-total=\"data-hz-navbar-total\" data-hz-navbar-content-to=\"title\" data-hz-navbar-content=\"totalPages\"></span></p>\n    <button class=\"hz-navbar__btn hz-navbar__next\" data-hz-navbar-next=\"data-hz-navbar-next\" data-hz-navbar-content=\"next\" data-hz-navbar-content-to=\"title\"><span class=\"hz-navbar__content\" data-hz-navbar-content=\"next\"></span></button>\n  </div>\n  <ul class=\"hz-navbar__index-list\" data-hz-navbar-index-list=\"data-hz-navbar-index-list\">\n    <li class=\"hz-navbar__index-item\" data-hz-navbar-index-list-item=\"data-hz-navbar-index-list-item\"><a class=\"hz-navbar__index-item-content\" data-hz-navbar-index-list-item-content=\"data-hz-navbar-index-list-item-content\" href=\"javascript:void(0)\"></a></li>\n  </ul>\n</div>";
+module.exports.default =  "\n<div data-hz-pages=\"data-hz-pages\"></div>\n<div class=\"hz-navbar\" data-hz-component=\"HzNavbar\">\n  <div class=\"hz-navbar__progress\">\n    <div class=\"hz-navbar__progress-bar\">\n      <div class=\"hz-navbar__progress-mask\"></div>\n      <div class=\"hz-navbar__progress-value\" data-hz-navbar-bar=\"data-hz-navbar-bar\"></div>\n    </div>\n    <div class=\"hz-navbar__content hz-navbar__progress-percentage\" data-hz-navbar-progress=\"data-hz-navbar-progress\"></div>\n  </div>\n  <div class=\"hz-navbar__actions\">\n    <button class=\"hz-navbar__btn hz-navbar__action-home\" data-hz-navbar-home=\"data-hz-navbar-home\" data-hz-navbar-content=\"home\" data-hz-navbar-content-to=\"title\"><span class=\"hz-navbar__content\" data-hz-navbar-content=\"home\"></span></button>\n    <button class=\"hz-navbar__btn hz-navbar__action-index\" data-hz-navbar-index=\"data-hz-navbar-index\" data-hz-navbar-content=\"showIndex\" data-hz-navbar-content-to=\"title\"><span class=\"hz-navbar__content\" data-hz-navbar-content=\"showIndex\"></span></button>\n    <button class=\"hz-navbar__btn hz-navbar__action-exit\" data-hz-navbar-exit=\"data-hz-navbar-exit\" data-hz-navbar-content=\"exit\" data-hz-navbar-content-to=\"title\"><span class=\"hz-navbar__content\" data-hz-navbar-content=\"exit\"></span></button>\n  </div>\n  <div class=\"hz-navbar__pager\">\n    <button class=\"hz-navbar__btn hz-navbar__prev\" data-hz-navbar-prev=\"data-hz-navbar-prev\" data-hz-navbar-content=\"prev\" data-hz-navbar-content-to=\"title\"><span class=\"hz-navbar__content\" data-hz-navbar-content=\"prev\"></span></button>\n    <p class=\"hz-navbar__pages\"><span class=\"hz-navbar__content hz-navbar__current\" data-hz-navbar-current=\"data-hz-navbar-current\" data-hz-navbar-content-to=\"title\" data-hz-navbar-content=\"currentPage\"></span><span class=\"hz-navbar__content hz-navbar__total\" data-hz-navbar-total=\"data-hz-navbar-total\" data-hz-navbar-content-to=\"title\" data-hz-navbar-content=\"totalPages\"></span></p>\n    <button class=\"hz-navbar__btn hz-navbar__next\" data-hz-navbar-next=\"data-hz-navbar-next\" data-hz-navbar-content=\"next\" data-hz-navbar-content-to=\"title\"><span class=\"hz-navbar__content\" data-hz-navbar-content=\"next\"></span></button>\n  </div>\n  <ul class=\"hz-navbar__dialog hz-navbar__index-list\" data-hz-navbar-index-list=\"data-hz-navbar-index-list\">\n    <li class=\"hz-navbar__index-item\" data-hz-navbar-index-list-item=\"data-hz-navbar-index-list-item\"><a class=\"hz-navbar__index-item-content\" data-hz-navbar-index-list-item-content=\"data-hz-navbar-index-list-item-content\" href=\"javascript:void(0)\"></a></li>\n  </ul>\n  <div class=\"hz-navbar__dialog hz-navbar__exit-dialog\" data-hz-navbar-exit-dialog=\"data-hz-navbar-exit-dialog\">\n    <p data-hz-navbar-content=\"exitMessage\"></p>\n  </div>\n</div>";
 });
 ___scope___.file("sco1221/main.scss", function(exports, require, module, __filename, __dirname){
 
-__fsbx_css("sco1221/main.scss", "/* Estilos de prueba. NO UTILIZAR en proyecto*/\n/* Common */\n/*Cross browser: reset vendor styles*/\nhtml, body, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,\narticle, aside, details, dialog, figcaption, figure, footer, header, main, nav, section, summary, audio, canvas, video, mark, code, kbd, pre, samp,\na, abbr, acronym, address, code, del, dfn, em, strong, img, q, dl, dt, dd, ol, ul,\nli, fieldset, form, label, legend, table, caption, tbody, tfoot, thead,\ntr, th, td, div {\n  line-height: initial;\n  margin: 0;\n  padding: 0;\n  border: none;\n  font-weight: normal;\n  font-style: normal;\n  font-size: 100%;\n  font-family: inherit;\n  vertical-align: baseline;\n  text-decoration: none;\n  -ms-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n}\n\nhtml {\n  font-family: sans-serif;\n  /* 1 */\n  line-height: 1.15;\n  /* 2 */\n  -ms-text-size-adjust: 100%;\n  /* 3 */\n  -webkit-text-size-adjust: 100%;\n  /* 3 */\n}\n\ninput, button, select, textarea {\n  line-height: initial;\n  margin: 0;\n  padding: 0;\n  font-weight: normal;\n  font-style: normal;\n  font-size: 100%;\n  font-family: inherit;\n  vertical-align: baseline;\n  text-decoration: none;\n  -ms-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n}\n\nul, ol, dl {\n  list-style: none;\n}\n\ninput[type=\"text\"] {\n  -webkit-appearance: none;\n}\n\nbody input[type=\"search\"] {\n  box-sizing: border-box;\n}\n\ni {\n  font-style: normal;\n}\n\n/*html elements*/\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  /* 1 */\n  display: block;\n}\n\n/*! extends from normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */\n/**\r\n * 1. Change the default font family in all browsers (opinionated).\r\n * 2. Correct the line height in all browsers.\r\n * 3. Prevent adjustments of font size after orientation changes in IE and iOS.\r\n */\nhtml {\n  font-family: sans-serif;\n  /* 1 */\n  font-size: 100%;\n  line-height: 1.15;\n  /* 2 */\n  -ms-text-size-adjust: 100%;\n  /* 3 */\n  -webkit-text-size-adjust: 100%;\n  /* 3 */\n}\n\n/**\r\n * Remove the margin in all browsers (opinionated).\r\n */\nbody {\n  margin: 0;\n}\n\n/* HTML5 display definitions\r\n   ========================================================================== */\n/**\r\n * Add the correct display in IE 9-.\r\n * 1. Add the correct display in Edge, IE, and Firefox.\r\n * 2. Add the correct display in IE.\r\n */\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  /* 1 */\n  display: block;\n}\n\n/**\r\n * Add the correct display in IE 9-.\r\n */\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block;\n}\n\n/**\r\n * Add the correct display in iOS 4-7.\r\n */\naudio:not([controls]) {\n  display: none;\n  height: 0;\n}\n\n/**\r\n * Add the correct vertical alignment in Chrome, Firefox, and Opera.\r\n */\nprogress {\n  vertical-align: baseline;\n}\n\n/**\r\n * Add the correct display in IE 10-.\r\n * 1. Add the correct display in IE.\r\n */\ntemplate,\n[hidden] {\n  display: none;\n}\n\n/* Links\r\n   ========================================================================== */\n/**\r\n * 1. Remove the gray background on active links in IE 10.\r\n * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.\r\n */\na {\n  background-color: transparent;\n  /* 1 */\n  -webkit-text-decoration-skip: objects;\n  /* 2 */\n}\n\n/**\r\n * Remove the outline on focused links when they are also active or hovered\r\n * in all browsers (opinionated).\r\n */\na:active,\na:hover,\na:visited {\n  outline-width: 0;\n  color: inherit;\n}\n\n/* Text-level semantics\r\n   ========================================================================== */\n/**\r\n * 1. Remove the bottom border in Firefox 39-.\r\n * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.\r\n */\nabbr[title] {\n  border-bottom: none;\n  /* 1 */\n  text-decoration: underline;\n  /* 2 */\n  text-decoration: underline dotted;\n  /* 2 */\n}\n\n/**\r\n * Prevent the duplicate application of `bolder` by the next rule in Safari 6.\r\n */\nb,\nstrong {\n  font-weight: inherit;\n}\n\n/**\r\n * Add the correct font weight in Chrome, Edge, and Safari.\r\n */\nb,\nstrong {\n  font-weight: bold;\n}\n\n/**\r\n * Add the correct font style in Android 4.3-.\r\n */\ndfn {\n  font-style: italic;\n}\n\n/**\r\n * Add the correct background and color in IE 9-.\r\n */\nmark {\n  background-color: #ff0;\n  color: #000;\n}\n\n/**\r\n * Add the correct font size in all browsers.\r\n */\nsmall {\n  font-size: 80%;\n}\n\n/**\r\n * Prevent `sub` and `sup` elements from affecting the line height in\r\n * all browsers.\r\n */\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline;\n}\n\nsub {\n  bottom: -0.25em;\n}\n\nsup {\n  top: -0.5em;\n}\n\n/* Embedded content\r\n   ========================================================================== */\n/**\r\n * Remove the border on images inside links in IE 10-.\r\n */\nimg {\n  border-style: none;\n  max-width: 100%;\n}\n\n/**\r\n * Hide the overflow in IE.\r\n */\nsvg:not(:root) {\n  overflow: hidden;\n}\n\n/* Grouping content\r\n   ========================================================================== */\n/**\r\n * 1. Correct the inheritance and scaling of font size in all browsers.\r\n * 2. Correct the odd `em` font sizing in all browsers.\r\n */\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */\n}\n\n/**\r\n * 1. Add the correct box sizing in Firefox.\r\n * 2. Show the overflow in Edge and IE.\r\n */\nhr {\n  box-sizing: content-box;\n  /* 1 */\n  height: 0;\n  /* 1 */\n  overflow: visible;\n  /* 2 */\n}\n\n/* Forms\r\n   ========================================================================== */\n/**\r\n * 1. Change font properties to `inherit` in all browsers (opinionated).\r\n * 2. Remove the margin in Firefox and Safari.\r\n */\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font: inherit;\n  /* 1 */\n  margin: 0;\n  /* 2 */\n}\n\n/**\r\n * Restore the font weight unset by the previous rule.\r\n */\noptgroup {\n  font-weight: bold;\n}\n\n/**\r\n * Show the overflow in IE.\r\n * 1. Show the overflow in Edge.\r\n */\nbutton,\ninput {\n  /* 1 */\n  overflow: visible;\n}\n\n/**\r\n * Remove the inheritance of text transform in Edge, Firefox, and IE.\r\n * 1. Remove the inheritance of text transform in Firefox.\r\n */\nbutton,\nselect {\n  /* 1 */\n  text-transform: none;\n}\n\n/**\r\n * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`\r\n *    controls in Android 4.\r\n * 2. Correct the inability to style clickable types in iOS and Safari.\r\n */\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button;\n  /* 2 */\n}\n\n/**\r\n * Remove the inner border and padding in Firefox.\r\n */\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: none;\n  padding: 0;\n}\n\n/**\r\n * 1. Correct the text wrapping in Edge and IE.\r\n * 2. Correct the color inheritance from `fieldset` elements in IE.\r\n * 3. Remove the padding so developers are not caught out when they zero out\r\n *    `fieldset` elements in all browsers.\r\n */\nlegend {\n  box-sizing: border-box;\n  /* 1 */\n  color: inherit;\n  /* 2 */\n  display: table;\n  /* 1 */\n  max-width: 100%;\n  /* 1 */\n  padding: 0;\n  /* 3 */\n  white-space: normal;\n  /* 1 */\n}\n\n/**\r\n * Remove the default vertical scrollbar in IE.\r\n */\ntextarea {\n  overflow: auto;\n}\n\n/**\r\n * Correct the cursor style of increment and decrement buttons in Chrome.\r\n */\n[type=\"number\"]::-webkit-inner-spin-button,\n[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto;\n}\n\n/**\r\n * 1. Correct the odd appearance in Chrome and Safari.\r\n * 2. Correct the outline style in Safari.\r\n */\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  /* 1 */\n  outline-offset: -2px;\n  /* 2 */\n}\n\n/**\r\n * Remove the inner padding and cancel buttons in Chrome and Safari on OS X.\r\n */\n[type=\"search\"]::-webkit-search-cancel-button,\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n\n/**\r\n * Correct the text style of placeholders in Chrome, Edge, and Safari.\r\n */\n::-webkit-input-placeholder {\n  color: inherit;\n  opacity: 0.54;\n}\n\n/**\r\n * 1. Correct the inability to style clickable types in iOS and Safari.\r\n * 2. Change font properties to `inherit` in Safari.\r\n */\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  /* 1 */\n  font: inherit;\n  /* 2 */\n}\n\n/* End common */\n/* Components */\nbody {\n  width: 80%;\n  margin: 0 auto;\n  padding: 1em;\n}\n\n/* _hz-navbar.theme-default */\n/* _hz-navbar.structure */\n.hz-navbar {\n  display: flex;\n  padding: 0.75em;\n  align-items: center;\n}\n\n.hz-navbar .hz-navbar__btn {\n  margin: 0;\n  padding: 0;\n  border: none;\n  cursor: pointer;\n  background: none;\n  outline: none;\n}\n\n.hz-navbar .hz-navbar__progress {\n  width: 33.3%;\n  display: flex;\n  align-items: center;\n}\n\n.hz-navbar .hz-navbar__progress-mask {\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 1;\n}\n\n.hz-navbar .hz-navbar__progress-bar {\n  height: 1.125em;\n  width: 75%;\n  position: relative;\n}\n\n.hz-navbar .hz-navbar__progress-value {\n  height: 100%;\n  transform: scaleX(0);\n  transform-origin: left;\n}\n\n.hz-navbar .hz-navbar__progress-percentage {\n  margin-left: 0.375em;\n}\n\n.hz-navbar .hz-navbar__actions {\n  display: flex;\n  width: 33.3%;\n  justify-content: center;\n}\n\n.hz-navbar .hz-navbar__actions .hz-navbar__btn {\n  margin: 0 0.375em;\n}\n\n.hz-navbar .hz-navbar__pager {\n  display: flex;\n  align-items: center;\n  width: 33.3%;\n  justify-content: flex-end;\n}\n\n.hz-navbar .hz-navbar__pages {\n  padding: 0 0.375em;\n}\n\n.hz-navbar .hz-navbar__total:before {\n  content: \"/\";\n}\n\n.hz-navbar__index-list-dialog {\n  position: absolute;\n}\n\n/* End _hz-navbar.structure */\n.hz-navbar {\n  background-color: rgba(0, 0, 0, 0.5);\n}\n\n.hz-navbar .hz-navbar__progress-percentage {\n  color: #fff;\n}\n\n.hz-navbar .hz-navbar__btn {\n  transition: all 400ms ease;\n}\n\n.hz-navbar .hz-navbar__btn .hz-navbar__content {\n  position: absolute;\n  top: 0;\n  left: -99999em;\n}\n\n.hz-navbar .hz-navbar__btn:not([disabled]):hover, .hz-navbar .hz-navbar__btn:not([disabled]):focus {\n  transform: scale(1.2);\n}\n\n.hz-navbar .hz-navbar__btn[disabled] {\n  opacity: 0.5;\n  cursor: default;\n}\n\n.hz-navbar .hz-navbar__progress-bar {\n  border: 2px solid none;\n  background-color: #999;\n}\n\n.hz-navbar .hz-navbar__progress-value {\n  transition: all 400ms ease;\n  background-color: #ddd;\n}\n\n.hz-navbar .hz-navbar__actions .hz-navbar__btn {\n  font-size: 1em;\n}\n\n.hz-navbar .hz-navbar__actions .hz-navbar__btn:after {\n  transition: all 400ms ease;\n  font-family: FontAwesome;\n  font-size: 1.75em;\n}\n\n.hz-navbar .hz-navbar__action-home {\n  color: #fff;\n}\n\n.hz-navbar .hz-navbar__action-home:not([disabled]):hover, .hz-navbar .hz-navbar__action-home:not([disabled]):focus {\n  color: #fff;\n}\n\n.hz-navbar .hz-navbar__action-home:not([disabled]):hover:after, .hz-navbar .hz-navbar__action-home:not([disabled]):focus:after {\n  color: #fff;\n}\n\n.hz-navbar .hz-navbar__action-home:after {\n  content: \"\\f015\";\n  color: #fff;\n}\n\n.hz-navbar .hz-navbar__action-index {\n  color: #fff;\n}\n\n.hz-navbar .hz-navbar__action-index:not([disabled]):hover, .hz-navbar .hz-navbar__action-index:not([disabled]):focus {\n  color: #fff;\n}\n\n.hz-navbar .hz-navbar__action-index:not([disabled]):hover:after, .hz-navbar .hz-navbar__action-index:not([disabled]):focus:after {\n  color: #fff;\n}\n\n.hz-navbar .hz-navbar__action-index:after {\n  content: \"\\f0ca\";\n  color: #fff;\n}\n\n.hz-navbar .hz-navbar__pager .hz-navbar__btn {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  color: #fff;\n}\n\n.hz-navbar .hz-navbar__pager .hz-navbar__btn:after {\n  font-family: FontAwesome;\n  font-size: 1.875em;\n}\n\n.hz-navbar .hz-navbar__pager .hz-navbar__btn.hz-navbar__prev:after {\n  content: \"\\f053\";\n}\n\n.hz-navbar .hz-navbar__pager .hz-navbar__btn.hz-navbar__next:after {\n  content: \"\\f054\";\n}\n\n.hz-navbar .hz-navbar__pages {\n  color: #fff;\n}\n\n/* End _hz-navbar.theme-default */\n/* End components */\n\n/*# sourceMappingURL=main.scss.map */");
+__fsbx_css("sco1221/main.scss", "/* Estilos de prueba. NO UTILIZAR en proyecto*/\n/* Common */\n/*Cross browser: reset vendor styles*/\nhtml, body, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,\narticle, aside, details, dialog, figcaption, figure, footer, header, main, nav, section, summary, audio, canvas, video, mark, code, kbd, pre, samp,\na, abbr, acronym, address, code, del, dfn, em, strong, img, q, dl, dt, dd, ol, ul,\nli, fieldset, form, label, legend, table, caption, tbody, tfoot, thead,\ntr, th, td, div {\n  line-height: initial;\n  margin: 0;\n  padding: 0;\n  border: none;\n  font-weight: normal;\n  font-style: normal;\n  font-size: 100%;\n  font-family: inherit;\n  vertical-align: baseline;\n  text-decoration: none;\n  -ms-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n}\n\nhtml {\n  font-family: sans-serif;\n  /* 1 */\n  line-height: 1.15;\n  /* 2 */\n  -ms-text-size-adjust: 100%;\n  /* 3 */\n  -webkit-text-size-adjust: 100%;\n  /* 3 */\n}\n\ninput, button, select, textarea {\n  line-height: initial;\n  margin: 0;\n  padding: 0;\n  font-weight: normal;\n  font-style: normal;\n  font-size: 100%;\n  font-family: inherit;\n  vertical-align: baseline;\n  text-decoration: none;\n  -ms-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n}\n\nul, ol, dl {\n  list-style: none;\n}\n\ninput[type=\"text\"] {\n  -webkit-appearance: none;\n}\n\nbody input[type=\"search\"] {\n  box-sizing: border-box;\n}\n\ni {\n  font-style: normal;\n}\n\n/*html elements*/\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  /* 1 */\n  display: block;\n}\n\n/*! extends from normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */\n/**\r\n * 1. Change the default font family in all browsers (opinionated).\r\n * 2. Correct the line height in all browsers.\r\n * 3. Prevent adjustments of font size after orientation changes in IE and iOS.\r\n */\nhtml {\n  font-family: sans-serif;\n  /* 1 */\n  font-size: 100%;\n  line-height: 1.15;\n  /* 2 */\n  -ms-text-size-adjust: 100%;\n  /* 3 */\n  -webkit-text-size-adjust: 100%;\n  /* 3 */\n}\n\n/**\r\n * Remove the margin in all browsers (opinionated).\r\n */\nbody {\n  margin: 0;\n}\n\n/* HTML5 display definitions\r\n   ========================================================================== */\n/**\r\n * Add the correct display in IE 9-.\r\n * 1. Add the correct display in Edge, IE, and Firefox.\r\n * 2. Add the correct display in IE.\r\n */\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  /* 1 */\n  display: block;\n}\n\n/**\r\n * Add the correct display in IE 9-.\r\n */\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block;\n}\n\n/**\r\n * Add the correct display in iOS 4-7.\r\n */\naudio:not([controls]) {\n  display: none;\n  height: 0;\n}\n\n/**\r\n * Add the correct vertical alignment in Chrome, Firefox, and Opera.\r\n */\nprogress {\n  vertical-align: baseline;\n}\n\n/**\r\n * Add the correct display in IE 10-.\r\n * 1. Add the correct display in IE.\r\n */\ntemplate,\n[hidden] {\n  display: none;\n}\n\n/* Links\r\n   ========================================================================== */\n/**\r\n * 1. Remove the gray background on active links in IE 10.\r\n * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.\r\n */\na {\n  background-color: transparent;\n  /* 1 */\n  -webkit-text-decoration-skip: objects;\n  /* 2 */\n}\n\n/**\r\n * Remove the outline on focused links when they are also active or hovered\r\n * in all browsers (opinionated).\r\n */\na:active,\na:hover,\na:visited {\n  outline-width: 0;\n  color: inherit;\n}\n\n/* Text-level semantics\r\n   ========================================================================== */\n/**\r\n * 1. Remove the bottom border in Firefox 39-.\r\n * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.\r\n */\nabbr[title] {\n  border-bottom: none;\n  /* 1 */\n  text-decoration: underline;\n  /* 2 */\n  text-decoration: underline dotted;\n  /* 2 */\n}\n\n/**\r\n * Prevent the duplicate application of `bolder` by the next rule in Safari 6.\r\n */\nb,\nstrong {\n  font-weight: inherit;\n}\n\n/**\r\n * Add the correct font weight in Chrome, Edge, and Safari.\r\n */\nb,\nstrong {\n  font-weight: bold;\n}\n\n/**\r\n * Add the correct font style in Android 4.3-.\r\n */\ndfn {\n  font-style: italic;\n}\n\n/**\r\n * Add the correct background and color in IE 9-.\r\n */\nmark {\n  background-color: #ff0;\n  color: #000;\n}\n\n/**\r\n * Add the correct font size in all browsers.\r\n */\nsmall {\n  font-size: 80%;\n}\n\n/**\r\n * Prevent `sub` and `sup` elements from affecting the line height in\r\n * all browsers.\r\n */\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline;\n}\n\nsub {\n  bottom: -0.25em;\n}\n\nsup {\n  top: -0.5em;\n}\n\n/* Embedded content\r\n   ========================================================================== */\n/**\r\n * Remove the border on images inside links in IE 10-.\r\n */\nimg {\n  border-style: none;\n  max-width: 100%;\n}\n\n/**\r\n * Hide the overflow in IE.\r\n */\nsvg:not(:root) {\n  overflow: hidden;\n}\n\n/* Grouping content\r\n   ========================================================================== */\n/**\r\n * 1. Correct the inheritance and scaling of font size in all browsers.\r\n * 2. Correct the odd `em` font sizing in all browsers.\r\n */\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */\n}\n\n/**\r\n * 1. Add the correct box sizing in Firefox.\r\n * 2. Show the overflow in Edge and IE.\r\n */\nhr {\n  box-sizing: content-box;\n  /* 1 */\n  height: 0;\n  /* 1 */\n  overflow: visible;\n  /* 2 */\n}\n\n/* Forms\r\n   ========================================================================== */\n/**\r\n * 1. Change font properties to `inherit` in all browsers (opinionated).\r\n * 2. Remove the margin in Firefox and Safari.\r\n */\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font: inherit;\n  /* 1 */\n  margin: 0;\n  /* 2 */\n}\n\n/**\r\n * Restore the font weight unset by the previous rule.\r\n */\noptgroup {\n  font-weight: bold;\n}\n\n/**\r\n * Show the overflow in IE.\r\n * 1. Show the overflow in Edge.\r\n */\nbutton,\ninput {\n  /* 1 */\n  overflow: visible;\n}\n\n/**\r\n * Remove the inheritance of text transform in Edge, Firefox, and IE.\r\n * 1. Remove the inheritance of text transform in Firefox.\r\n */\nbutton,\nselect {\n  /* 1 */\n  text-transform: none;\n}\n\n/**\r\n * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`\r\n *    controls in Android 4.\r\n * 2. Correct the inability to style clickable types in iOS and Safari.\r\n */\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button;\n  /* 2 */\n}\n\n/**\r\n * Remove the inner border and padding in Firefox.\r\n */\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: none;\n  padding: 0;\n}\n\n/**\r\n * 1. Correct the text wrapping in Edge and IE.\r\n * 2. Correct the color inheritance from `fieldset` elements in IE.\r\n * 3. Remove the padding so developers are not caught out when they zero out\r\n *    `fieldset` elements in all browsers.\r\n */\nlegend {\n  box-sizing: border-box;\n  /* 1 */\n  color: inherit;\n  /* 2 */\n  display: table;\n  /* 1 */\n  max-width: 100%;\n  /* 1 */\n  padding: 0;\n  /* 3 */\n  white-space: normal;\n  /* 1 */\n}\n\n/**\r\n * Remove the default vertical scrollbar in IE.\r\n */\ntextarea {\n  overflow: auto;\n}\n\n/**\r\n * Correct the cursor style of increment and decrement buttons in Chrome.\r\n */\n[type=\"number\"]::-webkit-inner-spin-button,\n[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto;\n}\n\n/**\r\n * 1. Correct the odd appearance in Chrome and Safari.\r\n * 2. Correct the outline style in Safari.\r\n */\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  /* 1 */\n  outline-offset: -2px;\n  /* 2 */\n}\n\n/**\r\n * Remove the inner padding and cancel buttons in Chrome and Safari on OS X.\r\n */\n[type=\"search\"]::-webkit-search-cancel-button,\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n\n/**\r\n * Correct the text style of placeholders in Chrome, Edge, and Safari.\r\n */\n::-webkit-input-placeholder {\n  color: inherit;\n  opacity: 0.54;\n}\n\n/**\r\n * 1. Correct the inability to style clickable types in iOS and Safari.\r\n * 2. Change font properties to `inherit` in Safari.\r\n */\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  /* 1 */\n  font: inherit;\n  /* 2 */\n}\n\n/* End common */\n/* Components */\nbody {\n  width: 80%;\n  margin: 0 auto;\n  padding: 1em;\n}\n\n/* _hz-navbar.theme-default */\n/* _hz-navbar.structure */\n.hz-navbar {\n  display: flex;\n  padding: 0.75em;\n  align-items: center;\n}\n\n.hz-navbar .hz-navbar__btn {\n  margin: 0;\n  padding: 0;\n  border: none;\n  cursor: pointer;\n  background: none;\n  outline: none;\n}\n\n.hz-navbar .hz-navbar__progress {\n  width: 33.3%;\n  display: flex;\n  align-items: center;\n}\n\n.hz-navbar .hz-navbar__progress-mask {\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 1;\n}\n\n.hz-navbar .hz-navbar__progress-bar {\n  height: 1.125em;\n  width: 75%;\n  position: relative;\n}\n\n.hz-navbar .hz-navbar__progress-value {\n  height: 100%;\n  transform: scaleX(0);\n  transform-origin: left;\n}\n\n.hz-navbar .hz-navbar__progress-percentage {\n  margin-left: 0.375em;\n}\n\n.hz-navbar .hz-navbar__actions {\n  display: flex;\n  width: 33.3%;\n  justify-content: center;\n}\n\n.hz-navbar .hz-navbar__actions .hz-navbar__btn {\n  margin: 0 0.375em;\n}\n\n.hz-navbar .hz-navbar__pager {\n  display: flex;\n  align-items: center;\n  width: 33.3%;\n  justify-content: flex-end;\n}\n\n.hz-navbar .hz-navbar__pages {\n  padding: 0 0.375em;\n}\n\n.hz-navbar .hz-navbar__total:before {\n  content: \"/\";\n}\n\n.hz-navbar__dialog {\n  position: absolute;\n  background-color: #fff;\n}\n\n.ui-widget-overlay {\n  background-color: rgba(0, 0, 0, 0.25);\n}\n\n/* End _hz-navbar.structure */\n.hz-navbar {\n  background-color: rgba(0, 0, 0, 0.5);\n}\n\n.hz-navbar .hz-navbar__progress-percentage {\n  color: #fff;\n}\n\n.hz-navbar .hz-navbar__btn {\n  transition: all 400ms ease;\n}\n\n.hz-navbar .hz-navbar__btn .hz-navbar__content {\n  position: absolute;\n  top: 0;\n  left: -99999em;\n}\n\n.hz-navbar .hz-navbar__btn:not([disabled]):hover, .hz-navbar .hz-navbar__btn:not([disabled]):focus {\n  transform: scale(1.2);\n}\n\n.hz-navbar .hz-navbar__btn[disabled] {\n  opacity: 0.5;\n  cursor: default;\n}\n\n.hz-navbar .hz-navbar__progress-bar {\n  border: 2px solid none;\n  background-color: #999;\n}\n\n.hz-navbar .hz-navbar__progress-value {\n  transition: all 400ms ease;\n  background-color: #ddd;\n}\n\n.hz-navbar .hz-navbar__actions .hz-navbar__btn {\n  font-size: 1em;\n}\n\n.hz-navbar .hz-navbar__actions .hz-navbar__btn:after {\n  transition: all 400ms ease;\n  font-family: FontAwesome;\n  font-size: 1.75em;\n}\n\n.hz-navbar .hz-navbar__action-home {\n  color: #fff;\n}\n\n.hz-navbar .hz-navbar__action-home:not([disabled]):hover, .hz-navbar .hz-navbar__action-home:not([disabled]):focus {\n  color: #fff;\n}\n\n.hz-navbar .hz-navbar__action-home:not([disabled]):hover:after, .hz-navbar .hz-navbar__action-home:not([disabled]):focus:after {\n  color: #fff;\n}\n\n.hz-navbar .hz-navbar__action-home:after {\n  content: \"\\f015\";\n  color: #fff;\n}\n\n.hz-navbar .hz-navbar__action-index {\n  color: #fff;\n}\n\n.hz-navbar .hz-navbar__action-index:not([disabled]):hover, .hz-navbar .hz-navbar__action-index:not([disabled]):focus {\n  color: #fff;\n}\n\n.hz-navbar .hz-navbar__action-index:not([disabled]):hover:after, .hz-navbar .hz-navbar__action-index:not([disabled]):focus:after {\n  color: #fff;\n}\n\n.hz-navbar .hz-navbar__action-index:after {\n  content: \"\\f0ca\";\n  color: #fff;\n}\n\n.hz-navbar .hz-navbar__action-exit {\n  color: #fff;\n}\n\n.hz-navbar .hz-navbar__action-exit:not([disabled]):hover, .hz-navbar .hz-navbar__action-exit:not([disabled]):focus {\n  color: #fff;\n}\n\n.hz-navbar .hz-navbar__action-exit:not([disabled]):hover:after, .hz-navbar .hz-navbar__action-exit:not([disabled]):focus:after {\n  color: #fff;\n}\n\n.hz-navbar .hz-navbar__action-exit:after {\n  content: \"\\f08b\";\n  color: #fff;\n}\n\n.hz-navbar .hz-navbar__pager .hz-navbar__btn {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  color: #fff;\n}\n\n.hz-navbar .hz-navbar__pager .hz-navbar__btn:after {\n  font-family: FontAwesome;\n  font-size: 1.875em;\n}\n\n.hz-navbar .hz-navbar__pager .hz-navbar__btn.hz-navbar__prev:after {\n  content: \"\\f053\";\n}\n\n.hz-navbar .hz-navbar__pager .hz-navbar__btn.hz-navbar__next:after {\n  content: \"\\f054\";\n}\n\n.hz-navbar .hz-navbar__pages {\n  color: #fff;\n}\n\n.ui-dialog.hz-navbar__dialog {\n  padding: 0;\n  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);\n}\n\n.ui-dialog.hz-navbar__dialog .ui-dialog-titlebar {\n  background-color: #999;\n}\n\n.ui-dialog.hz-navbar__dialog .ui-dialog-titlebar-close {\n  font-size: 0;\n  background: none;\n  border: none;\n  cursor: pointer;\n}\n\n.ui-dialog.hz-navbar__dialog .ui-dialog-titlebar-close:after {\n  content: \"\\f00d\";\n  font-size: 1rem;\n  color: #fff;\n  font-family: \"FontAwesome\";\n}\n\n.ui-dialog.hz-navbar__dialog .hz-navbar__index-item .hz-navbar__index-item-content {\n  color: #666;\n  cursor: default;\n}\n\n.ui-dialog.hz-navbar__dialog .hz-navbar__index-item.hz-navbar__page--completed .hz-navbar__index-item-content {\n  color: #999;\n  cursor: pointer;\n}\n\n.ui-dialog.hz-navbar__dialog .hz-navbar__index-item.hz-navbar__page--visited .hz-navbar__index-item-content,\n.ui-dialog.hz-navbar__dialog .hz-navbar__index-item.hz-navbar__page--completed + .hz-navbar__index-item .hz-navbar__index-item-content {\n  color: #333;\n  cursor: pointer;\n}\n\n/* End _hz-navbar.theme-default */\n/* End components */\n\n/*# sourceMappingURL=main.scss.map */");
 });
 ___scope___.file("sco1221/markdown.scss", function(exports, require, module, __filename, __dirname){
 
@@ -10391,7 +10391,7 @@ exports.page.on(core_1.PageController.ON_SHOW, null, function (eventObject, $pag
 });
 ___scope___.file("sco1221/pages/6611/page.pug", function(exports, require, module, __filename, __dirname){
 
-module.exports.default =  "\n<div>\n  <div class=\"markdown-wrapper\"><h1>hz-anim</h1>\n<p>hz-anim helps to perform animations synchronizing  with the haztivity resources flow.</p>\n<p>hz-anim uses <a href=\"http://velocityjs.org/\">velocity.js</a> under the hood.</p>\n<h2>Dependencies</h2>\n<ul>\n<li>JQuery</li>\n<li>velocity.js</li>\n<li>haztivity/core</li>\n</ul>\n<h2>Usage</h2>\n<ol>\n<li>Import @haztivity/hz-anim</li>\n<li>Add HzAnim to the page</li>\n<li>Assign an event to listen with <code>data-hz-anim-on</code></li>\n<li>Set the properties o transition to anim with <code>data-opt-hz-anim-do</code></li>\n</ol>\n<h4>Ts</h4>\n<pre><code class=\"language-typescript\">import {PageFactory, Page, PageController, PageRegister} from &quot;@haztivity/core&quot;;\nimport template from &quot;./page.pug&quot;;\nimport {HzAnimResource} from &quot;@haztivity/hz-anim&quot;;\nexport let page: PageRegister = PageFactory.createPage(\n    {\n        name: &quot;myPage&quot;,\n        resources: [\n            HzAnimResource\n        ],\n        template: template\n    }\n);\n</code></pre>\n<h4>Pug</h4>\n<pre><code class=\"language-pug\">button(\n    data-hz-resource=&quot;HzAnim&quot;\n    data-opt-hz-anim-on=&quot;click&quot;\n    data-opt-hz-anim-do={&quot;rotateZ&quot;:&quot;45deg&quot;}\n) Do to me\n</code></pre>\n<p>or</p>\n<h4>HTML</h4>\n<pre><code class=\"language-html\">&lt;button\n    data-hz-resource=&quot;HzAnim&quot;\n    data-opt-hz-anim-on=&quot;click&quot;\n    data-opt-hz-anim-do='{&quot;rotateZ&quot;:&quot;45deg&quot;}'\n&gt;\n    Do to me\n&lt;/button&gt;\n</code></pre>\n<p>This will perform a rotate in the Z axis from 45 degrees.</p>\n<p>By default, the animation is performed to the item itself, to see how to apply the animation to other element plase go to <a href=\"#markdown-header-apply-animation-to-other-targets\">Apply animation to other targets</a></p>\n<p>HzAnim uses <a href=\"http://velocityjs.org/\">velocity.js</a>, a very <strong>efficient</strong> js library to perform animations.</p>\n<p>It's possible to animate any of the properties and transitions available in velocity.js and use all the options.</p>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;rotateZ&quot;:&quot;45deg&quot;}\">Do to me</button>\n  </div>\n  <div class=\"markdown-wrapper\"><h2>Apply animation to other targets</h2>\n<p>To apply the transforms to other elements, use the <code>data-opt-hz-anim-to</code>, accepts any jquery valid selector.\nSee <a href=\"https://api.jquery.com/category/selectors/\">jquery selectors</a> for more info.</p>\n<h3>Example</h3>\n<h4>Pug</h4>\n<pre><code class=\"language-pug\">button(\n    data-hz-resource=&quot;HzAnim&quot;\n    data-opt-hz-anim-on=&quot;click&quot;\n    data-opt-hz-anim-do={&quot;rotateZ&quot;:&quot;45deg&quot;}\n    data-opt-hz-anim-to=&quot;.target&quot;\n) Do to .target\n\nbutton.target Target\n</code></pre>\n<p>or</p>\n<h4>HTML</h4>\n<pre><code class=\"language-html\">&lt;button\n    data-hz-resource=&quot;HzAnim&quot;\n    data-opt-hz-anim-on=&quot;cli###ck&quot;\n    data-opt-hz-anim-do='{&quot;rotateZ&quot;:&quot;45deg&quot;}'\n    data-opt-hz-anim-to=&quot;.target&quot;\n&gt;\n    Do to .target\n&lt;/button&gt;\n&lt;button class=&quot;target&quot;&gt;Target&lt;/button&gt;\n</code></pre>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;rotateZ&quot;:&quot;40deg&quot;}\" data-opt-hz-anim-to=\".target\">Do to .target</button>\n    <button class=\"target\">.target</button>\n  </div>\n  <div class=\"markdown-wrapper\"><h2>Increment / decrement</h2>\n<p>Velocity.js allows to increment/decrement a property, this is allows to create complex animations with an easiest configuration.</p>\n<p>To set an increment use <code>+=</code> and to decrement use <code>-=</code></p>\n<h3>Pug</h3>\n<pre><code class=\"language-pug\">button.targetIncrement(\n   data-hz-resource=&quot;HzAnim&quot;\n   data-opt-hz-anim-on=&quot;click&quot;\n   data-opt-hz-anim-do={&quot;rotateZ&quot;: &quot;+=45deg&quot;, &quot;scale&quot;: &quot;+=0.4&quot;,&quot;colorRed&quot;:&quot;+=80&quot;,&quot;marginRight&quot;:&quot;+=0.5em&quot;}\n) Increase\nbutton(\n   data-hz-resource=&quot;HzAnim&quot;\n   data-opt-hz-anim-to=&quot;.targetIncrement&quot;,\n   data-opt-hz-anim-on=&quot;click&quot;\n   data-opt-hz-anim-do={&quot;rotateZ&quot;: &quot;-=45deg&quot;, &quot;scale&quot;: &quot;-=0.4&quot;,&quot;colorRed&quot;:&quot;-=80&quot;,&quot;marginRight&quot;:&quot;-=0.5em&quot;}\n) Decrease\n</code></pre>\n<p>or</p>\n<h3>HTML</h3>\n<pre><code class=\"language-html\">&lt;button\n    class=&quot;targetIncrement&quot;\n    data-hz-resource=&quot;HzAnim&quot;\n    data-opt-hz-anim-on=&quot;click&quot;\n    data-opt-hz-anim-do='{&quot;rotateZ&quot;: &quot;+=45deg&quot;, &quot;scale&quot;: &quot;+=0.4&quot;,&quot;colorRed&quot;:&quot;+=80&quot;,&quot;marginRight&quot;:&quot;+=0.5em&quot;}'\n&gt;\n    Increase\n&lt;/button&gt;\n&lt;button\n    data-opt-hz-anim-to=&quot;.targetIncrement&quot;,\n    data-opt-hz-anim-on=&quot;click&quot;\n    data-opt-hz-anim-do='{&quot;rotateZ&quot;: &quot;-=45deg&quot;, &quot;scale&quot;: &quot;-=0.4&quot;,&quot;colorRed&quot;:&quot;-=80&quot;,&quot;marginRight&quot;:&quot;-=0.5em&quot;}'\n&gt;\n    Decrease\n&lt;/button&gt;\n</code></pre>\n\n    <button class=\"targetIncrement\" data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;rotateZ&quot;:&quot;+=45deg&quot;,&quot;scale&quot;:&quot;+=0.4&quot;,&quot;colorRed&quot;:&quot;+=80&quot;,&quot;marginRight&quot;:&quot;+=0.5em&quot;}\">Increase</button>\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-to=\".targetIncrement\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;rotateZ&quot;:&quot;-=45deg&quot;,&quot;scale&quot;:&quot;-=0.4&quot;,&quot;colorRed&quot;:&quot;-=80&quot;,&quot;marginRight&quot;:&quot;-=0.5em&quot;}\">Decrease</button>\n  </div>\n  <div class=\"markdown-wrapper\"><h2>Repeatable</h2>\n<p>By default, the animation is repeatable and could be performed multiple times.</p>\n<p>For one time execution, set the <code>repeatable</code> option to false</p>\n<h3>Pug</h3>\n<pre><code class=\"language-pug\">    button(\n        data-hz-resource=&quot;HzAnim&quot;\n        data-opt-hz-anim-repeatable=&quot;false&quot;\n        data-opt-hz-anim-on=&quot;click&quot;\n        data-opt-hz-anim-do={&quot;rotateZ&quot;: &quot;+=45deg&quot;}\n    ) Do to me one time\n</code></pre>\n<p>or</p>\n<h3>HTML</h3>\n<pre><code class=\"language-html\">&lt;button\n    data-hz-resource=&quot;HzAnim&quot;\n    data-opt-hz-anim-repeatable=&quot;false&quot;\n    data-opt-hz-anim-on=&quot;click&quot;\n    data-opt-hz-anim-do='{&quot;rotateZ&quot;:&quot;+=45deg&quot;}'\n&gt;\n    Do to me one time\n&lt;/button&gt;</code></pre>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-repeatable=\"false\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;rotateZ&quot;:&quot;+=45deg&quot;}\">Do to me one time</button>\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;rotateZ&quot;:&quot;+=45deg&quot;}\">Do to me infinite times</button>\n  </div>\n</div>";
+module.exports.default =  "\n<div>\n  <div class=\"markdown-wrapper\"><h1>hz-anim</h1>\n<p>hz-anim helps to perform animations synchronizing  with the haztivity resources flow.</p>\n<p>hz-anim uses <a href=\"http://velocityjs.org/\">velocity.js</a> under the hood.</p>\n<h2>Dependencies</h2>\n<ul>\n<li>JQuery</li>\n<li>velocity.js</li>\n<li>haztivity/core</li>\n</ul>\n<h2>Usage</h2>\n<ol>\n<li>Import @haztivity/hz-anim</li>\n<li>Add HzAnim to the page</li>\n<li>Assign an event to listen with <code>data-hz-anim-on</code></li>\n<li>Set the properties o transition to anim with <code>data-opt-hz-anim-do</code></li>\n</ol>\n<h3>Ts</h3>\n<pre><code class=\"language-typescript\">import {PageFactory, Page, PageController, PageRegister} from &quot;@haztivity/core&quot;;\nimport template from &quot;./page.pug&quot;;\nimport {HzAnimResource} from &quot;@haztivity/hz-anim&quot;;\nexport let page: PageRegister = PageFactory.createPage(\n    {\n        name: &quot;myPage&quot;,\n        resources: [\n            HzAnimResource\n        ],\n        template: template\n    }\n);\n</code></pre>\n<h3>Pug</h3>\n<pre><code class=\"language-pug\">button(\n    data-hz-resource=&quot;HzAnim&quot;\n    data-opt-hz-anim-on=&quot;click&quot;\n    data-opt-hz-anim-do={&quot;rotateZ&quot;:&quot;45deg&quot;}\n) Do to me\n</code></pre>\n<p>or</p>\n<h4>HTML</h4>\n<pre><code class=\"language-html\">&lt;button\n    data-hz-resource=&quot;HzAnim&quot;\n    data-opt-hz-anim-on=&quot;click&quot;\n    data-opt-hz-anim-do='{&quot;rotateZ&quot;:&quot;45deg&quot;}'\n&gt;\n    Do to me\n&lt;/button&gt;\n</code></pre>\n<p>This will perform a rotate in the Z axis from 45 degrees.</p>\n<p>By default, the animation is performed to the item itself, to see how to apply the animation to other element plase go to <a href=\"#markdown-header-apply-animation-to-other-targets\">Apply animation to other targets</a></p>\n<p>HzAnim uses <a href=\"http://velocityjs.org/\">velocity.js</a>, a very <strong>efficient</strong> js library to perform animations.</p>\n<p>It's possible to animate any of the properties and transitions available in velocity.js and use all the options.</p>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;rotateZ&quot;:&quot;45deg&quot;}\">Do to me</button>\n  </div>\n  <div class=\"markdown-wrapper\"><h2>Apply animation to other targets</h2>\n<p>To apply the transforms to other elements, use the <code>data-opt-hz-anim-to</code>, accepts any jquery valid selector.\nSee <a href=\"https://api.jquery.com/category/selectors/\">jquery selectors</a> for more info.</p>\n<h3>Example</h3>\n<h4>Pug</h4>\n<pre><code class=\"language-pug\">button(\n    data-hz-resource=&quot;HzAnim&quot;\n    data-opt-hz-anim-on=&quot;click&quot;\n    data-opt-hz-anim-do={&quot;rotateZ&quot;:&quot;45deg&quot;}\n    data-opt-hz-anim-to=&quot;.target&quot;\n) Do to .target\n\nbutton.target Target\n</code></pre>\n<p>or</p>\n<h4>HTML</h4>\n<pre><code class=\"language-html\">&lt;button\n    data-hz-resource=&quot;HzAnim&quot;\n    data-opt-hz-anim-on=&quot;cli###ck&quot;\n    data-opt-hz-anim-do='{&quot;rotateZ&quot;:&quot;45deg&quot;}'\n    data-opt-hz-anim-to=&quot;.target&quot;\n&gt;\n    Do to .target\n&lt;/button&gt;\n&lt;button class=&quot;target&quot;&gt;Target&lt;/button&gt;\n</code></pre>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;rotateZ&quot;:&quot;40deg&quot;}\" data-opt-hz-anim-to=\".target\">Do to .target</button>\n    <button class=\"target\">.target</button>\n  </div>\n  <div class=\"markdown-wrapper\"><h2>Increment / decrement</h2>\n<p>Velocity.js allows to increment/decrement a property, this is allows to create complex animations with an easiest configuration.</p>\n<p>To set an increment use <code>+=</code> and to decrement use <code>-=</code></p>\n<h3>Pug</h3>\n<pre><code class=\"language-pug\">button.targetIncrement(\n   data-hz-resource=&quot;HzAnim&quot;\n   data-opt-hz-anim-on=&quot;click&quot;\n   data-opt-hz-anim-do={&quot;rotateZ&quot;: &quot;+=45deg&quot;, &quot;scale&quot;: &quot;+=0.4&quot;,&quot;colorRed&quot;:&quot;+=80&quot;,&quot;marginRight&quot;:&quot;+=0.5em&quot;}\n) Increase\nbutton(\n   data-hz-resource=&quot;HzAnim&quot;\n   data-opt-hz-anim-to=&quot;.targetIncrement&quot;,\n   data-opt-hz-anim-on=&quot;click&quot;\n   data-opt-hz-anim-do={&quot;rotateZ&quot;: &quot;-=45deg&quot;, &quot;scale&quot;: &quot;-=0.4&quot;,&quot;colorRed&quot;:&quot;-=80&quot;,&quot;marginRight&quot;:&quot;-=0.5em&quot;}\n) Decrease\n</code></pre>\n<p>or</p>\n<h3>HTML</h3>\n<pre><code class=\"language-html\">&lt;button\n    class=&quot;targetIncrement&quot;\n    data-hz-resource=&quot;HzAnim&quot;\n    data-opt-hz-anim-on=&quot;click&quot;\n    data-opt-hz-anim-do='{&quot;rotateZ&quot;: &quot;+=45deg&quot;, &quot;scale&quot;: &quot;+=0.4&quot;,&quot;colorRed&quot;:&quot;+=80&quot;,&quot;marginRight&quot;:&quot;+=0.5em&quot;}'\n&gt;\n    Increase\n&lt;/button&gt;\n&lt;button\n    data-opt-hz-anim-to=&quot;.targetIncrement&quot;,\n    data-opt-hz-anim-on=&quot;click&quot;\n    data-opt-hz-anim-do='{&quot;rotateZ&quot;: &quot;-=45deg&quot;, &quot;scale&quot;: &quot;-=0.4&quot;,&quot;colorRed&quot;:&quot;-=80&quot;,&quot;marginRight&quot;:&quot;-=0.5em&quot;}'\n&gt;\n    Decrease\n&lt;/button&gt;\n</code></pre>\n\n    <button class=\"targetIncrement\" data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;rotateZ&quot;:&quot;+=45deg&quot;,&quot;scale&quot;:&quot;+=0.4&quot;,&quot;colorRed&quot;:&quot;+=80&quot;,&quot;marginRight&quot;:&quot;+=0.5em&quot;}\">Increase</button>\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-to=\".targetIncrement\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;rotateZ&quot;:&quot;-=45deg&quot;,&quot;scale&quot;:&quot;-=0.4&quot;,&quot;colorRed&quot;:&quot;-=80&quot;,&quot;marginRight&quot;:&quot;-=0.5em&quot;}\">Decrease</button>\n  </div>\n  <div class=\"markdown-wrapper\"><h2>Repeatable</h2>\n<p>By default, the animation is repeatable and could be performed multiple times.</p>\n<p>For one time execution, set the <code>repeatable</code> option to false</p>\n<h3>Pug</h3>\n<pre><code class=\"language-pug\">    button(\n        data-hz-resource=&quot;HzAnim&quot;\n        data-opt-hz-anim-repeatable=&quot;false&quot;\n        data-opt-hz-anim-on=&quot;click&quot;\n        data-opt-hz-anim-do={&quot;rotateZ&quot;: &quot;+=45deg&quot;}\n    ) Do to me one time\n</code></pre>\n<p>or</p>\n<h3>HTML</h3>\n<pre><code class=\"language-html\">&lt;button\n    data-hz-resource=&quot;HzAnim&quot;\n    data-opt-hz-anim-repeatable=&quot;false&quot;\n    data-opt-hz-anim-on=&quot;click&quot;\n    data-opt-hz-anim-do='{&quot;rotateZ&quot;:&quot;+=45deg&quot;}'\n&gt;\n    Do to me one time\n&lt;/button&gt;</code></pre>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-repeatable=\"false\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;rotateZ&quot;:&quot;+=45deg&quot;}\">Do to me one time</button>\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;rotateZ&quot;:&quot;+=45deg&quot;}\">Do to me infinite times</button>\n  </div>\n</div>";
 });
 ___scope___.file("resources/hzanim/HzAnim.js", function(exports, require, module, __filename, __dirname){
 
@@ -10800,7 +10800,7 @@ exports.page.on(core_1.PageController.ON_SHOW, null, function (eventObject, $pag
 });
 ___scope___.file("sco1221/pages/6614/page.pug", function(exports, require, module, __filename, __dirname){
 
-module.exports.default =  "\n<div>\n  <div class=\"markdown-wrapper\"><h2>Loops</h2>\n<p>Velocity.js allows to use loop animations.</p>\n<p>To set up a loop animation use the <code>loop</code> option from Velocity.js. Check the doc <a href=\"http://velocityjs.org/#loop\">here</a></p>\n<p>The loop has two steps:</p>\n<ol>\n<li>Apply the changes specified</li>\n<li>Reverse to the original state</li>\n</ol>\n<p>For example, in this case, the animation will apply the rotation of 45deg and then will be reversed to the prior state.</p>\n<h3>Pug</h3>\n<pre><code class=\"language-pug\">button(\n    data-hz-resource='HzAnim',\n    data-opt-hz-anim-on='click',\n    data-opt-hz-anim-do={&quot;rotateX&quot;:&quot;45deg&quot;},\n    data-opt-hz-anim-with={loop:true}\n) Go and back\n</code></pre>\n<h3>HTML</h3>\n<pre><code class=\"language-html\">&lt;button\n    data-hz-resource=&quot;HzAnim&quot;\n    data-opt-hz-anim-on=&quot;click&quot;\n    data-opt-hz-anim-do='{&quot;rotateZ&quot;:&quot;45deg&quot;}'\n    data-opt-hz-anim-with='{&quot;loop&quot;:true}'\n&gt;\n    Go and back for ever&amp;;ever\n&lt;/button&gt;\n</code></pre>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;rotateZ&quot;:&quot;45deg&quot;}\" data-opt-hz-anim-with=\"{&quot;loop&quot;:true}\">Go and back for ever&ever</button>\n  </div>\n  <div class=\"markdown-wrapper\"><h3>Resource completion in infinite loops</h3>\n<p>If a <code>loop:true</code> (infinite loop) is specified in a step, the resource will be marked as completed when the step with the loop starts and no more steps will be executed.</p>\n<p>In this case, the step 1 changes the background color.</p>\n<p>After the step 1, the step 2 is executed. The step 2 has a infinite loop so the resource is marked as completed just before executing the step 2.</p>\n<p>The step 3 will never be executed.</p>\n<h4>Pug</h4>\n<pre><code class=\"language-pug\">button(\n    data-hz-resource='HzAnim',\n    data-opt-hz-anim-on='click',\n    data-opt-hz-anim-do={&quot;backgroundColor&quot;:&quot;#ff0000&quot;},\n    data-opt-hz-anim-do-2={&quot;rotateX&quot;:&quot;45deg&quot;},\n    data-opt-hz-anim-with-2={loop:true},\n    data-opt-hz-anim-do-3={&quot;backgroundColor&quot;:&quot;#fff&quot;}\n) Go and back\n</code></pre>\n<h4>HTML</h4>\n<pre><code class=\"language-html\">&lt;button\n    data-hz-resource='HzAnim',\n    data-opt-hz-anim-on='click',\n    data-opt-hz-anim-do='{&quot;backgroundColor&quot;:&quot;#ff0000&quot;}',\n    data-opt-hz-anim-do-2='{&quot;rotateX&quot;:&quot;45deg&quot;}',\n    data-opt-hz-anim-with-2='{&quot;loop&quot;:true},\n    data-opt-hz-anim-do-3='{&quot;backgroundColor&quot;:&quot;#fff&quot;}'\n&gt;\n    Go and back for ever&amp;ever\n&lt;/button&gt;\n</code></pre>\n<h3>Loop over a number of times</h3>\n<p>Also is possible to execute the loop a certain number of times. Set the loop with the numer of times to repeat the animation</p>\n<h4>Pug</h4>\n<pre><code class=\"language-pug\">button(\n    data-hz-resource='HzAnim',\n    data-opt-hz-anim-on='click',\n    data-opt-hz-anim-do='{&quot;rotateZ&quot;:&quot;45deg&quot;}',\n    data-opt-hz-anim-with={loop: 3}\n) Go and back 3 times\n</code></pre>\n<h4>HTML</h4>\n<pre><code class=\"language-html\">&lt;button\n    data-hz-resource=&quot;HzAnim&quot;\n    data-opt-hz-anim-on=&quot;click&quot;\n    data-opt-hz-anim-do='{&quot;rotateZ&quot;:&quot;45deg&quot;}'\n    data-opt-hz-anim-with='{&quot;loop&quot;:3}'\n&gt;\n    Go and back 3 times\n&lt;/button&gt;</code></pre>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;rotateZ&quot;:&quot;45deg&quot;}\" data-opt-hz-anim-with=\"{&quot;loop&quot;:3}\">Go and back 3 times</button>\n  </div>\n</div>";
+module.exports.default =  "\n<div>\n  <div class=\"markdown-wrapper\"><h1>Loops</h1>\n<p>Velocity.js allows using loop animations.</p>\n<p>To set up a loop animation use the <code>loop</code> option from Velocity.js. Check the doc <a href=\"http://velocityjs.org/#loop\">here</a></p>\n<p>The loop has two steps:</p>\n<ol>\n<li>Apply the specified changes</li>\n<li>Reverse to the original state</li>\n</ol>\n<p>For example, in this case, the animation will apply the rotation of 45deg and then will be reversed to the prior state.</p>\n<h2>Pug</h2>\n<pre><code class=\"language-pug\">    button(\n    data-hz-resource='HzAnim',\n    data-opt-hz-anim-on='click',\n    data-opt-hz-anim-do={&quot;rotateX&quot;: &quot;45deg&quot;},\n    data-opt-hz-anim-with={loop: true}\n    ) Go and back\n</code></pre>\n<h2>HTML</h2>\n<pre><code class=\"language-html\">    &lt;button\n    data-hz-resource=&quot;HzAnim&quot;\n    data-opt-hz-anim-on=&quot;click&quot;\n    data-opt-hz-anim-do='{&quot;rotateZ&quot;:&quot;45deg&quot;}'\n    data-opt-hz-anim-with='{&quot;loop&quot;:true}'\n&gt;\nGo and back for ever&amp;ever\n&lt;/button&gt;\n</code></pre>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;rotateZ&quot;:&quot;45deg&quot;}\" data-opt-hz-anim-with=\"{&quot;loop&quot;:true}\">Go and back for ever&ever</button>\n  </div>\n  <div class=\"markdown-wrapper\"><h3>Resource completion in infinite loops</h3>\n<p>If a <code>loop:true</code> (infinite loop) is specified in a step, the resource will be marked as completed when the step with the loop starts and no more steps will be executed.</p>\n<p>In this case, step 1 changes the background color.</p>\n<p>After the step 1, step 2 is executed. Step 2 has an infinite loop so the resource is marked as completed just before executing the rotation.</p>\n<p>The step 3 will never be executed.</p>\n<h4>Pug</h4>\n<pre><code class=\"language-pug\">button(\n    data-hz-resource='HzAnim',\n    data-opt-hz-anim-on='click',\n    data-opt-hz-anim-do={&quot;backgroundColor&quot;:&quot;#ff0000&quot;},\n    data-opt-hz-anim-do-2={&quot;rotateX&quot;:&quot;45deg&quot;},\n    data-opt-hz-anim-with-2={loop:true},\n    data-opt-hz-anim-do-3={&quot;backgroundColor&quot;:&quot;#fff&quot;}\n) Go and back\n</code></pre>\n<h4>HTML</h4>\n<pre><code class=\"language-html\">&lt;button\n    data-hz-resource='HzAnim',\n    data-opt-hz-anim-on='click',\n    data-opt-hz-anim-do='{&quot;backgroundColor&quot;:&quot;#ff0000&quot;}',\n    data-opt-hz-anim-do-2='{&quot;rotateX&quot;:&quot;45deg&quot;}',\n    data-opt-hz-anim-with-2='{&quot;loop&quot;:true},\n    data-opt-hz-anim-do-3='{&quot;backgroundColor&quot;:&quot;#fff&quot;}'\n&gt;\n    Go and back for ever&amp;ever\n&lt;/button&gt;\n</code></pre>\n<h3>Loop over a number of times</h3>\n<p>Also is possible to execute the loop a certain number of times. Set the loop with the number of times to repeat the animation</p>\n<h4>Pug</h4>\n<pre><code class=\"language-pug\">button(\n    data-hz-resource='HzAnim',\n    data-opt-hz-anim-on='click',\n    data-opt-hz-anim-do='{&quot;rotateZ&quot;:&quot;45deg&quot;}',\n    data-opt-hz-anim-with={loop: 3}\n) Go and back 3 times\n</code></pre>\n<h4>HTML</h4>\n<pre><code class=\"language-html\">&lt;button\n    data-hz-resource=&quot;HzAnim&quot;\n    data-opt-hz-anim-on=&quot;click&quot;\n    data-opt-hz-anim-do='{&quot;rotateZ&quot;:&quot;45deg&quot;}'\n    data-opt-hz-anim-with='{&quot;loop&quot;:3}'\n&gt;\n    Go and back 3 times\n&lt;/button&gt;</code></pre>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;rotateZ&quot;:&quot;45deg&quot;}\" data-opt-hz-anim-with=\"{&quot;loop&quot;:3}\">Go and back 3 times</button>\n  </div>\n</div>";
 });
 ___scope___.file("sco1221/pages/6615/page.js", function(exports, require, module, __filename, __dirname){
 
@@ -10835,7 +10835,7 @@ exports.page.on(core_1.PageController.ON_SHOW, null, function (eventObject, $pag
 });
 ___scope___.file("sco1221/pages/6615/page.pug", function(exports, require, module, __filename, __dirname){
 
-module.exports.default =  "\n<div>\n  <div class=\"markdown-wrapper\"><h2>Reverse</h2>\n<p>Velocity.js allows to animate back to the previous values using <code>reverse</code>. Check the doc <a href=\"http://velocityjs.org/#reverse\">here</a></p>\n<p>Simpy set <code>reverse</code> in the <code>do</code> option</p>\n<h3>Pug</h3>\n<pre><code class=\"language-pug\">button.target(\n    data-hz-resource='HzAnim',\n    data-opt-hz-anim-on='click',\n    data-opt-hz-anim-do={&quot;rotateZ&quot;:&quot;45deg&quot;}\n) Rotate\nbutton(\n    data-hz-resource='HzAnim',\n    data-opt-hz-anim-on='click',\n    data-opt-hz-anim-to='.target',\n    data-opt-hz-anim-do='reverse'\n) Reverse .target\n</code></pre>\n<h3>HTML</h3>\n<pre><code class=\"language-html\">&lt;button\n    class=&quot;target&quot;\n    data-hz-resource=&quot;HzAnim&quot;\n    data-opt-hz-anim-on=&quot;click&quot;\n    data-opt-hz-anim-do='{&quot;rotateZ&quot;:&quot;45deg&quot;}'\n&gt;\n    Rotate\n&lt;/button&gt;\n&lt;button\n    class=&quot;target&quot;\n    data-hz-resource=&quot;HzAnim&quot;\n    data-opt-hz-anim-on=&quot;click&quot;\n    data-opt-hz-anim-to=&quot;.target&quot;\n    data-opt-hz-anim-do='reverse'\n&gt;\n    Reverse .target\n&lt;/button&gt;\n</code></pre>\n\n    <button class=\"target\" data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;rotateZ&quot;:&quot;45deg&quot;}\">Rotate</button>\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-to=\".target\" data-opt-hz-anim-do=\"reverse\">Reverse .target</button>\n  </div>\n  <div class=\"markdown-wrapper\"><p>Please, note that <code>reverse</code> only applies to the latest step and could not be stacked.</p>\n<pre><code class=\"language-pug\">button(\n    data-hz-resource='HzAnim',\n    data-opt-hz-anim-on='click',\n    data-opt-hz-anim-do={&quot;backgroundColor&quot;:&quot;#ff0000&quot;},\n    data-opt-hz-anim-do-2=[{&quot;width&quot;:&quot;10em&quot;,&quot;height&quot;:&quot;10em&quot;}],\n    data-opt-hz-anim-do-3=&quot;reverse&quot;\n) Go and back\n</code></pre>\n<pre><code class=\"language-HTML\">&lt;button\n    data-hz-resource='HzAnim'\n    data-opt-hz-anim-on='click'\n    data-opt-hz-anim-do='{&quot;backgroundColor&quot;:&quot;#ff0000&quot;}'\n    data-opt-hz-anim-do-2='[{&quot;width&quot;:&quot;10em&quot;,&quot;height&quot;:&quot;10em&quot;}]'\n    data-opt-hz-anim-do-3=&quot;reverse&quot;\n&gt;\n    Go and back\n&lt;/button&gt;\n</code></pre>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;backgroundColor&quot;:&quot;#ff0000&quot;}\" data-opt-hz-anim-do-2=\"[{&quot;width&quot;:&quot;10em&quot;,&quot;height&quot;:&quot;10em&quot;}]\" data-opt-hz-anim-do-3=\"reverse\">Go and back</button>\n  </div>\n</div>";
+module.exports.default =  "\n<div>\n  <div class=\"markdown-wrapper\"><h2>Reverse</h2>\n<p>Velocity.js allows animating back to the previous values using <code>reverse</code>. Check the doc <a href=\"http://velocityjs.org/#reverse\">here</a></p>\n<p>Simply set <code>reverse</code> in the <code>do</code> option</p>\n<h3>Pug</h3>\n<pre><code class=\"language-pug\">button.target(\n    data-hz-resource='HzAnim',\n    data-opt-hz-anim-on='click',\n    data-opt-hz-anim-do={&quot;rotateZ&quot;:&quot;45deg&quot;}\n) Rotate\nbutton(\n    data-hz-resource='HzAnim',\n    data-opt-hz-anim-on='click',\n    data-opt-hz-anim-to='.target',\n    data-opt-hz-anim-do='reverse'\n) Reverse .target\n</code></pre>\n<h3>HTML</h3>\n<pre><code class=\"language-html\">&lt;button\n    class=&quot;target&quot;\n    data-hz-resource=&quot;HzAnim&quot;\n    data-opt-hz-anim-on=&quot;click&quot;\n    data-opt-hz-anim-do='{&quot;rotateZ&quot;:&quot;45deg&quot;}'\n&gt;\n    Rotate\n&lt;/button&gt;\n&lt;button\n    class=&quot;target&quot;\n    data-hz-resource=&quot;HzAnim&quot;\n    data-opt-hz-anim-on=&quot;click&quot;\n    data-opt-hz-anim-to=&quot;.target&quot;\n    data-opt-hz-anim-do='reverse'\n&gt;\n    Reverse .target\n&lt;/button&gt;\n</code></pre>\n\n    <button class=\"target\" data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;rotateZ&quot;:&quot;45deg&quot;}\">Rotate</button>\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-to=\".target\" data-opt-hz-anim-do=\"reverse\">Reverse .target</button>\n  </div>\n  <div class=\"markdown-wrapper\"><p>Please, note that <code>reverse</code> only applies to the latest step and could not be stacked.</p>\n<pre><code class=\"language-pug\">button(\n    data-hz-resource='HzAnim',\n    data-opt-hz-anim-on='click',\n    data-opt-hz-anim-do={&quot;backgroundColor&quot;:&quot;#ff0000&quot;},\n    data-opt-hz-anim-do-2=[{&quot;width&quot;:&quot;10em&quot;,&quot;height&quot;:&quot;10em&quot;}],\n    data-opt-hz-anim-do-3=&quot;reverse&quot;\n) Go and back\n</code></pre>\n<pre><code class=\"language-HTML\">&lt;button\n    data-hz-resource='HzAnim'\n    data-opt-hz-anim-on='click'\n    data-opt-hz-anim-do='{&quot;backgroundColor&quot;:&quot;#ff0000&quot;}'\n    data-opt-hz-anim-do-2='[{&quot;width&quot;:&quot;10em&quot;,&quot;height&quot;:&quot;10em&quot;}]'\n    data-opt-hz-anim-do-3=&quot;reverse&quot;\n&gt;\n    Go and back\n&lt;/button&gt;\n</code></pre>\n\n    <button data-hz-resource=\"HzAnim\" data-opt-hz-anim-on=\"click\" data-opt-hz-anim-do=\"{&quot;backgroundColor&quot;:&quot;#ff0000&quot;}\" data-opt-hz-anim-do-2=\"[{&quot;width&quot;:&quot;10em&quot;,&quot;height&quot;:&quot;10em&quot;}]\" data-opt-hz-anim-do-3=\"reverse\">Go and back</button>\n  </div>\n</div>";
 });
 });
 FuseBox.pkg("jquery", {}, function(___scope___){
@@ -10845,7 +10845,7 @@ module.exports = $
 });
 return ___scope___.entry = "index.js";
 });
-FuseBox.pkg("@haztivity/core", {"bottlejs":"1.6.3","array-unique":"0.3.2","loglevel":"1.6.1"}, function(___scope___){
+FuseBox.pkg("@haztivity/core", {}, function(___scope___){
 ___scope___.file("dist/index.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
@@ -13370,6 +13370,8 @@ var ScoController = /** @class */ (function () {
             this._$context.prepend(this._options.template);
             this._$context.addClass(ScoController_1.CLASS_CONTEXT);
             this._$pagesContainer = this._$context.find("[data-hz-pages]");
+            this._$exit = this._$context.find("[data-hz-on-exit]");
+            this._$exit.detach();
             this._eventEmitter.globalEmitter.on(PageController_1.PageController.ON_COMPLETE_CHANGE, { instance: this }, this._onPageStateChange);
             this._eventEmitter.globalEmitter.on(PageController_1.PageController.ON_SHOWN, { instance: this }, this._onPageShown);
             //page contexts must exists
@@ -13448,7 +13450,36 @@ var ScoController = /** @class */ (function () {
             instance._scormService.doLMSCommit();
         }
     };
+    ScoController.prototype.exit = function () {
+        this._eventEmitter.globalEmitter.trigger(ScoController_1.ON_BEFORE_EXIT);
+        if (this._scormService.LMSIsInitialized()) {
+            // enviamos un exit
+            this._scormService.doLMSSetValue("cmi.core.exit", "");
+            //los tiempos
+            var sessionTime = this.getSessionTime();
+            this._scormService.doLMSSetValue("cmi.core.session_time", sessionTime);
+            this._scormService.doLMSCommit();
+            this._scormService.doLMSFinish();
+        }
+        this._$context.empty();
+        if (this._$exit && this._$exit.length > 0) {
+            this._$context.append(this._$exit);
+        }
+        else if (this._options.exitMessage) {
+            this._$context.text(this._options.exitMessage);
+        }
+        this._eventEmitter.globalEmitter.trigger(ScoController_1.ON_EXIT);
+    };
+    ScoController.prototype.getSessionTime = function () {
+        var now = Date.now(), sessionTime = now - this._dateStart.getTime();
+        var hours = Math.floor(sessionTime / (1000 * 60 * 60) % 60), minutes = Math.floor(sessionTime / (1000 * 60) % 60), seconds = Math.floor(sessionTime / 1000 % 60);
+        hours = hours < 10 ? '0' + hours : hours;
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+        return hours + ':' + minutes + ':' + seconds;
+    };
     ScoController.prototype.run = function () {
+        this._dateStart = new Date();
         this._init();
         this._Navigator.activate(this._$pagesContainer);
         this._$pagesContainer.addClass(ScoController_1.CLASS_PAGES);
@@ -13465,8 +13496,11 @@ var ScoController = /** @class */ (function () {
         }
         return this;
     };
+    ScoController.NAMESPACE = "sco";
     ScoController.CLASS_CONTEXT = "hz-container";
     ScoController.CLASS_PAGES = "hz-pages-container";
+    ScoController.ON_EXIT = ScoController_1.NAMESPACE + ":exit";
+    ScoController.ON_BEFORE_EXIT = ScoController_1.NAMESPACE + ":beforeexit";
     ScoController = ScoController_1 = __decorate([
         di_1.Sco({
             name: "ScoController",
@@ -13682,6 +13716,7 @@ var PageController = /** @class */ (function () {
         }
         $element.addClass(PageController_1.CLASS_PAGE + " " + PageController_1.CLASS_PAGE + "-" + this.options.name);
         this.$element = $element;
+        this.eventEmitter.globalEmitter.trigger(PageController_1.ON_RENDERING, [this.$element, this]);
         return $element;
     };
     PageController.prototype._render = function (template) {
@@ -13714,6 +13749,7 @@ var PageController = /** @class */ (function () {
      */
     PageController.prototype.show = function ($oldPage, oldPageRelativePosition) {
         var deferred = this._$.Deferred(), promise = deferred.promise(), event = this.eventEmitter.createEvent(PageController_1.ON_SHOW), result = this.eventEmitter.trigger(event, [this.$element, $oldPage, oldPageRelativePosition, this]);
+        this.eventEmitter.globalEmitter.trigger(PageController_1.ON_SHOW, [this.$element, $oldPage, oldPageRelativePosition, this]);
         if (!event.isDefaultPrevented()) {
             //if the user doesn't prevent default
             this._show($oldPage, oldPageRelativePosition).then(function () {
@@ -16271,17 +16307,33 @@ var ScoFactory = /** @class */ (function () {
     }
     ScoFactory_1 = ScoFactory;
     ScoFactory.createSco = function (options) {
-        var ScoControllerFactory = di_1.Injector.getInstance(ScoFactory_1).get(Sco_1.ScoController);
-        var sco = ScoControllerFactory.instance();
-        sco.activate(options);
-        return sco;
+        if (!ScoFactory_1.SCO) {
+            var ScoControllerFactory = di_1.Injector.getInstance(ScoFactory_1).get(Sco_1.ScoController);
+            var sco = ScoControllerFactory.instance();
+            sco.activate(options);
+            ScoFactory_1.SCO = sco;
+            return sco;
+        }
+        else {
+            throw "[ScoFactory] Error, only 1 sco is allowed";
+        }
     };
     ScoFactory.registerSco = function (scoController, options) {
-        var ScoControllerFactory = di_1.Injector.getInstance(ScoFactory_1).get(scoController);
-        var sco = ScoControllerFactory.instance();
-        sco.activate(options);
-        return sco;
+        if (!ScoFactory_1.SCO) {
+            var ScoControllerFactory = di_1.Injector.getInstance(ScoFactory_1).get(scoController);
+            var sco = ScoControllerFactory.instance();
+            sco.activate(options);
+            ScoFactory_1.SCO = sco;
+            return sco;
+        }
+        else {
+            throw "[ScoFactory] Error, only 1 sco is allowed";
+        }
     };
+    ScoFactory.getCurrentSco = function () {
+        return ScoFactory_1.SCO;
+    };
+    ;
     ScoFactory = ScoFactory_1 = __decorate([
         di_1.Core({
             name: "ScoFactory",
@@ -16504,18 +16556,26 @@ exports.DevTools = DevTools;
 });
 return ___scope___.entry = "dist/index.js";
 });
-FuseBox.pkg("bottlejs@1.6.3", {}, function(___scope___){
+FuseBox.pkg("bottlejs", {}, function(___scope___){
 ___scope___.file("dist/bottle.js", function(exports, require, module, __filename, __dirname){
 
 ;(function(undefined) {
     'use strict';
     /**
-     * BottleJS v1.6.3 - 2017-12-06
+     * BottleJS v1.7.0 - 2018-01-29
      * A powerful dependency injection micro container
      *
-     * Copyright (c) 2017 Stephen Young
+     * Copyright (c) 2018 Stephen Young
      * Licensed MIT
      */
+    /**
+     * String constants
+     */
+    var DELIMITER = '.';
+    var FUNCTION_TYPE = 'function';
+    var STRING_TYPE = 'string';
+    var GLOBAL_NAME = '__global__';
+    var PROVIDER_SUFFIX = 'Provider';
     
     /**
      * Unique id counter;
@@ -16575,7 +16635,7 @@ ___scope___.file("dist/bottle.js", function(exports, require, module, __filename
      * @return Service
      */
     var getNestedService = function getNestedService(fullname) {
-        return fullname.split('.').reduce(getNested, this);
+        return fullname.split(DELIMITER).reduce(getNested, this);
     };
     
     /**
@@ -16586,7 +16646,7 @@ ___scope___.file("dist/bottle.js", function(exports, require, module, __filename
      * @return Bottle
      */
     var constant = function constant(name, value) {
-        var parts = name.split('.');
+        var parts = name.split(DELIMITER);
         name = parts.pop();
         defineConstant.call(parts.reduce(setValueObject, this.container), name, value);
         return this;
@@ -16610,15 +16670,15 @@ ___scope___.file("dist/bottle.js", function(exports, require, module, __filename
      */
     var decorator = function decorator(fullname, func) {
         var parts, name;
-        if (typeof fullname === 'function') {
+        if (typeof fullname === FUNCTION_TYPE) {
             func = fullname;
-            fullname = '__global__';
+            fullname = GLOBAL_NAME;
         }
     
-        parts = fullname.split('.');
+        parts = fullname.split(DELIMITER);
         name = parts.shift();
         if (parts.length) {
-            getNestedBottle.call(this, name).decorator(parts.join('.'), func);
+            getNestedBottle.call(this, name).decorator(parts.join(DELIMITER), func);
         } else {
             if (!this.decorators[name]) {
                 this.decorators[name] = [];
@@ -16743,15 +16803,15 @@ ___scope___.file("dist/bottle.js", function(exports, require, module, __filename
      */
     var middleware = function middleware(fullname, func) {
         var parts, name;
-        if (typeof fullname === 'function') {
+        if (typeof fullname === FUNCTION_TYPE) {
             func = fullname;
-            fullname = '__global__';
+            fullname = GLOBAL_NAME;
         }
     
-        parts = fullname.split('.');
+        parts = fullname.split(DELIMITER);
         name = parts.shift();
         if (parts.length) {
-            getNestedBottle.call(this, name).middleware(parts.join('.'), func);
+            getNestedBottle.call(this, name).middleware(parts.join(DELIMITER), func);
         } else {
             if (!this.middlewares[name]) {
                 this.middlewares[name] = [];
@@ -16779,7 +16839,7 @@ ___scope___.file("dist/bottle.js", function(exports, require, module, __filename
      */
     var pop = function pop(name) {
         var instance;
-        if (typeof name === 'string') {
+        if (typeof name === STRING_TYPE) {
             instance = bottles[name];
             if (!instance) {
                 bottles[name] = instance = new Bottle();
@@ -16794,7 +16854,7 @@ ___scope___.file("dist/bottle.js", function(exports, require, module, __filename
      * Clear all named bottles.
      */
     var clear = function clear(name) {
-        if (typeof name === 'string') {
+        if (typeof name === STRING_TYPE) {
             delete bottles[name];
         } else {
             bottles = {};
@@ -16821,8 +16881,8 @@ ___scope___.file("dist/bottle.js", function(exports, require, module, __filename
      */
     var provider = function provider(fullname, Provider) {
         var parts, name;
-        parts = fullname.split('.');
-        if (this.providerMap[fullname] && parts.length === 1 && !this.container[fullname + 'Provider']) {
+        parts = fullname.split(DELIMITER);
+        if (this.providerMap[fullname] && parts.length === 1 && !this.container[fullname + PROVIDER_SUFFIX]) {
             return console.error(fullname + ' provider already instantiated.');
         }
         this.originalProviders[fullname] = Provider;
@@ -16831,7 +16891,7 @@ ___scope___.file("dist/bottle.js", function(exports, require, module, __filename
         name = parts.shift();
     
         if (parts.length) {
-            getNestedBottle.call(this, name).provider(parts.join('.'), Provider);
+            getNestedBottle.call(this, name).provider(parts.join(DELIMITER), Provider);
             return this;
         }
         return createProvider.call(this, name, Provider);
@@ -16860,7 +16920,7 @@ ___scope___.file("dist/bottle.js", function(exports, require, module, __filename
         container = this.container;
         decorators = this.decorators;
         middlewares = this.middlewares;
-        providerName = name + 'Provider';
+        providerName = name + PROVIDER_SUFFIX;
     
         properties = Object.create(null);
         properties[providerName] = {
@@ -16925,7 +16985,7 @@ ___scope___.file("dist/bottle.js", function(exports, require, module, __filename
     var removeProviderMap = function resetProvider(name) {
         delete this.providerMap[name];
         delete this.container[name];
-        delete this.container[name + 'Provider'];
+        delete this.container[name + PROVIDER_SUFFIX];
     };
     
     /**
@@ -16936,7 +16996,7 @@ ___scope___.file("dist/bottle.js", function(exports, require, module, __filename
     var resetProviders = function resetProviders() {
         var providers = this.originalProviders;
         Object.keys(this.originalProviders).forEach(function resetPrvider(provider) {
-            var parts = provider.split('.');
+            var parts = provider.split(DELIMITER);
             if (parts.length > 1) {
                 parts.forEach(removeProviderMap, getNestedBottle.call(this, parts[0]));
             }
@@ -16961,23 +17021,41 @@ ___scope___.file("dist/bottle.js", function(exports, require, module, __filename
     };
     
     /**
-     * Register a service inside a generic factory.
+     * Register a function service
+     */
+    var serviceFactory = function serviceFactory(name, factoryService) {
+        return createService.apply(this, [name, factoryService, false].concat(slice.call(arguments, 2)));
+    };
+    
+    /**
+     * Register a class service
      *
      * @param String name
      * @param Function Service
      * @return Bottle
      */
     var service = function service(name, Service) {
-        var deps = arguments.length > 2 ? slice.call(arguments, 2) : null;
+        return createService.apply(this, [name, Service, true].concat(slice.call(arguments, 2)));
+    };
+    
+    /**
+     * Private helper for creating service and service factories.
+     *
+     * @param String name
+     * @param Function Service
+     * @return Bottle
+     */
+    var createService = function createService(name, Service, isClass) {
+        var deps = arguments.length > 3 ? slice.call(arguments, 3) : [];
         var bottle = this;
         return factory.call(this, name, function GenericFactory() {
-            var ServiceCopy = Service;
-            if (deps) {
-                var args = deps.map(getNestedService, bottle.container);
-                args.unshift(Service);
-                ServiceCopy = Service.bind.apply(Service, args);
+            var serviceFactory = Service; // alias for jshint
+            var args = deps.map(getNestedService, bottle.container);
+    
+            if (!isClass) {
+                return serviceFactory.apply(null, args);
             }
-            return new ServiceCopy();
+            return new (Service.bind.apply(Service, [null].concat(args)))();
         });
     };
     
@@ -16990,7 +17068,7 @@ ___scope___.file("dist/bottle.js", function(exports, require, module, __filename
      */
     var value = function value(name, val) {
         var parts;
-        parts = name.split('.');
+        parts = name.split(DELIMITER);
         name = parts.pop();
         defineValue.call(parts.reduce(setValueObject, this.container), name, val);
         return this;
@@ -17071,6 +17149,7 @@ ___scope___.file("dist/bottle.js", function(exports, require, module, __filename
         register : register,
         resolve : resolve,
         service : service,
+        serviceFactory : serviceFactory,
         value : value
     };
     
@@ -17140,7 +17219,7 @@ ___scope___.file("dist/bottle.js", function(exports, require, module, __filename
         /**
          * Export
          */
-        if (typeof define === 'function' && typeof define.amd === 'object' && define.amd) {
+        if (typeof define === FUNCTION_TYPE && typeof define.amd === 'object' && define.amd) {
             root.Bottle = Bottle;
             define(function() { return Bottle; });
         } else if (freeExports && freeModule) {
@@ -17158,7 +17237,7 @@ ___scope___.file("dist/bottle.js", function(exports, require, module, __filename
 });
 return ___scope___.entry = "dist/bottle.js";
 });
-FuseBox.pkg("array-unique@0.3.2", {}, function(___scope___){
+FuseBox.pkg("array-unique", {}, function(___scope___){
 ___scope___.file("index.js", function(exports, require, module, __filename, __dirname){
 
 /*!
@@ -17208,7 +17287,7 @@ module.exports.immutable = function uniqueImmutable(arr) {
 });
 return ___scope___.entry = "index.js";
 });
-FuseBox.pkg("loglevel@1.6.1", {}, function(___scope___){
+FuseBox.pkg("loglevel", {}, function(___scope___){
 ___scope___.file("lib/loglevel.js", function(exports, require, module, __filename, __dirname){
 
 /*
@@ -17465,7 +17544,7 @@ ___scope___.file("lib/loglevel.js", function(exports, require, module, __filenam
 });
 return ___scope___.entry = "lib/loglevel.js";
 });
-FuseBox.pkg("@haztivity/hz-navbar", {"jquery-ui-dist":"1.12.1"}, function(___scope___){
+FuseBox.pkg("@haztivity/hz-navbar", {}, function(___scope___){
 ___scope___.file("dist/HzNavbar.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
@@ -17496,7 +17575,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@haztivity/core");
 require("jquery-ui-dist/jquery-ui");
-var HzNavbarComponent = HzNavbarComponent_1 = (function (_super) {
+var HzNavbarComponent = /** @class */ (function (_super) {
     __extends(HzNavbarComponent, _super);
     function HzNavbarComponent(_$, _EventEmitterFactory, _Navigator, _PageManager, _DataOptions) {
         var _this = _super.call(this, _$, _EventEmitterFactory) || this;
@@ -17507,13 +17586,43 @@ var HzNavbarComponent = HzNavbarComponent_1 = (function (_super) {
         _this._numPages = 0;
         return _this;
     }
+    HzNavbarComponent_1 = HzNavbarComponent;
     HzNavbarComponent.prototype.init = function (options, config) {
         this._options = core_1.$.extend(true, {}, HzNavbarComponent_1._DEFAULTS, options);
         this._getElements();
         this.updateLocale();
+        this._initExitDialog();
         this.progress(0);
         this._assignEvents();
         this.updatePaginator();
+    };
+    HzNavbarComponent.prototype._initExitDialog = function () {
+        var locale = this._options.locale[this._options.lang] || this._options.locale[this._options.defaultLang];
+        var options = this._DataOptions.getDataOptions(this._$exitDialog, "dialog");
+        options = core_1.$.extend(true, options, {
+            autoOpen: false,
+            show: "fade",
+            hide: "fade",
+            resizable: false,
+            modal: true,
+            buttons: [
+                {
+                    text: locale.exitOk,
+                    click: this._onConfirmExit.bind(this)
+                },
+                {
+                    text: locale.exitKo,
+                    click: this._onCancelExit.bind(this)
+                }
+            ]
+        });
+        if (options.dialogClass) {
+            options.dialogClass += " " + HzNavbarComponent_1.CLASS_LIST_EXIT_DIALOG;
+        }
+        else {
+            options.dialogClass = HzNavbarComponent_1.CLASS_LIST_EXIT_DIALOG;
+        }
+        this._$exitDialog.dialog(options);
     };
     HzNavbarComponent.prototype.updatePaginator = function () {
         var numPages = this._PageManager.count();
@@ -17606,7 +17715,7 @@ var HzNavbarComponent = HzNavbarComponent_1 = (function (_super) {
     HzNavbarComponent.prototype._generateIndex = function () {
         if (this._$indexList && this._$indexList.length > 0 && this._$indexListItemTemplate && this._$indexListItemTemplate.length > 0) {
             this._$indexListItemTemplate.detach();
-            var options = core_1.$.extend({}, HzNavbarComponent_1.OPT_DIALOG_DEFAULTS, this._DataOptions.getDataOptions(this._$indexList, HzNavbarComponent_1.PREFIX_LIST_DIALOG_OPTIONS));
+            var options = core_1.$.extend(true, {}, HzNavbarComponent_1.OPT_DIALOG_DEFAULTS, this._DataOptions.getDataOptions(this._$indexList, "dialog"));
             options.dialogClass = HzNavbarComponent_1.CLASS_LIST_INDEX_DIALOG;
             this._$indexList.dialog(options);
             this._indexListDialog = this._$indexList.data("ui-dialog");
@@ -17650,6 +17759,8 @@ var HzNavbarComponent = HzNavbarComponent_1 = (function (_super) {
         this._$progress = this._$element.find(HzNavbarComponent_1.QUERY_PROGRESS);
         this._$homeBtn = this._$element.find(HzNavbarComponent_1.QUERY_ACTION_HOME);
         this._$indexBtn = this._$element.find(HzNavbarComponent_1.QUERY_ACTION_INDEX);
+        this._$exitBtn = this._$element.find(HzNavbarComponent_1.QUERY_ACTION_EXIT);
+        this._$exitDialog = this._$element.find(HzNavbarComponent_1.QUERY_ACTION_EXIT_DIALOG);
         this._$currentPageIndex = this._$element.find(HzNavbarComponent_1.QUERY_PAGE_CURRENT);
         this._$numPages = this._$element.find(HzNavbarComponent_1.QUERY_PAGE_TOTAL);
         this._$indexList = this._$element.find(HzNavbarComponent_1.QUERY_INDEX_LIST);
@@ -17664,6 +17775,7 @@ var HzNavbarComponent = HzNavbarComponent_1 = (function (_super) {
         this._$prevBtn.on("click." + HzNavbarComponent_1.NAMESPACE, { instance: this }, this._onPrevClick);
         this._$homeBtn.on("click." + HzNavbarComponent_1.NAMESPACE, { instance: this }, this._onHomeClick);
         this._$indexBtn.on("click." + HzNavbarComponent_1.NAMESPACE, { instance: this }, this._onIndexClick);
+        this._$exitBtn.on("click." + HzNavbarComponent_1.NAMESPACE, { instance: this }, this._onExitClick);
         this._$indexList.on("click." + HzNavbarComponent_1.NAMESPACE, HzNavbarComponent_1.QUERY_INDEX_LIST_ITEM, { instance: this }, this._onIndexListItemClick);
         this._Navigator.on(core_1.Navigator.ON_DISABLE, { instance: this }, this._onDisabled);
         this._Navigator.on(core_1.Navigator.ON_ENABLE, { instance: this }, this._onEnabled);
@@ -17698,6 +17810,18 @@ var HzNavbarComponent = HzNavbarComponent_1 = (function (_super) {
     };
     HzNavbarComponent.prototype._onHomeClick = function (e) {
         var instance = e.data.instance;
+        instance._Navigator.goTo(0);
+    };
+    HzNavbarComponent.prototype._onExitClick = function (e) {
+        var instance = e.data.instance;
+        instance._$exitDialog.dialog("open");
+    };
+    HzNavbarComponent.prototype._onCancelExit = function () {
+        this._$exitDialog.dialog("close");
+    };
+    HzNavbarComponent.prototype._onConfirmExit = function () {
+        this._$exitDialog.dialog("close").dialog("destroy");
+        core_1.ScoFactory.getCurrentSco().exit();
     };
     HzNavbarComponent.prototype._onIndexClick = function (e) {
         var instance = e.data.instance;
@@ -17828,62 +17952,71 @@ var HzNavbarComponent = HzNavbarComponent_1 = (function (_super) {
         var instance = e.data.instance;
         instance._updatePagerButtonState();
     };
+    HzNavbarComponent.NAMESPACE = "hzNavbar";
+    HzNavbarComponent.PREFIX = "hz-navbar";
+    HzNavbarComponent.QUERY_ACTION_NEXT = "[data-" + HzNavbarComponent_1.PREFIX + "-next]";
+    HzNavbarComponent.QUERY_ACTION_PREV = "[data-" + HzNavbarComponent_1.PREFIX + "-prev]";
+    HzNavbarComponent.QUERY_BAR = "[data-" + HzNavbarComponent_1.PREFIX + "-bar]";
+    HzNavbarComponent.QUERY_PROGRESS = "[data-" + HzNavbarComponent_1.PREFIX + "-progress]";
+    HzNavbarComponent.QUERY_ACTION_HOME = "[data-" + HzNavbarComponent_1.PREFIX + "-home]";
+    HzNavbarComponent.QUERY_ACTION_INDEX = "[data-" + HzNavbarComponent_1.PREFIX + "-index]";
+    HzNavbarComponent.QUERY_ACTION_EXIT = "[data-" + HzNavbarComponent_1.PREFIX + "-exit]";
+    HzNavbarComponent.QUERY_ACTION_EXIT_DIALOG = "[data-" + HzNavbarComponent_1.PREFIX + "-exit-dialog]";
+    HzNavbarComponent.QUERY_PAGE_CURRENT = "[data-" + HzNavbarComponent_1.PREFIX + "-current]";
+    HzNavbarComponent.QUERY_PAGE_TOTAL = "[data-" + HzNavbarComponent_1.PREFIX + "-total]";
+    HzNavbarComponent.QUERY_INDEX_LIST = "[data-" + HzNavbarComponent_1.PREFIX + "-index-list]";
+    HzNavbarComponent.QUERY_INDEX_LIST_ITEM = "[data-" + HzNavbarComponent_1.PREFIX + "-index-list-item]";
+    HzNavbarComponent.QUERY_INDEX_LIST_ITEM_CONTENT = "[data-" + HzNavbarComponent_1.PREFIX + "-index-list-item-content]";
+    HzNavbarComponent.CLASS_PAGE_VISITED = "hz-navbar__page--visited";
+    HzNavbarComponent.CLASS_PAGE_COMPLETED = "hz-navbar__page--completed";
+    HzNavbarComponent.CLASS_LIST_INDEX_DIALOG = "hz-navbar__dialog hz-navbar__index-list-dialog";
+    HzNavbarComponent.CLASS_LIST_EXIT_DIALOG = "hz-navbar__dialog hz-navbar__index-list-dialog";
+    HzNavbarComponent.DATA_PAGE = "hzNavbarPage";
+    HzNavbarComponent.OPT_DIALOG_DEFAULTS = {
+        autoOpen: false,
+        show: "fade",
+        hide: "fade"
+    };
+    HzNavbarComponent._DEFAULTS = {
+        locale: {
+            "es": {
+                next: "Siguiente",
+                prev: "Anterior",
+                currentPage: "Página actual",
+                totalPages: "Páginas totales",
+                home: "Ir al inicio",
+                showIndex: "Mostrar índice",
+                index: "Índice",
+                exit: "Salir",
+                exitTitle: "Salir",
+                exitMessage: "Va a salir del curso. ¿Desea guardar la puntuación y salir?",
+                exitOk: "Salir",
+                exitKo: "Cancelar"
+            }
+        },
+        defaultLang: "es"
+    };
+    HzNavbarComponent = HzNavbarComponent_1 = __decorate([
+        core_1.Component({
+            name: "HzNavbar",
+            dependencies: [
+                core_1.$,
+                core_1.EventEmitterFactory,
+                core_1.Navigator,
+                core_1.PageManager,
+                core_1.DataOptions
+            ]
+        })
+    ], HzNavbarComponent);
     return HzNavbarComponent;
+    var HzNavbarComponent_1;
 }(core_1.ComponentController));
-HzNavbarComponent.NAMESPACE = "hzNavbar";
-HzNavbarComponent.PREFIX = "hz-navbar";
-HzNavbarComponent.PREFIX_LIST_DIALOG_OPTIONS = HzNavbarComponent_1.NAMESPACE + "Dialog";
-HzNavbarComponent.QUERY_ACTION_NEXT = "[data-" + HzNavbarComponent_1.PREFIX + "-next]";
-HzNavbarComponent.QUERY_ACTION_PREV = "[data-" + HzNavbarComponent_1.PREFIX + "-prev]";
-HzNavbarComponent.QUERY_BAR = "[data-" + HzNavbarComponent_1.PREFIX + "-bar]";
-HzNavbarComponent.QUERY_PROGRESS = "[data-" + HzNavbarComponent_1.PREFIX + "-progress]";
-HzNavbarComponent.QUERY_ACTION_HOME = "[data-" + HzNavbarComponent_1.PREFIX + "-home]";
-HzNavbarComponent.QUERY_ACTION_INDEX = "[data-" + HzNavbarComponent_1.PREFIX + "-index]";
-HzNavbarComponent.QUERY_PAGE_CURRENT = "[data-" + HzNavbarComponent_1.PREFIX + "-current]";
-HzNavbarComponent.QUERY_PAGE_TOTAL = "[data-" + HzNavbarComponent_1.PREFIX + "-total]";
-HzNavbarComponent.QUERY_INDEX_LIST = "[data-" + HzNavbarComponent_1.PREFIX + "-index-list]";
-HzNavbarComponent.QUERY_INDEX_LIST_ITEM = "[data-" + HzNavbarComponent_1.PREFIX + "-index-list-item]";
-HzNavbarComponent.QUERY_INDEX_LIST_ITEM_CONTENT = "[data-" + HzNavbarComponent_1.PREFIX + "-index-list-item-content]";
-HzNavbarComponent.CLASS_PAGE_VISITED = "hz-navbar__page--visited";
-HzNavbarComponent.CLASS_PAGE_COMPLETED = "hz-navbar__page--completed";
-HzNavbarComponent.CLASS_LIST_INDEX_DIALOG = "hz-navbar__index-list-dialog";
-HzNavbarComponent.DATA_PAGE = "hzNavbarPage";
-HzNavbarComponent.OPT_DIALOG_DEFAULTS = {
-    autoOpen: false
-};
-HzNavbarComponent._DEFAULTS = {
-    locale: {
-        "es": {
-            next: "Siguiente",
-            prev: "Anterior",
-            currentPage: "Página actual",
-            totalPages: "Páginas totales",
-            home: "Ir al inicio",
-            showIndex: "Mostrar índice",
-            index: "Índice"
-        }
-    },
-    defaultLang: "es"
-};
-HzNavbarComponent = HzNavbarComponent_1 = __decorate([
-    core_1.Component({
-        name: "HzNavbar",
-        dependencies: [
-            core_1.$,
-            core_1.EventEmitterFactory,
-            core_1.Navigator,
-            core_1.PageManager,
-            core_1.DataOptions
-        ]
-    })
-], HzNavbarComponent);
 exports.HzNavbarComponent = HzNavbarComponent;
-var HzNavbarComponent_1;
 //# sourceMappingURL=HzNavbarComponent.js.map
 });
 return ___scope___.entry = "dist/HzNavbar.js";
 });
-FuseBox.pkg("jquery-ui-dist@1.12.1", {}, function(___scope___){
+FuseBox.pkg("jquery-ui-dist", {}, function(___scope___){
 ___scope___.file("jquery-ui.js", function(exports, require, module, __filename, __dirname){
 
 /*! jQuery UI - v1.12.1 - 2016-09-14
